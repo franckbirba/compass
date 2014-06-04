@@ -1,5 +1,8 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
+$component-active-color:    red !important;
+//** Global background color for active items (e.g., navs or dropdowns).
+
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
 .browsehappy {
