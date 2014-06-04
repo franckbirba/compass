@@ -230,77 +230,69 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-<div class="container" ng-controller="BuildingCtrl" >
-    <form role="form" class="form-horizontal" name="form" ng-submit="" novalidate style="position:relative">
-        <h3>Investissement</h3>
-        <div class="form-group">
-            <label for="portfolio" class="col-sm-2 control-label">Portfolio</label>
-            <div class="col-sm-10">
-                 <input class="form-control" id="portfolio" placeholder="Portfolio" name="portfolio" type="text" autofocus >
-            </div>
-           
-        </div>
-        <div class="form-group">
-            <label for="portfolio" class="col-sm-2 control-label">Nom du Bâtiment</label>
-            <div class="col-sm-10">
-                <input class="form-control" placeholder="Nom du Bâtiment" name="name" type="text" autofocus >
-            </div>
-        </div>
-        <hr>
-        
-        <div class="container">
-            <div style="height:430px;width:400px;float:left">
-                <h3>Adresse</h3>
-                <div class="form-group">
-                    <label for="portfolio" class="col-sm-2 control-label">Adresse</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" placeholder="Adresse" name="adresse" type="text" autofocus >
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="portfolio" class="col-sm-2 control-label">Code Postal</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" placeholder="Code Postal" name="cp" type="text" autofocus >
-                    </div>
-                </div>
-                 <div class="form-group">
-                    <label for="portfolio" class="col-sm-2 control-label">Ville</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" placeholder="Ville" name="city" type="text" autofocus >
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="portfolio" class="col-sm-2 control-label">Secteur</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" placeholder="Secteur" name="sector" type="text" autofocus >
-                    </div>
-                </div>
-                <div class="form-group" style="width:400px;">
-                    <label for="portfolio" class="col-sm-2 control-label">Pays</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" placeholder="Pays" name="country" type="text" autofocus >
-                    </div>
-                </div>
-
-               
-            </div>
-            <google-map center="map.center" zoom="map.zoom"></google-map>
-        </div>
-        
-        <hr>
-        <h3>Photos</h3>
-        <div class="container">
-            <div style="position:relative;width:200px;height:150px;float:left;margin-left:5px;margin-right:5px;" ng-repeat="img in IMAGES">
-                <img  height="150px" width="200px" src="{{img.src}}" style="border-color:black;border-width:thin;border-style:solid;" class="">
-                <button href="" class="btn btn-xs btn-danger glyphicon glyphicon-remove" style="position:absolute;right:5px;"></button>
-            </div>
+<div class="container" ng-controller="BuildingCtrl" style="position:relative;margin-top:20px;">
+    <h3>Certifications</h3>
+    <div class="container" style="height:250px;">
+        <div style="position:relative;width:150px;height:100px;float:left;margin-left:5px;margin-right:5px;" ng-repeat="img in CERTS">
+            <img  height="100px" width="150px" src="{{img.src}}"  class="">
+            <input type="checkbox">
+            <textarea  style="border-width:thin;border-style:solid;border-color:black;width:150px;height:100px;" placeholder="version,détails:"/>
             
-            <button class="btn btn-primary glyphicon glyphicon-plus"></button>
-        </div>        
-
-        <!-- Change this to a button or input when using this as a form -->
-        <br/>
-        <a href="/building2" style="position:absolute;right:50px;" class="btn btn-lg btn-success btn-primary">proceed</a>
-    </form>
+        </div>
+        
+        <button class="btn btn-primary glyphicon glyphicon-plus"></button>
+    </div> 
+    <br/>
+    <hr>
+    <div class="container">
+        <h3>Appréciation qualitative du Confort</h3>
+        
+        <form role="form" class="form-horizontal" style="width:400px;float:left" name="form" ng-submit="" novalidate style="position:relative">
+             <div class="form-group">
+                <label for="portfolio" class="col-sm-2 control-label">Acoustique</label>
+                <div class="col-sm-10 input-group">
+                    <select class="selectpicker">
+                        <option>(vide)</option>
+                        <option>Bon</option>
+                        <option>Moyen</option>
+                        <option>Mauvais</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="portfolio" class="col-sm-2 control-label">Visuel</label>
+                <div class="col-sm-10 input-group">
+                    <select class="selectpicker">
+                        <option>(vide)</option>
+                        <option>Bon</option>
+                        <option>Moyen</option>
+                        <option>Mauvais</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="portfolio" class="col-sm-2 control-label">Thermique</label>
+                <div class="col-sm-10 input-group">
+                    <select class="selectpicker">
+                        <option>(vide)</option>
+                        <option>Bon</option>
+                        <option>Moyen</option>
+                        <option>Mauvais</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div style="width:300px;float:right">
+            <h3>Indice de confort global</h3>
+            <a href="" class="btn btn-lg btn-primary">%</a>
+            <textarea style="height:100px;border-width:thin;border-style:solid;border-color:black;" placeholder="Commentaires: retours utilisateurs"></textarea>
+        </div>
+        <a href="/building5" style="position:absolute;left:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">back<a/>
+        <a href="/building7" style="position:absolute;right:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">proceed</a>
+    </div>
+    
 </div>
+</div>
+     <script type="text/javascript">
+         $('.selectpicker').selectpicker();
+      </script>

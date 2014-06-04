@@ -1,6 +1,6 @@
 
-<div class="container">
-    <div class="panel panel-primary">
+<div class="">
+    <div class="panel panel-primary" style="position:relative">
         <div class="panel-heading" style="display: inline-block; width: 100%">
             <h4 class="panel-title" style="float: left">
                 <i class="{{ngModel.icon}}"></i>
@@ -19,7 +19,7 @@
                             {{col.name}}
                             <i class="fa fa-sort"></i>
                         </th>
-                        <th class="title-edit">
+                        <th class="title-edit" style="position: absolute; right: -55px;">
                             Edit
                         </th>
                     </tr>
@@ -54,7 +54,7 @@
                                     <span class="glyphicon glyphicon glyphicon-thumbs-down"></span>
                                 </button>
                             </form>
-                            <div class="buttons" ng-show="!rowform.$visible" style="position: absolute; right: 5px;">
+                            <div class="buttons" ng-show="!rowform.$visible" style="position: absolute; right: -55px;">
                                 <button class="btn btn-xs btn-default" ng-click="rowform.$show()"><span class="glyphicon glyphicon-edit"></span></button>
                                 <button class="btn btn-xs btn-danger" ng-click="removeData($index)"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
