@@ -240,9 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .g-map {
     position: absolute;
-    height: 235px;
-    width: 283px;
-    right: 216px;
+    right: 50px;
     top: 242px;
     overflow: hidden;
 }
@@ -274,4 +272,9 @@ Layout
 GMAP
 =================
 */
-.angular-google-map-container { height: 400px; }
+.angular-google-map-container { 
+height: 300px; 
+width: 300px;
+margin-left:auto;
+margin-right:auto;
+}
