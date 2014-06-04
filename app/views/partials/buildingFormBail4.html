@@ -1,6 +1,4 @@
-<div id="wrapper">
-
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" >
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" >
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -12,12 +10,12 @@
             </div>
             <!-- /.navbar-header -->
             <div class="pull-right">
-      <form class="navbar-form" role="search">
-              <input type="text" class="search-query" placeholder="Search">
-          </form>
-          </div>
+            <form class="navbar-form" role="search">
+                    <input type="text" class="search-query" placeholder="Search">
+            </form>
+            </div>
             <ul class="nav navbar-top-links navbar-right">
-        
+                
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -228,68 +226,73 @@
             </ul>
             <!-- /.navbar-top-links -->
 
+      
             <!-- /.navbar-static-side -->
         </nav>
-        <div id="page-wrapper" style="margin:0">
-          <div class="row">
-  <div class="col-sm-12">
-    <h1>Change Password</h1>
-  </div>
-  <div class="col-sm-12">
-    <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
-      
-      <div class="form-group">
-        <label>Current Password</label>
 
-        <input type="password" name="password" class="form-control" ng-model="user.oldPassword"
-               mongoose-error/>    
-        <p class="help-block" ng-show="form.password.$error.mongoose">
-            {{ errors.other }}
-        </p>
-      </div>
-
-      <div class="form-group">
-        <label>New Password</label>
-
-        <input type="password" name="newPassword" class="form-control" ng-model="user.newPassword" 
-               ng-minlength="3"
-               required/>
-        <p class="help-block"
-           ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)">
-          Password must be at least 3 characters.
-        </p>
-      </div>
-
-      <p class="help-block"> {{ message }} </p>
-
-      <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
-    </form>
-  </div>
-</div>
- <div class="row">
- <h2>Coût de la construction</h2>
-  <div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit="" model="'indices'"></div>
-</div>
-<div class="row">
- <h2>Coefficients "fixes" de montage</h2>
-  <div class="col-sm-12" style="margin-top:20px;width:1200px;"></div>
-</div>
-<div class="row">
- <h2>Coût des Fluides</h2>
-  <div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit="" model="'fluids'"></div>
-</div>
-
-<div class="row">
- <h2>Fluides</h2>
-  <div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit="" model="'fluidType'"></div>
-</div>
-
-<div class="row">
- <h2>Fournisseurs</h2>
-  <div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit="" model="'vendor'"></div>
-</div>
+<div class="container" ng-controller="BuildingCtrl" style="position:relative;margin-top:20px;">
+    <h3>Certifications</h3>
+    <div class="container" style="height:250px;">
+        <div style="position:relative;width:150px;height:100px;float:left;margin-left:5px;margin-right:5px;" ng-repeat="img in CERTS">
+            <img  height="100px" width="150px" src="{{img.src}}"  class="">
+            <input type="checkbox">
+            <textarea  style="border-width:thin;border-style:solid;border-color:black;width:150px;height:100px;" placeholder="version,détails:"/>
+            
         </div>
-
+        
+        <button class="btn btn-primary glyphicon glyphicon-plus"></button>
+    </div> 
+    <br/>
+    <hr>
+    <div class="container">
+        <h3>Appréciation qualitative du Confort</h3>
+        
+        <form role="form" class="form-horizontal" style="width:400px;float:left" name="form" ng-submit="" novalidate style="position:relative">
+             <div class="form-group">
+                <label for="portfolio" class="col-sm-2 control-label">Acoustique</label>
+                <div class="col-sm-10 input-group">
+                    <select class="selectpicker">
+                        <option>(vide)</option>
+                        <option>Bon</option>
+                        <option>Moyen</option>
+                        <option>Mauvais</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="portfolio" class="col-sm-2 control-label">Visuel</label>
+                <div class="col-sm-10 input-group">
+                    <select class="selectpicker">
+                        <option>(vide)</option>
+                        <option>Bon</option>
+                        <option>Moyen</option>
+                        <option>Mauvais</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="portfolio" class="col-sm-2 control-label">Thermique</label>
+                <div class="col-sm-10 input-group">
+                    <select class="selectpicker">
+                        <option>(vide)</option>
+                        <option>Bon</option>
+                        <option>Moyen</option>
+                        <option>Mauvais</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div style="width:300px;float:right">
+            <h3>Indice de confort global</h3>
+            <a href="" class="btn btn-lg btn-primary">%</a>
+            <textarea style="height:100px;border-width:thin;border-style:solid;border-color:black;" placeholder="Commentaires: retours utilisateurs"></textarea>
+        </div>
+        <a href="/building5" style="position:absolute;left:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">back<a/>
+        <a href="/building7" style="position:absolute;right:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">proceed</a>
+    </div>
+    
 </div>
-
-
+</div>
+     <script type="text/javascript">
+         $('.selectpicker').selectpicker();
+      </script>

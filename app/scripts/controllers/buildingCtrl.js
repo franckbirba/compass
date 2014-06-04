@@ -21,5 +21,26 @@ angular.module('compassApp')
     {
       src: "http://dtxtq4w60xqpw.cloudfront.net/sites/all/files/photocontest2012/untitled-1copy.jpg"
     }
+  ];
+
+  $scope.CERTS = [
+    {
+      src: "http://www.ffbatiment.fr/Files/pub/Fede_N00/MINISITE_ECO_CONSTRUCTION_3374/4ee8529f4d2d460db2121e9104f1f3b3/EDIT/logo_nf_service_batiment.png"
+    },
+    {
+      src: "http://www.bio-teknik-consulting.com/wp-content/uploads/2010/05/logo_effinergie.jpg"
+    },
+    {
+      src: "http://www.gerflor.fr/cache/media/20-environnement/logos-environnement/leed_72dpi/s,180,300-eb11e7.png"
+    },
+    {
+      src: "http://www.ffbatiment.fr/Files/pub/Fede_N00/MINISITE_ECO_CONSTRUCTION_3374/4ee8529f4d2d460db2121e9104f1f3b3/EDIT/logo_nf_service_batiment.png"
+    },
+    {
+      src: "http://www.bio-teknik-consulting.com/wp-content/uploads/2010/05/logo_effinergie.jpg"
+    },
+    {
+      src: "http://www.gerflor.fr/cache/media/20-environnement/logos-environnement/leed_72dpi/s,180,300-eb11e7.png"
+    }
   ]
 });
