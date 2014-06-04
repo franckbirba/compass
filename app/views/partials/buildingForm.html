@@ -52,11 +52,18 @@
             <google-map center="map.center" zoom="map.zoom"></google-map>
         </div>
 
-         <h3>Photos</h3>
-        
-
-            <!-- Change this to a button or input when using this as a form -->
+        <h3>Photos</h3>
+        <div class="container">
+            <div style="position:relative;width:80px;float:left;" ng-repeat="img in IMAGES">
+                <img  width="80px" src="{{img.src}}"  class="">
+                <span class="glyphicon glyphicon-remove" style="position:absolute;right:5px;"></span>
+            </div>
             
+            <button class="glyphicon glyphicon-plus"></button>
+        </div>        
+
+        <!-- Change this to a button or input when using this as a form -->
+        <br/>
         <button type="submit" class="btn btn-lg btn-success btn-primary">save</button>
     </form>
 </div>
