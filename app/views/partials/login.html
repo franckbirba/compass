@@ -2,7 +2,8 @@
 <div ng-controller="LangCtrl">
     <label>Langue: &nbsp</label>
     <select class="selectpicker" ng-model="selectLang" ng-options="lang.name for lang in LANG">
-        <option ng-repeat="tmplang in LANG">{{tmplang.name}}</option>
+        <option>français</option>
+        <option>english</option>
     </select>
 
     <div class="container" ng-controller="LoginCtrl">
@@ -37,3 +38,6 @@
 
     </div>
 </div>
+     <script type="text/javascript">
+         $('.selectpicker').selectpicker();
+      </script>
