@@ -228,72 +228,76 @@
 
       
             <!-- /.navbar-static-side -->
-        </nav>
+</nav>
 
+<!-- START FORM -->
+<div class="build-title">Création d'un bâtiment</div>
 <div class="container" ng-controller="BuildingCtrl" style="position:relative">
     <form role="form" class="form-horizontal" name="form" ng-submit="" novalidate >
-        <h3>DPE</h3>
-        <fieldset>
-            <label>Consommation énergétique</label>
-            <div class="form-group">
-                <label for="portfolio" class="col-sm-2 control-label">Notation</label>
-                <div class="col-sm-10 input-group">
-                     <select class="selectpicker">
-                        <option>(vide)</option>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                        <option>E</option>
-                        <option>F</option>
-                        <option>G</option>
-                    </select>
+        <div class="build-info">
+            <h3>DPE</h3>
+            <fieldset>
+                <label class="label-fieldset">Consommation énergétique</label>
+                <div class="form-group">
+                    <label for="portfolio" class="col-sm-2 control-label">Notation</label>
+                    <div class="col-sm-10 input-group">
+                         <select class="selectpicker">
+                            <option>(vide)</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="portfolio" class="col-sm-2 control-label">Valeur</label>
-                <div class="col-sm-10 input-group">
-                     <input class="form-control" id="portfolio" placeholder="Valeur" name="portfolio" type="text" autofocus >
-                     <span class="input-group-addon">kWh/m2.an</span>
+                <div class="form-group">
+                    <label for="portfolio" class="col-sm-2 control-label">Valeur</label>
+                    <div class="col-sm-10 input-group">
+                         <input class="form-control" id="portfolio" placeholder="Valeur" name="portfolio" type="text" autofocus >
+                         <span class="input-group-addon">kWh/m2.an</span>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
-        <fieldset>
-            <label>Emission CO2</label>
-            <div class="form-group">
-                <label for="portfolio" class="col-sm-2 control-label">Notation</label>
-                <div class="col-sm-10 input-group">
-                     <select class="selectpicker">
-                        <option>(vide)</option>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                        <option>E</option>
-                        <option>F</option>
-                        <option>G</option>
-                    </select>
+            </fieldset>
+            <fieldset>
+                <label class="label-fieldset">Emission CO2</label>
+                <div class="form-group">
+                    <label for="portfolio" class="col-sm-2 control-label">Notation</label>
+                    <div class="col-sm-10 input-group">
+                         <select class="selectpicker">
+                            <option>(vide)</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="portfolio" class="col-sm-2 control-label">Valeur</label>
-                <div class="col-sm-10 input-group">
-                     <input class="form-control" id="portfolio" placeholder="Valeur" name="portfolio" type="text" autofocus >
-                     <span class="input-group-addon">kg/m2.an</span>
+                <div class="form-group">
+                    <label for="portfolio" class="col-sm-2 control-label">Valeur</label>
+                    <div class="col-sm-10 input-group">
+                         <input class="form-control" id="portfolio" placeholder="Valeur" name="portfolio" type="text" autofocus >
+                         <span class="input-group-addon">kg/m2.an</span>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
-        <br/>
-        <hr>
-        
-
-        <br/>
-        <a href="/building3" style="position:absolute;left:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">back<a/>
-        <a href="/building5" style="position:absolute;right:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">proceed</a>
+            </fieldset>
+            <hr>
+            <a href="/building3" style="position:absolute;left:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">back<a/>
+            <a href="/building5" style="position:absolute;right:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">proceed</a>
+        </div>
     </form>
+    <!-- TABLE -->
     <h3>Consommation Compteur Fluides</h3>
-        <div class="form-group" style="margin-top:20px;height:200px;width:600px;" listedit="" model="'fluidcons'"></div>
+    <div class="build-table">
+        <div class="form-group" style="margin-top:20px;height:200px;" listedit="" model="'fluidcons'"></div>
+    </div>
 </div>
-     <script type="text/javascript">
-         $('.selectpicker').selectpicker();
-      </script>
+
+<script type="text/javascript">
+    $('.selectpicker').selectpicker();
+</script>
