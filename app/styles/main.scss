@@ -256,8 +256,36 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 5px;
 }
 
-.build-invest .col-sm-10 {
+.build-invest > .col-sm-10 {
     width: 500px;
+}
+
+.build-info {
+    width: 600px;
+    margin: auto;
+}
+
+.form-horizontal .control-label {
+    text-align: left; 
+    margin-bottom: 0;
+    padding-top: 0px; 
+}
+
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    height: 34px;
+}
+
+.usages {
+    width: 600px;
+    margin: auto;
+    position: relative;
+    height: 100px;
+}
+
+.build-radio {
+    position: absolute;
+    top: 30px;
+    right: 5px;
 }
 /*
 =================
