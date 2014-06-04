@@ -66,6 +66,11 @@ angular.module('compassApp', [
         controller: 'BuildingCtrl',
         authenticate: true
       })
+      .when('/building8', {
+        templateUrl: 'partials/buildingFormBail6',
+        controller: 'BuildingCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
