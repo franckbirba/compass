@@ -1,4 +1,25 @@
+// Global
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$border-radius-base:        0px ;
+$brand-primary:    #90bd59 ;
+$text-color: #7c7c7c;
+$font-family-sans-serif: "Roboto", sans-serif;
+// Dropdwon
+$dropdown-link-hover-bg:      #90bd59 ;
+$dropdown-link-hover-color:      #fff ;
+// Button
+$btn-primary-bg:                 #90bd59 ;
+$btn-primary-border:             #90bd59 ;
+// Form
+$input-border-focus: #90bd59;
+// Navbar
+$navbar-default-bg: #393939;
+$navbar-height: 43px;
+$navbar-default-border: #333;
+// Panel
+$panel-primary-border: #efefef;
+$panel-default-text: #fff;
+$panel-default-border: #dddddd;
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 
@@ -97,14 +118,6 @@ body {
 =================
  */
 
-body {
-    font-family: 'Roboto',sans-serif;
-    background: #fff;
-    font-size: 13px;
-    color: #7c7c7c;
-    position: relative;
-}
-
 a {
     color: #90bd59;
     text-decoration: none;
@@ -118,7 +131,6 @@ form {
 }
 
 .form-control:focus {
-    border-color: #90bd59;
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(144, 189, 89, 0.6);
 }
@@ -131,6 +143,13 @@ button {
   outline: 0 !important;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', sans-serif;
+    margin: 0 0 5px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+
 
 /*
 =================
@@ -139,26 +158,11 @@ button {
 =================
  */
 .btn-primary {
-    background: #90bd59;
-    border-color: #90bd59;
-    color: #fff;
     border-radius: 0;
 }
 
-.navbar {
-    margin: 0;
-    height: 43px;
-    background-color: #393939;
-    border-bottom: 1px solid #333;
-}
-
-.panel-primary>.panel-heading {
-    background-color: #90bd59;
+.panel-primary > .panel-heading {
     border: 0px;
-}
-
-.panel-primary {
-    border: 1px solid #efefef;
 }
 
 .dropdown-toggle {
@@ -177,9 +181,6 @@ button {
 .nav > li > a:focus {
     text-decoration: none;
     background: none;
-}
-
-.dropdown-toggle:hover {
     color: #90bd59;
 }
 
@@ -188,16 +189,8 @@ button {
     color: #90bd59;
 }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    text-decoration: none;
-    color: #fff;
-    background-color: #90bd59;
-}
-
 .panel-default > .panel-heading {
-    color:  #fff;
     background-color: #90bd59;
-    border-color: #dddddd;
 }
 
 .input-group-btn.open .btn-primary.dropdown-toggle, .btn-primary.disabled, .btn-primary[disabled], .btn-primary:hover, .btn-primary:focus {
@@ -209,6 +202,11 @@ button {
 .login-panel {
     width: 300px;
     margin: auto;
+}
+
+.panel-heading {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }
 /*
 =================
