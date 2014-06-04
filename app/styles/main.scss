@@ -4,6 +4,7 @@ $border-radius-base:        0px ;
 $brand-primary:    #90bd59 ;
 $text-color: #7c7c7c;
 $font-family-sans-serif: "Roboto", sans-serif;
+$body-bg: #fff !important;
 // Dropdwon
 $dropdown-link-hover-bg:      #90bd59 ;
 $dropdown-link-hover-color:      #fff ;
@@ -148,6 +149,14 @@ button {
   outline: 0 !important;
 }
 
+hr {
+    border-top: 2px solid #eeeeee;
+}
+
+input{
+   text-align:center;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', sans-serif;
     margin: 0 0 5px;
@@ -232,12 +241,30 @@ h1, h2, h3, h4, h5, h6 {
 .line {
     height: 31px;
 }
+
+.g-map {
+    position: absolute;
+    height: 235px;
+    width: 283px;
+    right: 216px;
+    top: 242px;
+    overflow: hidden;
+}
 /*
 =================
 @Olivier
 Layout
 =================
  */
+.form-horizontal {
+    border: none;
+    width: 80%;
+}
+
+.col-sm-10 {
+    width: 400px;
+}
+
 .col-sm-12 {
     margin-top: 20px;
 }
