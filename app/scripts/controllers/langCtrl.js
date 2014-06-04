@@ -2,18 +2,18 @@
 
 angular.module('compassApp')
   .controller('LangCtrl', function ($scope, Auth, $location) {
-    $('.selectpicker').selectpicker();
     $scope.LANG = [
       {
-        name: 'english',
+        name: 'français',
         value: 'eng'
       },
       {
-        name: 'français',
+        name: 'english',
         value: 'eng'
       }
     ];
 
     $scope.selectLang = $scope.LANG[0];
-    
+
+
   });
