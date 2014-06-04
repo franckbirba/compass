@@ -19,14 +19,14 @@
                             {{col.name}}
                             <i class="fa fa-sort"></i>
                         </th>
-                        <th>
+                        <th style="position: absolute; right: 10px;">
                             Edit
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="row in ngModel.rows" ts-repeat>
-                        <td ng-repeat="cell in ngModel.cols">
+                        <td ng-repeat="cell in ngModel.cols" style="min-height: 31px;">
                             <span ng-if="!cell.type"  editable-text="row[cell.name]" e-name="{{cell.name}}" e-form="rowform">
                                 {{row[cell.name]}}
                             </span>
@@ -45,7 +45,7 @@
                         </td>
                         <td style="white-space: nowrap;width:50px;">
                             <!-- form -->
-                            <form editable-form name="rowform" onbeforesave="saveData($data, row)" onaftersave=(loadData()) ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == row">
+                            <form editable-form name="rowform" onbeforesave="saveData($data, row)" onaftersave=(loadData()) ng-show="rowform.$visible" class="form-buttons form-inline" style="position: absolute; right: 5px; width: 50px;" shown="inserted == row">
                                 <input type="hidden" visibility="hidden!important;"  e-name="_id" e-form="rowform" e-value="row._id">
                                 <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-xs btn-success">
                                     <span class="glyphicon glyphicon-thumbs-up"></span>
@@ -54,7 +54,7 @@
                                     <span class="glyphicon glyphicon glyphicon-thumbs-down"></span>
                                 </button>
                             </form>
-                            <div class="buttons" ng-show="!rowform.$visible">
+                            <div class="buttons" ng-show="!rowform.$visible" style="position: absolute; right: 5px;">
                                 <button class="btn btn-xs btn-default" ng-click="rowform.$show()"><span class="glyphicon glyphicon-edit"></span></button>
                                 <button class="btn btn-xs btn-danger" ng-click="removeData($index)"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
