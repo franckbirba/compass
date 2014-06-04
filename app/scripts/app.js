@@ -28,6 +28,11 @@ angular.module('compassApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/building', {
+        templateUrl: 'partials/buildingForm',
+        controller: 'BuildingCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
