@@ -213,6 +213,25 @@ h1, h2, h3, h4, h5, h6 {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
 }
+
+.form-absolute {
+    position: absolute;
+    right: 5px;
+    width: 50px;
+    height: 27px;
+    border: none;
+    padding: 0;
+}
+
+.title-edit {
+    position: absolute;
+    right: 10px;
+    border: none !important;
+}
+
+.line {
+    height: 31px;
+}
 /*
 =================
 @Olivier
