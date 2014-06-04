@@ -244,6 +244,21 @@ h1, h2, h3, h4, h5, h6 {
     top: 242px;
     overflow: hidden;
 }
+
+.build-title {
+    background-color: #90bd59;
+    height: 50px;
+    color: #fff;
+    width: 500px;
+    margin: 10px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.build-invest .col-sm-10 {
+    width: 500px;
+}
 /*
 =================
 @Olivier
@@ -253,10 +268,6 @@ Layout
 .form-horizontal {
     border: none;
     width: 80%;
-}
-
-.col-sm-10 {
-    width: 400px;
 }
 
 .col-sm-12 {
