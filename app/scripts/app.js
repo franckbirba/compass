@@ -6,7 +6,10 @@ angular.module('compassApp', [
   'ngSanitize',
   'ngRoute',
   'models',
-  'ui.bootstrap', 'xeditable','tableSort'
+  'ui.bootstrap',
+  'xeditable',
+  'tableSort',
+  'google-maps'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
