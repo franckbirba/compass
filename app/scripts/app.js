@@ -18,6 +18,11 @@ angular.module('compassApp', [
         controller: 'MainCtrl',
         authenticate: true
       })
+      .when('/home', {
+        templateUrl: 'partials/home',
+      //  controller: 'MainCtrl',
+        authenticate: true
+      })
       .when('/login', {
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
@@ -63,6 +68,11 @@ angular.module('compassApp', [
       })
       .when('/building7', {
         templateUrl: 'partials/buildingFormBail5',
+        controller: 'BuildingCtrl',
+        authenticate: true
+      })
+      .when('/building8', {
+        templateUrl: 'partials/buildingFormBail6',
         controller: 'BuildingCtrl',
         authenticate: true
       })
