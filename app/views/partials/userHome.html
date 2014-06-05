@@ -1,5 +1,3 @@
-
-
 <script>
 nv.addGraph(function() {
   var chart = nv.models.discreteBarChart()
@@ -61,15 +59,13 @@ function exampleData() {
       ]
     }
   ]
-
 }
 </script>
 <div compassnav=""></div>
 
 <div class="container" ng-controller="UserCtrl">
-	
 
-	<div style="width:400px;float:left;">
+	<div style="width:400px;float:left;border: 1px solid #eeeeee; margin-top: 20px; padding: 10px;">
 		<h3 class="glyphicon glyphicon-user">{{User.name}}</h3>
 		<ul class="list-group">
 			<li class="list-group-item">Portefeuille 1</li>
@@ -82,10 +78,9 @@ function exampleData() {
 			<input type="text" placeholder="Créer un portfolio">
 		</div>
 	</div>
-	
-	
-	<div style="width:600px;height:300px;float:right">
-		<label for="portfolio" class="col-sm-2 control-label">Filtres</label>
+
+	<div style="width:600px;height:350px;float:right;border: 1px solid #eeeeee;margin-top: 20px;padding: 10px;">
+		<label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
 		<select class="selectpicker">
 			<option>Bâtiments HQE</option>
 			<option>(vide)</option>
@@ -93,9 +88,9 @@ function exampleData() {
 		</select>
 		<google-map center="map.center" width="400px" style="width:400px;height:400px" zoom="map.zoom"></google-map>
 	</div>
-	
-	<div style="width:600px;float:right;margin-top:20px;padding-top:20px;">
-		<label for="portfolio" class="col-sm-2 control-label">Filtres</label>
+
+	<div style="width:600px;float:right;margin-top:20px;padding-top:20px;border: 1px solid #eeeeee;margin-top: 20px;padding: 10px;">
+		<label for="portfolio" class="col-sm-2 control-label build-lab-obs">Visualisations</label>
 		<select class="selectpicker">
 			<option>Par type d'usage</option>
 			<option>(vide)</option>
@@ -105,9 +100,9 @@ function exampleData() {
  			<svg></svg>
 		</div>
 	</div>
-	
-	
+
 </div>
+
 <script type="text/javascript">
 	$('.selectpicker').selectpicker();
 </script>
