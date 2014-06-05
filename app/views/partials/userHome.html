@@ -1,0 +1,113 @@
+
+
+<script>
+nv.addGraph(function() {
+  var chart = nv.models.discreteBarChart()
+      .x(function(d) { return d.label })    //Specify the data accessors.
+      .y(function(d) { return d.value })
+      .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+      .tooltips(false)        //Don't show tooltips
+      .showValues(true)       //...instead, show the bar value right on top of each bar.
+      .transitionDuration(350)
+      ;
+
+  d3.select('#chart svg')
+      .datum(exampleData())
+      .call(chart);
+
+  nv.utils.windowResize(chart.update);
+
+  return chart;
+});
+
+//Each bar represents a single discrete quantity.
+function exampleData() {
+ return  [ 
+    {
+      key: "Cumulative Return",
+      values: [
+        { 
+          "label" : "A Label" ,
+          "value" : 29.765957771107
+        } , 
+        { 
+          "label" : "B Label" , 
+          "value" : 0
+        } , 
+        { 
+          "label" : "C Label" , 
+          "value" : 32.807804682612
+        } , 
+        { 
+          "label" : "D Label" , 
+          "value" : 196.45946739256
+        } , 
+        { 
+          "label" : "E Label" ,
+          "value" : 0.19434030906893
+        } , 
+        { 
+          "label" : "F Label" , 
+          "value" : 98.079782601442
+        } , 
+        { 
+          "label" : "G Label" , 
+          "value" : 13.925743130903
+        } , 
+        { 
+          "label" : "H Label" , 
+          "value" : 5.1387322875705
+        }
+      ]
+    }
+  ]
+
+}
+</script>
+<div compassnav=""></div>
+
+<div class="container" ng-controller="UserCtrl">
+	
+
+	<div style="width:400px;float:left;">
+		<h3 class="glyphicon glyphicon-user">{{User.name}}</h3>
+		<ul class="list-group">
+			<li class="list-group-item">Portefeuille 1</li>
+			<li class="list-group-item">Portefeuille 2</li>
+			<li class="list-group-item">Portefeuille 3</li>
+			<li class="list-group-item">Portefeuille 4</li>
+		</ul>
+		<div>
+			<button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
+			<input type="text" placeholder="Créer un portfolio">
+		</div>
+	</div>
+	
+	
+	<div style="width:600px;height:300px;float:right">
+		<label for="portfolio" class="col-sm-2 control-label">Filtres</label>
+		<select class="selectpicker">
+			<option>Bâtiments HQE</option>
+			<option>(vide)</option>
+			<option>...</option>
+		</select>
+		<google-map center="map.center" width="400px" style="width:400px;height:400px" zoom="map.zoom"></google-map>
+	</div>
+	
+	<div style="width:600px;float:right;margin-top:20px;padding-top:20px;">
+		<label for="portfolio" class="col-sm-2 control-label">Filtres</label>
+		<select class="selectpicker">
+			<option>Par type d'usage</option>
+			<option>(vide)</option>
+			<option>...</option>
+		</select>
+		<div id="chart">
+ 			<svg></svg>
+		</div>
+	</div>
+	
+	
+</div>
+<script type="text/javascript">
+	$('.selectpicker').selectpicker();
+</script>
