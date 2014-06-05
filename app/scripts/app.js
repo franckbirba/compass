@@ -18,6 +18,11 @@ angular.module('compassApp', [
         controller: 'MainCtrl',
         authenticate: true
       })
+      .when('/home', {
+        templateUrl: 'partials/home',
+      //  controller: 'MainCtrl',
+        authenticate: true
+      })
       .when('/login', {
         templateUrl: 'partials/login',
         controller: 'LoginCtrl'
