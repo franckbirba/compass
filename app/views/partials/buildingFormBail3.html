@@ -2,18 +2,22 @@
 
 <!-- START FORM -->
 <div class="build-title">Création d'un bâtiment</div>
+
+<!-- MASTER CONTAINER -->
 <div class="container" ng-controller="BuildingCtrl" style="position:relative;margin-top:20px;">
-    <h3>Consommation d'énergie par Usage</h3>
-    <div class="form-group" style="margin-top:20px;height: 100%;" listedit="" model="'uses'"></div>
-        <hr>
-        <div class="total-container">
-            <input class="build-total" type="text" value="TOTAL">
-        </div>
-        <a href="/building4" style="position:absolute;left:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">back<a/>
-        <a href="/building6" style="position:absolute;right:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">proceed</a>
-</div>
+	<h3>Consommation d'énergie par Usage</h3>
+
+	<div class="form-group" style="margin-top:20px;height: 100%;" listedit="" model="'uses'"></div>
+	<hr>
+	<div class="total-container">
+		<input class="build-total" type="text" value="TOTAL">
+	</div>
 </div>
 
+<!-- BUTTON -->
+<a href="/building4" style="position:absolute;left:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">back<a/>
+<a href="/building6" style="position:absolute;right:50px;bottom:-50px" class="btn btn-lg btn-success btn-primary">proceed</a>
+
 <script type="text/javascript">
-    $('.selectpicker').selectpicker();
+	$('.selectpicker').selectpicker();
 </script>
