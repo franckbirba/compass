@@ -14,8 +14,8 @@ angular.module('compassApp', [
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl',
+        templateUrl: 'partials/home',
+       // controller: 'MainCtrl',
         authenticate: true
       })
       .when('/home', {
