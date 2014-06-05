@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module('compassApp')
   .factory('Session', function ($resource) {

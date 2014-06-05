@@ -11,14 +11,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(app) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+
     <!-- build:css({.tmp,app}) styles/main.css -->
 
     <link href="bower_components/sb-admin/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/sb-admin/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
     <link href="bower_components/angular-tablesort/tablesort.css" rel="stylesheet">
     <link href="bower_components/google-code-prettify/src/prettify.css" rel="stylesheet">
@@ -36,6 +32,8 @@
  <!--   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- endbuild -->
+        <link href="bower_components/sb-admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+
   </head>
   <body ng-app="compassApp">
     <!--[if lt IE 7]>
@@ -55,6 +53,10 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
+     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -93,10 +95,7 @@
         <script src="scripts/directives/mongooseError.js"></script>
         <script src="scripts/directives/barChart.js"></script>
 
-          <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
-
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+         
 
     <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
      <script src="bower_components/angular-tablesort/js/angular-tablesort.js"></script>

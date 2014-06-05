@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module('compassApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {

@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module('compassApp')
   .controller('LangCtrl', function ($scope, Auth, $location) {

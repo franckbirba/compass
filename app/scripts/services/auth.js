@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module('compassApp')
   .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {

@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module('compassApp')
   .controller('LoginCtrl', function ($scope, Auth, $location) {

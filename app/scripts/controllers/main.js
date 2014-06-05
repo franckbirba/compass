@@ -1,4 +1,4 @@
-'use strict';
+
 
 angular.module('compassApp')
   .controller('MainCtrl', function ($scope, $http) {
