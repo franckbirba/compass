@@ -146,7 +146,15 @@ form {
 }
 
 button {
-  outline: 0 !important;
+    outline: 0 !important;
+}
+
+textarea{ 
+    outline: 1px solid #90bd59;
+}​
+
+input[text] {
+    outline: 0 !important;
 }
 
 hr {
@@ -309,6 +317,23 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 30px;
     right: 5px;
+}
+
+.build-thumb {
+    position:relative;
+    width:150px;
+    height:100%;
+    float:left;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.input-group-btn {
+    width: 25%;
+}
+
+.build-lab {
+    width: 200px;
 }
 /*
 =================
