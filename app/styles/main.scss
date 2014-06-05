@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .input-group-btn {
-    width: 19%;
+    width: 25%;
 }
 
 .build-lab {
@@ -337,7 +337,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .build-lab-inline {
-    width: 130px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.dropdown-toggle, .build-input {
+    height: 27px;
+}
+
+.btn-paperclip {
+    border: none;
+    background: none;
 }
 /*
 =================
@@ -364,8 +374,8 @@ GMAP
 =================
 */
 .angular-google-map-container { 
-height: 300px; 
-width: 400px;
-margin-left:auto;
-margin-right:auto;
+    height: 300px; 
+    width: 400px;
+    margin-left:auto;
+    margin-right:auto;
 }
