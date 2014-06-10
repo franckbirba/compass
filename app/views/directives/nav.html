@@ -1,24 +1,27 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" >
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">compass</a>
-            </div>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#compass-collapse-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">compass</a>
+        </div>
             <!-- /.navbar-header -->
-            <div class="pull-right">
-            <form class="navbar-form" role="search">
-                    <input type="text" class="search-query" placeholder="Search">
+
+        <div class="collapse navbar-collapse" id="compass-collapse-nav">
+            <form class="navbar-right navbar-form" role="search">
+                <div class="form-group">
+                    <input type="text" class="search-query form-control" placeholder="Search">
+                </div>
             </form>
-            </div>
-            <ul class="nav navbar-top-links navbar-right">
+             <ul class="nav navbar-top-links navbar-right">
                 
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <li class="dropdown" id="dropdownmsg">
+                    <a class="dropdown-toggle" data-toggle="#dropdownmsg" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
@@ -68,8 +71,8 @@
                     <!-- /.dropdown-messages -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <li class="dropdown" id="dropdowntask">
+                    <a class="dropdown-toggle" data-toggle="#dropdowntask" href="#">
                         <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-tasks">
@@ -147,8 +150,8 @@
                     <!-- /.dropdown-tasks -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <li class="dropdown" id="dropdownalerts">
+                    <a class="dropdown-toggle" data-toggle="#dropdownalerts" href="#">
                         <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
@@ -207,8 +210,8 @@
                     <!-- /.dropdown-alerts -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <li class="dropdown" id="dropdownuser">
+                    <a class="dropdown-toggle" data-toggle="#dropdownuser" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
@@ -226,6 +229,11 @@
             </ul>
             <!-- /.navbar-top-links -->
 
+        </div>
+        
+           
       
             <!-- /.navbar-static-side -->
+    </div>
+            
 </nav>
