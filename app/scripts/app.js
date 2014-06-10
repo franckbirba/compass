@@ -91,6 +91,11 @@ angular.module('compassApp', [
         controller: 'BuildingCtrl',
         authenticate: true
       })
+      .when('/graph', {
+        templateUrl: 'partials/graph',
+        controller: 'BuildingCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
