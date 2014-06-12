@@ -371,6 +371,52 @@ Layout
     width: 1130px;
 }
 
+.item-carousel {
+    height: 180px;
+    padding: 10px;
+}
+
+.comp-item {
+    padding: 5px;
+}
+
+.comp-control {
+    background-image: none!important;
+    top: 100px;
+    color: #eeeeee;
+}
+.comp-inner {
+    border: 1px solid #90bd59;
+    border-radius: 10px;
+    height: 100%;
+    padding: 10px;
+}
+
+.comp-inner:active {
+    border: 1px solid #90bd59;
+}
+.comp-inner-selected {
+    border: 3px solid #90bd59;
+}
+
+.comp-panel {
+    height: 150px;
+    position: absolute;
+    width: 30%;
+    background-color: #eeeeee;
+}
+.left {
+    left: 20px;
+}
+.right {
+    right: 20px;
+}
+.comp-img {
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
 /*
     FORM ARBRES
  */
