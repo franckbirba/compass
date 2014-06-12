@@ -63,4 +63,67 @@ angular.module('compassApp')
       name: "action 5"
     }
   ];
+
+  $scope.BUILDINGS = [
+    {
+      name: "building 1"
+    },
+    {
+      name: "building 2"
+    },
+    {
+      name: "building 3"
+    },
+    {
+      name: "building 4"
+    },
+    {
+      name: "building 5"
+    },
+    {
+      name: "building 1"
+    },
+    {
+      name: "building 2"
+    },
+    {
+      name: "building 3"
+    },
+    {
+      name: "building 4"
+    },
+    {
+      name: "building 5"
+    },
+    {
+      name: "building 1"
+    },
+    {
+      name: "building 2"
+    },
+    {
+      name: "building 3"
+    },
+    {
+      name: "building 4"
+    },
+    {
+      name: "building 5"
+    },
+    {
+      name: "building 1"
+    },
+    {
+      name: "building 2"
+    },
+    {
+      name: "building 3"
+    },
+    {
+      name: "building 4"
+    },
+    {
+      name: "building 5"
+    }
+  ];
 });
