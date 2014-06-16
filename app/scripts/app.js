@@ -126,6 +126,11 @@ angular.module('compassApp', [
         controller: 'ActionCtrl',
         authenticate: true
       })
+      .when('/resultats', {
+        templateUrl: 'partials/resultats',
+        controller: 'ActionCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
