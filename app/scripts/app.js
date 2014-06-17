@@ -136,6 +136,11 @@ angular.module('compassApp', [
         controller: 'ActionCtrl',
         authenticate: true
       })
+      .when('/timeline', {
+        templateUrl: 'partials/timeline',
+        controller: 'ActionCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });

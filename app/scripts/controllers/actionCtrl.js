@@ -1,6 +1,50 @@
 
 angular.module('compassApp')
   .controller('ActionCtrl', function ($scope, Auth) {
+    $scope.LINKEDACTIONS = [
+      {
+        name: 'action 1',
+        building: 'building 1',
+        cost: '20204.45',
+        efficiency: 34,
+        tri: 23
+      },
+      {
+        name: 'action 1',
+        building: 'building 1',
+        cost: '20204.45',
+        efficiency: 34,
+        tri: 23
+      },
+      {
+        name: 'action 1',
+        building: 'building 1',
+        cost: '20204.45',
+        efficiency: 34,
+        tri: 23
+      },
+      {
+        name: 'action 1',
+        building: 'building 1',
+        cost: '20204.45',
+        efficiency: 34,
+        tri: 23
+      },
+      {
+        name: 'action 1',
+        building: 'building 1',
+        cost: '20204.45',
+        efficiency: 34,
+        tri: 23
+      },
+      {
+        name: 'action 1',
+        building: 'building 1',
+        cost: '20204.45',
+        efficiency: 34,
+        tri: 23
+      }
+    ];
    $scope.ACTIONS = [
     {
       name: "action 1"
@@ -126,4 +170,8 @@ angular.module('compassApp')
       name: "building 5"
     }
   ];
+
+  $scope.genTimeline = function(){
+    
+  }
 });
