@@ -172,7 +172,7 @@
 		el = null;
 	});
 	$('.list-group-item').bind('dragover', function( e ) {
-		el = e.target;
+		if(e.target.className === "list-group-item") el = e.target;
 	});
 
 </script>
