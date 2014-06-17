@@ -168,6 +168,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #4d4d4d;
 }
 
+[draggable=true]{
+    cursor: move;
+}
+[draggable=true]:hover{
+    border: 1px solid #90bd59;/* CSS3 */
+}
+
 .build-info > fieldset {
     border: 1px solid #eeeeee;
     margin-bottom: 20px;
