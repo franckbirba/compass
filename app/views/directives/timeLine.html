@@ -1,6 +1,6 @@
 <div style="width:50%;float:left">
 	<div ng-repeat="point in TIMELINE" style="height:100px;border:1px solid red">{{point.year}}
-		<div ng-drop="true" ng-drop-success="onDropComplete($data,$event)" ng-repeat="tmpTrim in point.t">
+		<div class="trimLine" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" ng-repeat="tmpTrim in point.t">
 			{{tmpTrim.name}}
 			<div >
 				
