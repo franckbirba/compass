@@ -17,9 +17,7 @@
                     <input type="text" class="search-query form-control" placeholder="Search">
                 </div>
             </form>
-             <ul class="nav navbar-top-links navbar-right">
-                
-
+            <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown" id="dropdownmsg">
                     <a class="dropdown-toggle" data-toggle="#dropdownmsg" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -227,13 +225,106 @@
                 </li>
                 <!-- /.dropdown -->
             </ul>
-            <!-- /.navbar-top-links -->
-
         </div>
-        
-           
-      
-            <!-- /.navbar-static-side -->
+        <span class="glyphicon glyphicon-fullscreen fullscreenButton"></span>
     </div>
-            
 </nav>
+
+<script type="text/javascript">
+    // A mettre dans les controllers dédié -->
+    $('.fullscreenButton').on('click', function() {
+        debugger;
+    });
+
+    /**
+     * Check if window is in full screen mode.
+     * @return {Boolean} full screen mode
+     */
+    function isInFullScreen() {
+
+        if(document.fullScreenElement !== undefined) {
+            return !!document.fullScreenElement;
+        }
+
+        if(document.mozFullScreen !== undefined) {
+            return !!document.mozFullScreen;
+        }
+
+        if(document.webkitIsFullScreen !== undefined) {
+            return !!document.webkitIsFullScreen;
+        }
+
+        if(window['fullScreen'] !== undefined) {
+            return !!window.fullScreen;
+        }
+
+        if(window.navigator.standalone !== undefined) {
+            return !!window.navigator.standalone;
+        }
+
+        // 5px height margin, just in case (needed by e.g. IE)
+        var heightMargin = 5;
+        if(Ext.isWebKit && /Apple Computer/.test(navigator.vendor)) {
+            // Safari in full screen mode shows the navigation bar,which is 40px
+            heightMargin = 42;
+        }
+        return screen.width == window.innerWidth && Math.abs(screen.height - window.innerHeight) < heightMargin;
+    },
+
+    /**
+     * Switch to/from fullscreen mode.
+     * Must be triggered by mouse event
+     *
+     * @param {Boolean} b on/off fullscreen
+     */
+    function setFullScreen( bool ) {
+        if(bool) {
+
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.body.requestFullscreen) {
+                document.body.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            } else if (document.body.webkitRequestFullScreen) {
+                document.body.webkitRequestFullScreen();
+            } else if(typeof window.ActiveXObject != "undefined"){
+                // for Internet Explorer
+                var wscript = new ActiveXObject("WScript.Shell");
+                if(wscript != null){
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        } else {
+
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+            } else if(document.exitFullscreen){
+                document.exitFullscreen();
+            } else if(typeof window.ActiveXObject != "undefined"){
+                // for Internet Explorer
+                var wscript = new ActiveXObject("WScript.Shell");
+                if(wscript != null){
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        }
+    },
+
+    /**
+     * Toggle full screen mode.
+     * @return {Boolean} the new full-screen mode
+     */
+    function toggleFullScreen () {
+        var isInFullScreen = this.isInFullScreen();
+debugger;
+        this.setFullScreen(!isInFullScreen);
+        return this.isInFullScreen();
+    }
+</script>

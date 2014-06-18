@@ -60,77 +60,79 @@ body {
 	    </form>
 	</div>
 	<div class="row">
-		<div style="border-style:solid;border-width:thin;border-color:black;height:550px" class="col-sm-8">
+		<div class="col-sm-8 blocleft">
+			<!-- line 1 -->
 			<div id="line1">
-				
 			</div>
+			<!-- line 2 -->
 			<div id="line2">
-				
+			</div>
+			<!-- ARRAYAction -->
+			<div class="row actionArray">
+				<span class="glyphicon glyphicon-circle-arrow-up buttonArray"></span>
+				<h3>Réservoir d'actions</h3>
+				<div class="col-sm-4">
+					<label>Filtres</label>
+					<a href="" data-toggle="button" role="button" class="btn btn-primary">Planifiées</a>
+					<a href="" data-toggle="button" role="button" class="btn btn-primary">Non planifiées</a>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Réalisation</th>
+								<th>Type d'action</th>
+								<th>Bâtiment</th>
+								<th>€</th>
+								<th>Efficacité (%)</th>
+								<th>Efficacité (kWh)</th>
+								<th>TRI</th>
+							</tr>
+							
+						</thead>
+						<tbody>
+							<tr ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in LINKEDACTIONS">
+								<td>
+									{{action.name}}
+								</td>
+								<td>
+									{{action.name}}
+								</td>
+								<td>
+									{{action.building}}
+								</td>
+								<td>
+									{{action.cost}}
+								</td>
+								<td>
+									{{action.efficiency}}
+								</td>
+								<td>
+									{{action.efficiency}}
+								</td>
+								<td>
+									{{action.tri}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-		<div style="border-style:solid;border-width:thin;border-color:black;height:550px;overflow-y:scroll;overflow-x:hidden;" class="col-sm-4">
+		<div class="col-sm-4 blocright ">
 			<div timeline></div>
 		</div>
-	</div>
-	
-	<div class="row" style="padding-top:50px;border-style:solid;border-width:thin;border-color:black;height:500px;">
-		<h3>Réservoir d'actions</h3>
-		<div class="col-sm-4">
-			<label>Filtres</label>
-
-			<a href="" data-toggle="button" role="button" class="btn btn-primary">Planifiées</a>
-			<a href="" data-toggle="button" role="button" class="btn btn-primary">Non planifiées</a>
-		</div>
-		<div class="table-responsive">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>Réalisation</th>
-						<th>Type d'action</th>
-						<th>Bâtiment</th>
-						<th>€</th>
-						<th>Efficacité (%)</th>
-						<th>Efficacité (kWh)</th>
-						<th>TRI</th>
-					</tr>
-					
-				</thead>
-				<tbody>
-					<tr ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in LINKEDACTIONS">
-						<td>
-							{{action.name}}
-						</td>
-						<td>
-							{{action.name}}
-						</td>
-						<td>
-							{{action.building}}
-						</td>
-						<td>
-							{{action.cost}}
-						</td>
-						<td>
-							{{action.efficiency}}
-						</td>
-						<td>
-							{{action.efficiency}}
-						</td>
-						<td>
-							{{action.tri}}
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		
-
 	</div>
 </div>
 <script type="text/javascript">
 	$('.selectpicker').selectpicker();
+
+	$('.buttonArray').on('click', function() {
+		$('.actionArray').toggleClass('actionArrayAnimate');
+	});
 </script>
 
-<script>
+<script type="text/javascript">
 
 
 
