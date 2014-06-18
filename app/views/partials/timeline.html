@@ -25,6 +25,7 @@ body {
 
 
 <div compassnav=""></div>
+
 <div class="build-title">Scénario 1</div>
 
 <div class="container">
@@ -68,8 +69,8 @@ body {
 				
 			</div>
 		</div>
-		<div style="border-style:solid;border-width:thin;border-color:black;height:550px" class="col-sm-4">
-			
+		<div style="border-style:solid;border-width:thin;border-color:black;height:550px;overflow-y:scroll;overflow-x:hidden;" class="col-sm-4">
+			<div timeline></div>
 		</div>
 	</div>
 	
@@ -96,7 +97,7 @@ body {
 					
 				</thead>
 				<tbody>
-					<tr ng-repeat="action in LINKEDACTIONS">
+					<tr ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in LINKEDACTIONS">
 						<td>
 							{{action.name}}
 						</td>
