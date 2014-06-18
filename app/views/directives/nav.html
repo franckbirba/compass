@@ -232,8 +232,9 @@
 
 <script type="text/javascript">
     // A mettre dans les controllers dédié -->
+
     $('.fullscreenButton').on('click', function() {
-        debugger;
+        toggleFullScreen();
     });
 
     /**
@@ -269,7 +270,7 @@
             heightMargin = 42;
         }
         return screen.width == window.innerWidth && Math.abs(screen.height - window.innerHeight) < heightMargin;
-    },
+    }
 
     /**
      * Switch to/from fullscreen mode.
@@ -315,7 +316,7 @@
                 }
             }
         }
-    },
+    }
 
     /**
      * Toggle full screen mode.
@@ -323,7 +324,6 @@
      */
     function toggleFullScreen () {
         var isInFullScreen = this.isInFullScreen();
-debugger;
         this.setFullScreen(!isInFullScreen);
         return this.isInFullScreen();
     }

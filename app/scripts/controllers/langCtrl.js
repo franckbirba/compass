@@ -13,6 +13,4 @@ angular.module('compassApp')
     ];
 
     $scope.selectLang = $scope.LANG[0];
-
-
-  });
+});
