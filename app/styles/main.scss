@@ -369,6 +369,20 @@ td, th {
     position: absolute;
     right: 15px;
 }
+
+.barTemp {
+    height: 150px;
+    width: 50px;
+    background: #ff3232;
+    background: -moz-linear-gradient(top,  #ff3232 0%, #fff830 35%, #fff830 61%, #0cff00 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3232), color-stop(35%,#fff830), color-stop(61%,#fff830), color-stop(100%,#0cff00));
+    background: -webkit-linear-gradient(top,  #ff3232 0%,#fff830 35%,#fff830 61%,#0cff00 100%);
+    background: -o-linear-gradient(top,  #ff3232 0%,#fff830 35%,#fff830 61%,#0cff00 100%);
+    background: -ms-linear-gradient(top,  #ff3232 0%,#fff830 35%,#fff830 61%,#0cff00 100%);
+    background: linear-gradient(to bottom,  #ff3232 0%,#fff830 35%,#fff830 61%,#0cff00 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#0cff00',GradientType=0 );
+    position: absolute;
+}
 /*
 =================
 @Olivier
