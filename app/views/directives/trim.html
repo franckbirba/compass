@@ -1,3 +1,3 @@
-<p ng-repeat="picto in pictos" class="{{picto.img}} picto-timeline">
+<p ng-repeat="picto in pictos" class="{{picto.img}} picto-timeline" ng-drag="true" ng-drag-data="trim" ng-drag-success="onDragComplete($data,$event)" >
 	<span ng-if="picto.count > 1" ng-bind="picto.count" class="badge">{{picto.count}}</span>
 </p>
