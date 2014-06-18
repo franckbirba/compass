@@ -383,6 +383,35 @@ td, th {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#0cff00',GradientType=0 );
     position: absolute;
 }
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    background: none;
+    color: black;
+    padding: 4px;
+    font-size: 9px;
+}
+
+.picto-timeline {
+    font-size: 21px;
+    color: #90bd59;
+    position: relative;
+    margin: 0;
+}
+.trimLine {
+    width:100%;height:25%;border:1px solid #eeeeee; position:relative;
+}
+
+.trimName {
+    position:absolute;
+}
+.year {
+    height: 100px;
+    border: 1px solid #eeeeee;
+}
+>>>>>>> 37ef0015ae33915983590f48ee270845bf159943
 /*
 =================
 @Olivier
