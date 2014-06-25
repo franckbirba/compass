@@ -210,8 +210,18 @@ td, th {
 - module
 =================
  */
+
+.home {
+    width:24%;
+    height:200px;
+    overflow: hidden;
+}
+
 .btn-primary {
     border-radius: 0;
+    background-color: #f4f4f4;
+    color: #4d4d4d;
+    border: 0;
 }
 
 .panel-primary > .panel-heading {
@@ -247,7 +257,7 @@ td, th {
 }
 
 .input-group-btn.open .btn-primary.dropdown-toggle, .btn-primary.disabled, .btn-primary[disabled], .btn-primary:hover, .btn-primary:focus {
-    background: #84b548;
+    background: #f4f4f4;
     color: #fff;
     border-color: #90bd59;
 }
@@ -332,12 +342,14 @@ td, th {
 }
 
 .build-thumb {
-    position:relative;
-    width:150px;
-    height:100%;
-    float:left;
-    margin-left:5px;
-    margin-right:5px;
+    position: relative;
+    width: 15%;
+    height: 100%;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid #eeeeee;
 }
 
 .input-group-btn {
@@ -510,7 +522,7 @@ Layout
     color: #eeeeee;
 }
 .comp-inner {
-    border: 1px solid #90bd59;
+    border: 1px solid #eeeeee;
     border-radius: 10px;
     height: 100%;
     padding: 10px;
@@ -552,6 +564,7 @@ Layout
     border-top: 0px;
     border-right: 0px;
     right: 0px;
+    background: #eeeeee;
 }
 
 /*
