@@ -5,7 +5,7 @@ angular.module('compassApp').directive('listedit', function ($rootScope) {
         	model: '='
         },
         templateUrl:'/views/directives/listedit.html',
-        controller: ['$scope', '$http', '$rootScope', 'Auth', 'MODELS', '$route',function($scope, $http, $rootScope, Auth, MODELS, $route){
+        controller: ['$scope', '$http', '$rootScope', 'Auth', 'MODELS', '$route','Api',function($scope, $http, $rootScope, Auth, MODELS, $route, Api){
             //console.log("listedit", $scope, $scope.$parent.models);
             //$scope.models = sharedData.get('models');
             $rootScope.models = MODELS;
@@ -22,11 +22,11 @@ angular.module('compassApp').directive('listedit', function ($rootScope) {
                     return $scope.states[row[cellname]].cls;
                 return $scope.states[false].cls;
             };
-        
+
             $scope.loadData = function() {
-                return $http.get('/crud/'+$scope.ngModel.url+'/?type='+$scope.ngModel.url).success(function(data) {
+                return Api.request("get", $scope.ngModel.url, {type:$scope.ngModel.url}, function(data){
                     $scope.ngModel.rows = data;
-                });
+                })
             };
 
         	$rootScope.$watch('dataLoaded', function(newVal, oldVal){
