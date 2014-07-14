@@ -1,17 +1,17 @@
 <script>
 nv.addGraph(function() {
   var chart = nv.models.discreteBarChart()
-	  .x(function(d) { return d.label })    //Specify the data accessors.
-	  .y(function(d) { return d.value })
-	  .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
-	  .tooltips(false)        //Don't show tooltips
-	  .showValues(true)       //...instead, show the bar value right on top of each bar.
-	  .transitionDuration(350)
-	  ;
+    .x(function(d) { return d.label })    //Specify the data accessors.
+    .y(function(d) { return d.value })
+    .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+    .tooltips(false)        //Don't show tooltips
+    .showValues(true)       //...instead, show the bar value right on top of each bar.
+    .transitionDuration(350)
+    ;
 
   d3.select('#chart svg')
-	  .datum(exampleData())
-	  .call(chart);
+    .datum(exampleData())
+    .call(chart);
 
   nv.utils.windowResize(chart.update);
 
@@ -21,191 +21,197 @@ nv.addGraph(function() {
 //Each bar represents a single discrete quantity.
 function exampleData() {
  return [ 
-	{
-	  key: "Cumulative Return",
-	  values: [
-		{ 
-		  "label" : "A Label" ,
-		  "value" : 29.765957771107
-		} , 
-		{ 
-		  "label" : "B Label" , 
-		  "value" : 0
-		} , 
-		{ 
-		  "label" : "C Label" , 
-		  "value" : 32.807804682612
-		} , 
-		{ 
-		  "label" : "D Label" , 
-		  "value" : 196.45946739256
-		} , 
-		{ 
-		  "label" : "E Label" ,
-		  "value" : 0.19434030906893
-		} , 
-		{ 
-		  "label" : "F Label" , 
-		  "value" : 98.079782601442
-		} , 
-		{ 
-		  "label" : "G Label" , 
-		  "value" : 13.925743130903
-		} , 
-		{ 
-		  "label" : "H Label" , 
-		  "value" : 5.1387322875705
-		}
-	  ]
-	}
+  {
+    key: "Cumulative Return",
+    values: [
+    { 
+      "label" : "A Label" ,
+      "value" : 29.765957771107
+    } , 
+    { 
+      "label" : "B Label" , 
+      "value" : 0
+    } , 
+    { 
+      "label" : "C Label" , 
+      "value" : 32.807804682612
+    } , 
+    { 
+      "label" : "D Label" , 
+      "value" : 196.45946739256
+    } , 
+    { 
+      "label" : "E Label" ,
+      "value" : 0.19434030906893
+    } , 
+    { 
+      "label" : "F Label" , 
+      "value" : 98.079782601442
+    } , 
+    { 
+      "label" : "G Label" , 
+      "value" : 13.925743130903
+    } , 
+    { 
+      "label" : "H Label" , 
+      "value" : 5.1387322875705
+    }
+    ]
+  }
   ]
 }
 </script>
 <div compassnav=""></div>
 <div class="wrapper">
-	<!-- MAIN CONTAINER -->
-	<div class="container-fluid" ng-controller="UserCtrl">
-		<h3 class="glyphicon glyphicon-user">{{User.name}}</h3>
-		<div class="row">
-			<div class="col-md-4">
-				<ul class="nav nav-tabs" id="createtab">
-					<li class="active">
-						<a href="#portfolio" data-toggle="tab">Portfolio</a>
-					</li>
-					<li>
-						<a href="#building" data-toggle="tab">Bâtiment</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="portfolio">
-						<ul class="list-group" style="height:200px;overflow-y:scroll;">
-							<li class="list-group-item"><a class="btn" data-toggle="modal" data-target="#myModal" href="">Portefeuille 1</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 2</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 3</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 4</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 5</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 6</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 7</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 8</a></li>
-						</ul>
-						<div>
-							<button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
-							<input type="text" placeholder="Créer un portfolio">
-						</div>
-					</div>
+  <!-- MAIN CONTAINER -->
+  <div class="container-fluid" ng-controller="UserCtrl">
+    <!-- <h3 class="glyphicon glyphicon-user">{{User.name}}</h3> -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="observatory">
+          <ul class="nav nav-tabs" id="createtab">
+            <li class="active">
+              <a href="#portfolio" data-toggle="tab">Portfolio</a>
+            </li>
+            <li>
+              <a href="#building" data-toggle="tab">Bâtiment</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="portfolio">
+              <ul class="list-group" style="height:200px;overflow-y:scroll;">
+                <li class="list-group-item"><a class="btn" data-toggle="modal" data-target="#myModal" href="">Portefeuille 1</a></li>
+                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 2</a></li>
+                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 3</a></li>
+                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 4</a></li>
+                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 5</a></li>
+                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 6</a></li>
+                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 7</a></li>
+                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 8</a></li>
+              </ul>
+              <div>
+                <button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
+                <input type="text" placeholder="Créer un portfolio">
+              </div>
+            </div>
 
-					<div class="tab-pane" id="building" style="width:400px;float:left;border: 1px solid #eeeeee; padding: 10px;">
-						<ul class="list-group" style="height:200px;overflow-y:scroll;">
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 1</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 2</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 3</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 4</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 5</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 6</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 7</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 8</a></li>
-						</ul>
-						<div>
-							<a role="button" href="/building" class=" btn btn-primary glyphicon glyphicon-plus btn btn-xs btn-primary">Créer un bâtiment</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-8">
-				<div class="observatory">
-					<label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
-					<select class="selectpicker">
-						<option>Bâtiments HQE</option>
-						<option>(vide)</option>
-						<option>...</option>
-					</select>
-					<google-map center="map.center" width="400px" style="width:400px;height:400px" zoom="map.zoom"></google-map>
-				</div>
-				<div class="observatory">
-					<label for="portfolio" class="col-sm-2 control-label build-lab-obs">Visualisation</label>
-					<select class="selectpicker">
-						<option>Par type d'usage</option>
-						<option>(vide)</option>
-						<option>...</option>
-					</select>
-					<div id="chart">
-						<svg></svg>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+            <div class="tab-pane" id="building">
+              <ul class="list-group" style="height:200px;overflow-y:scroll;">
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 1</a></li>
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 2</a></li>
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 3</a></li>
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 4</a></li>
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 5</a></li>
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 6</a></li>
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 7</a></li>
+                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 8</a></li>
+              </ul>
+              <div>
+                <a role="button" href="/building" class=" btn btn-primary glyphicon glyphicon-plus btn btn-xs btn-primary">Créer un bâtiment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+          <div class="observatory" ng-controller="ObservatoryController as observatory">
+            <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
+            <select class="selectpicker">
+              <option>Bâtiments HQE</option>
+              <option>(vide)</option>
+              <option>...</option>
+            </select>
+          <!-- GOOGLE MAP -->
+          <google-map center="map.center" draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
+            <markers models="observatory.buildings" coords="'self'" labelContent="'name'" showWindow="true" click="observatory.markerClick"></markers>
+          </google-map>
+          <!-- END MAP -->
+          </div>
+          <div class="observatory">
+            <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Visualisation</label>
+            <select class="selectpicker">
+              <option>Par type d'usage</option>
+              <option>(vide)</option>
+              <option ng-repeat="t in observatory.usageTypes" value="{{t}}">{{t}}</option>
+            </select>
+            <div id="chart">
+              <svg></svg>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
 
-	<!-- MODAL -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Informations du portefeuille</h4>
-				</div>
-				<div class="modal-body">
-					<form role="form" class="form-horizontal">
-						<div class="form-group">
-							<div class="input-group">
-								<label for="portfolio" class="col-sm-4 control-label">Bâtiments</label>
-								<div class="col-sm-8">
-									<input class="form-control" placeholder="Bâtiments"  type="text">
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="portfolio" class="col-sm-4 control-label">Superficie totale</label>
-							<div class="col-sm-8 input-group">
-								<input class="form-control"  placeholder="Superficie totale"  type="text"  >
-								<span class="input-group-addon">m&sup2;</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="portfolio" class="col-sm-4 control-label">Taux d'occupation</label>
-							<div class="col-sm-8 input-group">
-								<input class="form-control"  placeholder="Taux d'occupation"  type="text"  >
-								<span class="input-group-addon">%</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="portfolio" class="col-sm-4 control-label">Indice de vétusté</label>
-							<div class="col-sm-8">
-								<input class="form-control"  placeholder="Indice de vétusté"  type="text"  >
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="portfolio" class="col-sm-4 control-label">Indice de conformité</label>
-							<div class="col-sm-8">
-								<input class="form-control col-sm-4"  placeholder="Indice de conformité"  type="text"  >
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="portfolio" class="col-sm-4 control-label">Performance énergétique moyenne</label>
-							<div class="col-sm-8">
-								<input class="form-control"  placeholder="Performance énergétique moyenne"  type="text"  >
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="portfolio" class="col-sm-4 control-label">Age moyen</label>
-							<div class="col-sm-8">
-								<input class="form-control"  placeholder="Age moyen"  type="text">
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div> <!-- MODAL -->
+  <!-- MODAL -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Informations du portefeuille</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form" class="form-horizontal">
+            <div class="form-group">
+              <div class="input-group">
+                <label for="portfolio" class="col-sm-4 control-label">Bâtiments</label>
+                <div class="col-sm-8">
+                  <input class="form-control" placeholder="Bâtiments"  type="text">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="portfolio" class="col-sm-4 control-label">Superficie totale</label>
+              <div class="col-sm-8 input-group">
+                <input class="form-control"  placeholder="Superficie totale"  type="text"  >
+                <span class="input-group-addon">m&sup2;</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="portfolio" class="col-sm-4 control-label">Taux d'occupation</label>
+              <div class="col-sm-8 input-group">
+                <input class="form-control"  placeholder="Taux d'occupation"  type="text"  >
+                <span class="input-group-addon">%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="portfolio" class="col-sm-4 control-label">Indice de vétusté</label>
+              <div class="col-sm-8">
+                <input class="form-control"  placeholder="Indice de vétusté"  type="text"  >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="portfolio" class="col-sm-4 control-label">Indice de conformité</label>
+              <div class="col-sm-8">
+                <input class="form-control col-sm-4"  placeholder="Indice de conformité"  type="text"  >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="portfolio" class="col-sm-4 control-label">Performance énergétique moyenne</label>
+              <div class="col-sm-8">
+                <input class="form-control"  placeholder="Performance énergétique moyenne"  type="text"  >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="portfolio" class="col-sm-4 control-label">Age moyen</label>
+              <div class="col-sm-8">
+                <input class="form-control"  placeholder="Age moyen"  type="text">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- MODAL -->
 </div><!-- wrapper -->
 
 <script type="text/javascript">
-	$('.selectpicker').selectpicker();
-	$('#createtab a').click(function (e) {
-		e.preventDefault()
-		$(this).tab('show')
-	});
+  $('.selectpicker').selectpicker();
+  $('#createtab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  });
 </script>
