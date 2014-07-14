@@ -119,9 +119,9 @@ function exampleData() {
             <option>(vide)</option>
             <option>...</option>
           </select>
-          <!-- MAP -->
-          <google-map center="map.center" draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
-            <marker ng-repeat="b in observatory.buildings" coords="b.coords" title="b.name" showWindow="false"></marker>
+        <!-- GOOGLE MAP -->
+        <google-map center="map.center" draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
+          <markers models="observatory.buildings" coords="'self'" labelContent="'name'" showWindow="true" click="observatory.markerClick"></markers>
         </google-map>
         <!-- END MAP -->
         </div>
@@ -130,7 +130,7 @@ function exampleData() {
           <select class="selectpicker">
             <option>Par type d'usage</option>
             <option>(vide)</option>
-            <option>...</option>
+            <option ng-repeat="t in observatory.usageTypes" value="{{t}}">{{t}}</option>
           </select>
           <div id="chart">
             <svg></svg>
