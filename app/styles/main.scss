@@ -186,6 +186,23 @@ h1, h2, h3, h4, h5, h6 {
     color: #4d4d4d;
 }
 
+.popover, .popover-title {
+    font-weight: 600;
+    padding: 0 10px;
+    height: 29px;
+    line-height: 29px;
+    background-image: none !important;
+    filter: none !important;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    background: #f4f4f4;
+    border-bottom: 1px solid #efefef;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 [draggable=true]{
     cursor: move;
 }
@@ -195,7 +212,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .build-info > fieldset {
     border: 1px solid #eeeeee;
-    margin-bottom: 20px;
     padding: 25px 25px 5px 25px;
     position: relative;
 }
@@ -431,7 +447,7 @@ td, th {
     margin: 0px 0px 0px 15px;
 }
 .trimLine {
-    width:100%;height:25%;border:1px solid #eeeeee; position:relative;
+    width:100%;height:25px;border-bottom: 1px solid #eeeeee; position:relative;
 }
 
 .trimName {
@@ -440,37 +456,44 @@ td, th {
 .year {
     height: 100px;
     border-top: 1px solid #eeeeee;
-    border-left: 1px solid #eeeeee;
+}
+
+.smallYear {
+    overflow: hidden;
+    height: 25px;
 }
 .numberYear {
     position: absolute;
     opacity: 0.2;
-    font-size: 30px;
-    left: 65px;
+    font-size: 24px;
+    left: 75px;
 }
 .year-odd {
-    background-color: #d6e9c6;
+    background-color: #f7f7f7;
 }
 
 .actionArray {
     height: 500px;
-    -webkit-transform: translateY(-25px);
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    transform: translateY(30px);
     background: white;
     width: 100%;
     position: absolute;
     -webkit-transition: 1s ease-in-out;
     -moz-transition: 1s ease-in-out;
     -o-transition: 1s ease-in-out;
+    -ms-transition: 1s ease-in-out;
     transition: 1s ease-in-out;
-    border-top: 1px solid #90bd59;
 }
 
 .actionArrayAnimate {
-    -webkit-transform: translate(0em, -486px);
-    -moz-transform: translate(0em,-486px);
-    -o-transform: translate(0em,-486px);
-    -ms-transform: translate(0em,-486px);
-    transform: translate(0em,-486px);
+    -webkit-transform: translate(0em, -450px);
+    -moz-transform: translate(0em,-450px);
+    -o-transform: translate(0em,-450px);
+    -ms-transform: translate(0em,-450px);
+    transform: translate(0em,-450px);
   }
 
 .buttonArray {
@@ -482,15 +505,15 @@ td, th {
 
 .blocleft {
     height:550px;
-    border: 1px solid #90bd59;
+    border: 1px solid #efefef;
     overflow: hidden;
 }
 
 .blocright {
     height:550px;
-    overflow-y:scroll;
-    overflow-x:hidden;
-    border: 1px solid #90bd59;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid #efefef;
 }
 
 .fullscreenButton {
@@ -505,6 +528,24 @@ td, th {
     position: absolute;
     top: 0px;
     left: 200px;
+}
+
+.widget-head {
+    background-color: #f9f9f9;
+    background-image: -moz-linear-gradient(top, #fdfdfd, #f4f4f4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#f4f4f4));
+    background-image: -webkit-linear-gradient(top, #fdfdfd, #f4f4f4);
+    background-image: -o-linear-gradient(top, #fdfdfd, #f4f4f4);
+    background-image: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdfdfd', endColorstr='#fff4f4f4', GradientType=0);
+    border-bottom: 1px solid #efefef;
+    text-shadow: 0 1px 0 0 1px 0 #fff;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    padding: 0 15px 0 15px;
+    overflow: hidden;
 }
 /*
 =================
@@ -599,13 +640,29 @@ Layout
     width:100%;
     height:100%;
     float:right;
-    border: 1px solid #eeeeee;
+    border: 1px solid #efefef;
     padding: 10px;
     margin-bottom: 20px;
 }
 
 .buildingdetail {
     border: 1px solid #eeeeee;
+}
+
+.navbar-form {
+    margin-top: 7.5px;
+}
+
+.apply {
+    float: left;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    width: 50%;
+}
+.scroll-y {
+    overflow-y: scroll;
+    height: 263px;
 }
 /*
 =================
@@ -615,7 +672,7 @@ GMAP
 */
 .angular-google-map-container { 
     height: 300px; 
-    width: 400px;
+    width: 100%;
     margin-left:auto;
     margin-right:auto;
 }

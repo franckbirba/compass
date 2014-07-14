@@ -65,48 +65,50 @@ function exampleData() {
 <div class="wrapper">
 	<!-- MAIN CONTAINER -->
 	<div class="container-fluid" ng-controller="UserCtrl">
-		<h3 class="glyphicon glyphicon-user">{{User.name}}</h3>
+		<!-- <h3 class="glyphicon glyphicon-user">{{User.name}}</h3> -->
 		<div class="row">
 			<div class="col-md-4">
-				<ul class="nav nav-tabs" id="createtab">
-					<li class="active">
-						<a href="#portfolio" data-toggle="tab">Portfolio</a>
-					</li>
-					<li>
-						<a href="#building" data-toggle="tab">Bâtiment</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="portfolio">
-						<ul class="list-group" style="height:200px;overflow-y:scroll;">
-							<li class="list-group-item"><a class="btn" data-toggle="modal" data-target="#myModal" href="">Portefeuille 1</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 2</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 3</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 4</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 5</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 6</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 7</a></li>
-							<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 8</a></li>
-						</ul>
-						<div>
-							<button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
-							<input type="text" placeholder="Créer un portfolio">
+				<div class="observatory">
+					<ul class="nav nav-tabs" id="createtab">
+						<li class="active">
+							<a href="#portfolio" data-toggle="tab">Portfolio</a>
+						</li>
+						<li>
+							<a href="#building" data-toggle="tab">Bâtiment</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="portfolio">
+							<ul class="list-group" style="height:200px;overflow-y:scroll;">
+								<li class="list-group-item"><a class="btn" data-toggle="modal" data-target="#myModal" href="">Portefeuille 1</a></li>
+								<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 2</a></li>
+								<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 3</a></li>
+								<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 4</a></li>
+								<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 5</a></li>
+								<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 6</a></li>
+								<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 7</a></li>
+								<li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 8</a></li>
+							</ul>
+							<div>
+								<button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
+								<input type="text" placeholder="Créer un portfolio">
+							</div>
 						</div>
-					</div>
 
-					<div class="tab-pane" id="building" style="width:400px;float:left;border: 1px solid #eeeeee; padding: 10px;">
-						<ul class="list-group" style="height:200px;overflow-y:scroll;">
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 1</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 2</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 3</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 4</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 5</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 6</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 7</a></li>
-							<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 8</a></li>
-						</ul>
-						<div>
-							<a role="button" href="/building" class=" btn btn-primary glyphicon glyphicon-plus btn btn-xs btn-primary">Créer un bâtiment</a>
+						<div class="tab-pane" id="building">
+							<ul class="list-group" style="height:200px;overflow-y:scroll;">
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 1</a></li>
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 2</a></li>
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 3</a></li>
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 4</a></li>
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 5</a></li>
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 6</a></li>
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 7</a></li>
+								<li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 8</a></li>
+							</ul>
+							<div>
+								<a role="button" href="/building" class=" btn btn-primary glyphicon glyphicon-plus btn btn-xs btn-primary">Créer un bâtiment</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -119,7 +121,7 @@ function exampleData() {
 						<option>(vide)</option>
 						<option>...</option>
 					</select>
-					<google-map center="map.center" width="400px" style="width:400px;height:400px" zoom="map.zoom"></google-map>
+					<google-map center="map.center" width="100%" zoom="map.zoom"></google-map>
 				</div>
 				<div class="observatory">
 					<label for="portfolio" class="col-sm-2 control-label build-lab-obs">Visualisation</label>
