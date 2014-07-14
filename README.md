@@ -11,7 +11,15 @@ tornado.awesome(); // "awesome"
 ```
 
 ## Documentation
-_(Coming soon)_
+ Prerequisites
+ make sure you have (install otherwise) mongodb, node.js, npm, ruby & compass, grunt-cli, bower, mongodb
+ Launch the project
+ * launch mongodb on default port
+ * git clone this
+ * npm install
+ * bower install
+ * cd app && bower install
+ * cd .. && grunt serve
 
 ## Examples
 _(Coming soon)_
