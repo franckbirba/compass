@@ -28,12 +28,12 @@ angular.module('compassApp', [
       //  controller: 'MainCtrl',
         authenticate: true
       })
-      .when('/observatory', {
+      .when('/observatory', { // css
         templateUrl: 'partials/userHome',
       //  controller: 'MainCtrl',
         authenticate: true
       })
-      .when('/buildingDetail', {
+      .when('/buildingDetail', { // css
         templateUrl: 'partials/buildingDetail',
       //  controller: 'MainCtrl',
         authenticate: true
@@ -116,12 +116,12 @@ angular.module('compassApp', [
         controller: 'ActionCtrl',
         authenticate: true
       })
-      .when('/scenarioList', {
+      .when('/scenarioList', { // css
         templateUrl: 'partials/scenarioList',
         controller: 'BuildingCtrl',
         authenticate: true
       })
-      .when('/applyAction', {
+      .when('/applyAction', { // css
         templateUrl: 'partials/applyAction',
         controller: 'ActionCtrl',
         authenticate: true
@@ -131,12 +131,12 @@ angular.module('compassApp', [
         controller: 'ActionCtrl',
         authenticate: true
       })
-      .when('/newScenario', {
+      .when('/newScenario', { // css
         templateUrl: 'partials/newScenario',
         controller: 'ActionCtrl',
         authenticate: true
       })
-      .when('/timeline', {
+      .when('/timeline', { // css
         templateUrl: 'partials/timeline',
         controller: 'ActionCtrl',
         authenticate: true
