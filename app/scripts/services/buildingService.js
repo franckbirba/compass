@@ -71,6 +71,12 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
     }
 
     return ret;
+  };
+  
+  this.test = function() {
+    return [
+    "A", "B", "C", "D", "E", "F"
+    ];
   }
 
 }]);
