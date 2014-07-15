@@ -67,5 +67,9 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
 
     return usageTypes;
   };
+  
+  this.getByUsageType = function(type) {
+    
+  }
 
 }]);

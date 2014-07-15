@@ -123,7 +123,15 @@ function exampleData() {
             </select>
             <!-- GOOGLE MAP -->
             <google-map center="map.center" draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
-              <markers models="observatory.buildings" coords="'self'" labelContent="'name'" showWindow="true" click="observatory.markerClick"></markers>
+              <markers models="observatory.buildings" coords="'self'" labelContent="'name'" showWindow="true" click="observatory.markerClick">
+                <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
+                    <div>
+                        <p>YO!</p>
+                        <p ng-non-bindable>This is an info window at {{ latitude | number:4 }}, {{ longitude | number:4 }}!</p>
+                        <p class="muted">Some option 1 | Some option 2 | Some option 3</p>
+                    </div>
+                </windows>
+              </markers>
             </google-map>
             <!-- END MAP -->
           </div>
