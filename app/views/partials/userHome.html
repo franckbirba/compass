@@ -129,11 +129,8 @@ function exampleData() {
           </div>
           <div class="observatory">
             <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Visualisation</label>
-            <select class="selectpicker">
-              <option>Par type d'usage</option>
-              <option>(vide)</option>
-              <option ng-repeat="t in observatory.usageTypes" value="{{t}}">{{t}}</option>
-            </select>
+              <select class="form-control" style="width:400px" id="select-by-usage-type" ng-model="currentUsageType" ng-options="k as v for (k, v) in usageTypes">
+              </select>
             <div id="chart">
               <svg></svg>
             </div>

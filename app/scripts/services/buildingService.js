@@ -57,26 +57,15 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
   };
 
   this.getUsageTypes = function() {
-    var usageTypes = {},
-      ret = [];
+    var usageTypes = {
+      '0' : 'Par type d\'usage'
+    };
 
     for (var i=0, l=this.buildings.length; i<l; i++) {
-      usageTypes[this.buildings[i].usage] = true;
+      usageTypes[this.buildings[i].usage] = usageTypes[this.buildings[i].usage] || this.buildings[i].usage + ' label';
     }
 
-    for (var prop in usageTypes) {
-      if (usageTypes.hasOwnProperty(prop)) {
-        ret.push(prop);
-      }
-    }
-
-    return ret;
+    return usageTypes;
   };
-  
-  this.test = function() {
-    return [
-    "A", "B", "C", "D", "E", "F"
-    ];
-  }
 
 }]);

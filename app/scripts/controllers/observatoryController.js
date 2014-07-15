@@ -2,8 +2,8 @@
 angular.module('compassApp').controller('ObservatoryController', ['$scope', 'buildingService', function($scope, buildingService){
   this.buildings = buildingService.getAll();
 
-  //this.usageTypes = buildingService.test();//buildingService.getUsageTypes();
-  $scope.usageTypes = ["A", "B", "C"];
+  $scope.usageTypes = buildingService.getUsageTypes();
+  $scope.currentUsageType = '0';
 
   this.markerClick = function() {
     alert('marker clicked');
