@@ -1,11 +1,16 @@
 'use strict';
-angular.module('compassApp').controller('ObservatoryController', ['buildingService', function(buildingService){
+angular.module('compassApp').controller('ObservatoryController', ['$scope', 'buildingService', function($scope, buildingService){
   this.buildings = buildingService.getAll();
 
-  this.usageTypes = buildingService.getUsageTypes();
+  $scope.usageTypes = buildingService.getUsageTypes();
+  $scope.currentUsageType = '0';
 
   this.markerClick = function() {
-    alert('marker clicked');
+    //alert('marker clicked');
+  };
+  
+  $scope.closeClick = function() {
+    
   }
 
 }]);

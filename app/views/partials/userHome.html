@@ -113,27 +113,32 @@ function exampleData() {
           </div>
         </div>
       </div>
-      <div class="col-md-8">
-          <div class="observatory" ng-controller="ObservatoryController as observatory">
+      <div class="col-md-8" ng-controller="ObservatoryController as observatory">
+          <div class="observatory">
             <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
             <select class="selectpicker">
               <option>Bâtiments HQE</option>
               <option>(vide)</option>
               <option>...</option>
             </select>
-          <!-- GOOGLE MAP -->
-          <google-map center="map.center" draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
-            <markers models="observatory.buildings" coords="'self'" labelContent="'name'" showWindow="true" click="observatory.markerClick"></markers>
-          </google-map>
-          <!-- END MAP -->
+            <!-- GOOGLE MAP -->
+            <google-map center="map.center" draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
+              <markers models="observatory.buildings" coords="'self'" labelContent="'name'" showWindow="true" click="observatory.markerClick">
+                <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
+                    <div>
+                        <p>YO!</p>
+                        <p ng-non-bindable>This is an info window at {{ latitude | number:4 }}, {{ longitude | number:4 }}!</p>
+                        <p class="muted">Some option 1 | Some option 2 | Some option 3</p>
+                    </div>
+                </windows>
+              </markers>
+            </google-map>
+            <!-- END MAP -->
           </div>
           <div class="observatory">
             <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Visualisation</label>
-            <select class="selectpicker">
-              <option>Par type d'usage</option>
-              <option>(vide)</option>
-              <option ng-repeat="t in observatory.usageTypes" value="{{t}}">{{t}}</option>
-            </select>
+              <select class="form-control" style="width:400px" id="select-by-usage-type" ng-model="currentUsageType" ng-options="k as v for (k, v) in usageTypes">
+              </select>
             <div id="chart">
               <svg></svg>
             </div>
