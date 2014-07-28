@@ -28,7 +28,6 @@ $component-active-color:    red !important;
 //** Global background color for active items (e.g., navs or dropdowns).
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -135,13 +134,6 @@ body {
 //         border-bottom: 0;
 //     }
 // }
-
-/*
-=================
-@Olivier Colonna
-- base
-=================
- */
 
 a {
     color: $brand-primary;
