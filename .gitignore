@@ -8,3 +8,5 @@ heroku
 /views
 /actions-test.numbers
 /buildings.numbers
+
+.DS_Store
