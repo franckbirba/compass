@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- License Agreement at http://iconmonstr.com/license/ -->
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<path id="battery-16-icon" d="M372,186v140H80V186H372 M402,156H50v200h352V156z M422,301h24c8.837,0,16-7.163,16-16v-58
+	c0-8.837-7.163-16-16-16h-24V301z M251.614,266.278h26.621v26.621h20.558v-26.621h26.621v-20.557h-26.621v-26.621h-20.558v26.621
+	h-26.621V266.278z M126.814,266.278h72v-20.557h-72V266.278z"/>
+</svg>

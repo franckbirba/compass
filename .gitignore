@@ -6,4 +6,5 @@ app/bower_components
 bower_components
 heroku
 /views
-
+/actions-test.numbers
+/buildings.numbers

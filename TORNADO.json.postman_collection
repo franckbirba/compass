@@ -1,0 +1,3150 @@
+{
+	"id": "faeb7735-240b-d668-1f74-52bc86012472",
+	"name": "TORNADO",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "17d52dbc-7ee1-8701-91c1-e6c53c480fa0",
+			"name": "ACTION",
+			"description": "",
+			"order": [
+				"88599e12-08d6-df29-efff-e6d75b61c71e",
+				"290bad62-eb93-380a-4379-2f799ea90a45",
+				"caec73b2-6d06-1988-82ee-a54cda4d4043",
+				"7dff96d7-eb98-96a6-6096-5cd7e9658c27"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "f928a9a1-3279-de25-7d17-04a73728ff74",
+			"name": "BUILDING",
+			"description": "",
+			"order": [
+				"4beef446-0db1-8b2d-3ade-06ec23d6f004",
+				"328ec467-0a1f-a582-c714-28b9f49bb715",
+				"9521bb89-377d-e5a7-64bf-6567191ef2a4",
+				"56fc0304-58c5-467c-31bc-0fe307e167af",
+				"743d3c75-7bbe-a5d9-28b9-eb5758512f4f",
+				"db4b2659-73de-83cf-7abd-115d8176cc8d"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "48ed5daa-b7bf-b27c-3837-bf9ba667d373",
+			"name": "CERTIFICATION",
+			"description": "",
+			"order": [
+				"dad247cb-bdee-0d32-12e7-3e354a5a3372",
+				"bd4d5bf2-297a-a6dd-904d-36b3870f64ef",
+				"c7fcba2d-3dcf-0858-a294-a8678d5bfb6f",
+				"d093db9b-6ce2-2cdd-6919-cdfbc6683ed6"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "c3ca7b94-15ab-c540-834a-7c09a3040319",
+			"name": "FLUIDS",
+			"description": "",
+			"order": [
+				"2b739d79-45f6-e81e-58df-c637749e3922",
+				"3653ddfb-c840-de24-5f79-f9c97ec7800c",
+				"49836c49-5b28-c059-aa23-61e482d4799f",
+				"268882f0-37ae-7f70-68f6-22bef942c9b1",
+				"a2f1a34a-9278-f4ff-b675-d9a4260378d2",
+				"e7e9b1d9-d2e2-c738-3f04-34103ba294e6"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "65d885d7-73dc-0fad-0bdb-3f5afa68cb11",
+			"name": "INDICE",
+			"description": "",
+			"order": [
+				"928f3b58-0d35-c4a1-2baf-4d22b410bf91",
+				"753978ea-d759-696f-f81a-553f0b0c9b51",
+				"feed68c7-2b7b-b3d2-6cb1-783416020646",
+				"7aef2098-a3df-f995-1225-689cec2b8675"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "0654f90e-4211-04e2-9a0e-42aa935efb34",
+			"name": "LEASE",
+			"description": "",
+			"order": [
+				"6f99f855-ca52-ac4f-6b58-44637c7190e2",
+				"6d525eae-4069-a12f-2dc4-e035b3d703fa",
+				"84031b6a-edf9-41fd-6e37-163d76d8f60b",
+				"ce6016f0-7a7b-8c00-2e26-2d6f0cedad78",
+				"7f11e4e0-fc4d-33fd-2436-c0f519edc39a"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "31756bd7-8b41-e8b2-b045-2e064b6c94c1",
+			"name": "PORTFOLIO",
+			"description": "",
+			"order": [
+				"563c783b-0366-b52c-da9e-da61e2b55678",
+				"9c947e77-17bf-1ba2-6d01-9c151559f13e",
+				"3aa78e5c-8536-9b27-bfeb-104dbdb0b43b",
+				"9bf4f7a0-5f1b-cb46-8a0a-4c7720947966",
+				"1b326f6b-ec20-7730-bb06-a881d4062f41"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "5bb5012a-307c-c34f-f773-de0756a5d56d",
+			"name": "PROPERTY",
+			"description": "",
+			"order": [
+				"1bad8b9d-7934-7fa1-24cc-a8e2b5e4567a",
+				"79e4a886-26c2-ac7f-9fed-83e5a95cd4a2",
+				"ecac9203-6a20-3ed6-46ad-d4126c8683e7",
+				"f7e580f8-eb16-514b-dbf7-f0414cf55ed2",
+				"0b94ab20-ba5a-c1d0-53c5-96afb8aa486d"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "b1c79b71-6e62-2c79-87a0-d006a216be56",
+			"name": "SCENARIO",
+			"description": "",
+			"order": [
+				"c8891247-d5d1-0049-9647-a1fb27013b8b",
+				"c5bb1015-2217-5033-91d4-23b07e5998ac",
+				"4f03d88e-85d5-0516-2ca7-3db2cae574f8",
+				"aec4cfdc-f716-f34a-f9ee-f90374d2c700"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		},
+		{
+			"id": "ebd3f632-68b2-4e17-14e8-59ae42c23283",
+			"name": "SESSION",
+			"description": "",
+			"order": [
+				"8b409155-cb08-4e8d-1709-4f5043bce459",
+				"67b9a2cd-a798-d5fc-2736-1120680f9b75",
+				"8347a612-0f6c-fa3a-ea46-744ad75c3e48",
+				"af8854b8-52a9-48a8-36b4-ba766ff6da33",
+				"54c911c7-050b-fb20-0887-f22cf90cf511"
+			],
+			"collection_name": "TORNADO",
+			"collection_id": "faeb7735-240b-d668-1f74-52bc86012472"
+		}
+	],
+	"timestamp": 1397010514513,
+	"synced": false,
+	"requests": [
+		{
+			"id": "0b94ab20-ba5a-c1d0-53c5-96afb8aa486d",
+			"headers": "",
+			"url": "localhost:3000/crud/property/?_id=5344b57bc67d03f87d99a5a3",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129733242,
+			"name": "PROPERTY:delete",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "1b326f6b-ec20-7730-bb06-a881d4062f41",
+			"headers": "",
+			"url": "localhost:3000/crud/portfolio/?_id=5344b670c67d03f87d99a5a4",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397012178853,
+			"name": "PORTFOLIO:delete",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "1bad8b9d-7934-7fa1-24cc-a8e2b5e4567a",
+			"headers": "",
+			"url": "localhost:3000/crud/property/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "patrimoine1 updated",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129669746,
+			"name": "PROPERTY:get",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "268882f0-37ae-7f70-68f6-22bef942c9b1",
+			"headers": "",
+			"url": "localhost:3000/crud/fluids/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "values",
+					"value": "{2014: {value:13},2015:{value:156}}",
+					"type": "text"
+				},
+				{
+					"key": "group",
+					"value": "fluid",
+					"type": "text"
+				},
+				{
+					"key": "indice",
+					"value": "5344bf1ac67d03f87d99a5a8",
+					"type": "text"
+				},
+				{
+					"key": "provider",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398130231329,
+			"name": "FLUIDS:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "290bad62-eb93-380a-4379-2f799ea90a45",
+			"headers": "",
+			"url": "localhost:3000/crud/action/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "action1",
+					"type": "text"
+				},
+				{
+					"key": "field",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "mounting",
+					"value": "classic",
+					"type": "text"
+				},
+				{
+					"key": "batch",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "feasibility",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "priority",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "comfort",
+					"value": "thermique",
+					"type": "text"
+				},
+				{
+					"key": "technicalCompliance",
+					"value": "conforme",
+					"type": "text"
+				},
+				{
+					"key": "compliance",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "residualLife",
+					"value": "conforme",
+					"type": "text"
+				},
+				{
+					"key": "studyPeriod",
+					"value": "4",
+					"type": "text"
+				},
+				{
+					"key": "constructionPeriod",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "actionPeriod",
+					"value": "16",
+					"type": "text"
+				},
+				{
+					"key": "linkedActions",
+					"value": "[]",
+					"type": "text"
+				},
+				{
+					"key": "energyPercent",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "investmentRatio",
+					"value": "4.5",
+					"type": "text"
+				},
+				{
+					"key": "workingRatio",
+					"value": "7",
+					"type": "text"
+				},
+				{
+					"key": "eligibleForSubsidies",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "eligibleForEconomyEnergyCertificat",
+					"value": "true",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397018722153,
+			"name": "ACTION:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "2b739d79-45f6-e81e-58df-c637749e3922",
+			"headers": "",
+			"url": "localhost:3000/crud/fluids/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "5344b670c67d03f87d99a5a4",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "2354",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "best city ever",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "world",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "underground",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "2014",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "co-propriété",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "locataire",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "120",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "consumptionGrade",
+					"value": "D",
+					"type": "text"
+				},
+				{
+					"key": "consumptionValue",
+					"value": "120332",
+					"type": "text"
+				},
+				{
+					"key": "emissionGrade",
+					"value": "C",
+					"type": "text"
+				},
+				{
+					"key": "emissionValue",
+					"value": "39203",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "FLUIDS:get",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397014199612,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "328ec467-0a1f-a582-c714-28b9f49bb715",
+			"headers": "",
+			"url": "localhost:3000/crud/building/?portfolio=5344b670c67d03f87d99a5a4",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "bail2",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "state",
+					"value": "loué",
+					"type": "text"
+				},
+				{
+					"key": "rent",
+					"value": "850",
+					"type": "text"
+				},
+				{
+					"key": "lastUpdate",
+					"value": "20/01/2014",
+					"type": "text"
+				},
+				{
+					"key": "use",
+					"value": "résidentiel",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "70",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "igh",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "erpState",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "BUILDING:getByPortfolio",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397013554424,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "3653ddfb-c840-de24-5f79-f9c97ec7800c",
+			"headers": "",
+			"url": "localhost:3000/crud/fluids/?building=5344b88ec67d03f87d99a5a5",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "values",
+					"value": "{2014: {value:13},2015:{value:156}}",
+					"type": "text"
+				},
+				{
+					"key": "group",
+					"value": "fluid",
+					"type": "text"
+				},
+				{
+					"key": "indice",
+					"value": "5344bf1ac67d03f87d99a5a8",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344c12bc67d03f87d99a5a9",
+					"type": "text"
+				},
+				{
+					"key": "yearlyRent",
+					"value": "600",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "FLUIDS:getByBuilding",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397015072906,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "3aa78e5c-8536-9b27-bfeb-104dbdb0b43b",
+			"headers": "",
+			"url": "localhost:3000/crud/portfolio/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "portfolio1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "property",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "address",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "description",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "picture",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129932034,
+			"name": "PORTFOLIO:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "49836c49-5b28-c059-aa23-61e482d4799f",
+			"headers": "",
+			"url": "localhost:3000/crud/fluids/?provider=EDF",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "values",
+					"value": "{2014: {value:13},2015:{value:156}}",
+					"type": "text"
+				},
+				{
+					"key": "group",
+					"value": "fluid",
+					"type": "text"
+				},
+				{
+					"key": "indice",
+					"value": "5344bf1ac67d03f87d99a5a8",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344c12bc67d03f87d99a5a9",
+					"type": "text"
+				},
+				{
+					"key": "yearlyRent",
+					"value": "600",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "provider",
+					"value": "EDF",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "FLUIDS:getByProvider",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1398130421291,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "4beef446-0db1-8b2d-3ade-06ec23d6f004",
+			"headers": "",
+			"url": "localhost:3000/crud/building/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "BUILDING:get",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397012643788,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "4f03d88e-85d5-0516-2ca7-3db2cae574f8",
+			"headers": "",
+			"url": "localhost:3000/crud/scenario/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "scen 1",
+					"type": "text"
+				},
+				{
+					"key": "period",
+					"value": "16",
+					"type": "text"
+				},
+				{
+					"key": "cost",
+					"value": "20000",
+					"type": "text"
+				},
+				{
+					"key": "paybackTimeLessThan",
+					"value": "3",
+					"type": "text"
+				},
+				{
+					"key": "params",
+					"value": "[{name:'dépense annuelle max', id:'12432434232', value: '3'}]",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344d27bc67d03f87d99a5ad",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397019290073,
+			"name": "SCENARIO:update",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "54c911c7-050b-fb20-0887-f22cf90cf511",
+			"headers": "",
+			"url": "localhost:3000/auth/session",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "email",
+					"value": "test@test.com",
+					"type": "text"
+				},
+				{
+					"key": "username",
+					"value": "test",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "test",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "SESSION:logout",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397019790077,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "563c783b-0366-b52c-da9e-da61e2b55678",
+			"headers": "",
+			"url": "localhost:3000/crud/portfolio/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"name": "PORTFOLIO:get",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397012048989,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "56fc0304-58c5-467c-31bc-0fe307e167af",
+			"headers": "",
+			"url": "localhost:3000/crud/building/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "property",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "usefullSurface",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "totalSurface",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398130524174,
+			"name": "BUILDING:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "67b9a2cd-a798-d5fc-2736-1120680f9b75",
+			"headers": "",
+			"url": "localhost:3000/auth/users/53440c77bf82e80000a20622",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "email",
+					"value": "test@test.com",
+					"type": "text"
+				},
+				{
+					"key": "username",
+					"value": "test",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "SESSION:showUser",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397019698548,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "6d525eae-4069-a12f-2dc4-e035b3d703fa",
+			"headers": "",
+			"url": "localhost:3000/crud/lease/?building=5344b88ec67d03f87d99a5a5",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "bail2",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "state",
+					"value": "loué",
+					"type": "text"
+				},
+				{
+					"key": "rent",
+					"value": "850",
+					"type": "text"
+				},
+				{
+					"key": "lastUpdate",
+					"value": "20/01/2014",
+					"type": "text"
+				},
+				{
+					"key": "use",
+					"value": "résidentiel",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "70",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "igh",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "erpState",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397013501087,
+			"name": "LEASE:getByBuilding",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "6f99f855-ca52-ac4f-6b58-44637c7190e2",
+			"headers": "",
+			"url": "localhost:3000/crud/lease/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "5344b670c67d03f87d99a5a4",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "2354",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "best city ever",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "world",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "underground",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "2014",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "co-propriété",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "locataire",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "120",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397012975069,
+			"name": "LEASE:get",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "743d3c75-7bbe-a5d9-28b9-eb5758512f4f",
+			"headers": "",
+			"url": "localhost:3000/crud/building/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "property",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "5344b670c67d03f87d99a5a4",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "2354",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "best city ever",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "world",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "underground",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "2014",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "co-propriété",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "locataire",
+					"type": "text"
+				},
+				{
+					"key": "usefullSurface",
+					"value": "120",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "totalSurface",
+					"value": "200",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398131535536,
+			"name": "BUILDING:update",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "753978ea-d759-696f-f81a-553f0b0c9b51",
+			"headers": "",
+			"url": "localhost:3000/crud/indices/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "coefficient de montage",
+					"type": "text"
+				},
+				{
+					"key": "values",
+					"value": "{2014: {value:13},2015:{value:156}}",
+					"type": "text"
+				},
+				{
+					"key": "group",
+					"value": "construction",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397011052865,
+			"name": "INDICES:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "79e4a886-26c2-ac7f-9fed-83e5a95cd4a2",
+			"headers": "",
+			"url": "localhost:3000/crud/property/?user=admin",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "patrimoine1 updated",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129677500,
+			"name": "PROPERTY:getByUser",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "7aef2098-a3df-f995-1225-689cec2b8675",
+			"headers": "",
+			"url": "localhost:3000/crud/indices/?_id=5344b0c4c67d03f87d99a5a1",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397011072686,
+			"name": "INDICES:delete",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "7dff96d7-eb98-96a6-6096-5cd7e9658c27",
+			"headers": "",
+			"url": "localhost:3000/crud/action/?_id=5344d064c67d03f87d99a5ab",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"name": "ACTION:delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397018999410,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "7f11e4e0-fc4d-33fd-2436-c0f519edc39a",
+			"headers": "",
+			"url": "localhost:3000/crud/lease/?_id=5344bab0c67d03f87d99a5a6",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397013364056,
+			"name": "LEASE:delete",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "8347a612-0f6c-fa3a-ea46-744ad75c3e48",
+			"headers": "",
+			"url": "localhost:3000/auth/users",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "test@test.com",
+					"type": "text"
+				},
+				{
+					"key": "username",
+					"value": "test",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "SESSION:newuser",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397019568214,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "84031b6a-edf9-41fd-6e37-163d76d8f60b",
+			"headers": "",
+			"url": "localhost:3000/crud/lease/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "bail1",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "state",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "rent",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "lastUpdate",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "use",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "floor",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "igh",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "erpState",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397013160631,
+			"name": "LEASE:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "88599e12-08d6-df29-efff-e6d75b61c71e",
+			"headers": "",
+			"url": "localhost:3000/crud/action/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "5344b670c67d03f87d99a5a4",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "2354",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "best city ever",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "world",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "underground",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "2014",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "co-propriété",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "locataire",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "120",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "consumptionGrade",
+					"value": "D",
+					"type": "text"
+				},
+				{
+					"key": "consumptionValue",
+					"value": "120332",
+					"type": "text"
+				},
+				{
+					"key": "emissionGrade",
+					"value": "C",
+					"type": "text"
+				},
+				{
+					"key": "emissionValue",
+					"value": "39203",
+					"type": "text"
+				},
+				{
+					"key": "certifications",
+					"value": "[{id:'5344c41fc67d03f87d99a5aa',detail:'loremipsum'}]",
+					"type": "text"
+				},
+				{
+					"key": "acoustic",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "visual",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "thermal",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "comments",
+					"value": "[{user:'admin',text:'lorem ipsum', date: '02/02/2014'}]",
+					"type": "text"
+				},
+				{
+					"key": "structure",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "frontage",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "roofing",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "hotProduction",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "coldProduction",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "TBGT",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "technicalComments",
+					"value": "[{user:'admin',text:'lorem ipsum', date: '02/02/2014'}]",
+					"type": "text"
+				},
+				{
+					"key": "accessibility",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "elevators",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "fireSafety",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "amiante",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "plumb",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "legionela",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "ACTION:get",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397017894559,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "8b409155-cb08-4e8d-1709-4f5043bce459",
+			"headers": "",
+			"url": "localhost:3000/auth/session",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"name": "SESSION:get",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397019527253,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "928f3b58-0d35-c4a1-2baf-4d22b410bf91",
+			"headers": "",
+			"url": "localhost:3000/crud/indices/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "email",
+					"value": "test@test.com",
+					"type": "text"
+				},
+				{
+					"key": "username",
+					"value": "test",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "test",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397010519523,
+			"name": "INDICES:get",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "9521bb89-377d-e5a7-64bf-6567191ef2a4",
+			"headers": "",
+			"url": "localhost:3000/crud/building/?property=5344b57bc67d03f87d99a5a3",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "property",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "5344b670c67d03f87d99a5a4",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "2354",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "best city ever",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "world",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "underground",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "2014",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "co-propriété",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "locataire",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "120",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "consumptionGrade",
+					"value": "D",
+					"type": "text"
+				},
+				{
+					"key": "consumptionValue",
+					"value": "120332",
+					"type": "text"
+				},
+				{
+					"key": "emissionGrade",
+					"value": "C",
+					"type": "text"
+				},
+				{
+					"key": "emissionValue",
+					"value": "39203",
+					"type": "text"
+				},
+				{
+					"key": "certifications",
+					"value": "[{id:'5344c41fc67d03f87d99a5aa',detail:'loremipsum'}]",
+					"type": "text"
+				},
+				{
+					"key": "acoustic",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "visual",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "thermal",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "comments",
+					"value": "[{user:'admin',text:'lorem ipsum', date: '02/02/2014'}]",
+					"type": "text"
+				},
+				{
+					"key": "structure",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "frontage",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "roofing",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "hotProduction",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "coldProduction",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "TBGT",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "technicalComments",
+					"value": "[{user:'admin',text:'lorem ipsum', date: '02/02/2014'}]",
+					"type": "text"
+				},
+				{
+					"key": "accessibility",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "elevators",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "fireSafety",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "amiante",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "plumb",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "legionela",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129855827,
+			"name": "BUILDING:getByProperty",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "9bf4f7a0-5f1b-cb46-8a0a-4c7720947966",
+			"headers": "",
+			"url": "localhost:3000/crud/portfolio/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "portfolio2",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "property",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "53450889c67d03f87d99a5af",
+					"type": "text"
+				},
+				{
+					"key": "address",
+					"value": "2 street city in country",
+					"type": "text"
+				},
+				{
+					"key": "description",
+					"value": "lorem ipsum 2",
+					"type": "text"
+				},
+				{
+					"key": "picture",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129978817,
+			"name": "PORTFOLIO:update",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "9c947e77-17bf-1ba2-6d01-9c151559f13e",
+			"headers": "",
+			"url": "localhost:3000/crud/portfolio/?user=admin",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "building1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "portfolio",
+					"value": "5344b670c67d03f87d99a5a4",
+					"type": "text"
+				},
+				{
+					"key": "zipcode",
+					"value": "2354",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "best city ever",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "world",
+					"type": "text"
+				},
+				{
+					"key": "area",
+					"value": "underground",
+					"type": "text"
+				},
+				{
+					"key": "builtYear",
+					"value": "2014",
+					"type": "text"
+				},
+				{
+					"key": "control",
+					"value": "co-propriété",
+					"type": "text"
+				},
+				{
+					"key": "buildingUser",
+					"value": "locataire",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "120",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "parkings",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "parkingSurface",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "consumptionGrade",
+					"value": "D",
+					"type": "text"
+				},
+				{
+					"key": "consumptionValue",
+					"value": "120332",
+					"type": "text"
+				},
+				{
+					"key": "emissionGrade",
+					"value": "C",
+					"type": "text"
+				},
+				{
+					"key": "emissionValue",
+					"value": "39203",
+					"type": "text"
+				},
+				{
+					"key": "certifications",
+					"value": "[{id:'5344c41fc67d03f87d99a5aa',detail:'loremipsum'}]",
+					"type": "text"
+				},
+				{
+					"key": "acoustic",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "visual",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "thermal",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "comments",
+					"value": "[{user:'admin',text:'lorem ipsum', date: '02/02/2014'}]",
+					"type": "text"
+				},
+				{
+					"key": "structure",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "frontage",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "roofing",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "hotProduction",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "coldProduction",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "TBGT",
+					"value": "{obsolescence: '', compliance: '', detail: 'lorem ipsum'}",
+					"type": "text"
+				},
+				{
+					"key": "technicalComments",
+					"value": "[{user:'admin',text:'lorem ipsum', date: '02/02/2014'}]",
+					"type": "text"
+				},
+				{
+					"key": "accessibility",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "elevators",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "fireSafety",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "amiante",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "plumb",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				},
+				{
+					"key": "legionela",
+					"value": "{eligibility: '', periodicity: '', compliance:'', lastDiag:'10/01/2014', detail: 'lorem ipsum', file:'3242432432432423'}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "PORTFOLIO:getByUser",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397017380263,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "a2f1a34a-9278-f4ff-b675-d9a4260378d2",
+			"headers": "",
+			"url": "localhost:3000/crud/fluids/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "values",
+					"value": "{2014: {value:13},2015:{value:156}}",
+					"type": "text"
+				},
+				{
+					"key": "group",
+					"value": "fluid",
+					"type": "text"
+				},
+				{
+					"key": "indice",
+					"value": "5344bf1ac67d03f87d99a5a8",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344c12bc67d03f87d99a5a9",
+					"type": "text"
+				},
+				{
+					"key": "yearlyRent",
+					"value": "600",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "provider",
+					"value": "EDF",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398131882066,
+			"name": "FLUIDS:update",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "aec4cfdc-f716-f34a-f9ee-f90374d2c700",
+			"headers": "",
+			"url": "localhost:3000/crud/scenario/?_id=5344d27bc67d03f87d99a5ad",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"name": "SCENARIO:delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397019315570,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "af8854b8-52a9-48a8-36b4-ba766ff6da33",
+			"headers": "",
+			"url": "localhost:3000/auth/session",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "test@test.com",
+					"type": "text"
+				},
+				{
+					"key": "username",
+					"value": "test",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "test",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397019728027,
+			"name": "SESSION:login",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "bd4d5bf2-297a-a6dd-904d-36b3870f64ef",
+			"headers": "",
+			"url": "localhost:3000/crud/certification/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "NFHQE",
+					"type": "text"
+				},
+				{
+					"key": "version",
+					"value": "0.1",
+					"type": "text"
+				},
+				{
+					"key": "description",
+					"value": "lorem ipsum",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "CERTIFICATION:new",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397015581577,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "c5bb1015-2217-5033-91d4-23b07e5998ac",
+			"headers": "",
+			"url": "localhost:3000/crud/scenario/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "scen 1",
+					"type": "text"
+				},
+				{
+					"key": "period",
+					"value": "16",
+					"type": "text"
+				},
+				{
+					"key": "cost",
+					"value": "20000",
+					"type": "text"
+				},
+				{
+					"key": "paybackTimeLessThan",
+					"value": "3",
+					"type": "text"
+				},
+				{
+					"key": "params",
+					"value": "[{name:'dépense annuelle max', id:'12432434232', value: '3'}]",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397019248755,
+			"name": "SCENARIO:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "c7fcba2d-3dcf-0858-a294-a8678d5bfb6f",
+			"headers": "",
+			"url": "localhost:3000/crud/certification/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "NFHQE",
+					"type": "text"
+				},
+				{
+					"key": "version",
+					"value": "0.1",
+					"type": "text"
+				},
+				{
+					"key": "description",
+					"value": "lorem ipsum",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344c41fc67d03f87d99a5aa",
+					"type": "text"
+				},
+				{
+					"key": "picture",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1397015770558,
+			"name": "CERTIFICATION:update",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "c8891247-d5d1-0049-9647-a1fb27013b8b",
+			"headers": "",
+			"url": "localhost:3000/crud/scenario/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "action1",
+					"type": "text"
+				},
+				{
+					"key": "field",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "mounting",
+					"value": "classic",
+					"type": "text"
+				},
+				{
+					"key": "batch",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "feasibility",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "priority",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "comfort",
+					"value": "thermique",
+					"type": "text"
+				},
+				{
+					"key": "technicalCompliance",
+					"value": "conforme",
+					"type": "text"
+				},
+				{
+					"key": "compliance",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "residualLife",
+					"value": "conforme",
+					"type": "text"
+				},
+				{
+					"key": "studyPeriod",
+					"value": "4",
+					"type": "text"
+				},
+				{
+					"key": "constructionPeriod",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "actionPeriod",
+					"value": "16",
+					"type": "text"
+				},
+				{
+					"key": "linkedActions",
+					"value": "[]",
+					"type": "text"
+				},
+				{
+					"key": "energyPercent",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "investmentRatio",
+					"value": "4.5",
+					"type": "text"
+				},
+				{
+					"key": "workingRatio",
+					"value": "7",
+					"type": "text"
+				},
+				{
+					"key": "eligibleForSubsidies",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "eligibleForEconomyEnergyCertificat",
+					"value": "true",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "SCENARIO:get",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397018937191,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "caec73b2-6d06-1988-82ee-a54cda4d4043",
+			"headers": "",
+			"url": "localhost:3000/crud/action/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "action1",
+					"type": "text"
+				},
+				{
+					"key": "field",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "mounting",
+					"value": "classic",
+					"type": "text"
+				},
+				{
+					"key": "batch",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "feasibility",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "priority",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "comfort",
+					"value": "thermique",
+					"type": "text"
+				},
+				{
+					"key": "technicalCompliance",
+					"value": "conforme",
+					"type": "text"
+				},
+				{
+					"key": "compliance",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "residualLife",
+					"value": "conforme",
+					"type": "text"
+				},
+				{
+					"key": "studyPeriod",
+					"value": "4",
+					"type": "text"
+				},
+				{
+					"key": "constructionPeriod",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "actionPeriod",
+					"value": "16",
+					"type": "text"
+				},
+				{
+					"key": "linkedActions",
+					"value": "[]",
+					"type": "text"
+				},
+				{
+					"key": "energyPercent",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "investmentRatio",
+					"value": "4.5",
+					"type": "text"
+				},
+				{
+					"key": "workingRatio",
+					"value": "7",
+					"type": "text"
+				},
+				{
+					"key": "eligibleForSubsidies",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "eligibleForEconomyEnergyCertificat",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344d064c67d03f87d99a5ab",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "ACTION:update",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397018966556,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "ce6016f0-7a7b-8c00-2e26-2d6f0cedad78",
+			"headers": "",
+			"url": "localhost:3000/crud/lease/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "bail1",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				},
+				{
+					"key": "state",
+					"value": "vacant",
+					"type": "text"
+				},
+				{
+					"key": "rent",
+					"value": "1200",
+					"type": "text"
+				},
+				{
+					"key": "lastUpdate",
+					"value": "12/02/2014",
+					"type": "text"
+				},
+				{
+					"key": "use",
+					"value": "résidentiel",
+					"type": "text"
+				},
+				{
+					"key": "surface",
+					"value": "120",
+					"type": "text"
+				},
+				{
+					"key": "floors",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "igh",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "erpState",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "legacy",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344bab0c67d03f87d99a5a6",
+					"type": "text"
+				},
+				{
+					"key": "consumptionGrade",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "consumptionValue",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "emissionGrade",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "emissionValue",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "certifications",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "acoustic",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "visual",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "thermal",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "comments",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "structure",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "frontage",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "roofing",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "hotProduction",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "coldProduction",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "TBGT",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "technicalComments",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "accessibility",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "elevators",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "fireSafety",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "asbestos",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "plumb",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "legionela",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398131809026,
+			"name": "LEASE:update",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "d093db9b-6ce2-2cdd-6919-cdfbc6683ed6",
+			"headers": "",
+			"url": "localhost:3000/crud/certification/?_id=5344c41fc67d03f87d99a5aa",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"name": "CERTIFICATION:delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397015636896,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "dad247cb-bdee-0d32-12e7-3e354a5a3372",
+			"headers": "",
+			"url": "localhost:3000/crud/certification/",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "chaud",
+					"type": "text"
+				},
+				{
+					"key": "values",
+					"value": "{2014: {value:13},2015:{value:156}}",
+					"type": "text"
+				},
+				{
+					"key": "group",
+					"value": "fluid",
+					"type": "text"
+				},
+				{
+					"key": "indice",
+					"value": "5344bf1ac67d03f87d99a5a8",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344c12bc67d03f87d99a5a9",
+					"type": "text"
+				},
+				{
+					"key": "yearlyRent",
+					"value": "600",
+					"type": "text"
+				},
+				{
+					"key": "building",
+					"value": "5344b88ec67d03f87d99a5a5",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "CERTIFICATION:get",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397015525320,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "db4b2659-73de-83cf-7abd-115d8176cc8d",
+			"headers": "",
+			"url": "localhost:3000/crud/building/?_id=5344b88ec67d03f87d99a5a5",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"name": "BUILDING:delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397012860888,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "e7e9b1d9-d2e2-c738-3f04-34103ba294e6",
+			"headers": "",
+			"url": "localhost:3000/crud/fluids/?_id=5344c12bc67d03f87d99a5a9",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"name": "FLUIDS:delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397015005185,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		},
+		{
+			"id": "ecac9203-6a20-3ed6-46ad-d4126c8683e7",
+			"headers": "",
+			"url": "localhost:3000/crud/property/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "patrimoine1",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129685367,
+			"name": "PROPERTY:new",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "f7e580f8-eb16-514b-dbf7-f0414cf55ed2",
+			"headers": "",
+			"url": "localhost:3000/crud/property/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "patrimoine1 updated",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b57bc67d03f87d99a5a3",
+					"type": "text"
+				},
+				{
+					"key": "user",
+					"value": "admin",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"time": 1398129698461,
+			"name": "PROPERTY:update",
+			"description": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"responses": [],
+			"synced": false
+		},
+		{
+			"id": "feed68c7-2b7b-b3d2-6cb1-783416020646",
+			"headers": "",
+			"url": "localhost:3000/crud/indices/",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "coefficient de montage updated",
+					"type": "text"
+				},
+				{
+					"key": "values",
+					"value": "{2014: {value:13},2015:{value:156}}",
+					"type": "text"
+				},
+				{
+					"key": "_id",
+					"value": "5344b188c67d03f87d99a5a2",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"name": "INDICES:update",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1397010968561,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"collectionId": "faeb7735-240b-d668-1f74-52bc86012472",
+			"synced": false
+		}
+	]
+}
