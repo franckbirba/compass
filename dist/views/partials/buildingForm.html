@@ -1,81 +1,82 @@
 <div compassnav=""></div>
+<div class="wrapper">
+	<!-- START FORM -->
+	<div class="build-title">Création d'un bâtiment (étape 1): informations générales</div>
 
-<!-- START FORM -->
-<div class="build-title">Création d'un bâtiment (étape 1): informations générales</div>
-
-<!-- MASTER CONTAINER -->
-<div class="container" ng-controller="BuildingCtrl">
-	<form role="form" class="form-horizontal" name="form" ng-submit="" novalidate="" style="position:relative">
-		<div class="build-invest">
-			<h3>Investissement</h3>
-			<div class="form-group">
-				<label for="portfolio" class="col-sm-2 control-label">Portfolio</label>
-				<div class="col-sm-10">
-					 <input class="form-control" id="portfolio" placeholder="Portfolio" name="portfolio" type="text" autofocus="">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="portfolio" class="col-sm-2 control-label">Nom du Bâtiment</label>
-				<div class="col-sm-10">
-					<input class="form-control" placeholder="Nom du Bâtiment" name="name" type="text" autofocus="">
-				</div>
-			</div>
-		</div>
-		<hr>
-
-		<div>
-			<div style="height:300px;width:400px;float:left">
-				<h3>Adresse</h3>
+	<!-- MASTER CONTAINER -->
+	<div class="container" ng-controller="BuildingCtrl" style="border: 1px solid #eeeeee">
+		<form role="form" class="form-horizontal" name="form" ng-submit="" novalidate="" style="position:relative">
+			<div class="build-invest">
+				<h3>Investissement</h3>
 				<div class="form-group">
-					<label for="portfolio" class="col-sm-2 control-label">Adresse</label>
+					<label for="portfolio" class="col-sm-2 control-label">Portfolio</label>
 					<div class="col-sm-10">
-						<input class="form-control" placeholder="Adresse" name="adresse" type="text" autofocus="">
+						 <input class="form-control" id="portfolio" placeholder="Portfolio" name="portfolio" type="text" autofocus="">
 					</div>
 				</div>
+
 				<div class="form-group">
-					<label for="portfolio" class="col-sm-2 control-label">Code Postal</label>
+					<label for="portfolio" class="col-sm-2 control-label">Nom du Bâtiment</label>
 					<div class="col-sm-10">
-						<input class="form-control" placeholder="Code Postal" name="cp" type="text" autofocus="">
-					</div>
-				</div>
-				 <div class="form-group">
-					<label for="portfolio" class="col-sm-2 control-label">Ville</label>
-					<div class="col-sm-10">
-						<input class="form-control" placeholder="Ville" name="city" type="text" autofocus="">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="portfolio" class="col-sm-2 control-label">Secteur</label>
-					<div class="col-sm-10">
-						<input class="form-control" placeholder="Secteur" name="sector" type="text" autofocus="">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="portfolio" class="col-sm-2 control-label">Pays</label>
-					<div class="col-sm-10">
-						<input class="form-control" placeholder="Pays" name="country" type="text" autofocus="">
+						<input class="form-control" placeholder="Nom du Bâtiment" name="name" type="text" autofocus="">
 					</div>
 				</div>
 			</div>
-			<!-- GOOGLE MAP -->
-			<google-map center="map.center" zoom="map.zoom"></google-map>
-		</div>
+			<hr>
 
-		<hr>
-
-		<!-- PHOTOS -->
-		<h3>Photos</h3>
-		<div class="">
-			<div style="position:relative;width:200px;height:150px;float:left;margin-left:5px;margin-right:5px" ng-repeat="img in IMAGES">
-				<img height="150px" width="200px" src="{{img.src}}" style="border-color:black;border-width:thin;border-style:solid" class="">
-				<button href="" class="btn btn-xs btn-danger glyphicon glyphicon-remove" style="position:absolute;right:5px;top: 5px"></button>
+			<div>
+				<div style="height:300px;width:400px;float:left">
+					<h3>Adresse</h3>
+					<div class="form-group">
+						<label for="portfolio" class="col-sm-2 control-label">Adresse</label>
+						<div class="col-sm-10">
+							<input class="form-control" placeholder="Adresse" name="adresse" type="text" autofocus="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="portfolio" class="col-sm-2 control-label">Code Postal</label>
+						<div class="col-sm-10">
+							<input class="form-control" placeholder="Code Postal" name="cp" type="text" autofocus="">
+						</div>
+					</div>
+					 <div class="form-group">
+						<label for="portfolio" class="col-sm-2 control-label">Ville</label>
+						<div class="col-sm-10">
+							<input class="form-control" placeholder="Ville" name="city" type="text" autofocus="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="portfolio" class="col-sm-2 control-label">Secteur</label>
+						<div class="col-sm-10">
+							<input class="form-control" placeholder="Secteur" name="sector" type="text" autofocus="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="portfolio" class="col-sm-2 control-label">Pays</label>
+						<div class="col-sm-10">
+							<input class="form-control" placeholder="Pays" name="country" type="text" autofocus="">
+						</div>
+					</div>
+				</div>
+				<!-- GOOGLE MAP -->
+				<google-map center="map.center" zoom="map.zoom"></google-map>
 			</div>
-			<button class="btn btn-primary glyphicon glyphicon-plus"></button>
-		</div>
 
-		<!-- Change this to a button or input when using this as a form -->
-		<br>
-		<a href="/building2" style="position:absolute;right:50px" class="btn btn-lg btn-success btn-primary">proceed</a>
-	</form>
+			<hr>
+
+			<!-- PHOTOS -->
+			<h3>Photos</h3>
+			<div>
+				<div style="position:relative;width:200px;height:150px;float:left;margin-left:5px;margin-right:5px" ng-repeat="img in IMAGES">
+					<img height="150px" width="200px" src="{{img.src}}" style="border-color:black;border-width:thin;border-style:solid" class="">
+					<button href="" class="btn btn-xs btn-danger glyphicon glyphicon-remove" style="position:absolute;right:5px;top: 5px"></button>
+				</div>
+				<button class="btn btn-primary glyphicon glyphicon-plus"></button>
+			</div>
+
+			<!-- Change this to a button or input when using this as a form -->
+			<br>
+			<a href="/building2" style="position:absolute;right:50px" class="btn btn-lg btn-success btn-primary">proceed</a>
+		</form>
+	</div>
 </div>

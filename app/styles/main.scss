@@ -1,18 +1,18 @@
 // Global
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $border-radius-base:        0px ;
-$brand-primary:    #90bd59 ;
+$brand-primary:    #8faa00 ;
 $text-color: #7c7c7c;
 $font-family-sans-serif: "Roboto", sans-serif;
 $body-bg: #fff !important;
 // Dropdwon
-$dropdown-link-hover-bg:      #90bd59 ;
+$dropdown-link-hover-bg:      #8faa00 ;
 $dropdown-link-hover-color:      #fff ;
 // Button
-$btn-primary-bg:                 #90bd59 ;
-$btn-primary-border:             #90bd59 ;
+$btn-primary-bg:                 #8faa00 ;
+$btn-primary-border:             #8faa00 ;
 // Form
-$input-border-focus: #90bd59;
+$input-border-focus: #8faa00;
 // Navbar
 $navbar-default-bg: #393939;
 $navbar-height: 43px;
@@ -22,13 +22,12 @@ $panel-primary-border: #efefef;
 $panel-default-text: #fff;
 $panel-default-border: #dddddd;
 
-$brand-success:         #90bd59 !default;
+$brand-success:         #8faa00 !default;
 
 $component-active-color:    red !important;
 //** Global background color for active items (e.g., navs or dropdowns).
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -44,6 +43,7 @@ body {
     right: 0;
     bottom: 0;
     top: 0;
+    font-family: 'Roboto Slab', sans-serif;
 }
 
 .wrapper {
@@ -135,15 +135,8 @@ body {
 //     }
 // }
 
-/*
-=================
-@Olivier Colonna
-- base
-=================
- */
-
 a {
-    color: #90bd59;
+    color: $brand-primary;
     text-decoration: none;
 }
 
@@ -168,7 +161,7 @@ button {
 }
 
 textarea{ 
-    outline: 1px solid #90bd59;
+    outline: 1px solid $brand-primary;
 }​
 
 input[text] {
@@ -206,9 +199,7 @@ h1, h2, h3, h4, h5, h6 {
 [draggable=true]{
     cursor: move;
 }
-[draggable=true]:hover{
-    border: 1px solid #90bd59;/* CSS3 */
-}
+
 
 .build-info > fieldset {
     border: 1px solid #eeeeee;
@@ -246,11 +237,52 @@ td, th {
  */
 
 .home {
+    height: 415px;
     width: 100%;
-    height: 200px;
     overflow: hidden;
+    position: relative;
+    transition: opacity 0.8s;
 }
 
+.sextan {
+    background-image: url(../images/sextan.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text {
+    display: none;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 30px;
+    position: relative;
+    top: 200px;
+    width: 100%;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+a:hover > .text {
+    display: block;
+}
+
+.compass {
+    background-image: url(../images/compass.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homegraph {
+    width: 100%;
+    border: 1px solid $panel-primary-border;
+    background-image: url(../images/graph.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.list-group-item {
+    border: none;
+}
 .btn-primary {
     border-radius: 0;
     background-color: #f4f4f4;
@@ -278,22 +310,22 @@ td, th {
 .nav > li > a:focus {
     text-decoration: none;
     background: none;
-    color: #90bd59;
+    color: $brand-primary;
 }
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background: none;
-    color: #90bd59;
+    color: $brand-primary;
 }
 
 .panel-default > .panel-heading {
-    background-color: #90bd59;
+    background-color: $brand-primary;
 }
 
 .input-group-btn.open .btn-primary.dropdown-toggle, .btn-primary.disabled, .btn-primary[disabled], .btn-primary:hover, .btn-primary:focus {
     background: #f4f4f4;
     color: #fff;
-    border-color: #90bd59;
+    border-color: $brand-primary;
 }
 
 .login-panel {
@@ -333,7 +365,7 @@ td, th {
 }
 
 .build-title {
-    background-color: #90bd59;
+    background-color: $brand-primary;
     height: 50px;
     color: #fff;
     width: 500px;
@@ -442,7 +474,7 @@ td, th {
 
 .picto-timeline {
     font-size: 21px;
-    color: #90bd59;
+    color: $brand-primary;
     position: relative;
     margin: 0px 0px 0px 15px;
 }
@@ -588,10 +620,10 @@ Layout
 }
 
 .comp-inner:active {
-    border: 1px solid #90bd59;
+    border: 1px solid $brand-primary;
 }
 .comp-inner-selected {
-    border: 3px solid #90bd59;
+    border: 3px solid $brand-primary;
 }
 
 .comp-panel {
@@ -640,7 +672,6 @@ Layout
     width:100%;
     height:100%;
     float:right;
-    border: 1px solid #efefef;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -664,6 +695,50 @@ Layout
     overflow-y: scroll;
     height: 263px;
 }
+
+.guest {
+    height: 80px;
+}
+
+.media-object {
+    float: left;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.user {
+    color: $btn-primary-bg;
+}
+
+.message {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 155px;
+    white-space: nowrap;
+    float: right;
+}
+
+.messageMail {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    float: left;
+}
+.attachment {
+    color: $btn-primary-bg;
+    float: left;
+}
+
+.navbar-default {
+    background-color: $btn-primary-bg;
+    border-color: $btn-primary-bg;
+    color: white;
+}
+
+.navbar-brand, .navbar-top-links li a {
+    color: white !important;
+}
 /*
 =================
 @FBI
@@ -677,6 +752,6 @@ GMAP
     margin-right:auto;
 }
 
-body::-webkit-scrollbar { 
-width: 0em!important 
+::-webkit-scrollbar { 
+    width: 0em!important 
 }

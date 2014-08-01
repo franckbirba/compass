@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- The icon can be used freely in both personal and commercial projects with no attribution required, but always appreciated. 
+You may NOT sub-license, resell, rent, redistribute or otherwise transfer the icon without express written permission from iconmonstr.com -->
+
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+
+<path id="flickr-square-rounded-icon" d="M379.826,256.001c0,30.81-25.067,55.876-55.876,55.876
+
+	c-30.811,0-55.878-25.066-55.878-55.876c0-30.81,25.067-55.876,55.878-55.876C354.759,200.125,379.826,225.191,379.826,256.001z
+
+	 M461.945,100v312c0,27.614-22.386,50-50,50h-312c-27.614,0-50-22.386-50-50V100c0-27.614,22.386-50,50-50h312
+
+	C439.56,50,461.945,72.386,461.945,100z M400.146,256.001c0-42.083-34.114-76.196-76.195-76.196
+
+	c-29.704,0-55.436,16.998-68.005,41.795c-12.568-24.797-38.3-41.795-68.003-41.795c-42.083,0-76.196,34.113-76.196,76.196
+
+	c0,42.081,34.113,76.195,76.196,76.195c29.703,0,55.435-16.998,68.003-41.796c12.569,24.798,38.301,41.796,68.005,41.796
+
+	C366.031,332.196,400.146,298.082,400.146,256.001z"/>
+
+</svg>
+

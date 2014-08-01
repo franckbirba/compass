@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- The icon can be used freely in both personal and commercial projects with no attribution required, but always appreciated. 
+You may NOT sub-license, resell, rent, redistribute or otherwise transfer the icon without express written permission from iconmonstr.com -->
+
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+
+<path id="stumbleupon-square-rounded-icon" d="M411.945,50h-312c-27.614,0-50,22.386-50,50v312c0,27.614,22.386,50,50,50h312
+
+	c27.614,0,50-22.386,50-50V100C461.945,72.386,439.56,50,411.945,50z M255.945,191.347c-8.429,0-15.262,6.833-15.262,15.262v91.971
+
+	c-0.498,35.174-29.176,63.543-64.469,63.543c-35.607,0-64.469-28.863-64.469-64.469c0-0.465,0-39.988,0-39.988h49.338v39.463
+
+	c0,8.428,6.834,15.262,15.262,15.262c8.429,0,15.263-6.834,15.263-15.262c0,0,0-56.575,0-93.121s29.521-62.132,64.337-62.132
+
+	c34.943,0,64.338,27.367,64.338,62.512v20.381l-30.073,10.17l-19.003-10.581v-17.75C271.207,198.18,264.374,191.347,255.945,191.347
+
+	z M400.146,297.654c0,35.605-28.862,64.469-64.47,64.469c-35.412,0-64.16-28.558-64.469-63.896v-40.186l19.003,10.58l30.073-10.17
+
+	v40.52c0,8.429,6.833,15.262,15.262,15.262c8.428,0,15.262-6.833,15.262-15.262v-41.305h49.339
+
+	C400.146,257.666,400.146,297.189,400.146,297.654z"/>
+
+</svg>
+
