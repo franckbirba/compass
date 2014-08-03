@@ -5,10 +5,14 @@
 'use strict';
 
 angular.module('compassApp').service('buildingService', ['$http', function($http){
-  var self = this;
-  // dummy data atm
-  //this.url = '/test_data/buildings.json';
-
+  var self = this,
+    urlBase = '/crud/',
+    urlPortfolios = urlBase + 'portfolio/',
+    urlBuildings  = urlBase + 'building/',
+    urlLeases     = urlBase + 'lease/';
+  
+  
+  
   this.buildings = [
             {
               "id": 1,
@@ -50,10 +54,27 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
               "latitude": 45.03,
               "longitude": -73.103
             }
-          ];
+  ];
 
-  this.getAll = function() {
-    return this.buildings;
+  this.getBuildings = function(portfolioId) {
+    var params = portfolioId ?  { portfolio: portfolioId } : {};
+    return $http.get(urlBuildings, params).then(function(response) {
+      return response;
+    });
+  };
+  
+  this.getPortfolios = function(propertyId) {
+    var params = propertyId ? { propertyId: propertyId } : {};
+    return $http.get(urlPortfolios, params).then(function(response){
+      return response;
+    })
+  };
+  
+  this.getLeases = function(buildingId) {
+    var params = buildingId ? { buildingId : buildingId } : {};
+    return $http.get(urlLeases, params).then(function(response){
+      return response;
+    });
   };
 
   this.getUsageTypes = function() {
