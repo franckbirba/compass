@@ -1,5 +1,5 @@
 'use strict';
-angular.module('compassApp').controller('ObservatoryController', ['$scope', 'buildingService', function($scope, buildingService){
+angular.module('compassApp').controller('ObservatoryController', ['$scope', 'buildingService', 'Geocoder', function($scope, buildingService, Geocoder){
   var observatory = this;
   this.portfolios = [];
   this.buildings = [];

@@ -9,7 +9,8 @@ angular.module('compassApp', [
   'ui.bootstrap',
   'xeditable',
   'tableSort',
-  'google-maps'
+  'google-maps',
+  'geocoder'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
