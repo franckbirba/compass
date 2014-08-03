@@ -9,8 +9,7 @@ angular.module('compassApp', [
   'ui.bootstrap',
   'xeditable',
   'tableSort',
-  'google-maps',
-  'color-picker'
+  'google-maps'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
