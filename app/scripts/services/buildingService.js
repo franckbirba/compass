@@ -10,50 +10,8 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
     urlPortfolios = urlBase + 'portfolio/',
     urlBuildings  = urlBase + 'building/',
     urlLeases     = urlBase + 'lease/';
-  
 
-  window.testBuildings = this.buildings = [
-            {
-              "id": 1,
-              "name": "Bâtiment 1",
-              "usage": "A",
-              "address": "whatever street",
-              "latitude": 45,
-              "longitude": -73
-            },
-            {
-              "id": 2,
-              "name": "Bâtiment 2",
-              "usage": "E",
-              "address": "whatever street",
-              "latitude": 45.23,
-              "longitude": -73.123
-            },
-            {
-              "id": 3,
-              "name": "Bâtiment 3",
-              "usage": "B",
-              "address": "whatever street",
-              "latitude": 45.34,
-              "longitude": -73.023
-            },
-            {
-              "id": 4,
-              "name": "Bâtiment 4",
-              "usage": "C",
-              "address": "whatever street",
-              "latitude": 45.13,
-              "longitude": -73.123
-            },
-            {
-              "id": 5,
-              "name": "Bâtiment 5",
-              "usage": "D",
-              "address": "whatever street",
-              "latitude": 45.03,
-              "longitude": -73.103
-            }
-  ];
+  this.buildings = [];
 
   this.getBuildings = function(portfolioId) {
     var params = portfolioId ?  { portfolio: portfolioId } : {};
