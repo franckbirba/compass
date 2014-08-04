@@ -11,7 +11,7 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', 'bui
   };
   
   $scope.geocoder = Geocoder;
-Geocoder.geocodeAddress('21, rue Godot de Mauroy, Paris, France').then(function(){console.log(arguments)})
+
   var observatory = this;
   this.portfolios = [];
   this.buildings = [];
