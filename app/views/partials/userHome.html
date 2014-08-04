@@ -62,7 +62,7 @@ function exampleData() {
 }
 </script>
 <div compassnav=""></div>
-<div class="wrapper">
+<div class="wrapper" ng-controller="ObservatoryController as observatory">
   <!-- MAIN CONTAINER -->
   <div class="container-fluid" ng-controller="UserCtrl">
     <!-- <h3 class="glyphicon glyphicon-user">{{User.name}}</h3> -->
@@ -80,14 +80,7 @@ function exampleData() {
           <div class="tab-content">
             <div class="tab-pane active" id="portfolio">
               <ul class="list-group" style="height:200px;overflow-y:scroll;">
-                <li class="list-group-item"><a class="btn" data-toggle="modal" data-target="#myModal" href="">Portefeuille 1</a></li>
-                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 2</a></li>
-                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 3</a></li>
-                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 4</a></li>
-                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 5</a></li>
-                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 6</a></li>
-                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 7</a></li>
-                <li class="list-group-item"><a data-toggle="modal" data-target="#myModal" class="btn" href="">Portefeuille 8</a></li>
+                <li class="list-group-item" ng-repeat="portfolio in observatory.portfolios"><a class="btn" data-toggle="modal" data-target="#myModal" href="">{{portfolio.name}}</a></li>
               </ul>
               <div>
                 <button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
@@ -97,14 +90,7 @@ function exampleData() {
 
             <div class="tab-pane" id="building">
               <ul class="list-group" style="height:200px;overflow-y:scroll;">
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 1</a></li>
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 2</a></li>
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 3</a></li>
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 4</a></li>
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 5</a></li>
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 6</a></li>
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 7</a></li>
-                <li class="list-group-item"><a class="btn" href="/buildingDetail">Bâtiment 8</a></li>
+                <li class="list-group-item" ng-repeat="building in observatory.buildings"><a class="btn" href="/buildingDetail">{{building.name}}</a></li>
               </ul>
               <div>
                 <a role="button" href="/building" class=" btn btn-primary glyphicon glyphicon-plus btn btn-xs btn-primary">Créer un bâtiment</a>
@@ -113,7 +99,7 @@ function exampleData() {
           </div>
         </div>
       </div>
-      <div class="col-md-8" ng-controller="ObservatoryController as observatory">
+      <div class="col-md-8">
           <div class="observatory">
             <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
             <select class="selectpicker">
@@ -123,7 +109,7 @@ function exampleData() {
             </select>
             <!-- GOOGLE MAP -->
             <google-map center="map.center" options='{styles:[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]}' draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
-              <markers models="observatory.buildings" coords="'self'" labelContent="'name'" showWindow="true" click="observatory.markerClick">
+              <markers models="observatory.buildings" coords="'position'" labelContent="'name'" showWindow="true" click="observatory.markerClick">
                 <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
                     <div>
                         <p>YO!</p>

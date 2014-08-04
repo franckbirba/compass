@@ -11,9 +11,8 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
     urlBuildings  = urlBase + 'building/',
     urlLeases     = urlBase + 'lease/';
   
-  
-  
-  this.buildings = [
+
+  window.testBuildings = this.buildings = [
             {
               "id": 1,
               "name": "Bâtiment 1",
