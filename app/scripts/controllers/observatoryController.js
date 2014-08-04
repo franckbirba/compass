@@ -5,7 +5,6 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', 'bui
   this.buildings = [];
   this.leases = [];
   
-  
   // load everything without special business logic
   
   buildingService.getPortfolios().then(function(response){
