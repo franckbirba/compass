@@ -1,15 +1,16 @@
 'use strict';
-angular.module('compassApp').controller('ObservatoryController', ['$scope', 'buildingService', 'Geocoder', function($scope, buildingService, Geocoder){
-  
+angular.module('compassApp').controller('ObservatoryController', ['$scope', '$timeout', 'buildingService', 'Geocoder',
+  function($scope, $timeout, buildingService, Geocoder){
+
   // map
   $scope.map = {
       center: {
           latitude: 48.8715008,
           longitude: 2.3268878999999743
       },
-      zoom: 14
+      zoom: 10
   };
-  
+
   $scope.geocoder = Geocoder;
 
   var observatory = this;
@@ -55,9 +56,47 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', 'bui
     ]
   }
   ];
-  
+
+  // choose zoom and center for google map according to visible buildings
+  $scope.chooseMapPositioningAndZoom = function(coordinates) {
+    var lat = 0.00
+      , lng = 0.00
+      , zoom = 10
+      , latMin = 90.00
+      , latMax = 0.00
+      , lngMin = 180.00
+      , lngMax = 0.00
+      , distMax = 0.00;
+
+      if (!coordinates || !coordinates instanceof Array || !coordinates.length) {
+        return;
+      }
+
+      coordinates.forEach(function(c){
+        if (c.latitude > latMax) latMax = c.latitude;
+        if (c.latitude < latMin) latMin = c.latitude;
+        if (c.longitude > lngMax) lngMax = c.longitude;
+        if (c.longitude < lngMin) lngMin = c.longitude;
+      });
+      
+      lat = (latMax + latMin) / 2;
+      lng = (lngMax + lngMin) / 2;
+      
+      // TODO: calculate zoom
+      // we take approximate max distance, which is the distance between 2 edge points
+      //distMax = Math.sqrt( Math.pow( (latMax-latMin), 2 ) + Math.pow( (lngMax - lngMin), 2 ) );
+
+      $scope.map = {
+          center: {
+              latitude: lat,
+              longitude: lng
+          },
+          zoom: zoom
+      };
+      //$scope.$digest();
+  }
   // load everything without special business logic
-  
+
   buildingService.getPortfolios().then(function(response){
     observatory.portfolios = response.data;
   });
@@ -65,7 +104,8 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', 'bui
   buildingService.getBuildings().then(function(response) {
 
     if (response && response.data && response.data instanceof Array) {
-      response.data.forEach(function(b, idx){
+
+      response.data.forEach(function(b, idx, arr){
         var addr = [ b.address, b.city, b.country ].join(',');
 
         $scope.geocoder.geocodeAddress(addr).then(function(result){
@@ -76,6 +116,10 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', 'bui
             "formattedAddress": result.formattedAddress
           };
           observatory.buildings.push(this);
+          // last building is processed - launch map repositioning
+          if (idx === arr.length -1) {
+            $scope.chooseMapPositioningAndZoom( _.pluck(observatory.buildings, 'position') );
+          }
         }.bind(b));
 
       });
