@@ -15,7 +15,10 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
 
   var observatory = this;
   this.portfolios = [];
+  // here store filtered buildings by usage type and/or hqe
   this.buildings = [];
+  // here store all buildings
+  this.buildingsStorage = [];
   this.leases = [];
   this.consumptionChartData = [ 
   {
@@ -93,7 +96,6 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
           },
           zoom: zoom
       };
-      //$scope.$digest();
   }
   // load everything without special business logic
 
@@ -115,6 +117,7 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
             "longitude": parseFloat(result.lng),
             "formattedAddress": result.formattedAddress
           };
+          observatory.buildingsStorage.push(this);
           observatory.buildings.push(this);
           // last building is processed - launch map repositioning
           if (idx === arr.length -1) {
@@ -167,7 +170,30 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
 
   $scope.usageTypes = buildingService.getUsageTypes();
   $scope.currentUsageType = '0';
-
+  $scope.hqeTypes = {
+    'all': 'Touts bâtiments',
+    'hqe': 'Bâtiments HQE',
+    'nohqe': 'Bâtiments NON-HQE'
+  };
+  $scope.hqeType = 'all';
+  $scope.filterBuildingsByHqe = function(type) {
+    switch (type) {
+      case 'hqe': {
+        observatory.buildings = _.where( observatory.buildingsStorage, { 'hqe': true } );
+        break;
+      }
+      case 'nohqe': {
+        observatory.buildings = _.where( observatory.buildingsStorage, { 'hqe': false } );
+        break;
+      }
+      default:
+      case 'all': {
+        observatory.buildings = observatory.buildingsStorage;
+        break;
+      }
+    }
+  };
+  
   this.markerClick = function() {
 
   };

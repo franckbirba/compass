@@ -39,11 +39,9 @@
       <div class="col-md-8">
           <div class="observatory">
             <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
-            <select class="selectpicker">
-              <option>Bâtiments HQE</option>
-              <option>(vide)</option>
-              <option>...</option>
+            <select class="form-control" style="width:400px" ng-change="filterBuildingsByHqe(hqeType)" ng-model="hqeType" ng-options="k as v for (k, v) in hqeTypes">
             </select>
+            <br />
             <!-- GOOGLE MAP -->
             <google-map center="map.center" options='{styles:[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]}' draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
               <markers models="observatory.buildings" coords="'position'" labelContent="'name'" showWindow="true" click="observatory.markerClick">
@@ -139,7 +137,6 @@
 </div><!-- wrapper -->
 
 <script type="text/javascript">
-  $('.selectpicker').selectpicker();
   $('#createtab a').click(function (e) {
     e.preventDefault();
   });
