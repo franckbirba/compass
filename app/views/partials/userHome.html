@@ -49,9 +49,11 @@
               <markers models="observatory.buildings" coords="'position'" labelContent="'name'" showWindow="true" click="observatory.markerClick">
                 <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
                     <div>
-                        <p>YO!</p>
-                        <p ng-non-bindable>This is an info window at {{ latitude | number:4 }}, {{ longitude | number:4 }}!</p>
-                        <p class="muted">Some option 1 | Some option 2 | Some option 3</p>
+                      <p ng-non-bindable style="font-weight: bold; color: blue; font-size: 13px">{{ name }}</p>
+                      <p ng-non-bindable style="color: #999;">{{ position.formattedAddress }}</p>
+                        <p class="muted">
+                          <a href="">Some link 1</a> | <a href="">Some link 2</a> | <a href="">Some link 3</a>
+                        </p>
                     </div>
                 </windows>
               </markers>

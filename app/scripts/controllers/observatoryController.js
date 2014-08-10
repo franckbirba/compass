@@ -125,7 +125,7 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', 'bui
   $scope.currentUsageType = '0';
 
   this.markerClick = function() {
-    //alert('marker clicked');
+
   };
   
   $scope.closeClick = function() {
