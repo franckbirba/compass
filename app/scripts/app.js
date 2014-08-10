@@ -10,7 +10,8 @@ angular.module('compassApp', [
   'xeditable',
   'tableSort',
   'google-maps',
-  'geocoder'
+  'geocoder',
+  'ngCollaPicka'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -140,6 +141,11 @@ angular.module('compassApp', [
       .when('/timeline', { // css
         templateUrl: 'partials/timeline',
         controller: 'ActionCtrl',
+        authenticate: true
+      })
+      .when('/collapicka', { // css
+        templateUrl: 'partials/testCollapicka',
+        controller: 'TestCtrl',
         authenticate: true
       })
       .otherwise({

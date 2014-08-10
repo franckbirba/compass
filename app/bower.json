@@ -19,6 +19,7 @@
     "es5-shim": "~2.1.0",
     "google-code-prettify": "",
     "jquery": "~1.11.0",
+    "jquery-ui": "",
     "json3": "~3.2.6",
     "nvd3": "",
     "sb-admin-v2": "",
