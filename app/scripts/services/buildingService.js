@@ -36,18 +36,19 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
 
   this.getUsageTypes = function() {
     var usageTypes = {
-      '0' : 'Par type d\'usage'
+      '0' : 'Par type d\'usage',
+      'A' : 'A label',
+      'B' : 'B label',
+      'C' : 'C label',
+      'D' : 'D label',
+      'E' : 'E label',
+      'F' : 'F label',
+      'G' : 'G label',
+      'H' : 'H label'
     };
-
-    for (var i=0, l=this.buildings.length; i<l; i++) {
-      usageTypes[this.buildings[i].usage] = usageTypes[this.buildings[i].usage] || this.buildings[i].usage + ' label';
-    }
 
     return usageTypes;
   };
-  
-  this.getByUsageType = function(type) {
-    
-  }
+
 
 }]);

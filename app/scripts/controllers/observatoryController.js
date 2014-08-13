@@ -14,16 +14,42 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
   $scope.geocoder = Geocoder;
 
   var observatory = this;
-  this.portfolios = [];
+  observatory.portfolios = [];
   // here store filtered buildings by usage type and/or hqe
-  this.buildings = [];
+  observatory.buildings = [];
   // here store all buildings
-  this.buildingsStorage = [];
-  this.leases = [];
-  this.consumptionChartData = [ 
-  {
-    key: "Cumulative Return",
-    values: [
+  observatory.buildingsStorage = [];
+  observatory.buildingsStorage.getById = function(id) {
+    var item = null;
+    for (var i=0, l=this.length; i<l; i++) {
+      if (this[i]._id === id) {
+        item = this[i];
+        break;
+      }
+    }
+    return item;
+  }
+  observatory.buildingsStorage.filterByGrade = function(grade) {
+    if (grade === '0') {
+      return observatory.buildingsStorage;
+    }
+    var items = [];
+    for (var i=0, l=this.length; i<l; i++) {
+      if (this[i].consumptionGrade === grade) {
+        items.push(this[i]);
+      }
+    }
+    return items;
+  }
+  // store leases
+  observatory.leases = [];
+  // store usage types
+  $scope.usageTypes = buildingService.getUsageTypes();
+  $scope.currentUsageType = '0';
+  $scope.filterByUsageType = function(newType) {
+    observatory.buildings = observatory.buildingsStorage.filterByGrade(newType);
+  };
+  observatory.consumptionChartDataDefaults = [
     { 
       "label" : "A Label",
       "value" : 0
@@ -56,7 +82,11 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
       "label" : "H Label",
       "value" : 0
     }
-    ]
+    ];
+  observatory.consumptionChartData = [ 
+  {
+    key: "Cumulative Return",
+    values: observatory.consumptionChartDataDefaults
   }
   ];
 
@@ -128,48 +158,51 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
       });
     }
 
-  });
+    buildingService.getLeases().then(function(response){
+      observatory.leases = response.data;
 
-  buildingService.getLeases().then(function(response){
-    observatory.leases = response.data;
-
-    var lease, label, chartBlock;
+      var lease, label, chartBlock, building;
     
-    for (var i=0, l=observatory.leases.length; i<l; i++) {
-      lease = observatory.leases[i];
-      label = lease.consumptionGrade;
-      for (var k=0, l2 = observatory.consumptionChartData[0].values.length; k<l2; k++) {
-        chartBlock = observatory.consumptionChartData[0].values[k];
-        if (chartBlock.label.indexOf(label) !== -1) {
-          chartBlock.value += !isNaN( parseFloat(lease.consumptionValue) ) ? parseFloat(lease.consumptionValue) : 0;
-          continue;
-        }
+      for (var i=0, l=observatory.leases.length; i<l; i++) {
+        lease = observatory.leases[i];
+        label = lease.consumptionGrade;
+        building = observatory.buildingsStorage.getById(lease.building);
+        building.consumptionValue = building.consumptionValue || 0;
+        building.consumptionValue += parseFloat(lease.consumptionValue);
       }
-    }
+      
+      observatory.buildingsStorage.forEach(function(b){
+        for (var k=0, l2 = observatory.consumptionChartData[0].values.length; k<l2; k++) {
+          chartBlock = observatory.consumptionChartData[0].values[k];
+          if (chartBlock.label.indexOf(b.consumptionGrade) !== -1) {
+            chartBlock.value += !isNaN( parseFloat(b.consumptionValue) ) ? parseFloat(b.consumptionValue) : 0;
+          }
+        }
+      });
 
-    nv.addGraph(function() {
-      var chart = nv.models.discreteBarChart()
-        .x(function(d) { return d.label })    //Specify the data accessors.
-        .y(function(d) { return d.value })
-        .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
-        .tooltips(false)        //Don't show tooltips
-        .showValues(true)       //...instead, show the bar value right on top of each bar.
-        .transitionDuration(350)
-        ;
+      nv.addGraph(function() {
+        var chart = nv.models.discreteBarChart()
+          .x(function(d) { return d.label })    //Specify the data accessors.
+          .y(function(d) { return d.value })
+          .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+          .tooltips(false)        //Don't show tooltips
+          .showValues(true)       //...instead, show the bar value right on top of each bar.
+          .transitionDuration(350)
+          ;
 
-      d3.select('#chart svg')
-        .datum(observatory.consumptionChartData)
-        .call(chart);
+        d3.select('#chart svg')
+          .datum(observatory.consumptionChartData)
+          .call(chart);
 
-      nv.utils.windowResize(chart.update);
+        nv.utils.windowResize(chart.update);
 
-      return chart;
+        return chart;
+      });
+
     });
-    
+
   });
 
-  $scope.usageTypes = buildingService.getUsageTypes();
-  $scope.currentUsageType = '0';
   $scope.hqeTypes = {
     'all': 'Touts bâtiments',
     'hqe': 'Bâtiments HQE',
@@ -193,11 +226,7 @@ angular.module('compassApp').controller('ObservatoryController', ['$scope', '$ti
       }
     }
   };
-  
-  this.markerClick = function() {
 
-  };
-  
   $scope.closeClick = function() {
     
   }
