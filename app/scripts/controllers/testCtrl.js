@@ -4,4 +4,6 @@ angular.module('compassApp')
     $scope.$watch('position', function(newVal, oldVal){
       console.log('position now is ' + newVal);
     });
+    
+    $scope.showPlanifiedActions = 0;
 });

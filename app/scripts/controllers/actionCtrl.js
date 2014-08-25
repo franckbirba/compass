@@ -30,7 +30,8 @@ angular.module('compassApp')
         tri: 23,
         done: true,
         id: 1,
-        type: 1
+        type: 1,
+        isPlanified: false
       },
       {
         name: 'action 2',
@@ -42,7 +43,8 @@ angular.module('compassApp')
         tri: 23,
         done: true,
         id: 2,
-        type: 2
+        type: 2,
+        isPlanified: true
       },
       {
         name: 'action 3',
@@ -54,7 +56,8 @@ angular.module('compassApp')
         tri: 23,
         done: true,
         id: 3,
-        type: 3
+        type: 3,
+        isPlanified: false
       },
       {
         name: 'action 4',
@@ -66,7 +69,8 @@ angular.module('compassApp')
         tri: 23,
         done: false,
         id: 4,
-        type: 4
+        type: 4,
+        isPlanified: true
       },
       {
         name: 'action 4',
@@ -78,7 +82,8 @@ angular.module('compassApp')
         tri: 23,
         done: false,
         id: 5,
-        type: 4
+        type: 4,
+        isPlanified: true
       },
       {
         name: 'action 5',
@@ -90,7 +95,8 @@ angular.module('compassApp')
         tri: 23,
         done: false,
         id: 6,
-        type: 5
+        type: 5,
+        isPlanified: true
       },
       {
         name: 'action 5',
@@ -102,7 +108,8 @@ angular.module('compassApp')
         tri: 23,
         done: false,
         id: 7,
-        type: 5
+        type: 5,
+        isPlanified: false
       },
       {
         name: 'action 6',
@@ -114,14 +121,37 @@ angular.module('compassApp')
         tri: 23,
         done: true,
         id: 8,
-        type: 6
+        type: 6,
+        isPlanified: false
       }
     ];
+    // showPlanifiedActions - filtering actions by planified/non-planified
+    // 0 - all, 1 - planified, -1 - non planified
+    $scope.showPlanifiedActions = 0;
+    $scope.LINKEDACTIONS.getByIsPlanified = function(isPlanified) {
+      var filtered = []
+        , filterBy;
+      if ( typeof isPlanified === 'undefined' || isPlanified === 0) {
+        filtered = this;
+      } else {
+        filterBy = !!(isPlanified === 1);
+        this.forEach(function(a){
+          if (a.isPlanified === filterBy) {
+            filtered.push(a);
+          }
+        });
+      }
+      return filtered;
+    }
+    $scope.linkedactionsFiltered = $scope.LINKEDACTIONS.getByIsPlanified();
 
+    $scope.$watch('showPlanifiedActions', function(newVal){
+      $scope.linkedactionsFiltered = $scope.LINKEDACTIONS.getByIsPlanified(newVal);
+    });
 
     $scope.stock={};
-    
-    $scope.$watch($scope.LINKEDACTIONS, function(){      
+
+    $scope.$watch($scope.LINKEDACTIONS, function(){
       $scope.genStock();
     })
 
@@ -140,8 +170,7 @@ angular.module('compassApp')
             $scope.stock[tmpAction.date][tmpAction.type].push(tmpAction);
           }
     };
-    //$scope.genStock();
-    
+
    $scope.ACTIONS = [
     {
       name: "action 1"
