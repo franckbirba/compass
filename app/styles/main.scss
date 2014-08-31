@@ -546,6 +546,7 @@ a:hover > .text {
     overflow-y: scroll;
     overflow-x: hidden;
     border: 1px solid #efefef;
+    position: relative;
 }
 
 .fullscreenButton {
@@ -764,7 +765,23 @@ GMAP
     border: solid 1px red;
 }
 [ng-drag].dragging {
-    opacity: 0.5;
+    opacity: 0.8;
+}
+[ng-drag] {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+[ng-drag].timeline-action-tr {
+    background: rgba(255, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    cursor: move;
+}
+[ng-drag].timeline-action-tr:hover {
+  color: black;
 }
 /*
 * {
