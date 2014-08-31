@@ -1,17 +1,21 @@
 angular.module('compassApp').directive('trim', function ($rootScope) {
-	return {
+  return {
         restrict: 'A',
         scope:{
-        	model: '='
+          model: '='
         },
         templateUrl:'/views/directives/trim.html',
         controller: ['$scope', '$http', '$rootScope', 'Auth', 'MODELS', '$route',function($scope, $http, $rootScope, Auth, MODELS, $route){
-        	$scope.pictos = $scope.$parent.tmpTrim.pictos;
-        	$scope.trim = $scope.$parent.tmpTrim;
-        	$scope.$watch($scope.$parent.tmpTrim.pictos, function(newValue, oldValue){
-        		$scope.pictos = $scope.$parent.tmpTrim.pictos;
-        	});
-
+          $scope.actions = $scope.$parent.tmpTrim.actions;
+          $scope.trim = $scope.$parent.tmpTrim;
+          $scope.$watch($scope.$parent.tmpTrim.actions, function(newValue, oldValue){
+            $scope.actions = $scope.$parent.tmpTrim.actions;
+          });
+          $scope.onDragComplete = function(index, data, evt) {
+            // TODO : do it through scopes
+            window.sortedActionLiveIndex = index;
+            console.log('trim drag complete ', index, data, evt);
+          }
         }]
     }
 });
