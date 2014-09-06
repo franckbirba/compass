@@ -428,7 +428,21 @@ module.exports = function (grunt) {
     // concat: {
     //   dist: {}
     // },
-
+    exec: {
+      'reset-mongo': {
+        command: function() {
+          var collections = ['building', 'action', 'lease', 'portfolio', 'property']
+          , cmd = [];
+          collections.forEach(function(collection){
+            cmd.push('mongoimport -h localhost -d tornado -c '+collection+' --drop test-data/'+collection+'.json');
+          });
+          return cmd.join(';');
+        },
+        stdout: true,
+        stderr: true
+      }
+    },
+    
     // Test settings
     karma: {
       unit: {
@@ -547,4 +561,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('reset-mongo', [ 'exec:reset-mongo' ]);
 };
