@@ -18,9 +18,36 @@
                 return a.building === buildingId;
               })
             : vm.actions.data
+        },
+        getByIsPlanified: function(isPlanified) {
+          var actions = vm.actions.getByBuildingId(vm.currentBuilding)
+          , filtered = []
+          , filterBy;
+
+          if ( typeof isPlanified === 'undefined' || isPlanified === 0) {
+            filtered = actions;
+          } else {
+            filtered = _.filter(actions, function(a){
+              return isPlanified === 1 ? datas.length : !datas.length;
+            });
+          }
+          return filtered;
         }
       };
-      vm.buildings = [];
+      // mini-model buildings
+      vm.buildings = {
+        data: [],
+        names: {},
+        resolveNameById: function(id) {
+          if (!vm.buildings.names[id]) {
+            var srch = _.find(vm.buildings.data, function(b) {
+              return b._id === id;
+            });
+            vm.buildings.names[id] = srch ? srch.name : 'n.a.';
+          }
+          return vm.buildings.names[id];
+        }
+      };
 
       vm.currentBuilding = -1;
       vm.onBuildingChange = function(buildingId) {
@@ -44,13 +71,12 @@
       activate();
 
       function activate() {
-        getActions().then(function(){
-          console.info('Actions Loaded');
-          refreshPage();
-        });
-
         getBuildings().then(function(){
           console.info('Buildings loaded');
+          getActions().then(function(){
+            console.info('Actions Loaded');
+            refreshPage();
+          });
         });
       }
 
@@ -58,6 +84,9 @@
         return actionService.getActions()
             .then(function(data){
               vm.actions.data = data;
+              for (var i=0, l=vm.actions.data.length; i<l; i++) {
+                vm.actions.data[i].buildingName = vm.buildings.resolveNameById( vm.actions.data[i].building );
+              }
               return vm.actions;
             });
       }
@@ -65,7 +94,7 @@
       function getBuildings() {
         return buildingService.getBuildings()
           .then(function(response){
-            vm.buildings = response.data;
+            vm.buildings.data = response.data;
             return vm.buildings;
           });
       }
