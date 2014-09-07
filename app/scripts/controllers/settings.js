@@ -45,9 +45,14 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, $rootS
   });
   $scope.indices.cols.unshift({name:"indice"});
 
-  $scope.indices.action = function(inserted){
+  $scope.indices.add = function(inserted){
     $scope.indices.rows.push(inserted);
   };
+
+  $scope.indices.remove = function(index){
+    $scope.indices.rows.splice(index, 1);
+  };
+
 /*
   $scope.getCls = function(row, cellname) {
     if ($scope.states[row[cellname]])
@@ -91,38 +96,20 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, $rootS
                 });
             };
 
-            // remove user
-            $scope.removeData = function(index) {
-
-                var data = $scope.ngModel.rows[index];
-                console.log(data);
-                delete data.$$hashKey;
-                if(!data._id) {
-                    $scope.ngModel.rows.splice(index, 1);
-                    return;
-                }
-              
-                $http.delete('/crud/'+$scope.ngModel.url+'/', {data:data,headers:{"Content-Type":"application/json"}}).success(function(){
-                    //$scope.loadData();
-                    //console.log("SUCCESS");
-                    $scope.ngModel.rows.splice(index, 1);
-                 //   $rootScope.updateAllModels();
-                });
-            };
-
-            $scope.showLink = function(type, row) {
-            //    console.log("LINK %O, %O", type, row);
-                var selected = [];
-				var models = $rootScope.models;
-                angular.forEach(models[type.link].rows, function(s) {
-                    //console.log(s._id, $scope.ngModel.rows);
-                    //console.log(s, type.name, row[type.name]);
-                    if (row[type.name] && row[type.name].indexOf(s._id) >= 0) {
-                        selected.push(s.name);
-                    }
-                });
-                return selected.length ? selected.join(', ') : 'Not set';
-            };
-
+*/
+/*
+     $scope.showLink = function(type, row) {
+       //    console.log("LINK %O, %O", type, row);
+       var selected = [];
+			 var models = $rootScope.models;
+       angular.forEach(models[type.link].rows, function(s) {
+         //console.log(s._id, $scope.ngModel.rows);
+         //console.log(s, type.name, row[type.name]);
+         if (row[type.name] && row[type.name].indexOf(s._id) >= 0) {
+           selected.push(s.name);
+         }
+       });
+       return selected.length ? selected.join(', ') : 'Not set';
+     };
 */
   });
