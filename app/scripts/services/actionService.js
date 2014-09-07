@@ -14,12 +14,12 @@
     
     function getActions(buildingId) {
       var params = buildingId ? { building: buildingId } : {};
-      return $http.get('/crud/action', params)
+      return $http.get('/crud/action/', params)
             .then(getActionsComplete)
             .catch(getActionsFailed);
 
       function getActionsComplete(response) {
-        return response;
+        return response.data;
       }
 
       function getActionsFailed(error) {

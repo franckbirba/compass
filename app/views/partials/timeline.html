@@ -29,31 +29,31 @@ body {
   <div class="build-title">Scénario 1</div>
 
   <div class="container">
-    <div>
+    <div class="row">
       <form role="form" class="form-horizontal" >
               <div class="form-group">
                 <div class="input-group" style="float:left;width:25%;">
                   <label for="portfolio" class="control-label">Nombre d'actions</label>
                   <div >
-                    <input class="form-control" placeholder="54 actions"  type="text" disabled>
+                    <input class="form-control" value="{{ Action.overallStats.totalActions }}"  type="text" disabled>
                   </div>
                 </div>
                 <div class="input-group" style="float:left;width:25%;">
                   <label for="portfolio" class="control-label">Coût total</label>
                   <div >
-                    <input class="form-control" placeholder="1 950000€"  type="text" disabled>
+                    <input class="form-control" value="{{ Action.overallStats.totalCost | currency : '€' }}" type="text" disabled>
                   </div>
                 </div>
                 <div class="input-group" style="float:left;width:25%;">
                   <label for="portfolio" class="control-label">TRI global:</label>
                   <div >
-                    <input class="form-control" placeholder=""  type="text" disabled>
+                    <input class="form-control" value="{{ Action.overallStats.totalTRI }}" type="text" disabled>
                   </div>
                 </div>
                 <div class="input-group" style="float:left;width:25%;">
                   <label for="portfolio" class="control-label">Economie d'énergie</label>
                   <div >
-                    <input class="form-control" placeholder="€"  type="text" disabled>
+                    <input class="form-control" value="{{ Action.overallStats.totalEconomie }}" type="text" disabled>
                   </div>
                 </div>
             </div>
@@ -122,7 +122,17 @@ body {
           </div>
         </div>
       </div>
-      <div class="col-sm-4 blocright ">
+      <div class="col-sm-4 blocright">
+        <div class="row" style="padding:5px">
+          <div class="col-sm-6">
+            <h5>Répartition des actions</h5>
+          </div>
+          <div class="col-sm-6">
+            <select class="form-control" style="width: 100%" ng-model="Action.currentBuilding" ng-change="Action.onBuildingChange(Action.currentBuilding)" ng-options="b._id as b.name for b in Action.buildings">
+              <option value="">Tous les Bâtiments</option>
+            </select>
+          </div>
+        </div>
         <div timeline></div>
       </div>
     </div>

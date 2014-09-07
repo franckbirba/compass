@@ -1,22 +1,44 @@
-'use strict';
+(function(){
+  'use strict';
 
-angular.module('compassApp').service('timelineCalculationService', [function(){
-  var self = this;
+angular
+  .module('compassApp')
+  .service('timelineCalculationService', calcService);
 
-  self.overallCostTRIEconomie = function(timelineData) {
+  function calcService(){
+
     return {
-      totalActions: 0,
-      totalCost: 0,
-      totalTRI: 0,
-      totalEconomie: 0
+      overallCostTRIEconomie: overallCostTRIEconomie,
+      generateGraphConsumption: generateGraphConsumption,
+      generateGraphCost: generateGraphCost
     };
-  };
 
-  self.generateGraphConsumption = function(timelineData) {
-    return [];
-  };
+    // TODO: calculate with right formulas
+    function overallCostTRIEconomie(actions) {
+      var actions = actions || []
+        , values = {
+          totalActions: actions.length,
+          totalCost: 0,
+          totalTRI: 0,
+          totalEconomie: 0
+        };
 
-  self.generateGraphCost = function(timelineData) {
-    return [];
-  };
-}]);
+      actions.forEach(function(a){
+        values.totalCost += !isNaN( parseFloat(a.cost) ) ? parseFloat(a.cost) : 0;
+        values.totalTRI += !isNaN( parseFloat(a.tri) ) ? parseFloat(a.tri) : 0;
+        values.totalEconomie += 15;// random number //!isNaN( parseFloat(a.investmentRatio) )
+      });
+
+      return values;
+    };
+
+    function generateGraphConsumption(actions) {
+      return [];
+    };
+
+    function generateGraphCost(actions) {
+      return [];
+    };
+  }
+  
+}());

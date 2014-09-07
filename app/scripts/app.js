@@ -141,6 +141,7 @@ angular.module('compassApp', [
       .when('/timeline', { // css
         templateUrl: 'partials/timeline',
         controller: 'ActionCtrl',
+        controllerAs: 'Action',
         authenticate: true
       })
       .when('/collapicka', { // css

@@ -4,29 +4,74 @@
     .module('compassApp')
     .controller('ActionCtrl', ActionCtrl);
 
-  ActionCtrl.$inject = ['$scope', 'Auth', 'actionService'];
+  ActionCtrl.$inject = ['$scope', 'Auth', 'actionService', 'buildingService', 'timelineCalculationService'];
 
-  function ActionCtrl($scope, Auth, actionService) {
+  function ActionCtrl($scope, Auth, actionService, buildingService, timelineCalculationService) {
 
       var vm = this;
-      vm.actions = [];
- 
+      // mini-model actions
+      vm.actions = {
+        data: [],
+        getByBuildingId: function(buildingId) {
+          return buildingId && buildingId !== -1
+            ? _.filter(vm.actions.data, function(a) {
+                return a.building === buildingId;
+              })
+            : vm.actions.data
+        }
+      };
+      vm.buildings = [];
+
+      vm.currentBuilding = -1;
+      vm.onBuildingChange = function(buildingId) {
+        vm.currentBuilding = buildingId;
+      }
+
+      vm.overallStats = timelineCalculationService.overallCostTRIEconomie();
+      // refresh page on building change
+      // instead of million watchers
+      // update overall stats
+      // graphs
+      function refreshPage() {
+        vm.overallStats = timelineCalculationService.overallCostTRIEconomie(vm.actions.getByBuildingId( vm.currentBuilding ));
+      }
+      $scope.$watch(function() { 
+        return vm.currentBuilding;
+      }, function(newVal, oldVal){
+        refreshPage();
+      });
+      // load timeline page
       activate();
 
       function activate() {
-        return getActions().then(function(){
+        getActions().then(function(){
           console.info('Actions Loaded');
+          refreshPage();
+        });
+
+        getBuildings().then(function(){
+          console.info('Buildings loaded');
         });
       }
-      
+
       function getActions() {
         return actionService.getActions()
             .then(function(data){
-              vm.actions = data;
+              vm.actions.data = data;
               return vm.actions;
             });
       }
 
+      function getBuildings() {
+        return buildingService.getBuildings()
+          .then(function(response){
+            vm.buildings = response.data;
+            return vm.buildings;
+          });
+      }
+      
+
+      // OLD CODE
       $scope.droppedObjects = [];
 
       $scope.getPicto = function(index){
@@ -177,153 +222,6 @@
 
       $scope.stock={};
 
-      $scope.$watch($scope.LINKEDACTIONS, function(){
-        $scope.genStock();
-      })
-
-      $scope.genStock = function() {
-        $scope.stock={};
-        for(action in $scope.LINKEDACTIONS) {
-            var tmpAction = $scope.LINKEDACTIONS[action];
-
-            if (!$scope.stock[tmpAction.date]) {
-              $scope.stock[tmpAction.date] = {};
-            }
-
-            if(!$scope.stock[tmpAction.date][tmpAction.type]){
-              $scope.stock[tmpAction.date][tmpAction.type] = [];
-            }
-              $scope.stock[tmpAction.date][tmpAction.type].push(tmpAction);
-            }
-      };
-
-     $scope.ACTIONS = [
-      {
-        name: "action 1"
-      },
-      {
-        name: "action 2"
-      },
-      {
-        name: "action 3"
-      },
-      {
-        name: "action 4"
-      },
-      {
-        name: "action 5"
-      },
-      {
-        name: "action 1"
-      },
-      {
-        name: "action 2"
-      },
-      {
-        name: "action 3"
-      },
-      {
-        name: "action 4"
-      },
-      {
-        name: "action 5"
-      },
-      {
-        name: "action 1"
-      },
-      {
-        name: "action 2"
-      },
-      {
-        name: "action 3"
-      },
-      {
-        name: "action 4"
-      },
-      {
-        name: "action 5"
-      },
-      {
-        name: "action 1"
-      },
-      {
-        name: "action 2"
-      },
-      {
-        name: "action 3"
-      },
-      {
-        name: "action 4"
-      },
-      {
-        name: "action 5"
-      }
-    ];
-
-    $scope.BUILDINGS = [
-      {
-        name: "building 1"
-      },
-      {
-        name: "building 2"
-      },
-      {
-        name: "building 3"
-      },
-      {
-        name: "building 4"
-      },
-      {
-        name: "building 5"
-      },
-      {
-        name: "building 1"
-      },
-      {
-        name: "building 2"
-      },
-      {
-        name: "building 3"
-      },
-      {
-        name: "building 4"
-      },
-      {
-        name: "building 5"
-      },
-      {
-        name: "building 1"
-      },
-      {
-        name: "building 2"
-      },
-      {
-        name: "building 3"
-      },
-      {
-        name: "building 4"
-      },
-      {
-        name: "building 5"
-      },
-      {
-        name: "building 1"
-      },
-      {
-        name: "building 2"
-      },
-      {
-        name: "building 3"
-      },
-      {
-        name: "building 4"
-      },
-      {
-        name: "building 5"
-      }
-    ];
-
- 
   }
   
 }());
