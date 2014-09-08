@@ -12,12 +12,12 @@
         </div>
         <div class="panel-body table-responsive" style="overflow:scroll;">
             <!-- <form editable-form name="{{title}}"> -->
-            <table class="table table-bordered table-hover table-condensed tablesorter" ts-wrapper>
+            <table class="table table-bordered table-hover table-condensed tablesorter">
               <thead>
                 <tr>
-                  <th ts-criteria="{{cols.name}}" ng-repeat="col in cols">
+                  <th ng-repeat="col in cols" ng-click="$parent.reverse = $parent.predicate == col.name && !($parent.reverse); $parent.predicate = col.name">
                     {{col.name}}
-                    <i class="fa fa-sort"></i>
+                    <i class="fa {{getSortIcon(col.name)}}"></i>
                   </th>
                   <th class="title-edit" style="position: absolute; right: -55px;">
                     Edit
@@ -25,7 +25,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="line" ng-repeat="row in rows" ts-repeat >
+                <tr class="line" ng-repeat="row in rows | orderBy:stringifyPredicate(predicate):reverse">
                   <td ng-repeat="cell in cols" style="min-height: 31px;">
                     <span ng-if="!cell.type"  editable-text="row[cell.name]" e-name="{{cell.name}}" e-form="rowform">
                       {{row[cell.name]}}

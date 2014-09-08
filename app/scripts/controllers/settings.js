@@ -37,6 +37,9 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, $rootS
     
   $rootScope.models = MODELS;
   $scope.models = $rootScope.models;
+
+
+
 	$scope.indices = $scope.models['indices'];
 
   var currentYear = new Date().getFullYear();
@@ -52,6 +55,30 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, $rootS
   $scope.indices.remove = function(index){
     $scope.indices.rows.splice(index, 1);
   };
+
+
+
+	$scope.fluids = $scope.models['fluids'];
+
+  var currentYear = new Date().getFullYear();
+  $scope.fluids.cols = Array.apply(null, {length: 30}).map(function(curr, index){
+    return ({name: currentYear + index});
+  });
+  $scope.fluids.cols.unshift({name:"fluids"});
+
+  $scope.fluids.add = function(inserted){
+    $scope.fluids.rows.push(inserted);
+  };
+
+  $scope.fluids.remove = function(index){
+    $scope.fluids.rows.splice(index, 1);
+  };
+
+
+
+	$scope.fluidType = $scope.models['fluidType'];
+  $scope.fluidType.cols = [{name:"FluidType"}];
+
 
 /*
   $scope.getCls = function(row, cellname) {
