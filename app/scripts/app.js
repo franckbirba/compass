@@ -11,7 +11,8 @@ angular.module('compassApp', [
   'tableSort',
   'google-maps',
   'geocoder',
-  'ngCollaPicka'
+  'ngCollaPicka',
+
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     // change to true to turn on authentification
@@ -34,7 +35,7 @@ angular.module('compassApp', [
         authenticate: auth
       })
       .when('/observatory', { // css
-        templateUrl: 'partials/userHome',
+        templateUrl: 'partials/observatory',
       //  controller: 'MainCtrl',
         authenticate: auth
       })
@@ -57,7 +58,7 @@ angular.module('compassApp', [
         authenticate: auth
       })
       .when('/building', {
-        templateUrl: 'partials/buildingForm',
+        templateUrl: 'partials/buildingFormGen1',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
@@ -183,4 +184,14 @@ angular.module('compassApp', [
         $location.path('/login');
       }
     });
-  });
+  })
+  .filter('capitalizeAdressKeys', function () {
+    return function (input) {
+        if (input === 'cp'){
+          return 'Code Postal';
+        }
+        else {
+          return input.charAt(0).toUpperCase() + input.slice(1);
+        }
+    };
+});

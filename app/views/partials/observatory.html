@@ -1,5 +1,5 @@
 <div compassnav=""></div>
-<div class="wrapper" ng-controller="ObservatoryController as observatory">
+<div class="wrapper" ng-controller="ObservatoryCtrl as observatory">
   <!-- MAIN CONTAINER -->
   <div class="container-fluid" ng-controller="UserCtrl">
     <!-- <h3 class="glyphicon glyphicon-user">{{User.name}}</h3> -->
@@ -7,21 +7,19 @@
       <div class="col-md-4">
         <div class="observatory">
           <ul class="nav nav-tabs" id="createtab">
-            <li class="active">
-              <a href="#portfolio" data-toggle="tab">Portfolio</a>
-            </li>
-            <li>
-              <a href="#building" data-toggle="tab">Bâtiment</a>
-            </li>
+            <li class="active"><a href="#portfolio" data-toggle="tab">Portfolio</a></li>
+            <li><a href="#building" data-toggle="tab">Bâtiment</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="portfolio">
-              <ul class="list-group" style="height:200px;overflow-y:scroll;">
-                <li class="list-group-item" ng-repeat="portfolio in observatory.portfolios"><a class="btn" data-toggle="modal" data-target="#myModal" href="">{{portfolio.name}}</a></li>
+              <ul class="list-group">
+                <li class="list-group-item" ng-repeat="portfolio in portfolios">
+                  <a class="btn" data-toggle="modal" data-target="#myModal" href="">{{portfolio.name}}</a>
+                </li>
               </ul>
               <div>
-                <button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
-                <input type="text" placeholder="Créer un portfolio">
+                <input type="text" ng-model="tmp.name" placeholder="Créer un portfolio">
+                <button class="glyphicon glyphicon-plus btn btn-xs btn-primary" ng-click="portfolioNew()"></button>
               </div>
             </div>
 
@@ -76,7 +74,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Informations du portefeuille</h4>
+          <h4 class="modal-title" id="myModalLabel">Informations du portefeuille: {{portfolio.name}}</h4>
         </div>
         <div class="modal-body">
           <form role="form" class="form-horizontal">
@@ -134,6 +132,8 @@
       </div>
     </div>
   </div> <!-- MODAL -->
+
+
 </div><!-- wrapper -->
 
 <script type="text/javascript">
