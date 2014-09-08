@@ -144,9 +144,12 @@ angular.module('compassApp', [
       .when('/timeline', { // css
         templateUrl: 'partials/timeline',
         controller: 'ActionCtrl',
+<<<<<<< HEAD
+        authenticate: auth
+=======
         controllerAs: 'Action',
         authenticate: true
-
+>>>>>>> upstream/master
       })
       .when('/collapicka', { // css
         templateUrl: 'partials/testCollapicka',
