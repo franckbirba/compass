@@ -34,6 +34,7 @@
           return filtered;
         }
       };
+
       vm.showPlanifiedActions = 0;
       vm.actionsFiltered = vm.actions.getByIsPlanified( vm.showPlanifiedActions );
       $scope.$watch(function(){
@@ -94,6 +95,7 @@
               vm.actions.data = data;
               for (var i=0, l=vm.actions.data.length; i<l; i++) {
                 vm.actions.data[i].buildingName = vm.buildings.resolveNameById( vm.actions.data[i].building );
+                vm.actions.data[i].img = vm.getPicto( !isNaN( parseInt(vm.actions.data[i].type, 10) ) ? parseInt(vm.actions.data[i].type, 10) : 0 );
               }
               return vm.actions;
             });
@@ -106,12 +108,8 @@
             return vm.buildings;
           });
       }
-      
 
-      // OLD CODE
-      $scope.droppedObjects = [];
-
-      $scope.getPicto = function(index){
+      vm.getPicto = function(index){
         var pic = [
             'glyphicon glyphicon-asterisk',
             'glyphicon glyphicon-plus',
@@ -126,6 +124,11 @@
         ];
         return pic[index];
       };
+
+      // OLD CODE
+      $scope.droppedObjects = [];
+
+      
 
       // $scope.LINKEDACTIONS = [
 //         {
