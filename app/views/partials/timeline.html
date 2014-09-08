@@ -94,7 +94,7 @@ body {
                 
               </thead>
               <tbody>
-                <tr class="timeline-action-tr" ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in Action.actions.getByIsPlanified()">
+                <tr class="timeline-action-tr" ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in Action.actionsFiltered">
                   <td>
                     {{action.dates.join(',')}}
                   </td>

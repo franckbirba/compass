@@ -68,6 +68,7 @@
       // graphs
       function refreshPage() {
         vm.overallStats = timelineCalculationService.overallCostTRIEconomie(vm.actions.getByBuildingId( vm.currentBuilding ));
+        vm.actionsFiltered = vm.actions.getByIsPlanified( vm.showPlanifiedActions );
       }
       $scope.$watch(function() { 
         return vm.currentBuilding;
