@@ -1,6 +1,6 @@
 angular.module('compassApp')
-  .service('TornadoApi', function Api(User, $rootScope, Session, Auth, $location, $http, $q) {
-    var url = "crud";
+  .service('TornadoApi', function TornadoApi(User, $rootScope, Session, Auth, $location, $http, $q) {
+    var url = "/crud/";
     return {
       request: function(method, module, data){
         var methodMaps = {

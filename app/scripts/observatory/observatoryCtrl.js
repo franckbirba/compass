@@ -3,25 +3,27 @@ angular.module('observatoryModule')
 .controller('ObservatoryCtrl',
   function ObservatoryCtrl($scope, $timeout, buildingService, Geocoder, observatoryService){
     var db = observatoryService;
-    var Obs = observatoryService.newObservatory();
-
-    $scope.test = function(){
-      db.test().then(function(res){
-        $scope.test_res = res;
-      })
-    };
-
-    $scope.map = db.getMap();
     $scope.geocoder = Geocoder;
-    $scope.portfolios = Obs.getPortfolios();
+
+    // Fetch static values;
+    $scope.values = db.values;
+
+    // Fill scope with clients portfolios
+    $scope.portfolios = db.getPortfolios();
 
     // For adding a new Portfolio to Obs.
     $scope.tmp = {};
     $scope.portfolioNew = function(){
       var params = $scope.tmp;
-      Obs.addPortfolio(params);
+      db.addPortfolio(params);
       $scope.tmp = {};
     }
+
+    $scope.summarykeys = function(index){
+      var port = $scope.portfolios[index]
+      return formBuilder(port.summary);
+
+    };
 
     var observatory = this;
     // observatory.portfolios = [];
@@ -180,7 +182,7 @@ angular.module('observatoryModule')
 
     // });
 
-    $scope.hqeTypes = db.getHqeTypes();
+
     // $scope.hqeType = 'all';
     // $scope.filterBuildingsByHqe = function(type) {
     //   switch (type) {
