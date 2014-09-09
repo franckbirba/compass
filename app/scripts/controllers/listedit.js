@@ -21,7 +21,6 @@ angular.module('compassApp').directive('listedit', function ($rootScope) {
         scope.cols.forEach(function(elem){
           scope.inserted[elem.name] = null;
         });
-        /* todo : arrays insted of objects ? */
         scope.data.add(scope.inserted);
       };
       scope.save = function(data, row){};
@@ -35,7 +34,6 @@ angular.module('compassApp').directive('listedit', function ($rootScope) {
       };
 
       scope.getSortIcon = function(column){
-        console.log(scope.reverse);
         if (column != scope.predicate)
           return ('fa-sort');
         else if (scope.reverse)

@@ -5,6 +5,7 @@ angular.module('compassApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'Config',
   'models',
   'ui.bootstrap',
   'xeditable',

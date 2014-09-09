@@ -1,7 +1,8 @@
-angular.module('compassApp').controller('SettingsCtrl', function ($scope, $rootScope, User, Auth,$http, MODELS) {
+angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, Auth,$http, SETTINGS_CONF, Api) {
 
   $scope.errors = {};
 
+  // WHAT THE FUCK IS THIS ???
   $http.get('/bower_components/sb-admin/js/plugins/metisMenu/jquery.metisMenu.js')
     .success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
@@ -19,6 +20,7 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, $rootS
     }
   );
 
+  // WHAT THE FUCK IS THAT ???
   $scope.changePassword = function(form) {
     $scope.submitted = true;
 
@@ -34,51 +36,43 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, $rootS
         });
     }
   };
-    
-  $rootScope.models = MODELS;
-  $scope.models = $rootScope.models;
 
+  for (prop in SETTINGS_CONF)
+  {
+    if (!SETTINGS_CONF.hasOwnProperty(prop))
+      continue;
+    var section = angular.copy(SETTINGS_CONF[prop]);
 
+    // expanding cols Array if genYears = true;
+    if (section.hasOwnProperty('genYears') &&
+       section.genYears === true)
+    {
+      var currentYear = new Date().getFullYear();
+      var years = Array.apply(null, {length: 30}).map(function(curr, index){
+        return ({name: currentYear + index});
+      });
+      section.cols = section.cols.concat(years);
+      delete section.genYears;
+    }
 
-	$scope.indices = $scope.models['indices'];
+    // expanding rows array with data fetched from persistance API
+    // a l'aide de la prop' "url". 
+    // HERE
+    // HERE
 
-  var currentYear = new Date().getFullYear();
-  $scope.indices.cols = Array.apply(null, {length: 30}).map(function(curr, index){
-    return ({name: currentYear + index});
-  });
-  $scope.indices.cols.unshift({name:"indice"});
+    // expanding section with row manipulation functions.
+    // nota bene : could curry thoses bitches
+    section.add = function(inserted){
+      section.rows.push(inserted);
+    };
 
-  $scope.indices.add = function(inserted){
-    $scope.indices.rows.push(inserted);
-  };
+    section.remove = function(index){
+      section.rows.splice(index, 1);
+    };
 
-  $scope.indices.remove = function(index){
-    $scope.indices.rows.splice(index, 1);
-  };
-
-
-
-	$scope.fluids = $scope.models['fluids'];
-
-  var currentYear = new Date().getFullYear();
-  $scope.fluids.cols = Array.apply(null, {length: 30}).map(function(curr, index){
-    return ({name: currentYear + index});
-  });
-  $scope.fluids.cols.unshift({name:"fluids"});
-
-  $scope.fluids.add = function(inserted){
-    $scope.fluids.rows.push(inserted);
-  };
-
-  $scope.fluids.remove = function(index){
-    $scope.fluids.rows.splice(index, 1);
-  };
-
-
-
-	$scope.fluidType = $scope.models['fluidType'];
-  $scope.fluidType.cols = [{name:"FluidType"}];
-
+    // finally, extend $scope with it.
+    $scope[prop] = section;
+  }
 
 /*
   $scope.getCls = function(row, cellname) {
