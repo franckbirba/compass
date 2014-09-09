@@ -12,7 +12,7 @@ angular.module('compassApp', [
   'google-maps',
   'geocoder',
   'ngCollaPicka',
-
+  'Observatory',
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     // change to true to turn on authentification
@@ -34,11 +34,11 @@ angular.module('compassApp', [
       //  controller: 'MainCtrl',
         authenticate: auth
       })
-      .when('/observatory', { // css
-        templateUrl: 'partials/observatory',
-      //  controller: 'MainCtrl',
-        authenticate: auth
-      })
+      // .when('/observatory', { // css
+      //   templateUrl: 'partials/observatory',
+      // //  controller: 'MainCtrl',
+      //   authenticate: auth
+      // })
       .when('/buildingDetail', { // css
         templateUrl: 'partials/buildingDetail',
       //  controller: 'MainCtrl',

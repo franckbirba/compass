@@ -7,6 +7,7 @@
  * # observatoryService
  * Factory in the tornadoApp.
  */
+
 angular.module('Observatory')
   .factory('observatoryService', function ObservatoryService($http, PortfolioService, DUMMY) {
 

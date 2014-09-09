@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('compassApp')
+angular.module('Observatory')
   .controller('BuildingCtrl', function BuildingCtrl($scope, Auth, $location, buildingService) {
     var db = buildingService;
     var Building = buildingService.newBuilding();

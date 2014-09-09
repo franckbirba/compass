@@ -1,5 +1,5 @@
 'use strict';
-angular.module('compassApp')
+angular.module('Observatory')
 .controller('ObservatoryCtrl',
   function ObservatoryCtrl($scope, $timeout, buildingService, Geocoder, observatoryService){
     var db = observatoryService;
