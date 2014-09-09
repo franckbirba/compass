@@ -2,25 +2,6 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
 
   $scope.errors = {};
 
-  // WHAT THE FUCK IS THIS ???
-  $http.get('/bower_components/sb-admin/js/plugins/metisMenu/jquery.metisMenu.js')
-    .success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      eval(awesomeThings);
-      $http.get('/bower_components/sb-admin/js/plugins/morris/morris.js')
-        .success(function(awesomeThings) {
-          $scope.awesomeThings = awesomeThings;
-          eval(awesomeThings);
-          $http.get('/bower_components/sb-admin/js/sb-admin.js')
-            .success(function(awesomeThings) {
-              $scope.awesomeThings = awesomeThings;
-              eval(awesomeThings);    
-            });
-        });
-    }
-  );
-
-  // WHAT THE FUCK IS THAT ???
   $scope.changePassword = function(form) {
     $scope.submitted = true;
 
@@ -41,6 +22,7 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
   {
     if (!SETTINGS_CONF.hasOwnProperty(prop))
       continue;
+
     var section = angular.copy(SETTINGS_CONF[prop]);
 
     // expanding cols Array if genYears = true;
@@ -63,11 +45,11 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
     // expanding section with row manipulation functions.
     // nota bene : could curry thoses bitches
     section.add = function(inserted){
-      section.rows.push(inserted);
+      this.rows.push(inserted);
     };
 
     section.remove = function(index){
-      section.rows.splice(index, 1);
+      this.rows.splice(index, 1);
     };
 
     // finally, extend $scope with it.

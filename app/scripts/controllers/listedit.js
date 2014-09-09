@@ -22,6 +22,7 @@ angular.module('compassApp').directive('listedit', function ($rootScope) {
           scope.inserted[elem.name] = null;
         });
         scope.data.add(scope.inserted);
+        scope.data = scope.$parent[attrs.data];
       };
       scope.save = function(data, row){};
 
