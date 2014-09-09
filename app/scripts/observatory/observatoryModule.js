@@ -1,13 +1,14 @@
 'use strict';
 
-var Observatory = angular.module('Observatory', []);
+var ObsModule = angular.module('observatoryModule', []);
 
-Observatory.config(function ($routeProvider, $locationProvider, $httpProvider) {
+ObsModule.config(function ($routeProvider) {
   // change to true to turn on authentification
   var auth = false;
+
   $routeProvider
     .when('/observatory', {
-      templateUrl: 'scripts/observatory/views/observatory',
+      templateUrl: 'scripts/observatory/views/observatory.tpl.html',
       controller: 'ObservatoryCtrl',
       authenticate: auth
     })

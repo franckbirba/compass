@@ -8,8 +8,8 @@
  * Factory in the tornadoApp.
  */
 
-angular.module('Observatory')
-  .factory('observatoryService', function ObservatoryService($http, PortfolioService, DUMMY) {
+angular.module('observatoryModule')
+  .factory('observatoryService', function ObservatoryService($http, $q, PortfolioService, TornadoApi, DUMMY) {
 
     function Observatory(){
       var params = params || {};
@@ -32,6 +32,16 @@ angular.module('Observatory')
 
     // Public API here
     return {
+      // test: function(portfolioId) {
+      //   var params = portfolioId ?  { portfolio: '1' } : {};
+      //   return $http.get('crud/portfolio/', params).then(function(response) {
+      //     return response.data;
+      //   });
+      // },
+      test: function(id){
+        return TornadoApi.request('get', 'portfolio', {name: 'portfolio1'})
+      },
+
       getMap: function () {
         return map;
       },
@@ -43,6 +53,9 @@ angular.module('Observatory')
       },
       newObservatory: function(){
         return new Observatory();
+      },
+      newPortfolio: function(){
+        return PortfolioService.newInstance()
       }
     };
   });

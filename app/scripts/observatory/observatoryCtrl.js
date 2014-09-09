@@ -1,9 +1,15 @@
 'use strict';
-angular.module('Observatory')
+angular.module('observatoryModule')
 .controller('ObservatoryCtrl',
   function ObservatoryCtrl($scope, $timeout, buildingService, Geocoder, observatoryService){
     var db = observatoryService;
     var Obs = observatoryService.newObservatory();
+
+    $scope.test = function(){
+      db.test().then(function(res){
+        $scope.test_res = res;
+      })
+    };
 
     $scope.map = db.getMap();
     $scope.geocoder = Geocoder;
@@ -16,10 +22,6 @@ angular.module('Observatory')
       Obs.addPortfolio(params);
       $scope.tmp = {};
     }
-
-
-
-    console.log($scope.portfolios);
 
     var observatory = this;
     // observatory.portfolios = [];

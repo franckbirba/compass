@@ -1,5 +1,5 @@
 <div compassnav=""></div>
-<div class="wrapper" ng-controller="ObservatoryCtrl as observatory">
+<div class="wrapper">
   <!-- MAIN CONTAINER -->
   <div class="container-fluid" ng-controller="UserCtrl">
     <!-- <h3 class="glyphicon glyphicon-user">{{User.name}}</h3> -->
@@ -15,6 +15,11 @@
               <ul class="list-group">
                 <li class="list-group-item" ng-repeat="portfolio in portfolios">
                   <a class="btn" data-toggle="modal" data-target="#myModal" href="">{{portfolio.name}}</a>
+                </li>
+                <li class="list-group-item">
+                  <button class="glyphicon glyphicon-plus btn btn-xs btn-primary" ng-click="test()">get</button>
+                </li>
+                <li>{{test_res}}
                 </li>
               </ul>
               <div>

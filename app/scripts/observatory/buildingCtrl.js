@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Observatory')
+angular.module('observatoryModule')
   .controller('BuildingCtrl', function BuildingCtrl($scope, Auth, $location, buildingService) {
     var db = buildingService;
     var Building = buildingService.newBuilding();

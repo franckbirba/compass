@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Observatory')
+angular.module('observatoryModule')
   .factory('PortfolioService', function PortfolioService(){
     function Portfolio(params){
       var params = params || {};
