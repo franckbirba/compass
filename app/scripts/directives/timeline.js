@@ -22,18 +22,12 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
          var isSortable = !!(data.generated);
            if (isSortable) {
              console.log("SORTING %s in %s",data.name,this.tmpTrim.name+" "+this.tmpTrim.year);
-             //debugger;
              $scope.sortAction(this.tmpTrim, data);
-             //$scope.addActionToTrim(this.tmpTrim, data);
            } else {
              console.log("DROPPING %s in %s",data.name,this.tmpTrim.name+" "+this.tmpTrim.year);
              $scope.addActionToTimeline(this.tmpTrim, data);
            }
           };
-
-        $scope.onDragSuccess = function(index, data, evt) {
-          //debugger;
-        }
 
         $scope.findPicto = function(trim, picto) {
           for(pic in trim.pictos) {
@@ -61,17 +55,10 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
           }
         };
         
-        // deprecated
-        $scope.addActionToTrim = function(trim, action) {
-          action.date = trim.id;
-          $scope.$parent.genStock();
-          $scope.TIMELINE = $scope.genTimeline();
-        };
-        
         $scope.addActionToTimeline = function(trim, action) {
+          $rootScope.$broadcast('new-action-dropped', { trim: trim, action: action });
           var updatedElement = $scope.TIMELINE[trim.ref[0]];
           updatedElement.t[trim.ref[1]].actions.push(action);
-          
           $scope.TIMELINE.splice( trim.ref[0], 1, updatedElement );
         }
 

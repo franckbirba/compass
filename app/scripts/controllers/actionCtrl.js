@@ -32,8 +32,18 @@
             });
           }
           return filtered;
+        },
+        setExecutionDate: function(actionId, date) {
+          for (var i=0, l=vm.actions.data.length; i<l; i++) {
+            if (vm.actions.data[i]._id === actionId) {
+              vm.actions.data[i].date = date;
+              break;
+            }
+          }
+          return false;
         }
       };
+
       vm.showPlanifiedActions = 0;
       vm.actionsFiltered = vm.actions.getByIsPlanified( vm.showPlanifiedActions );
       $scope.$watch(function(){
@@ -68,6 +78,7 @@
       // graphs
       function refreshPage() {
         vm.overallStats = timelineCalculationService.overallCostTRIEconomie(vm.actions.getByBuildingId( vm.currentBuilding ));
+        vm.actionsFiltered = vm.actions.getByIsPlanified( vm.showPlanifiedActions );
       }
       $scope.$watch(function() { 
         return vm.currentBuilding;
@@ -93,6 +104,7 @@
               vm.actions.data = data;
               for (var i=0, l=vm.actions.data.length; i<l; i++) {
                 vm.actions.data[i].buildingName = vm.buildings.resolveNameById( vm.actions.data[i].building );
+                vm.actions.data[i].img = vm.getPicto( !isNaN( parseInt(vm.actions.data[i].type, 10) ) ? parseInt(vm.actions.data[i].type, 10) : 0 );
               }
               return vm.actions;
             });
@@ -105,12 +117,8 @@
             return vm.buildings;
           });
       }
-      
 
-      // OLD CODE
-      $scope.droppedObjects = [];
-
-      $scope.getPicto = function(index){
+      vm.getPicto = function(index){
         var pic = [
             'glyphicon glyphicon-asterisk',
             'glyphicon glyphicon-plus',
@@ -125,133 +133,17 @@
         ];
         return pic[index];
       };
-
-      // $scope.LINKEDACTIONS = [
-//         {
-//           name: 'action 1',
-//           img: $scope.getPicto(1),
-//           date: "T3-2030",
-//           building: 'building 1',
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: true,
-//           id: 1,
-//           type: 1,
-//           isPlanified: false
-//         },
-//         {
-//           name: 'action 2',
-//           img: $scope.getPicto(2),
-//           building: 'building 1',
-//           date: "T0-2030",
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: true,
-//           id: 2,
-//           type: 2,
-//           isPlanified: true
-//         },
-//         {
-//           name: 'action 3',
-//           date: "T0-2030",
-//           img: $scope.getPicto(3),
-//           building: 'building 1',
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: true,
-//           id: 3,
-//           type: 3,
-//           isPlanified: false
-//         },
-//         {
-//           name: 'action 4',
-//           img: $scope.getPicto(4),
-//           date: "T3-2030",
-//           building: 'building 1',
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: false,
-//           id: 4,
-//           type: 4,
-//           isPlanified: true
-//         },
-//         {
-//           name: 'action 4',
-//           img: $scope.getPicto(4),
-//           date: "T3-2030",
-//           building: 'building 1',
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: false,
-//           id: 5,
-//           type: 4,
-//           isPlanified: true
-//         },
-//         {
-//           name: 'action 5',
-//           img: $scope.getPicto(5),
-//           date: "T1-2014",
-//           building: 'building 1',
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: false,
-//           id: 6,
-//           type: 5,
-//           isPlanified: true
-//         },
-//         {
-//           name: 'action 5',
-//           img: $scope.getPicto(5),
-//           date: "T1-2014",
-//           building: 'building 3',
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: false,
-//           id: 7,
-//           type: 5,
-//           isPlanified: false
-//         },
-//         {
-//           name: 'action 6',
-//           img: $scope.getPicto(6),
-//           date: "T2-2015",
-//           building: 'building 1',
-//           cost: '20204.45',
-//           efficiency: 34,
-//           tri: 23,
-//           done: true,
-//           id: 8,
-//           type: 6,
-//           isPlanified: false
-//         }
-//       ];
-      // showPlanifiedActions - filtering actions by planified/non-planified
-      // 0 - all, 1 - planified, -1 - non planified
-      // $scope.showPlanifiedActions = 0;
-//       $scope.LINKEDACTIONS.getByIsPlanified = function(isPlanified) {
-//         var filtered = []
-//           , filterBy;
-//         if ( typeof isPlanified === 'undefined' || isPlanified === 0) {
-//           filtered = this;
-//         } else {
-//           filterBy = !!(isPlanified === 1);
-//           this.forEach(function(a){
-//             if (a.isPlanified === filterBy) {
-//               filtered.push(a);
-//             }
-//           });
-//         }
-//         return filtered;
-//       }
-//       $scope.linkedactionsFiltered = $scope.LINKEDACTIONS.getByIsPlanified();
-$scope.stock = {};
+      
+      $scope.$on('new-action-dropped', function(ev, data) {
+        var trim = data.trim
+        , action = data.action;
+        vm.actions.setExecutionDate( action._id, trim.id );
+        debugger;
+      });
+      
+      
+      // LEGACY
+      $scope.stock = {};
   }
   
 }());
