@@ -1,43 +1,46 @@
 <!-- <div ng-include="'partials/navbar.html'"></div> -->
-<div ng-controller="LangCtrl">
-    <label>Langue: &nbsp</label>
-    <select class="selectpicker" ng-model="selectLang" ng-options="lang.name for lang in LANG">
-        <option>français</option>
-        <option>english</option>
-    </select>
+<div ng-controller="TranslateController">
+	<label>Langue: &nbsp</label>
+	<select class="selectpicker" ng-model="selectLang" ng-change="changeLanguage()" ng-options="lang.name for lang in LANG">
+		<option>français</option>
+		<option>english</option>
+	</select>
+	<div ng-controller="TranslateController">
+		<h2>{{ 'HEADLINE' | translate }}</h2>
+		<p>{{ 'INTRO_TEXT' | translate }}</p>
+	</div>
+	<div class="container" ng-controller="LoginCtrl">
+		<div>
+			<h1>Compass</h1>
+			<div class="login-panel panel panel-default" style="margin-top: 10px;">
+				<div class="panel-heading">
+					<h3 class="panel-title">Please Sign In</h3>
+				</div>
+				<div class="panel-body">
+					<p>Accounts are reset on server restart from <code>dummydata.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
+					<form class="b-login-from" role="form" name="form" ng-submit="login(form)" novalidate>
+						<fieldset>
+							<div class="form-group">
+								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus ng-model="user.email">
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="Password" name="password" type="password" value="" ng-model="user.password">
+							</div>
+							<div class="checkbox">
+								<input name="remember" type="checkbox" value="Remember Me"/>
+								<label>Remember Me</label>
+							</div>
+							<!-- Change this to a button or input when using this as a form -->
+							
+						</fieldset>
+						<button type="submit" class="btn btn-lg btn-success btn-primary">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
-    <div class="container" ng-controller="LoginCtrl">
-        <div>
-             <h1>Compass</h1>
-            <div class="login-panel panel panel-default" style="margin-top: 10px;">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Please Sign In</h3>
-                </div>
-                <div class="panel-body">
-                    <p>Accounts are reset on server restart from <code>dummydata.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-                    <form class="b-login-from" role="form" name="form" ng-submit="login(form)" novalidate>
-                        <fieldset>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus ng-model="user.email">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="" ng-model="user.password">
-                            </div>
-                            <div class="checkbox">
-                                <input name="remember" type="checkbox" value="Remember Me"/>
-                                <label>Remember Me</label>
-                            </div>
-                            <!-- Change this to a button or input when using this as a form -->
-                            
-                        </fieldset>
-                        <button type="submit" class="btn btn-lg btn-success btn-primary">Login</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </div>
+	</div>
 </div>
 <script type="text/javascript">
-    $('.selectpicker').selectpicker();
+	$('.selectpicker').selectpicker();
 </script>
