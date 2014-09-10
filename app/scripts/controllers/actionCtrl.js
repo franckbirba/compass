@@ -138,7 +138,6 @@
         var trim = data.trim
         , action = data.action;
         vm.actions.setExecutionDate( action._id, trim.id );
-        debugger;
       });
       
       
