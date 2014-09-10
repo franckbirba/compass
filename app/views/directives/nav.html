@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" >
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" ng-controller="TranslateController">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#compass-collapse-nav">
@@ -14,9 +14,13 @@
         <div class="collapse navbar-collapse" id="compass-collapse-nav">
             <form class="navbar-right navbar-form" role="search">
                 <div class="form-group">
-                    <input type="text" class="search-query form-control" placeholder="Search">
+                    <input type="text" class="search-query form-control" placeholder="{{ 'SEARCH' | translate }}">
                 </div>
             </form>
+            <select class="navbar-right selectpicker" ng-model="selectLang" ng-change="changeLanguage()" ng-options="lang.name for lang in LANG">
+        <option>français</option>
+        <option>english</option>
+    </select>
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown" id="dropdownmsg">
                     <a class="dropdown-toggle" data-toggle="#dropdownmsg" href="#">

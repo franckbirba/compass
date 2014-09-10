@@ -4,11 +4,11 @@ angular.module('compassApp')
     $scope.LANG = [
       {
         name: 'français',
-        value: 'eng'
+        value: 'fr'
       },
       {
         name: 'english',
-        value: 'eng'
+        value: 'en'
       }
     ];
 
