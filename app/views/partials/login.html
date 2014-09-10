@@ -5,13 +5,10 @@
 		<option>français</option>
 		<option>english</option>
 	</select>
-	<div ng-controller="TranslateController">
-		<h2>{{ 'HEADLINE' | translate }}</h2>
-		<p>{{ 'INTRO_TEXT' | translate }}</p>
-	</div>
+
 	<div class="container" ng-controller="LoginCtrl">
 		<div>
-			<h1>Compass</h1>
+			<h1>{{ 'HEADLINE' | translate }}</h1>
 			<div class="login-panel panel panel-default" style="margin-top: 10px;">
 				<div class="panel-heading">
 					<h3 class="panel-title">Please Sign In</h3>

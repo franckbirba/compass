@@ -2,17 +2,11 @@ angular.module('compassApp')
   .config(function($translateProvider) {
     // Our translations will go in here
     $translateProvider.translations('en', {
-        HEADLINE: 'Hello there, This is my awesome app!',
-        INTRO_TEXT: 'And it has i18n support!',
-        BUTTON_TEXT_EN: 'english',
-        BUTTON_TEXT_FR: 'french'
+        HEADLINE: 'Welcome to e-portfolio'
       });
       
     $translateProvider.translations('fr', {
-          HEADLINE: 'Salut, cette appli est géniale!',
-          INTRO_TEXT: 'Et elle supporte i18n!',
-          BUTTON_TEXT_EN: 'anglais',
-          BUTTON_TEXT_FR: 'français'
+          HEADLINE: 'Bienvenu sur e-portfolio'
         });
     $translateProvider.preferredLanguage('fr');
 })

@@ -1,5 +1,5 @@
 <div compassnav=""></div>
-<div class="wrapper">
+<div class="wrapper" ng-controller="HomeCtrl">
 	<div class="container">
 		<img class="thumbnail" width="200px" height="100px" style="float:left;">
 	</div>
@@ -94,65 +94,26 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<span class="glyphicon glyphicon-info-sign"></span>
-				View all Emails
+				Actualités
 				<span class="glyphicon glyphicon-envelope" style="float:right;"></span>
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
-				<div class="list-group" style="height:400px;overflow-y:scroll;">
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<i>From <span class="user">New Comment</span> <em>9:49 AM</em></i>
-						<span class="messageMail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-						<span class="glyphicon glyphicon-link attachment">Attachment</span>
-					</a>
+				<div class="list-group" style="height:400px;overflow-y:scroll;"  ng-repeat="feed in feeds | orderBy:'title'" ng-animate="'animate'">
+				<p>
+						<span ng-repeat="item in feed.entries" ng-animate="'animate'">
+							<i> From <span class="user">{{item.author}}</span> <em>{{getTimeStamp(item.publishedDate) | date:'H:mm dd-MM-yyyy'}}</em></i>
+							<a class="list-group-item guest" href="{{item.link}}" target="_blank">
+								<span><strong>{{item.title}}</strong></span> <br/>
+								<span class="messageMail" ng-bind-html="item.contentSnippet"></span>
+							</a>                
+						</span>
+					</p>
 				</div>
 			</div>
 			<!-- /.panel-body -->
+
 		</div>
+
 	</div>
 </div>
