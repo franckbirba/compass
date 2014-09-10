@@ -2,11 +2,23 @@ angular.module('compassApp')
   .config(function($translateProvider) {
     // Our translations will go in here
     $translateProvider.translations('en', {
-        HEADLINE: 'Welcome to e-portfolio'
+        HEADLINE: 'Welcome to e-portfolio',
+        SIGNUP_TITLE:'Please Sign In',
+        SIGNUP_MESSAGE:'Default account is test@test.com / test',
+        EMAIL: 'e-mail',
+        PASSWORD: 'password',
+        REMEMBER_ME: 'remember me',
+        LOGIN_BTN: 'login'
       });
       
     $translateProvider.translations('fr', {
-          HEADLINE: 'Bienvenu sur e-portfolio'
+          HEADLINE: 'Bienvenue sur e-portfolio',
+          SIGNUP_TITLE: 'Veuillez vous loguer',
+          SIGNUP_MESSAGE: 'Le compte par défaut est test@test.com / test',
+          EMAIL: 'e-mail',
+          PASSWORD: 'mot de passe',
+          REMEMBER_ME: 'sauvegarder la session',
+          LOGIN_BTN: 'valider'
         });
     $translateProvider.preferredLanguage('fr');
 })
