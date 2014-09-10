@@ -27,70 +27,7 @@
 		</div>
 	</div>
 	<div class="container col-md-3">
-		<div class="panel panel-default">
-			<!-- /.panel-heading -->
-			<div class="panel-body">
-				<div class="list-group" style="height:250px;overflow-y:scroll;">
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-					<a href="#" class="list-group-item guest">
-						<img src="125x125.jpg" class="media-object" alt="Rounded Image">
-						<span class="glyphicon glyphicon-user user"></span>
-						<span class="user">New Comment</span> wrote:
-						<span class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-					</a>
-				</div>
-				<!-- /.list-group -->
-				<a href="#" class="btn btn-default btn-block" style="background-color: #8faa00;">View All Alerts</a>
-			</div>
-			<!-- /.panel-body -->
-		</div>
+	
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<span class="glyphicon glyphicon-info-sign"></span>
@@ -99,7 +36,7 @@
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
-				<div class="list-group" style="height:400px;overflow-y:scroll;"  ng-repeat="feed in feeds | orderBy:'title'" ng-animate="'animate'">
+				<div class="list-group" style="height:100%;overflow-y:scroll;"  ng-repeat="feed in feeds | orderBy:'title'" ng-animate="'animate'">
 				<p>
 						<span ng-repeat="item in feed.entries" ng-animate="'animate'">
 							<i> From <span class="user">{{item.author}}</span> <em>{{getTimeStamp(item.publishedDate) | date:'H:mm dd-MM-yyyy'}}</em></i>
