@@ -8,7 +8,14 @@ angular.module('compassApp')
         EMAIL: 'e-mail',
         PASSWORD: 'password',
         REMEMBER_ME: 'remember me',
-        LOGIN_BTN: 'login'
+        LOGIN_BTN: 'login',
+        NEWS: 'News',
+        FROM: 'from',
+        AT: 'at',
+        OBSERVE:'Observe',
+        PLAN: 'Plan',
+        EVALUATE: 'Evaluate',
+        SEARCH: 'search'
       });
       
     $translateProvider.translations('fr', {
@@ -18,7 +25,14 @@ angular.module('compassApp')
           EMAIL: 'e-mail',
           PASSWORD: 'mot de passe',
           REMEMBER_ME: 'sauvegarder la session',
-          LOGIN_BTN: 'valider'
+          LOGIN_BTN: 'valider',
+          NEWS: 'Actualités',
+          FROM: 'de',
+          AT: 'à',
+          OBSERVE: 'Observer',
+          PLAN: 'Planifier',
+          EVALUATE: 'Evaluer',
+          SEARCH: 'rechercher'
         });
     $translateProvider.preferredLanguage('fr');
 })
