@@ -6,7 +6,7 @@
 	<!-- MASTER CONTAINER -->
 	<div class="container-fluid" ng-controller="BuildingCtrl" >
 		<!-- FIRST CONTAINER -->
-		<div class="container-fluid" style="padding: 10px; border: 1px solid #eeeeee;">
+		<div class="container-fluid building-container">
 			<form role="form" class="form-horizontal" name="form" ng-submit="" novalidate style="position:relative">
 				<div class="build-info">
 					<h3>Informations complémentaires</h3>
@@ -101,8 +101,8 @@
 		</div>
 
 		<!-- BUTTON -->
-		<a href="/building" style="position:absolute;left:50px;" class="btn btn-lg btn-success btn-primary">back</a>
-		<a href="/building3" style="position:absolute;right:50px;" class="btn btn-lg btn-success btn-primary">proceed</a>
+		<a href="/building" class="btn btn-lg btn-success btn-primary building-btn-prev">back</a>
+		<a href="/building3" class="btn btn-lg btn-success btn-primary building-btn-next">proceed</a>
 	</div>
 </div>
 <script type="text/javascript">

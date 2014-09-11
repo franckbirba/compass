@@ -19,14 +19,14 @@ angular.module('compassApp').service('buildingService', ['$http', function($http
       return response;
     });
   };
-  
+
   this.getPortfolios = function(propertyId) {
     var params = propertyId ? { propertyId: propertyId } : {};
     return $http.get(urlPortfolios, params).then(function(response){
       return response;
     })
   };
-  
+
   this.getLeases = function(buildingId) {
     var params = buildingId ? { buildingId : buildingId } : {};
     return $http.get(urlLeases, params).then(function(response){
