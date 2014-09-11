@@ -1,6 +1,6 @@
 angular.module('compassApp')
   .service('TornadoApi', function Api(User, $rootScope, Session, Auth, $location, $http, $q) {
-    var url = "/crud/";
+    var url = "crud";
     return {
       request: function(method, module, data){
         var methodMaps = {
@@ -18,15 +18,12 @@ angular.module('compassApp')
           },
           post: function(){
               return "";
-          },
-          delete: function(){
-              return "";
           }
         };
         console.log(url+module+"/"+methodMaps[method](data));
 
         var defer = $q.defer();
-        $http.jsonp(url+module+"/"+methodMaps[method](data)+"&callback=JSON_CALLBACK")
+        $http.jsonp("/" + url + "/" + module + "/" + methodMaps[method](data) + "&callback=JSON_CALLBACK")
         .success(function(data){
             defer.resolve(data)
         })

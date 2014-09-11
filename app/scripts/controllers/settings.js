@@ -1,4 +1,4 @@
-angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, Auth,$http, SETTINGS_CONF, Api) {
+angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, Auth,$http, SETTINGS_CONF, ApiPlaceholder) {
 
   $scope.errors = {};
 
@@ -38,23 +38,49 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
     }
 
     // expanding rows array with data fetched from persistance API
-    // a l'aide de la prop' "url". 
-    // HERE
-    // HERE
+    var tmp = ApiPlaceholder.get(section.url);
+    angular.forEach(tmp, function(value, key){
+      angular.extend(value, angular.fromJson(value.values));
+      delete value.values;
+      console.log(this);
+      this.push(value);
+    }, section.rows);
+    // return TornadoApi.request('get', 'portfolio', {name: 'portfolio1'})
 
     // expanding section with row manipulation functions.
     // nota bene : could curry thoses bitches
     section.add = function(inserted){
       this.rows.push(inserted);
+      ApiPlaceholder.post(this.url, {/* SOME DATA */});
     };
 
     section.remove = function(index){
       this.rows.splice(index, 1);
+      ApiPlaceholder.del(this.url, { /* SOME TANGS */ });
+    };
+
+    section.update = function(index){
+      ApiPlaceholder.update(this.url, { /* DEM TAMGS */ });
     };
 
     // finally, extend $scope with it.
     $scope[prop] = section;
   }
+
+  //overriddin' fluids' .add()
+  delete $scope.fluids.add;
+  $scope.fluids.add = function(inserted){
+    // Fetch a Provider
+    var provider;
+    // Fetch a flui type
+    var fluidType;
+    inserted.name = fluidType + ' (' + provider + ')';
+    this.rows.push(inserted);
+    ApiPlaceholder.post(this.url, {/* SOME DATA */});
+  };
+
+  // 
+  
 
 /*
   $scope.getCls = function(row, cellname) {

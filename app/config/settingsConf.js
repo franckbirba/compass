@@ -15,10 +15,10 @@ angular.module("Config", [])
     icon: 'glyphicon glyphicon-tree-deciduous'
   },
   fluids:{
-    title:'Fluid',
+    title:'Fluids',
     genYears: true,
     cols: [
-      {name: 'name'}
+      {name: 'fluid'}
     ],
     rows: [],
     action: 'new fluid',
@@ -26,44 +26,22 @@ angular.module("Config", [])
     icon: 'glyphicon glyphicon-tree-deciduous'
   },
   fluidType:{
-    title: "FluidType",
-    url:"fldt",
+    title: "Fluid Types",
+    url:"fluidtype",
     cols: [
       {name: 'name'}
     ],
-    rows: [
-      {
-        _id: 'elec',
-        name: 'Electricité'
-      },
-      {
-        _id: 'chaleur',
-        name: 'Chaleur'
-      },
-      {
-        _id: 'eau',
-        name: 'Eau'
-      }
-    ]
+    rows: []
   },
   vendor:{
-        title:'Provider',
-        url:"pvr",
+        title:'Providers',
+        url:"provider",
         cols: [
             {
             name: 'name'
             }
         ],
-             rows: [
-            {
-                _id: 'edf',
-                name: 'EDF'
-            },
-            {
-                _id: 'gdf',
-                name: 'GDF'
-            }
-        ]
+             rows: []
     },
     fluidcons:{
         title:'fluidcons',

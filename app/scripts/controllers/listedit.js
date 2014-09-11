@@ -9,7 +9,7 @@ angular.module('compassApp').directive('listedit', function ($rootScope) {
       scope.icon = scope.data.icon;
       scope.cols = scope.data.cols;
       scope.rows = scope.data.rows;
-      scope.predicate = scope.cols[1].name;
+      scope.predicate = scope.cols[0].name;
 
       scope.add = function(){
         /* 
