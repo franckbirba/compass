@@ -9,7 +9,7 @@
  */
 
 angular.module('observatoryModule')
-  .service('observatoryService', function ObservatoryService($http, $q, PortfolioService, TornadoApi, DUMMY) {
+  .service('observatorySvc', function ObservatorySvc($http, $q, Restangular, PortfolioSvc, DUMMY) {
     var self = this;
 
     // Static values
@@ -20,31 +20,25 @@ angular.module('observatoryModule')
       usageTypes:                   DUMMY.usage_types
     };
 
-    // Private functions
-    function fetchPortfolios(){
-      $http.get('/crud/portfolio/').then(function(res) {
-        return res.data;
-      }).then(function(res){
-        res.forEach(function(elem){
-          self.portfolios.push(PortfolioService.newInstance(elem));
-        })
-      })
-    };
 
     // Public functions
-    this.portfolios = [];
-
-    this.getPortfolios = function(){
-      fetchPortfolios();
-      return this.portfolios;
-    }
+    this.portfolios = PortfolioSvc.getList().$object;
 
     this.addPortfolio = function(elem){
-      var port = PortfolioService.newInstance(elem);
+      //var port = PortfolioService.newInstance(elem);
       // Call to Api create should happen here
 
       // Make new portfolio available to scope
       this.portfolios.push(port);
+    }
+
+    this.delPortfolio = function(portfolio){
+      var index = this.portfolios.indexOf(portfolio);
+      var port = this.portfolios[index];
+      port.remove().then(function(res) {
+        console.log(res);
+        if (index > -1) self.portfolios.splice(index, 1);
+      });
     }
 
   });

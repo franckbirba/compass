@@ -1,15 +1,15 @@
 'use strict';
 angular.module('observatoryModule')
 .controller('ObservatoryCtrl',
-  function ObservatoryCtrl($scope, $timeout, buildingService, Geocoder, observatoryService){
-    var db = observatoryService;
+  function ObservatoryCtrl($scope, $timeout, buildingService, Geocoder, observatorySvc){
+    var db = observatorySvc;
     $scope.geocoder = Geocoder;
 
     // Fetch static values;
     $scope.values = db.values;
 
     // Fill scope with clients portfolios
-    $scope.portfolios = db.getPortfolios();
+    $scope.portfolios = db.portfolios;
 
     // For adding a new Portfolio to Obs.
     $scope.tmp = {};
@@ -19,11 +19,16 @@ angular.module('observatoryModule')
       $scope.tmp = {};
     }
 
+    $scope.portfolioDel = function(index){
+      db.delPortfolio(index);
+    }
+
     $scope.summarykeys = function(index){
       var port = $scope.portfolios[index]
       return formBuilder(port.summary);
-
     };
+
+
 
     var observatory = this;
     // observatory.portfolios = [];
