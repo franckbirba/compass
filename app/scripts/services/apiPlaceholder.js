@@ -26,7 +26,11 @@ angular.module('compassApp')
                     {'name':'EDF'},
                     {'name':'GDF'},
                     {'name':'Suez'}
-               ]
+               ],
+               coeff : [{
+                   'classique':'54',
+                   'PPP':'5'
+               }]
       },
       get : function(url){
         if (this.data.hasOwnProperty(url))

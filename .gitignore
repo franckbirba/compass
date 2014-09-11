@@ -10,3 +10,4 @@ heroku
 /buildings.numbers
 npm-debug.log
 .DS_Store
+*~
