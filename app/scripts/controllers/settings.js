@@ -42,7 +42,6 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
     angular.forEach(tmp, function(value, key){
       angular.extend(value, angular.fromJson(value.values));
       delete value.values;
-      console.log(this);
       this.push(value);
     }, section.rows);
     // return TornadoApi.request('get', 'portfolio', {name: 'portfolio1'})
@@ -67,19 +66,26 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
     $scope[prop] = section;
   }
 
-/*
-  //overriddin' fluids' .add()
+  // Fluids section specific overridding
+  angular.forEach($scope.fluids.rows, function(val){
+    val.name = val.fluidType + ' (' + val.provider + ')';
+    delete val.fluidType;
+    delete val.provider;
+  });
+
   delete $scope.fluids.add;
   $scope.fluids.add = function(inserted){
+    $scope.newFluid = true;
     // Fetch a Provider
-    var provider;
+    var provider = $scope.choosenVendor.name;
     // Fetch a flui type
-    var fluidType;
+    var fluidType = $scope.choosenFluid.name;
     inserted.name = fluidType + ' (' + provider + ')';
     this.rows.push(inserted);
-    ApiPlaceholder.post(this.url, {});
+//    ApiPlaceholder.post(this.url, {});
+//    $scope.newFluid = false;
   };
-*/
+
 
   // 
   
