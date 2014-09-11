@@ -8,9 +8,6 @@ angular.module('observatoryModule')
     $scope.images = Building.getImages();
     $scope.certs = db.getCerts();
 
-
-
-
     $scope.delImage = function(index){
       Building.delImage(index);
     };

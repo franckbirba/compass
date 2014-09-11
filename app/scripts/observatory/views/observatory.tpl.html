@@ -24,7 +24,7 @@
                     <div class="list-group">
                       <h4>Informations du Portfolio</h4>
                       <div class="list-group-item clearfix" ng-repeat="key in summarykeys($index)">
-                        <h5 class="pull-left">{{key}}</h5>
+                        <h5 class="pull-left">{{key | printPortSummary}}</h5>
                         <span class="pull-right">{{summary[key]}}</span>
                       </div>
                     </div>

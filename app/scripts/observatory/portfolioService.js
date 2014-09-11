@@ -20,9 +20,22 @@ angular.module('observatoryModule')
       };
     }
 
+
     return {
       newInstance: function(params){
         return new Portfolio(params)
+      },
+      all: function(){
+        var url = '/crud/portfolio';
+        var ans = [];
+        $http.get(url).then(function(res) {
+          return res.data;
+        }).then(function(res){
+          res.forEach(function(elem){
+            ans.push(new Portfolio(elem));
+          })
+          return ans;
+        })
       }
     }
-  })
+  });

@@ -181,14 +181,4 @@ angular.module('compassApp', [
         $location.path('/login');
       }
     });
-  })
-  .filter('capitalizeAdressKeys', function () {
-    return function (input) {
-        if (input === 'cp'){
-          return 'Code Postal';
-        }
-        else {
-          return input.charAt(0).toUpperCase() + input.slice(1);
-        }
-    };
-});
+  });
