@@ -28,7 +28,7 @@
             filtered = actions;
           } else {
             filtered = _.filter(actions, function(a){
-              return isPlanified === 1 ? a.dates.length : !a.dates.length;
+              return isPlanified === 1 ? a.date : !a.date;
             });
           }
           return filtered;
@@ -138,7 +138,6 @@
         var trim = data.trim
         , action = data.action;
         vm.actions.setExecutionDate( action._id, trim.id );
-        debugger;
       });
       
       

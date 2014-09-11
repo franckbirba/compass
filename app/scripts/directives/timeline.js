@@ -2,7 +2,8 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
   return {
         restrict: 'A',
         scope:{
-          model: '='
+          model: '=',
+          actions: '@'
         },
         templateUrl:'/views/directives/timeLine.html',
         controller: ['$scope', '$http', '$rootScope', 'Auth', 'MODELS', '$route',function($scope, $http, $rootScope, Auth, MODELS, $route){
@@ -61,7 +62,9 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
           updatedElement.t[trim.ref[1]].actions.push(action);
           $scope.TIMELINE.splice( trim.ref[0], 1, updatedElement );
         }
-
+        
+        //$scope.actions = $scope.$parent.Action.actionsFiltered;
+        
           $scope.genTimeline = function() {
             var tmpDate = new Date();
             var curYear = tmpDate.getFullYear();
@@ -80,14 +83,16 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
               for(i=0;i<4;i++){
                   var tmpTrimIndex = "T"+i + "-" + tmpYear;
                   var tmp = [];
-                  for( action in $scope.$parent.stock[tmpTrimIndex] ) {
-                    tmp.push(
-                      {
-                        count:$scope.$parent.stock[tmpTrimIndex][action].length,
-                        img:$scope.$parent.stock[tmpTrimIndex][action][0].img
-                      });
+                //  debugger;
+                  for (var k=0, l=$scope.actions.length; k<l; k++) {
+                    if ($scope.actions[k].date === tmpTrimIndex) {
+                      tmp.push(
+                        {
+                          count:1,
+                          img:actions[i].img
+                        });
+                    }
                   }
-              
                   trim.push({
                     year: tmpYear,
                     name: "T"+i,
