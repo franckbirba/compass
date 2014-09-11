@@ -67,6 +67,7 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
     $scope[prop] = section;
   }
 
+/*
   //overriddin' fluids' .add()
   delete $scope.fluids.add;
   $scope.fluids.add = function(inserted){
@@ -76,8 +77,9 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
     var fluidType;
     inserted.name = fluidType + ' (' + provider + ')';
     this.rows.push(inserted);
-    ApiPlaceholder.post(this.url, {/* SOME DATA */});
+    ApiPlaceholder.post(this.url, {});
   };
+*/
 
   // 
   
