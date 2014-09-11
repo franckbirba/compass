@@ -53,18 +53,22 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
       ApiPlaceholder.post(this.url, {/* SOME DATA */});
     };
 
-    section.remove = function(index){
-      this.rows.splice(index, 1);
+    section.remove = function(row){
+      this.rows.splice(this.rows.indexOf(row), 1);
       ApiPlaceholder.del(this.url, { /* SOME TANGS */ });
     };
 
     section.update = function(index){
+      console.log(index);
       ApiPlaceholder.update(this.url, { /* DEM TAMGS */ });
     };
 
     // finally, extend $scope with it.
     $scope[prop] = section;
   }
+
+  // Hard adding of coefficient fixe de montage
+  $scope.coeff = ApiPlaceholder.get('coeff');
 
   // Fluids section specific overridding
   angular.forEach($scope.fluids.rows, function(val){
