@@ -2,7 +2,7 @@ angular.module('compassApp')
   .config(function($translateProvider) {
     // Our translations will go in here
     $translateProvider.translations('en', {
-        HEADLINE: 'Welcome to e-portfolio',
+        HEADLINE: 'Welcome',
         SIGNUP_TITLE:'Please Sign In',
         SIGNUP_MESSAGE:'Default account is test@test.com / test',
         EMAIL: 'e-mail',
@@ -19,7 +19,7 @@ angular.module('compassApp')
       });
       
     $translateProvider.translations('fr', {
-          HEADLINE: 'Bienvenue sur e-portfolio',
+          HEADLINE: 'Bienvenue',
           SIGNUP_TITLE: 'Veuillez vous loguer',
           SIGNUP_MESSAGE: 'Le compte par défaut est test@test.com / test',
           EMAIL: 'e-mail',
