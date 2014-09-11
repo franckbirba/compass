@@ -184,16 +184,16 @@ angular.module('compassApp', [
   })
   .config(function(RestangularProvider) {
     RestangularProvider.setBaseUrl('/crud');
-    // RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
-    //   var extractedData;
-    //   // .. to look for getList operations
-    //   if (operation === "getList") {
-    //     // .. and handle the data and meta data
-    //     console.log(data.data);
-    //     extractedData = response.data;
-    //   } else {
-    //     extractedData = data.data;
-    //   }
-    //   return extractedData;
-    // });
+    RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+      var extractedData;
+      // .. to look for getList operations
+      if (operation === "getList") {
+        // .. and handle the data and meta data
+        extractedData = response.data;
+      } else {
+        console.log(response.data);
+        extractedData = data.data;
+      }
+      return extractedData;
+    });
   });
