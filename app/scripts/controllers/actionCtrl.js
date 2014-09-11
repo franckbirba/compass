@@ -28,7 +28,7 @@
             filtered = actions;
           } else {
             filtered = _.filter(actions, function(a){
-              return isPlanified === 1 ? a.dates.length : !a.dates.length;
+              return isPlanified === 1 ? a.date : !a.date;
             });
           }
           return filtered;

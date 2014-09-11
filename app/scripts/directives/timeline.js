@@ -114,7 +114,6 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
             return dates;
         };
       $scope.TIMELINE = $scope.genTimeline();
-      setTimeout(function(){ debugger }, 10000);
     }]
 
     }
