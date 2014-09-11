@@ -18,7 +18,7 @@ angular.module("Config", [])
     title:'Fluids',
     genYears: true,
     cols: [
-      {name: 'fluid'}
+      {name: 'name'}
     ],
     rows: [],
     action: 'new fluid',

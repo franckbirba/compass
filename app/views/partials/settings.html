@@ -60,6 +60,7 @@
 		<div class="row">
 			<h2>Coût des Fluides</h2>
 
+
       <script type="text/ng-template" id="newFluidModal.html">
         <div class="modal-body">
           type de fluide <select ng-model="choosenFluid" ng-options="fluidtype for fluidtype in fluidtypes"></select><br/>
@@ -71,6 +72,12 @@
         </div>
       </script>
 
+<!--
+      <div ng-show="newFluid">
+        <select ng-model="choosenFluid" ng-options="fluidType.name for fluidType in fluidType.rows"></select>
+        <select ng-model="choosenVendor" ng-options="vendor.name for vendor in vendor.rows"></select>
+      </div>
+ -->
 			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="fluids"></div>
 		</div>
 
