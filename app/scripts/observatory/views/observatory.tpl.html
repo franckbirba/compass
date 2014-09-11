@@ -17,8 +17,15 @@
           </div>
           <div class="panel-body">
             <div class="list-group">
-              <div class="list-group-item" ng-repeat="portfolio in portfolios track by $index">
-                <a class="btn" ng-click="portfolioCard = ! portfolioCard" href="">{{portfolio.name}}</a>
+              <div class="list-group-item clearfix" ng-repeat="portfolio in portfolios">
+                <span class="pull-left">
+                  <a class="btn" ng-click="portfolioCard = ! portfolioCard" href="">{{portfolio.name}}</a>
+                </span>
+                <span class="pull-right">
+                  <button ng-click="portfolioDel(portfolio)">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </span>
                 <div class="panel panel-default" ng-show="portfolioCard">
                   <div class="panel-body">
                     <div class="list-group">

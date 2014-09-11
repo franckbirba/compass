@@ -13,6 +13,7 @@ angular.module('compassApp', [
   'google-maps',
   'geocoder',
   'ngCollaPicka',
+  'restangular',
   'observatoryModule',
   'pascalprecht.translate',
   'rssServices'
@@ -173,12 +174,26 @@ angular.module('compassApp', [
     	};
     }]);
   })
-.run(function ($rootScope, $location, Auth) {
-
+  .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
       if (next.authenticate && !Auth.isLoggedIn()) {
         $location.path('/login');
       }
     });
+  })
+  .config(function(RestangularProvider) {
+    RestangularProvider.setBaseUrl('/crud');
+    // RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+    //   var extractedData;
+    //   // .. to look for getList operations
+    //   if (operation === "getList") {
+    //     // .. and handle the data and meta data
+    //     console.log(data.data);
+    //     extractedData = response.data;
+    //   } else {
+    //     extractedData = data.data;
+    //   }
+    //   return extractedData;
+    // });
   });
