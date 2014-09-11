@@ -13,9 +13,11 @@
                 <button class="glyphicon glyphicon-plus btn btn-xs btn-primary" ng-click="portFormShow = ! portFormShow ">
                 </button>
             </span>
+
+
             <div ng-show="portFormShow">
               <h4>Creer un nouveau Portfolio</h4>
-              <form novalidate class="form-horizontal" ng-controller="PortFormCtrl">
+              <form novalidate class="form-horizontal" ng-controller="portCtrl">
                 <div class="form-group">
                   <label for="portFormName" class="col-sm-2 control-label">Nom</label>
                   <div class="col-sm-4">
@@ -34,7 +36,11 @@
                   </div>
                 </div>
               </form>
+
             </div>
+
+
+
           </div>
           <div class="panel-body">
             <div class="list-group">

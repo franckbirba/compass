@@ -1,8 +1,16 @@
 'use strict';
 ObsModule
+  .controller('portCtrl', function($scope){
+      $scope.portfolioCreate = function(params){
+        console.log(params);
+        console.log($scope.portForm);
+        $scope.portForm = {};
+        console.log($scope.portForm);
+      }
+  })
   .controller('ObservatoryCtrl',
     function ObservatoryCtrl($scope, $timeout, Geocoder, ObservatorySvc){
-      var db = observatorySvc;
+      var db = ObservatorySvc;
       $scope.geocoder = Geocoder;
 
       // Fetch static values;
@@ -14,7 +22,9 @@ ObsModule
       // For adding a new Portfolio to Obs.
       $scope.portfolioCreate = function(params){
         console.log(params);
+        console.log($scope.portForm);
         $scope.portForm = {};
+        console.log($scope.portForm);
       }
 
 
