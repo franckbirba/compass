@@ -1,23 +1,48 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" >
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-bottom: 20px;" >
     <div class="container-fluid">
-        <div class="navbar-header">
+        <div class="navbar-header" style="margin-bottom:40px;">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#compass-collapse-nav">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">compass</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo_portoflio_baseline.png" alt="logo du site">
+                <!--compass-->
+            </a>
         </div>
             <!-- /.navbar-header -->
 
         <div class="collapse navbar-collapse" id="compass-collapse-nav">
+            <!--
             <form class="navbar-right navbar-form" role="search">
                 <div class="form-group">
                     <input type="text" class="search-query form-control" placeholder="Search">
                 </div>
             </form>
+        -->
             <ul class="nav navbar-top-links navbar-right">
+                
+
+                <li class="dropdown" id="dropdownuser">
+                    <a class="dropdown-toggle" data-toggle="#dropdownuser   " href="#" style="background-color: #F1F2F1;">
+                        <i class="fa fa-user fa-fw"></i>Users  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="/settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/login" ng-click="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+
+<!--
+                    
                 <li class="dropdown" id="dropdownmsg">
                     <a class="dropdown-toggle" data-toggle="#dropdownmsg" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -67,8 +92,10 @@
                         </li>
                     </ul>
                     <!-- /.dropdown-messages -->
-                </li>
+<!--            </li>
                 <!-- /.dropdown -->
+
+<!--
                 <li class="dropdown" id="dropdowntask">
                     <a class="dropdown-toggle" data-toggle="#dropdowntask" href="#">
                         <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -146,9 +173,10 @@
                         </li>
                     </ul>
                     <!-- /.dropdown-tasks -->
+<!--
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown" id="dropdownalerts">
+<!--                <li class="dropdown" id="dropdownalerts">
                     <a class="dropdown-toggle" data-toggle="#dropdownalerts" href="#">
                         <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
@@ -206,23 +234,11 @@
                         </li>
                     </ul>
                     <!-- /.dropdown-alerts -->
-                </li>
+<!--                </li>
+
+                -->
                 <!-- /.dropdown -->
-                <li class="dropdown" id="dropdownuser">
-                    <a class="dropdown-toggle" data-toggle="#dropdownuser   " href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="/settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="/login" ng-click="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
+              
                 <!-- /.dropdown -->
             </ul>
         </div>

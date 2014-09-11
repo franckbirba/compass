@@ -1,4 +1,4 @@
-<style>
+  <style>
 
 body {
   font: 10px sans-serif;
@@ -21,46 +21,71 @@ body {
   stroke-width: 1.5px;
 }
 
+.col-sm-4.blocright
+{
+  padding: none;
+}
+
 </style>
 
 
 <div compassnav=""></div>
-<div class="wrapper">
+<div class="wrapper" style="background-color:#F1F2F1;margin-top:40px;">
   <div class="build-title">Scénario 1</div>
 
-  <div class="container">
-    <div class="row">
-      <form role="form" class="form-horizontal" >
-              <div class="form-group">
-                <div class="input-group" style="float:left;width:25%;">
-                  <label for="portfolio" class="control-label">Nombre d'actions</label>
-                  <div >
-                    <input class="form-control" value="{{ Action.overallStats.totalActions }}"  type="text" disabled>
-                  </div>
+<div class="wrapper-timeline style="margin-top:20px;"" style="background-color:#F1F2F1;">
+  <div class="container" style="background-color:#F1F2F1;">
+    <div class="row" style="background-color:#F1F2F1;">
+      <div class="col-sm-4 blocright" style="background-color:#e4e4e4;">
+        <div class="row">
+          <div class="wrapper_titre_timeline">
+            <h1 class="text-center">Timeline</h1>
+          </div>
+          <div class="col-sm-6">
+            <h5 style="padding-top:5px; "><u>Répartition des actions</u></h5>
+          </div>
+          <div class="col-sm-6">
+            <select class="form-control" style="width: 100%" ng-model="Action.currentBuilding" ng-change="Action.onBuildingChange(Action.currentBuilding)" ng-options="b._id as b.name for b in Action.buildings.data">
+              <option value="">Tous les Bâtiments</option>
+            </select>
+          </div>
+        </div>
+        <div timeline></div>
+      </div>
+      <div class="col-sm-7 col-sm-offset-1 blocleft blocleft" style="background-color:#e4e4e4;padding:0px;">
+         <div class="wrapper_titre_timeline">
+            <h1 class="text-center">Bilan</h1>
+          </div>
+        <div class="row">
+          <form role="form" class="form-horizontal" >
+                  <div class="form-group" style="margin:10px;">
+                    <div id="timeline_form_typo"class="input-group" style="float:left;width:25%;">
+                      <label for="portfolio" class="control-label" >Nombre d'actions</label>
+                      <div >
+                        <input class="form-control" value="{{ Action.overallStats.totalActions }}"  type="text" disabled>
+                      </div>
+                    </div>
+                    <div class="input-group" style="float:left;width:25%;">
+                      <label for="portfolio" class="control-label">Coût total</label>
+                      <div >
+                        <input class="form-control" value="{{ Action.overallStats.totalCost | currency : '€' }}" type="text" disabled>
+                      </div>
+                    </div>
+                    <div class="input-group" style="float:left;width:25%;">
+                      <label for="portfolio" class="control-label">TRI global:</label>
+                      <div >
+                        <input class="form-control" value="{{ Action.overallStats.totalTRI }}" type="text" disabled>
+                      </div>
+                    </div>
+                    <div class="input-group" style="float:left;width:25%;">
+                      <label for="portfolio" class="control-label">Economie d'énergie</label>
+                      <div >
+                        <input class="form-control" value="{{ Action.overallStats.totalEconomie }}" type="text" disabled>
+                      </div>
+                    </div>
                 </div>
-                <div class="input-group" style="float:left;width:25%;">
-                  <label for="portfolio" class="control-label">Coût total</label>
-                  <div >
-                    <input class="form-control" value="{{ Action.overallStats.totalCost | currency : '€' }}" type="text" disabled>
-                  </div>
-                </div>
-                <div class="input-group" style="float:left;width:25%;">
-                  <label for="portfolio" class="control-label">TRI global:</label>
-                  <div >
-                    <input class="form-control" value="{{ Action.overallStats.totalTRI }}" type="text" disabled>
-                  </div>
-                </div>
-                <div class="input-group" style="float:left;width:25%;">
-                  <label for="portfolio" class="control-label">Economie d'énergie</label>
-                  <div >
-                    <input class="form-control" value="{{ Action.overallStats.totalEconomie }}" type="text" disabled>
-                  </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-      <div class="col-sm-8 blocleft">
+            </form>
+        </div>
         <!-- line 1 -->
         <div id="line1">
         </div>
@@ -68,7 +93,7 @@ body {
         <div id="line2">
         </div>
         <!-- ARRAYAction -->
-        <div class="row actionArray">
+        <div class="row actionArray" style="margin-left:1px;">
           <span class="glyphicon glyphicon-circle-arrow-up buttonArray"></span>
           <h3>Réservoir d'actions</h3>
           <div class="col-sm-6 buttonFiltre">
@@ -122,19 +147,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col-sm-4 blocright">
-        <div class="row" style="padding:5px">
-          <div class="col-sm-6">
-            <h5>Répartition des actions</h5>
-          </div>
-          <div class="col-sm-6">
-            <select class="form-control" style="width: 100%" ng-model="Action.currentBuilding" ng-change="Action.onBuildingChange(Action.currentBuilding)" ng-options="b._id as b.name for b in Action.buildings.data">
-              <option value="">Tous les Bâtiments</option>
-            </select>
-          </div>
-        </div>
-        <div timeline></div>
-      </div>
+      
     </div>
   </div>
 </div>

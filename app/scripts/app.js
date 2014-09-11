@@ -94,7 +94,7 @@ angular.module('compassApp', [
         authenticate: true
       })
       .when('/graph', {
-        templateUrl: 'partials/graph',
+        templateUrl: 'partials/ ',
         controller: 'BuildingCtrl',
         authenticate: true
       })

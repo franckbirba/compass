@@ -3,14 +3,14 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 $border-radius-base:        0px ;
 $brand-primary:    #8faa00 ;
 $text-color: #7c7c7c;
-$font-family-sans-serif: "Roboto", sans-serif;
-$body-bg: #fff !important;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$body-bg: #eaeaea!important;
 // Dropdwon
 $dropdown-link-hover-bg:      #8faa00 ;
 $dropdown-link-hover-color:      #fff ;
 // Button
-$btn-primary-bg:                 #8faa00 ;
-$btn-primary-border:             #8faa00 ;
+$primary-bg:                 #8faa00 ;
+$btn-primary-border:             #e4e4e4 ;
 // Form
 $input-border-focus: #8faa00;
 // Navbar
@@ -34,7 +34,7 @@ $component-active-color:    red !important;
     color: #000;
     padding: 0.2em 0;
 }
-
+    
 /* Space out content a bit */
 body {
     overflow: hidden;
@@ -44,6 +44,7 @@ body {
     bottom: 0;
     top: 0;
     font-family: 'Roboto Slab', sans-serif;
+    background-color : #F1F2F1;
 }
 
 .wrapper {
@@ -58,6 +59,15 @@ body {
     right: 0;
     bottom: 0;
     padding: 10px 0 10px 0;
+}
+
+.wrapper-timeline {
+    background:white;
+}
+
+.wrapper_titre_timeline
+{
+    background-color:#8FAA00;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -141,10 +151,17 @@ a {
 }
 
 form {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #efefef;
     width: 500px;
     margin: auto;
+}
+
+.form-control{
+    font-family :'Roboto', sans-serif;
+    font-size : 14px;
+    color : #8faa00;
+
 }
 
 .form-control:focus {
@@ -173,7 +190,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Slab', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0 0 5px;
     font-weight: 400;
     color: #4d4d4d;
@@ -210,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
 .label-fieldset {
     position: absolute;
     top: -10px;
-    background-color: #fff;
+    background-color: #8faa00;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -252,11 +269,12 @@ td, th {
 
 .text {
     display: none;
-    font-family: 'Roboto Slab', sans-serif;
-    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 45px;
     position: relative;
     top: 200px;
     width: 100%;
+    color : white;
 }
 
 a:hover {
@@ -276,12 +294,13 @@ a:hover > .text {
 .homegraph {
     width: 100%;
     border: 1px solid $panel-primary-border;
-    background-image: url(../images/graph.png);
+    background-image: url(../images/evaluer-2.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .list-group-item {
     border: none;
+    padding-top:20px;
 }
 .btn-primary {
     border-radius: 0;
@@ -305,6 +324,9 @@ a:hover > .text {
     -moz-transition: color 0.5s;
     transition: color 0.5s;
 }
+
+
+
 
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -347,6 +369,10 @@ a:hover > .text {
     padding: 0;
 }
 
+.form-group{
+    background-color:  #f1f2f1;
+}
+
 .title-edit {
     position: absolute;
     right: 10px;
@@ -365,10 +391,21 @@ a:hover > .text {
 }
 
 .build-title {
-    background-color: $brand-primary;
+    background-color: white;
     height: 50px;
-    color: #fff;
-    width: 500px;
+    color: #7c7c7c;
+    width: 112px;
+    margin: 10px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.build-title-schemaHome {
+    background-color: #8FAA00;
+    height: 50px;
+    color: #7c7c7c;
+    width: 216px;
     margin: 10px;
     padding: 12px;
     font-size: 18px;
@@ -385,9 +422,17 @@ a:hover > .text {
 }
 
 .form-horizontal .control-label {
+    font-family :"Roboto" , sans-serif;
+    font-size : 16px;
+    font-style : italic;
     text-align: left; 
     margin-bottom: 0;
     padding-top: 0px; 
+}
+
+#timeline_form_typo
+{
+    font-family :"Roboto", sans-serif;
 }
 
 .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
@@ -447,6 +492,12 @@ a:hover > .text {
     position: absolute;
     right: 15px;
 }
+/* actionForm */
+
+#bouton_termine{
+
+}
+/* Fin actionForm */
 
 .barTemp {
     height: 150px;
@@ -496,9 +547,10 @@ a:hover > .text {
 }
 .numberYear {
     position: absolute;
-    opacity: 0.2;
+    opacity: 1;
     font-size: 24px;
     left: 75px;
+    color :#8faa00;
 }
 .year-odd {
     background-color: #f7f7f7;
@@ -536,9 +588,10 @@ a:hover > .text {
 }
 
 .blocleft {
-    height:550px;
+    height:700px;
     border: 1px solid #efefef;
     overflow: hidden;
+    padding:none;
 }
 
 .blocright {
@@ -563,8 +616,13 @@ a:hover > .text {
     left: 200px;
 }
 
+/* SIGN UP */
+
+.signup{
+    font-family : "Roboto", sans-serif;
+}
 .widget-head {
-    background-color: #f9f9f9;
+    background-color: #D6D7D6;
     background-image: -moz-linear-gradient(top, #fdfdfd, #f4f4f4);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#f4f4f4));
     background-image: -webkit-linear-gradient(top, #fdfdfd, #f4f4f4);
@@ -588,7 +646,8 @@ Layout
  */
 .form-horizontal {
     border: none;
-    width: 80%;
+    width: 100%;
+    background-color:#e4e4e4;
 }
 
 .col-sm-12 {
@@ -732,9 +791,9 @@ Layout
 }
 
 .navbar-default {
-    background-color: $btn-primary-bg;
-    border-color: $btn-primary-bg;
-    color: white;
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #f5f5f5;
 }
 
 .navbar-brand, .navbar-top-links li a {
