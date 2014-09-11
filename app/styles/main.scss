@@ -739,6 +739,14 @@ Layout
 GMAP
 =================
 */
+
+body > div > div > div.btn-group.bootstrap-select.open > div > ul > li > a > span {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 14px !important;
+    position: initial !important;
+    width: 100%;
+}
+
 .angular-google-map-container {
     height: 300px;
     width: 100%;

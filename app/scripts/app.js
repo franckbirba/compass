@@ -14,6 +14,8 @@ angular.module('compassApp', [
   'geocoder',
   'ngCollaPicka',
   'observatoryModule',
+  'pascalprecht.translate',
+  'rssServices'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     // change to true to turn on authentification
@@ -36,17 +38,17 @@ angular.module('compassApp', [
         authenticate: auth
       })
       .when('/buildingDetail', { // css
-        templateUrl: 'partials/buildingDetail',
-      //  controller: 'MainCtrl',
+      	templateUrl: 'partials/buildingDetail',
+        //  controller: 'MainCtrl',
         authenticate: auth
       })
       .when('/login', {
-        templateUrl: 'partials/login',
-        controller: 'LoginCtrl'
+      	templateUrl: 'partials/login',
+      	controller: 'LoginCtrl'
       })
       .when('/signup', {
-        templateUrl: 'partials/signup',
-        controller: 'SignupCtrl'
+      	templateUrl: 'partials/signup',
+      	controller: 'SignupCtrl'
       })
       .when('/settings', {
         templateUrl: 'partials/settings',
@@ -142,7 +144,7 @@ angular.module('compassApp', [
         templateUrl: 'partials/timeline',
         controller: 'ActionCtrl',
         controllerAs: 'Action',
-        authenticate: true
+        authenticate: auth
 
       })
       .when('/collapicka', { // css
@@ -151,31 +153,30 @@ angular.module('compassApp', [
         authenticate: auth
       })
       .otherwise({
-        redirectTo: '/'
+      	redirectTo: '/'
       });
 
     $locationProvider.html5Mode(true);
 
     // Intercept 401s and redirect you to login
     $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
-      return {
-        'responseError': function(response) {
-          if(response.status === 401) {
-            $location.path('/login');
-            return $q.reject(response);
-          }
-          else {
-            return $q.reject(response);
-          }
-        }
-      };
+    	return {
+    		'responseError': function(response) {
+    			if(response.status === 401) {
+    				$location.path('/login');
+    				return $q.reject(response);
+    			}
+    			else {
+    				return $q.reject(response);
+    			}
+    		}
+    	};
     }]);
   })
-  .run(function ($rootScope, $location, Auth) {
+.run(function ($rootScope, $location, Auth) {
 
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
-
       if (next.authenticate && !Auth.isLoggedIn()) {
         $location.path('/login');
       }
