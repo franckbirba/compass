@@ -8,8 +8,8 @@
  * Factory in the compassApp.
  */
 
-angular.module('observatoryModule')
-  .factory('buildingService', function BuildingService(DUMMY) {
+ObsModule
+  .factory('buildingService', function BuildingSvc(DUMMY) {
 
     function Adress(params){
       var params = params || {};

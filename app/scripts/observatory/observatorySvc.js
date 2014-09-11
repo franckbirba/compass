@@ -8,8 +8,8 @@
  * Factory in the tornadoApp.
  */
 
-angular.module('observatoryModule')
-  .service('observatorySvc', function ObservatorySvc($http, $q, Restangular, PortfolioSvc, DUMMY) {
+
+ObsModule.service('ObservatorySvc', function ObservatorySvc($http, $q, Restangular, PortfolioSvc, DUMMY) {
     var self = this;
 
     // Static values
@@ -25,11 +25,7 @@ angular.module('observatoryModule')
     this.portfolios = PortfolioSvc.getList().$object;
 
     this.addPortfolio = function(elem){
-      //var port = PortfolioService.newInstance(elem);
-      // Call to Api create should happen here
-
-      // Make new portfolio available to scope
-      this.portfolios.push(port);
+      this.portfolios.post(elem);
     }
 
     this.delPortfolio = function(portfolio){
