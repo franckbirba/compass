@@ -197,15 +197,15 @@ angular.module('compassApp', [
       }
       return extractedData;
     });
-    RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
+    // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
 
-      console.log(element);
-      console.log(operation);
-      console.log(what);
-      console.log(url);
+    //   console.log(element);
+    //   console.log(operation);
+    //   console.log(what);
+    //   console.log(url);
 
-      return url
-    })
+    //   return url
+    // })
     // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
     //   console.log(headers);
     //   console.log(params);
