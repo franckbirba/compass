@@ -2,9 +2,9 @@
 
 angular.module('observatoryModule')
   .factory('PortfolioSvc', function PortfolioSvc(Restangular) {
-    var Portfolio = Restangular.service('portfolio/');
+    var Portfolio = Restangular.service('portfolio');
 
-    Restangular.extendModel('portfolio/', function(model){
+    Restangular.extendModel('portfolio', function(model){
       return angular.extend(model, {
         //doesn't work. need to add to server response
         summary: function(){
