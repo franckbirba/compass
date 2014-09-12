@@ -19,10 +19,12 @@ ObsModule
       // Fill scope with clients portfolios
       $scope.portfolios = db.portfolios;
 
+
       //For adding a new Portfolio to Obs.
       $scope.portfolioCreate = function(params){
         db.addPortfolio(params);
-        $scope.portForm = {};
+        // toDo: clear $scope.portForm after, setting to null doesn't work.
+        $scope.portForm = null;
       }
 
 
