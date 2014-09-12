@@ -184,16 +184,40 @@ angular.module('compassApp', [
   })
   .config(function(RestangularProvider) {
     RestangularProvider.setBaseUrl('/crud');
+    RestangularProvider.setRestangularFields({ id: "_id" });
     RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
       var extractedData;
       // .. to look for getList operations
       if (operation === "getList") {
         // .. and handle the data and meta data
         extractedData = response.data;
-      } else {
+      }
+      else {
         console.log(response.data);
         extractedData = data.data;
       }
       return extractedData;
     });
+    // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
+
+    //   console.log(element);
+    //   console.log(operation);
+    //   console.log(what);
+    //   url = url + '/';
+    //   console.log(url);
+    //   return url
+    // })
+    // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
+    //   console.log(headers);
+    //   console.log(params);
+    //   console.log(element);
+    //   console.log(httpConfig);
+    // });
+    // RestangularProvider.setErrorInterceptor(function(response, deferred, responseHandler) {
+    //   if(response.status === 404) {
+    //     console.log(response);
+    //     console.log(deferred);
+    //   };
+    //   return true; // error not handled
+    // });
   });

@@ -23,9 +23,16 @@ ObsModule.service('ObservatorySvc', function ObservatorySvc($http, $q, Restangul
 
     // Public functions
     this.portfolios = PortfolioSvc.getList().$object;
+    // PortfolioSvc.getList().then(function(res){
+    //   console.log(res);
+    //   self.portfolios = res;
+    // })
 
     this.addPortfolio = function(elem){
-      this.portfolios.post(elem);
+      console.log(elem);
+      this.portfolios.post(elem).then(function(res){
+        self.portfolios.push(res);
+      })
     }
 
     this.delPortfolio = function(portfolio){
