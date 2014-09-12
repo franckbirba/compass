@@ -13,8 +13,6 @@
                 <button class="glyphicon glyphicon-plus btn btn-xs btn-primary" ng-click="portFormShow = ! portFormShow ">
                 </button>
             </span>
-
-
             <div ng-show="portFormShow">
               <h4>Creer un nouveau Portfolio</h4>
               <form novalidate class="form-horizontal">
@@ -36,11 +34,7 @@
                   </div>
                 </div>
               </form>
-
             </div>
-
-
-
           </div>
           <div class="panel-body">
             <div class="list-group">
@@ -59,7 +53,7 @@
                       <h4>Informations du Portfolio</h4>
                       <div class="list-group-item clearfix" ng-repeat="key in summarykeys($index)">
                         <h5 class="pull-left">{{key | printPortSummary}}</h5>
-                        <span class="pull-right">{{summary[key]}}</span>
+                        <span class="pull-right">{{$parent.portfolio.summary[key]}}</span>
                       </div>
                     </div>
                   </div>
@@ -67,14 +61,7 @@
               </div>
             </div>
           </div>
-
         </div><!-- END FOCUS PANEL -->
-        <div class="panel-body">
-          <h3> Test Zone </h3>
-          <div ng-repeat="portfolio in portfolios">
-            {{portfolio}}
-          </div>
-        </div>
       </div>
 
       <!-- SUMMARY PANEL -->
