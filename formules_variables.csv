@@ -1,0 +1,22 @@
+formule;valeur;variables
+cout annuel compteur fluide;Abonnement + (conso. compteur de l’année courante) x (coût variable année courante);
+Reste consommation d’énergie par usage;Total Conso. Compteur Fluide - (valeur des champs du dessus);
+table correspondance Eligibilité / conformité réglementaire;;
+alerte conformité périodicité;date du dernier diagnostique + périodicité) < date du jour;
+DPE énergie kwhef/m2/an;;
+DPE pollution kgefco2/m2/an;;
+impact Energie Kwh;;
+impact Energie €/an;;
+cout d’investissement €;formule? (calculé (=350xSurface/nb étage) MODIFIABLE) cf maquette slide 42;
+cout en fonctionnement €/an;;
+éligibilité certificat economie d’énergie;économie kwh*duréedevie*actualisation;
+lien outil de calcul en ligne;CF maquette V13 slide 42;
+temps de retour brut années;=G26/G23;
+temps de retour actualisé années;=G26/G23*actualisation;
+analyse de la valeur kwh/€;=G22/G26;
+LEC €/kwh;http://en.wikipedia.org/wiki/Levelised_energy_cost#Calculations;
+Rentabilité %;G23/G26;
+Dépense annuelle max;;
+budget/durée €/an;;
+subventions;Taux de sub x Investissement;
+;;
