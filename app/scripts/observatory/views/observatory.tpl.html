@@ -44,7 +44,7 @@
           </div>
           <div class="panel-body">
             <div class="list-group">
-              <div class="list-group-item clearfix" ng-repeat="portfolio in portfolios">
+              <div class="list-group-item clearfix" ng-repeat="portfolio in portfolios track by $index">
                 <span class="pull-left">
                   <a class="btn" ng-click="portfolioCard = ! portfolioCard" href="">{{portfolio.name}}</a>
                 </span>

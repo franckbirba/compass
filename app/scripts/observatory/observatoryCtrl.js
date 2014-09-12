@@ -17,16 +17,12 @@ ObsModule
       $scope.values = db.values;
 
       // Fill scope with clients portfolios
-      // db.portfolios().then(function(res){
-      //   $scope.portfolios = res;
-      // });
       $scope.portfolios = db.portfolios;
 
       //For adding a new Portfolio to Obs.
       $scope.portfolioCreate = function(params){
         db.addPortfolio(params);
         $scope.portForm = {};
-        console.log($scope.portForm);
       }
 
 
