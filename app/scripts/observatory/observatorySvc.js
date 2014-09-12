@@ -30,15 +30,16 @@ ObsModule.service('ObservatorySvc', function ObservatorySvc($http, $q, Restangul
 
     this.addPortfolio = function(elem){
       console.log(elem);
-      this.portfolios.post(elem).then(function(res){
+      PortfolioSvc.post(elem).then(function(res){
+        console.log(res);
         self.portfolios.push(res);
-      })
+      });
+
     }
 
     this.delPortfolio = function(portfolio){
       var index = this.portfolios.indexOf(portfolio);
       var port = this.portfolios[index];
-      console.log(port);
       port.remove().then(function(res) {
         console.log(res);
         if (index > -1) self.portfolios.splice(index, 1);
