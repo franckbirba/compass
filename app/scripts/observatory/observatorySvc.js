@@ -30,8 +30,6 @@ ObsModule.service('ObservatorySvc', function ObservatorySvc($http, $q, Restangul
         self.portfolios.push(res);
       });
 
-
-
     };
 
     this.delPortfolio = function(portfolio){

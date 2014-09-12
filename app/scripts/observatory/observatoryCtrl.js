@@ -19,7 +19,6 @@ ObsModule
       // Fill scope with clients portfolios
       $scope.portfolios = db.portfolios;
 
-
       //For adding a new Portfolio to Obs.
       $scope.portfolioCreate = function(params){
         db.addPortfolio(params);
@@ -27,15 +26,22 @@ ObsModule
         $scope.portForm = null;
       }
 
-
       $scope.portfolioDel = function(index){
         db.delPortfolio(index);
       }
 
       $scope.summarykeys = function(index){
-        var port = $scope.portfolios[index]
-        return formBuilder(port.summary);
+        if (index >= 0){
+          var port = $scope.portfolios[index];
+          var so = formBuilder(port.summary);
+          console.log('so');
+          return so;
+        }
+        else
+          return [];
       };
+
+
 
 
 

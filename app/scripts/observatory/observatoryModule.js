@@ -26,13 +26,13 @@ ObsModule.config(function ($routeProvider) {
 .filter('printPortSummary', function () {
   return function (input) {
     var map = {
-      batiments: 'Bâtiments',
-      superficie_total: 'Superficie Totale',
-      taux_occupation: 'Taux d\'occupation',
-      indice_vestute: 'Indice de cestuté',
-      indice_conformite: 'Indice de conformité',
-      perf_moyenne: 'Performence moyenne',
-      age_moyen: 'Age moyen'
+      buildings: 'Bâtiments',
+      total_suface: 'Superficie Totale',
+      occupation_rate: 'Taux d\'occupation',
+      condition_index: 'Indice de cestuté',
+      conformity_index: 'Indice de conformité',
+      avg_performence: 'Performence moyenne',
+      avg_age: 'Age moyen'
     }
     return map[input];
   }

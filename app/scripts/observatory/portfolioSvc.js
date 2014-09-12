@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('observatoryModule')
-  .factory('PortfolioSvc', function PortfolioSvc(Restangular) {
+ObsModule
+  .factory('PortfolioSvc', function PortfolioSvc(Restangular, Portfolio) {
     var Portfolio = Restangular.service('portfolio');
     // Restangular.extendCollection('portfolio', function(collection){
     //   // to restangularize new elem added to collection
@@ -14,15 +14,14 @@ angular.module('observatoryModule')
     // });
     Restangular.extendModel('portfolio', function(model){
       return angular.extend(model, {
-        //doesn't work. need to add to server response
-        summary: function(){
-            this.batiments = '';
-            this.superficie_total= '';
-            this.taux_occupation= '';
-            this.indice_vestute= '';
-            this.indice_conformite= '';
-            this.perf_moyenne= '';
-            this.age_moyen= '';
+        summary: {
+          buildings: '',
+          total_suface: '',
+          occupation_rate: '',
+          condition_index: '',
+          conformity_index: '',
+          avg_performence: '',
+          avg_age: ''
         }
       });
     });
