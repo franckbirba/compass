@@ -187,13 +187,17 @@ angular.module('compassApp', [
     RestangularProvider.setRestangularFields({ id: "_id" });
     RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
       var extractedData;
+      console.log(operation);
       // .. to look for getList operations
       if (operation === "getList") {
         // .. and handle the data and meta data
         extractedData = response.data;
       }
+      else if (operation === "post") {
+        extractedData = response.data;
+      }
       else {
-        extractedData = data.data;
+        extractedData = response.data;
       }
       return extractedData;
     });
