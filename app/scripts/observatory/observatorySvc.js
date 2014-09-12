@@ -23,25 +23,16 @@ ObsModule.service('ObservatorySvc', function ObservatorySvc($http, $q, Restangul
 
     // Public functions
     this.portfolios = PortfolioSvc.getList().$object;
-    // PortfolioSvc.getList().then(function(res){
-    //   console.log(res);
-    //   self.portfolios = res;
-    // })
 
     this.addPortfolio = function(elem){
-      console.log(elem);
-      PortfolioSvc.post(elem).then(function(res){
-        console.log(res);
-        self.portfolios.push(res);
-      });
-
-    }
+      this.portfolios.post(elem);
+      console.log(this.portfolios.one().get(elem));
+    };
 
     this.delPortfolio = function(portfolio){
       var index = this.portfolios.indexOf(portfolio);
       var port = this.portfolios[index];
       port.remove().then(function(res) {
-        console.log(res);
         if (index > -1) self.portfolios.splice(index, 1);
       });
     }

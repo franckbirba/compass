@@ -193,20 +193,19 @@ angular.module('compassApp', [
         extractedData = response.data;
       }
       else {
-        console.log(response.data);
         extractedData = data.data;
       }
       return extractedData;
     });
-    // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
+    RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
 
-    //   console.log(element);
-    //   console.log(operation);
-    //   console.log(what);
-    //   url = url + '/';
-    //   console.log(url);
-    //   return url
-    // })
+      console.log(element);
+      console.log(operation);
+      console.log(what);
+      console.log(url);
+
+      return url
+    })
     // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
     //   console.log(headers);
     //   console.log(params);
