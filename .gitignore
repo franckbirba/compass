@@ -8,5 +8,5 @@ heroku
 /views
 /actions-test.numbers
 /buildings.numbers
-
+npm-debug.log
 .DS_Store
