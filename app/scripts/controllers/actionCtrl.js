@@ -4,9 +4,9 @@
     .module('tornadoApp')
     .controller('ActionCtrl', ActionCtrl);
 
-  ActionCtrl.$inject = ['$scope', 'Auth', 'actionService', 'buildingService', 'timelineCalculationService'];
+  ActionCtrl.$inject = ['$scope', 'Auth', 'actionService', 'BuildingSvc', 'timelineCalculationService'];
 
-  function ActionCtrl($scope, Auth, actionService, buildingService, timelineCalculationService) {
+  function ActionCtrl($scope, Auth, actionService, BuildingSvc, timelineCalculationService) {
 
       var vm = this;
       // mini-model actions
@@ -111,7 +111,7 @@
       }
 
       function getBuildings() {
-        return buildingService.getBuildings()
+        return BuildingSvc.getBuildings()
           .then(function(response){
             vm.buildings.data = response.data;
             return vm.buildings;

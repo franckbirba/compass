@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('observatoryModule')
-  .controller('BuildingCtrl', function BuildingCtrl($scope, Auth, $location, buildingService) {
-    var db = buildingService;
-    var Building = buildingService.newBuilding();
+  .controller('BuildingCtrl', function BuildingCtrl($scope, Auth, $location, BuildingSvc) {
+    var db = BuildingSvc;
+    var Building = db.newBuilding();
     $scope.map = db.getMap();
     $scope.images = Building.getImages();
     $scope.certs = db.getCerts();
