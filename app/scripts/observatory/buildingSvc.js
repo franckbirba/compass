@@ -9,7 +9,7 @@
  */
 
 ObsModule
-  .factory('buildingService', function BuildingSvc(DUMMY) {
+  .factory('buildingService', function(DUMMY) {
 
     function Adress(params){
       var params = params || {};

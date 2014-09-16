@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("Config", [])
+angular.module("tornadoConfig", [])
 .constant("SETTINGS_CONF", {
   indices:{
     title:'Indices',
