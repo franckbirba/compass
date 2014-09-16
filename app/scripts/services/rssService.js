@@ -1,7 +1,5 @@
 var module = angular.module('rssServices', ['ngResource']);
 
-console.log("loading blog_services.js ...");
-
 module.factory('FeedLoader', function ($resource) {
     console.log("Creating FeedLoader...");
     return $resource('http://ajax.googleapis.com/ajax/services/feed/load', {}, {

@@ -1,8 +1,8 @@
 'use strict';
 
-var ObsModule = angular.module('observatoryModule', []);
+var ObsModule = angular.module('observatoryModule', ['ngRoute']);
 
-ObsModule.config(function ($routeProvider) {
+ObsModule.config(['$routeProvider', function ($routeProvider) {
   // change to true to turn on authentification
   var auth = false;
 
@@ -12,7 +12,10 @@ ObsModule.config(function ($routeProvider) {
       controller: 'ObservatoryCtrl',
       authenticate: auth
     })
-})
+    .otherwise({
+      redirectTo: '/observatory'
+    })
+}])
 .filter('capitalizeAdressKeys', function () {
   return function (input) {
       if (input === 'cp'){

@@ -1,5 +1,5 @@
 'use strict'
-angular.module("models", [])
+angular.module("tornadoConfig", [])
   .constant("DUMMY", {
     // BuildingService Values
     images: [
