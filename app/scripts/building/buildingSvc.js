@@ -59,15 +59,29 @@ angular.module('buildingMdl')
 
     Restangular.extendModel('building', function(model){
       return angular.extend(model, {
-        name: '',
-        portfolio: '',
-        address: new Adress(),
-        year: '',
-        controle: '',
-        user: '',
-        surface: '',
-        images: DUMMY.images
-      });
+          "address": {
+            "address1": "",
+            "address2": "",
+            "city":   "",
+            "zipcode":  "",
+            "country":  "",
+            "area":   ""
+          },
+          "buildingUser":   "",
+          "builtYear":  "",
+          "control":  "",
+          "floors":   "",
+          "name":   "",
+          "parkingSurface":   "",
+          "parkings":   "",
+          "portfolio":  "",
+          "property":   "",
+          "totalSurface":   "",
+          "usefulSurface":  "",
+          "user":   "",
+          "hqe":  "",
+          "images": []
+        });
     });
 
     return Building;

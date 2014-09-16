@@ -6,6 +6,8 @@ angular.module('buildingMdl', ["ngRoute"])
     var auth = false;
     var path = 'scripts/building/views/';
     $routeProvider
+      .when('/buildings', {
+        templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/buildingDetail', {
         templateUrl: path + 'buildingDetail.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building', {
@@ -30,7 +32,7 @@ angular.module('buildingMdl', ["ngRoute"])
         templateUrl: path + 'actionForm', controller: 'BuildingCtrl', authenticate: auth })
       .when('/scenario', {
         templateUrl: path + 'scenario', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/scenarioList', { // css
+      .when('/scenarioList', {
         templateUrl: path + 'scenarioList', controller: 'BuildingCtrl', authenticate: auth })
       .when('/schemaHome', {
         templateUrl: path + 'schemaHome', controller: 'BuildingCtrl', authenticate: auth  });

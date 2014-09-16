@@ -2,7 +2,7 @@
 
 ObsModule
   .factory('PortfolioSvc', function PortfolioSvc(Restangular, Portfolio) {
-    var Portfolio = Restangular.service('portfolio');
+    var Portfolio = Restangular.service('portfolios');
     // Restangular.extendCollection('portfolio', function(collection){
     //   // to restangularize new elem added to collection
     //   collection.add = function(params){
@@ -12,10 +12,10 @@ ObsModule
     //   };
     //   return collection;
     // });
-    Restangular.extendModel('portfolio', function(model){
+    Restangular.extendModel('portfolios', function(model){
       return angular.extend(model, {
         summary: {
-          buildings: '',
+          buildings: [],
           total_suface: '',
           occupation_rate: '',
           condition_index: '',

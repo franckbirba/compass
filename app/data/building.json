@@ -1,0 +1,31 @@
+/* Building Data Model */
+
+{
+  "_id":"53dea3374b87f315e4992837",
+  "address": {
+    "address1": "15, Bd des Capucines",
+    "address2": "",
+    "city":"Paris",
+    "zipcode":"75008",
+    "country":"France",
+    "area":"Ile-de-France"
+  },
+  "buildingUser":"admin",
+  "builtYear":"1900",
+  "control":"on",
+  "floors":"7",
+  "name":"building3",
+  "parkingSurface":"0",
+  "parkings":"0",
+  "portfolio":"53dea6314b87f315e4992842",
+  "property":"53de8a8f4b87f315e4992834",
+  "totalSurface":"239432",
+  "usefulSurface":"1500",
+  "user":"admin",
+  "hqe":"false",
+  "images":[
+    {"src":"http://www.zepros.fr/img_articles/images/articles/bati/actu/BZP1%20Reg%20GO%20Bepos%20Tours2.jpg"},
+    {"src":"http://acifmantoue.e-monsite.com/medias/images/faure-ingenierie-batiment-251544-1.jpg"},
+    {"src":"http://dtxtq4w60xqpw.cloudfront.net/sites/all/files/photocontest2012/untitled-1copy.jpg"}
+  ]
+}]

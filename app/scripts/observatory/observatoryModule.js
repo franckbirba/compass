@@ -32,7 +32,7 @@ ObsModule.config(['$routeProvider', function($routeProvider) {
       buildings: 'Bâtiments',
       total_suface: 'Superficie Totale',
       occupation_rate: 'Taux d\'occupation',
-      condition_index: 'Indice de cestuté',
+      condition_index: 'Indice de vestuté',
       conformity_index: 'Indice de conformité',
       avg_performence: 'Performence moyenne',
       avg_age: 'Age moyen'
