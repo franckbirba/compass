@@ -15,9 +15,8 @@ angular.module('buildingMdl')
     // $scope.adresskeys = formBuilder(Building.adress);
     // $scope.building = Building;
 
-    api.getList().then(function(res){
-      $scope.buildings = res;
-    })
+
+    $scope.buildings = api.getList().$object;
 
     $scope.create = function(params){
       // Create new Restangular element with params
@@ -31,6 +30,8 @@ angular.module('buildingMdl')
         $scope.buildings.push(Building);
       });
     }
+
+
 
 
 });
