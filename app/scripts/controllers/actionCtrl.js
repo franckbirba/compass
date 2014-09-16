@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   angular
-    .module('compassApp')
+    .module('tornadoApp')
     .controller('ActionCtrl', ActionCtrl);
 
   ActionCtrl.$inject = ['$scope', 'Auth', 'actionService', 'buildingService', 'timelineCalculationService'];
@@ -80,7 +80,7 @@
         vm.overallStats = timelineCalculationService.overallCostTRIEconomie(vm.actions.getByBuildingId( vm.currentBuilding ));
         vm.actionsFiltered = vm.actions.getByIsPlanified( vm.showPlanifiedActions );
       }
-      $scope.$watch(function() { 
+      $scope.$watch(function() {
         return vm.currentBuilding;
       }, function(newVal, oldVal){
         refreshPage();
@@ -133,16 +133,16 @@
         ];
         return pic[index];
       };
-      
+
       $scope.$on('new-action-dropped', function(ev, data) {
         var trim = data.trim
         , action = data.action;
         vm.actions.setExecutionDate( action._id, trim.id );
       });
-      
-      
+
+
       // LEGACY
       $scope.stock = {};
   }
-  
+
 }());

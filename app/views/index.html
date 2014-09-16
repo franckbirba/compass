@@ -23,7 +23,7 @@
     <link href="bower_components/nvd3/nv.d3.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/building.css">
+    <link rel="stylesheet" href="scripts/building/styles/building.css">
 
     <!-- SB Admin CSS - Include with every page -->
 
@@ -37,13 +37,13 @@
         <link href="bower_components/sb-admin/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   </head>
-  <body ng-app="compassApp">
+  <body ng-app="tornadoApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div  ng-view></div>
+    <div ng-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -76,10 +76,24 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
     <script src="bower_components/ngstorage/ngStorage.min.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/angular-tablesort/js/angular-tablesort.js"></script>
+    <script src="bower_components/google-code-prettify/src/prettify.js"></script>
+    <script src="bower_components/sb-admin/js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/nvd3/nv.d3.min.js"></script>
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/utils/utils.js"></script>
@@ -89,17 +103,18 @@
         <script src="scripts/controllers/langCtrl.js"></script>
         <script src="scripts/controllers/signup.js"></script>
         <script src="scripts/controllers/settings.js"></script>
+        <script src="config/settingsConf.js"></script>
         <script src="config/models.js"></script>
         <script src="config/dummy.js"></script>
-        <script src="config/settingsConf.js"></script>
         <script src="scripts/controllers/listedit.js"></script>
         <script src="scripts/controllers/actionCtrl.js"></script>
-
+        <script src="scripts/services/buildingService.old.js"></script>
         <script src="scripts/services/auth.js"></script>
         <script src="scripts/services/session.js"></script>
         <script src="scripts/services/user.js"></script>
         <script src="scripts/services/api.js"></script>
         <script src="scripts/services/apiPlaceholder.js"></script>
+
         <script src="scripts/controllers/navCtrl.js"></script>
         <script src="scripts/controllers/userCtrl.js"></script>
         <script src="scripts/directives/mongooseError.js"></script>
@@ -113,29 +128,20 @@
         <script src="scripts/services/actionService.js"></script>
         <script src="scripts/services/timelineCalculationService.js"></script>
 
+        <script src="scripts/building/buildingMdl.js"></script>
+        <script src="scripts/building/buildingSvc.js"></script>
+
+        <script src="scripts/building/buildingCtrl.js"></script>
+
         <script src="scripts/observatory/observatoryModule.js"></script>
-        <script src="scripts/observatory/buildingService.js"></script>
-        <script src="scripts/observatory/portfolioService.js"></script>
+        <script src="scripts/observatory/portfolioModel.js"></script>
+        <script src="scripts/observatory/portfolioSvc.js"></script>
+        <script src="scripts/observatory/observatorySvc.js"></script>
         <script src="scripts/observatory/observatoryCtrl.js"></script>
-        <script src="scripts/observatory/observatoryService.js"></script>
-                <script src="scripts/observatory/buildingCtrl.js"></script>
 
         <script src="scripts/services/rssService.js"></script>
         <script src="scripts/services/translate.js"></script>
         <script src="scripts/controllers/HomeCtrl.js"></script>
-
-
-    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
-     <script src="bower_components/angular-tablesort/js/angular-tablesort.js"></script>
-     <script src="bower_components/google-code-prettify/src/prettify.js"></script>
-     <script src="bower_components/sb-admin/js/plugins/morris/raphael-2.1.0.min.js"></script>
-     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-     <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
-     <script src="bower_components/underscore/underscore.js"></script>
-     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-     <script src="bower_components/d3/d3.min.js"></script>
-      <script src="bower_components/nvd3/nv.d3.min.js"></script>
-
 
         <!-- endbuild -->
 </body>

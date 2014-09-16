@@ -1,4 +1,4 @@
-angular.module('compassApp').directive('barchart', function ($rootScope) {
+angular.module('tornadoApp').directive('barchart', function ($rootScope) {
 	return {
         restrict: 'A',
         scope:{

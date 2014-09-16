@@ -1,8 +1,8 @@
 'use strict';
 
-var ObsModule = angular.module('observatoryModule', []);
+var ObsModule = angular.module('observatoryModule', ['ngRoute', 'restangular', 'tornadoConfig']);
 
-ObsModule.config(function ($routeProvider) {
+ObsModule.config(['$routeProvider', function($routeProvider) {
   // change to true to turn on authentification
   var auth = false;
 
@@ -12,7 +12,10 @@ ObsModule.config(function ($routeProvider) {
       controller: 'ObservatoryCtrl',
       authenticate: auth
     })
-})
+    .otherwise({
+      redirectTo: '/observatory'
+    })
+}])
 .filter('capitalizeAdressKeys', function () {
   return function (input) {
       if (input === 'cp'){
@@ -26,13 +29,13 @@ ObsModule.config(function ($routeProvider) {
 .filter('printPortSummary', function () {
   return function (input) {
     var map = {
-      batiments: 'Bâtiments',
-      superficie_total: 'Superficie Totale',
-      taux_occupation: 'Taux d\'occupation',
-      indice_vestute: 'Indice de cestuté',
-      indice_conformite: 'Indice de conformité',
-      perf_moyenne: 'Performence moyenne',
-      age_moyen: 'Age moyen'
+      buildings: 'Bâtiments',
+      total_suface: 'Superficie Totale',
+      occupation_rate: 'Taux d\'occupation',
+      condition_index: 'Indice de vestuté',
+      conformity_index: 'Indice de conformité',
+      avg_performence: 'Performence moyenne',
+      avg_age: 'Age moyen'
     }
     return map[input];
   }

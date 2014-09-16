@@ -1,5 +1,5 @@
 
-angular.module('compassApp')
+angular.module('tornadoApp')
   .controller('LangCtrl', function ($scope, Auth, $location) {
     $scope.LANG = [
       {

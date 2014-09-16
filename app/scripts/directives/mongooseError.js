@@ -1,6 +1,6 @@
 
 
-angular.module('compassApp')
+angular.module('tornadoApp')
 
   /**
    * Removes server error when user updates input

@@ -1,5 +1,6 @@
 node_modules
 public
+dist
 .tmp
 .sass-cache
 app/bower_components
@@ -10,3 +11,4 @@ heroku
 /buildings.numbers
 npm-debug.log
 .DS_Store
+*~

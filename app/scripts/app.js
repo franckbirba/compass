@@ -1,18 +1,19 @@
 'use strict';
 
-angular.module('compassApp', [
+angular.module('tornadoApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'Config',
-  'models',
+  'tornadoConfig',
   'ui.bootstrap',
   'xeditable',
   'tableSort',
   'google-maps',
   'geocoder',
   'ngCollaPicka',
+  'restangular',
+  'buildingMdl',
   'observatoryModule',
   'pascalprecht.translate',
   'rssServices'
@@ -20,138 +21,32 @@ angular.module('compassApp', [
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     // change to true to turn on authentification
     var auth = false;
-
+    var path = 'partials/';
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/home',
-       // controller: 'MainCtrl',
-        authenticate: auth
-      })
-      .when('/main', {
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl',
-        authenticate: auth
-      })
-      .when('/home', {
-        templateUrl: 'partials/home',
-      //  controller: 'MainCtrl',
-        authenticate: auth
-      })
-      .when('/buildingDetail', { // css
-      	templateUrl: 'partials/buildingDetail',
-        //  controller: 'MainCtrl',
-        authenticate: auth
-      })
+        templateUrl: path + 'home', controller: '', authenticate: auth})
       .when('/login', {
-      	templateUrl: 'partials/login',
-      	controller: 'LoginCtrl'
-      })
+        templateUrl: path + 'login',  controller: 'LoginCtrl' })
       .when('/signup', {
-      	templateUrl: 'partials/signup',
-      	controller: 'SignupCtrl'
-      })
+        templateUrl: path + 'signup', controller: 'SignupCtrl' })
+      .when('/main', {
+        templateUrl: path + 'main',  controller: '', authenticate: auth })
+      .when('/home', {
+        templateUrl: path + 'home',  controller: '', authenticate: auth })
       .when('/settings', {
-        templateUrl: 'partials/settings',
-        controller: 'SettingsCtrl',
-        authenticate: auth
-      })
-      .when('/building', {
-        templateUrl: 'partials/buildingFormGen1',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/building2', {
-        templateUrl: 'partials/buildingFormGen2',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/building3', {
-        templateUrl: 'partials/buildingFormBail1',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/building4', {
-        templateUrl: 'partials/buildingFormBail2',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/building5', {
-        templateUrl: 'partials/buildingFormBail3',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/building6', {
-        templateUrl: 'partials/buildingFormBail4',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/building7', {
-        templateUrl: 'partials/buildingFormBail5',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/building8', {
-        templateUrl: 'partials/buildingFormBail6',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/graph', {
-        templateUrl: 'partials/graph',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/actionForm', {
-        templateUrl: 'partials/actionForm',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/scenario', {
-        templateUrl: 'partials/scenario',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/schemaHome', {
-        templateUrl: 'partials/schemaHome',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
+        templateUrl: path + 'settings',  controller: 'SettingsCtrl', authenticate: auth })
       .when('/actionList', {
-        templateUrl: 'partials/actionList',
-        controller: 'ActionCtrl',
-        authenticate: auth
-      })
-      .when('/scenarioList', { // css
-        templateUrl: 'partials/scenarioList',
-        controller: 'BuildingCtrl',
-        authenticate: auth
-      })
-      .when('/applyAction', { // css
-        templateUrl: 'partials/applyAction',
-        controller: 'ActionCtrl',
-        authenticate: auth
-      })
+        templateUrl: path + 'actionList',  controller: 'ActionCtrl', authenticate: auth })
+      .when('/applyAction', {
+        templateUrl: path + 'applyAction',  controller: 'ActionCtrl', authenticate: auth })
       .when('/resultats', {
-        templateUrl: 'partials/resultats',
-        controller: 'ActionCtrl',
-        authenticate: auth
-      })
-      .when('/newScenario', { // css
-        templateUrl: 'partials/newScenario',
-        controller: 'ActionCtrl',
-        authenticate: auth
-      })
+        templateUrl: path + 'resultats',  controller: 'ActionCtrl', authenticate: auth })
+      .when('/newScenario', {
+        templateUrl: path + 'newScenario',  controller: 'ActionCtrl', authenticate: auth })
       .when('/timeline', { // css
-        templateUrl: 'partials/timeline',
-        controller: 'ActionCtrl',
-        controllerAs: 'Action',
-        authenticate: auth
-
-      })
-      .when('/collapicka', { // css
-        templateUrl: 'partials/testCollapicka',
-        controller: 'TestCtrl',
-        authenticate: auth
-      })
+        templateUrl: path + 'timeline',  controller: 'ActionCtrl', controllerAs: 'Action', authenticate: auth })
+      .when('/collapicka', {
+        templateUrl: path + 'testCollapicka',  controller: 'TestCtrl', authenticate: auth })
       .otherwise({
       	redirectTo: '/'
       });
@@ -173,12 +68,54 @@ angular.module('compassApp', [
     	};
     }]);
   })
-.run(function ($rootScope, $location, Auth) {
-
+  .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
       if (next.authenticate && !Auth.isLoggedIn()) {
         $location.path('/login');
       }
     });
+  })
+  .config(function(RestangularProvider) {
+    RestangularProvider.setBaseUrl('/crud');
+    RestangularProvider.setRestangularFields({ id: "_id" });
+    RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+      var extractedData;
+      // .. to look for getList operations
+      if (operation === "getList") {
+        // .. and handle the data and meta data
+        extractedData = response.data;
+      }
+      else if (operation === "post") {
+        extractedData = response.data;
+      }
+      else {
+        console.log(data);
+        console.log(url);
+        extractedData = response.data;
+      }
+      return extractedData;
+    });
+    // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
+
+    //   console.log(element);
+    //   console.log(operation);
+    //   console.log(what);
+    //   console.log(url);
+
+    //   return url
+    // })
+    // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
+    //   console.log(headers);
+    //   console.log(params);
+    //   console.log(element);
+    //   console.log(httpConfig);
+    // });
+    // RestangularProvider.setErrorInterceptor(function(response, deferred, responseHandler) {
+    //   if(response.status === 404) {
+    //     console.log(response);
+    //     console.log(deferred);
+    //   };
+    //   return true; // error not handled
+    // });
   });

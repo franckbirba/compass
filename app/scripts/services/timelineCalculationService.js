@@ -2,7 +2,7 @@
   'use strict';
 
 angular
-  .module('compassApp')
+  .module('tornadoApp')
   .service('timelineCalculationService', calcService);
 
   function calcService(){
@@ -40,5 +40,5 @@ angular
       return [];
     };
   }
-  
+
 }());

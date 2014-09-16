@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("Config", [])
+angular.module("tornadoConfig", [])
 .constant("SETTINGS_CONF", {
   indices:{
     title:'Indices',
@@ -18,7 +18,7 @@ angular.module("Config", [])
     title:'Fluids',
     genYears: true,
     cols: [
-      {name: 'fluid'}
+      {name: 'name'}
     ],
     rows: [],
     action: 'new fluid',
