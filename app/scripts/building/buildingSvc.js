@@ -13,76 +13,52 @@ angular.module('buildingMdl')
     // var map = DUMMY.map;
     // var certs = DUMMY.certs;
     // var usage_types = DUMMY.usage_types;
+    var resource = 'buildings';
 
-    function Adress(params){
+    function Address(params){
       var params = params || {};
-      this.adresse = params.adresse;
-      this.cp      = params.cp;
-      this.ville   = params.ville;
-      this.sector  = params.sector;
-      this.pays    = params.pays;
+      this.address1 = params.address1;
+      this.address1 = params.address2;
+      this.city     = params.city;
+      this.zipcode  = params.zipcode;
+      this.area     = params.area;
+      this.country  = params.country;
+      this.gps      = params.gps;
     }
 
-    // function Building(params){
-    //   var params = params || {adress: {}};
-    //   this.name       = params.name;
-    //   this.portofolio = params.portofolio;
-    //   this.adress     = new Adress(params.adress);
-    //   this.year       = params.year;
-    //   this.controle   = ['(vide)', 'Pleine propriété', 'Co-propriété'];
-    //   this.user       = ['(vide)', 'Own use', 'Locataire'];
-    //   this.surface    = params.surface;
-    //   this.images     = DUMMY.images;
-    // }
+    var Building = Restangular.service(resource);
 
-    // Building.prototype.getImages = function(){ return this.images };
-    // Building.prototype.addImage = function(img){ this.images.push(img) };
-    // Building.prototype.delImage = function(idx){ this.images.splice(idx, 1) };
-
-    // // Public API here
-    // return {
-    //   getMap: function() {
-    //     return map;
-    //   },
-    //   getCerts: function(){
-    //     return certs;
-    //   },
-    //   getUsageTypes: function(){
-    //     return usage_types;
-    //   },
-    //   newBuilding: function(params){
-    //     return new Building(params);
-    //   },
-    // };
-
-    var Building = Restangular.service('building');
-
-    Restangular.extendModel('building', function(model){
+    Restangular.extendModel(resource, function(model){
       return angular.extend(model, {
-          "address": {
-            "address1": "",
-            "address2": "",
-            "city":   "",
-            "zipcode":  "",
-            "country":  "",
-            "area":   ""
-          },
-          "buildingUser":   "",
-          "builtYear":  "",
+          "address": new Address(),
+          "building_user":   "",
+          "built_year":  "",
           "control":  "",
           "floors":   "",
           "name":   "",
-          "parkingSurface":   "",
+          "parking_surface":   "",
           "parkings":   "",
           "portfolio":  "",
           "property":   "",
-          "totalSurface":   "",
-          "usefulSurface":  "",
+          "total_surface":   "",
+          "useful_surface":  "",
           "user":   "",
           "hqe":  "",
           "images": []
         });
     });
 
-    return Building;
+    function createBuilding(params){
+      var elem = Restangular.one(resource);
+      angular.extend(elem, params);
+      return elem.post().then(function(res){
+        elem.id = res._id;
+        return elem;
+      })
+    }
+
+    return {
+      rest: Building,
+      createBuilding: createBuilding
+    }
   });

@@ -442,7 +442,7 @@ module.exports = function (grunt) {
         stderr: true
       }
     },
-    
+
     // Test settings
     karma: {
       unit: {

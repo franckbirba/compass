@@ -1,26 +1,29 @@
-/* Building Data Model */
+/*
+** Building Data Model
+*/
 
 {
   "_id":"53dea3374b87f315e4992837",
   "address": {
-    "address1": "15, Bd des Capucines",
-    "address2": "",
+    "adress1": "15, Bd des Capucines",
+    "adress2": "",
     "city":"Paris",
     "zipcode":"75008",
+    "area":"Ile-de-France",
     "country":"France",
-    "area":"Ile-de-France"
+    "gps":"0"
   },
-  "buildingUser":"admin",
-  "builtYear":"1900",
+  "building_user":"admin",
+  "built_year":"1900",
   "control":"on",
   "floors":"7",
   "name":"building3",
-  "parkingSurface":"0",
+  "parking_surface":"0",
   "parkings":"0",
   "portfolio":"53dea6314b87f315e4992842",
   "property":"53de8a8f4b87f315e4992834",
-  "totalSurface":"239432",
-  "usefulSurface":"1500",
+  "total_surface":"239432",
+  "useful_surface":"1500",
   "user":"admin",
   "hqe":"false",
   "images":[
