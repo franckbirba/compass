@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("tornadoConfig", [])
+angular.module("tornadoConfig")
   .constant("MODELS", {
     indices:{
         title:'Indices',

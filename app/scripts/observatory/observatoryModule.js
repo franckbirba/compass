@@ -1,10 +1,10 @@
 'use strict';
 
-var ObsModule = angular.module('observatoryModule', ['ngRoute']);
+var ObsModule = angular.module('observatoryModule', ['ngRoute', 'tornadoConfig']);
 
-ObsModule.config(['$routeProvider', function ($routeProvider) {
+ObsModule.config(function ($routeProvider, ENV) {
   // change to true to turn on authentification
-  var auth = false;
+  var auth = ENV.dev.auth;
 
   $routeProvider
     .when('/observatory', {
@@ -15,7 +15,7 @@ ObsModule.config(['$routeProvider', function ($routeProvider) {
     .otherwise({
       redirectTo: '/observatory'
     })
-}])
+})
 .filter('capitalizeAdressKeys', function () {
   return function (input) {
       if (input === 'cp'){
