@@ -22,7 +22,7 @@
 <link href="bower_components/nvd3/nv.d3.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/building.css">
+    <link rel="stylesheet" href="scripts/building/styles/building.css">
 
     <!-- SB Admin CSS - Include with every page -->
 
@@ -39,7 +39,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div  ng-view></div>
+    <div ng-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -139,9 +139,12 @@
         <script src="scripts/services/actionService.js"></script>
         <script src="scripts/services/timelineCalculationService.js"></script>
 
+        <script src="scripts/building/buildingMdl.js"></script>
+        <script src="scripts/building/buildingSvc.js"></script>
+        <script src="scripts/building/buildingService.old.js"></script>
+        <script src="scripts/building/buildingCtrl.js"></script>
+
         <script src="scripts/observatory/observatoryModule.js"></script>
-        <script src="scripts/observatory/buildingSvc.js"></script>
-        <script src="scripts/observatory/buildingCtrl.js"></script>
         <script src="scripts/observatory/portfolioModel.js"></script>
         <script src="scripts/observatory/portfolioSvc.js"></script>
         <script src="scripts/observatory/observatorySvc.js"></script>
