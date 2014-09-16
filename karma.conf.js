@@ -32,6 +32,7 @@ module.exports = function(config) {
       'app/bower_components/sb-admin/js/plugins/morris/raphael-2.1.0.min.js',
       'app/scripts/*.js',
       'app/scripts/utils/*.js',
+      'app/config/settingsConf.js',
       'app/config/*.js',
       'app/scripts/observatory/observatoryModule.js',
       'app/scripts/observatory/*.js',
