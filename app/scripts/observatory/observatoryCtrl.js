@@ -1,5 +1,13 @@
 'use strict';
 ObsModule
+  // .controller('portCtrl', function($scope){
+  //     $scope.portfolioCreate = function(params){
+  //       console.log(params);
+  //       console.log($scope.portForm);
+  //       $scope.portForm = {};
+  //       console.log($scope.portForm);
+  //     }
+  // })
   .controller('ObservatoryCtrl',
     function ObservatoryCtrl($scope, $timeout, Geocoder, ObservatorySvc){
       var db = ObservatorySvc;
@@ -25,11 +33,15 @@ ObsModule
       $scope.summarykeys = function(index){
         if (index >= 0){
           var port = $scope.portfolios[index];
-          return formBuilder(port.summary);
+          var so = formBuilder(port.summary);
+          console.log('so');
+          return so;
         }
         else
           return [];
       };
+
+
 
 
 
@@ -64,7 +76,7 @@ ObsModule
       // // store leases
       // observatory.leases = [];
       // // store usage types
-      // $scope.usageTypes = BuildingSvc.getUsageTypes();
+      // $scope.usageTypes = buildingService.getUsageTypes();
       // $scope.currentUsageType = '0';
       // $scope.filterByUsageType = function(newType) {
       //   observatory.buildings = observatory.buildingsStorage.filterByGrade(newType);
@@ -116,11 +128,11 @@ ObsModule
       // }
       // // load everything without special business logic
 
-      // BuildingSvc.getPortfolios().then(function(response){
+      // buildingService.getPortfolios().then(function(response){
       //   observatory.portfolios = response.data;
       // });
 
-      // BuildingSvc.getBuildings().then(function(response) {
+      // buildingService.getBuildings().then(function(response) {
 
       //   if (response && response.data && response.data instanceof Array) {
 
@@ -145,7 +157,7 @@ ObsModule
       //     });
       //   }
 
-      //   BuildingSvc().then(function(response){
+      //   buildingService.getLeases().then(function(response){
       //     observatory.leases = response.data;
 
       //     var lease, label, chartBlock, building;

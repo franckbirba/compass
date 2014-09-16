@@ -17,9 +17,9 @@ angular.module('tornadoApp', [
   'pascalprecht.translate',
   'rssServices'
 ])
-  .config(function ($routeProvider, $locationProvider, $httpProvider, ENV) {
+  .config(function ($routeProvider, $locationProvider, $httpProvider) {
     // change to true to turn on authentification
-    var auth = ENV.dev.auth;
+    var auth = false;
 
     $routeProvider
       .when('/', {

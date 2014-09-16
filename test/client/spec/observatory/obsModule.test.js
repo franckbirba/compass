@@ -3,16 +3,10 @@
 describe('ObsModule: observatoryModule', function () {
 
   // load the service's module
-  var tornadoConfig;
-  beforeEach(function(){
-    angular.mock.module('tornadoConfig');
-    angular.mock.module('observatoryModule');
-    inject(function(_tornadoConfig_){
-      tornadoConfig = _tornadoConfig_;
-    })
-  });
+  beforeEach(angular.mock.module('observatoryModule'));
 
   it('should map routes to controllers', function() {
+    // angular.modmodule('observatoryModule');
 
     inject(function($route) {
       expect($route.routes['/observatory'].controller).toBe('ObservatoryCtrl');
