@@ -9,7 +9,7 @@ ObsModule
   //     }
   // })
   .controller('ObservatoryCtrl',
-    function ObservatoryCtrl($scope, $timeout, Geocoder, ObservatorySvc){
+    function ObservatoryCtrl($scope, $timeout, Restangular, Geocoder, ObservatorySvc){
       var db = ObservatorySvc;
       $scope.geocoder = Geocoder;
 
@@ -33,17 +33,11 @@ ObsModule
       $scope.summarykeys = function(index){
         if (index >= 0){
           var port = $scope.portfolios[index];
-          var so = formBuilder(port.summary);
-          console.log('so');
-          return so;
+          return formBuilder(port.summary);
         }
         else
           return [];
       };
-
-
-
-
 
       var observatory = this;
       // observatory.portfolios = [];
