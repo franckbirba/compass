@@ -1,33 +1,23 @@
 'use strict';
 
 angular.module('buildingMdl')
-  .controller('BuildingCtrl', function BuildingCtrl($scope, BuildingSvc) {
+  .controller('BuildingCtrl', function BuildingCtrl($scope, $routeParams, BuildingSvc) {
     var Building = BuildingSvc;
+    var id = $routeParams.params || '';
 
-    // var Building = db.newBuilding();
-    // $scope.map = db.getMap();
-    // $scope.images = Building.getImages();
-    // $scope.certs = db.getCerts();
+    Building.get(id).then(function(res){
+      $scope.building = res;
+      $scope.buildingkeys = formBuilder($scope.building[0]);
+      debugger
+      $scope.update = function(){ res.put() };
+    });
 
-    // $scope.delImage = function(index){
-    //   Building.delImage(index);
-    // };
-    // $scope.adresskeys = formBuilder(Building.adress);
-    // $scope.building = Building;
-
-
-    $scope.buildings = Building.getList().$object;
+    $scope.buildings = Building.rest.getList().$object;
 
     $scope.create = function(params){
-      var Building = Restangular.one('buildings');
-      angular.extend(Building, params);
-      Building.post().then(function(res){
-        Building.id = res._id;
-        $scope.buildings.push(Building);
-      });
+      Building.createBuilding(params).then(function(res){
+        $scope.buildings.push(res);
+      })
     }
-
-
-
 
 });
