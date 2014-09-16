@@ -1,4 +1,4 @@
-angular.module('compassApp')
+angular.module('tornadoApp')
   .service('ApiPlaceholder', function Receipe($q) {
     return {
       data : {

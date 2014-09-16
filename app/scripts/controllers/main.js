@@ -1,6 +1,6 @@
 
 
-angular.module('compassApp')
+angular.module('tornadoApp')
   .controller('MainCtrl', function ($scope, $http) {
   	$http.get('/bower_components/sb-admin/js/plugins/metisMenu/jquery.metisMenu.js').success(function(awesomeThings) {
 

@@ -1,4 +1,4 @@
-angular.module('compassApp')
+angular.module('tornadoApp')
   .config(function($translateProvider) {
     // Our translations will go in here
     $translateProvider.translations('en', {
@@ -17,7 +17,7 @@ angular.module('compassApp')
         EVALUATE: 'Evaluate',
         SEARCH: 'search'
       });
-      
+
     $translateProvider.translations('fr', {
           HEADLINE: 'Bienvenue',
           SIGNUP_TITLE: 'Veuillez vous loguer',

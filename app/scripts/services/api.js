@@ -1,4 +1,4 @@
-angular.module('compassApp')
+angular.module('tornadoApp')
   .service('TornadoApi', function TornadoApi(User, $rootScope, Session, Auth, $location, $http, $q) {
     var url = "/crud/";
     return {

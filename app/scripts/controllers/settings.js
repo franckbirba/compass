@@ -1,4 +1,4 @@
-angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, Auth,$http, SETTINGS_CONF, ApiPlaceholder) {
+angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, User, Auth,$http, SETTINGS_CONF, ApiPlaceholder) {
 
   $scope.errors = {};
 
@@ -91,8 +91,8 @@ angular.module('compassApp').controller('SettingsCtrl', function ($scope, User, 
   };
 
 
-  // 
-  
+  //
+
 
 /*
   $scope.getCls = function(row, cellname) {

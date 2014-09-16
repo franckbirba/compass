@@ -1,4 +1,4 @@
-angular.module('compassApp').directive('listedit', function ($rootScope) {
+angular.module('tornadoApp').directive('listedit', function ($rootScope) {
   return {
     restrict: 'A',
     scope:{
@@ -12,10 +12,10 @@ angular.module('compassApp').directive('listedit', function ($rootScope) {
       scope.predicate = scope.cols[0].name;
 
       scope.add = function(){
-        /* 
-         * dont know why but inserted has to be made in the 
-         * directive scope rather then settings scope in 
-         * order for editable-form to work 
+        /*
+         * dont know why but inserted has to be made in the
+         * directive scope rather then settings scope in
+         * order for editable-form to work
          */
         scope.inserted = {};
         scope.cols.forEach(function(elem){

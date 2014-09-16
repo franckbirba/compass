@@ -3,7 +3,7 @@
 describe('Service: observatoryService', function () {
 
   // load the service's module
-  beforeEach(module('compassApp'));
+  beforeEach(module('tornadoApp'));
 
   // instantiate service
   var observatoryService;

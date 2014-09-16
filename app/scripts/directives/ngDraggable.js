@@ -2,7 +2,7 @@
  *
  * https://github.com/fatlinesofcode/ngDraggable
  */
-angular.module("compassApp")
+angular.module("tornadoApp")
         .directive('ngDrag', ['$rootScope', '$parse', function ($rootScope, $parse) {
             return {
                 restrict: 'A',

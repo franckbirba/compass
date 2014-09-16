@@ -1,13 +1,13 @@
 
 
-angular.module('compassApp')
+angular.module('tornadoApp')
   .controller('SignupCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 
     $scope.register = function(form) {
       $scope.submitted = true;
-  
+
       if(form.$valid) {
         Auth.createUser({
           name: $scope.user.name,

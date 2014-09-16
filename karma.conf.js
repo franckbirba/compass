@@ -18,8 +18,9 @@ module.exports = function(config) {
       'app/bower_components/angular-sanitize/angular-sanitize.js',
       'app/bower_components/angular-route/angular-route.js',
       'app/scripts/*.js',
-      'app/scripts/**/*.js',
-      'test/client/mock/**/*.js',
+      'app/scripts/observatory/observatoryModule.js',
+      'app/scripts/observatory/*.js',
+      // 'test/client/mock/**/*.js',
       'test/client/spec/**/*.js'
     ],
 
@@ -46,7 +47,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
