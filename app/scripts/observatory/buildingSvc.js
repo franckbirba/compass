@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc service
- * @name tornadoApp.BuildingSvc
+ * @name tornadoApp.buildingService
  * @description
- * # BuildingSvc
+ * # buildingService
  * Factory in the tornadoApp.
  */
 
 ObsModule
-  .factory('BuildingSvc', function(DUMMY) {
+  .factory('buildingService', function(DUMMY) {
 
     function Adress(params){
       var params = params || {};
