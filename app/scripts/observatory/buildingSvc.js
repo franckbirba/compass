@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc service
- * @name compassApp.buildingService
+ * @name tornadoApp.buildingService
  * @description
  * # buildingService
- * Factory in the compassApp.
+ * Factory in the tornadoApp.
  */
 
 ObsModule

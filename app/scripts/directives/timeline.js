@@ -1,4 +1,4 @@
-angular.module('compassApp').directive('timeline', function ($rootScope) {
+angular.module('tornadoApp').directive('timeline', function ($rootScope) {
   return {
         restrict: 'A',
         scope:{
@@ -16,7 +16,7 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
             } else {
               return "";
             }
-            
+
           };
 
        $scope.onDropComplete=function(index, data, evt){
@@ -55,16 +55,16 @@ angular.module('compassApp').directive('timeline', function ($rootScope) {
             $scope.TIMELINE.splice( trimFrom.ref[0], 1, removedElement );
           }
         };
-        
+
         $scope.addActionToTimeline = function(trim, action) {
           $rootScope.$broadcast('new-action-dropped', { trim: trim, action: action });
           var updatedElement = $scope.TIMELINE[trim.ref[0]];
           updatedElement.t[trim.ref[1]].actions.push(action);
           $scope.TIMELINE.splice( trim.ref[0], 1, updatedElement );
         }
-        
+
         //$scope.actions = $scope.$parent.Action.actionsFiltered;
-        
+
           $scope.genTimeline = function() {
             var tmpDate = new Date();
             var curYear = tmpDate.getFullYear();

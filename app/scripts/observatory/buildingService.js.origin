@@ -4,7 +4,7 @@
  */
 'use strict';
 
-angular.module('compassApp').service('buildingService', ['$http', function($http){
+angular.module('tornadoApp').service('buildingService', ['$http', function($http){
   var self = this,
     urlBase = '/crud/',
     urlPortfolios = urlBase + 'portfolio/',

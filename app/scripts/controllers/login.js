@@ -1,5 +1,5 @@
 
-angular.module('compassApp')
+angular.module('tornadoApp')
   .controller('LoginCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};

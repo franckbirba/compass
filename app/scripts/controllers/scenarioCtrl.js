@@ -1,5 +1,5 @@
 
-angular.module('compassApp')
+angular.module('tornadoApp')
   .controller('ScenarioCtrl', function ($scope, Auth) {
    $scope.ACTIONS = [
     {

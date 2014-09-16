@@ -1,4 +1,4 @@
-angular.module('compassApp').directive('trim', function ($rootScope) {
+angular.module('tornadoApp').directive('trim', function ($rootScope) {
   return {
         restrict: 'A',
         scope:{

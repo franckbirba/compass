@@ -2,7 +2,7 @@
 'use strict';
 
   angular
-    .module('compassApp')
+    .module('tornadoApp')
     .factory('actionService', actionService);
 
   actionService.$inject = ['$http'];
@@ -11,7 +11,7 @@
     return {
       getActions: getActions
     }
-    
+
     function getActions(buildingId) {
       var params = buildingId ? { building: buildingId } : {};
       return $http.get('/crud/action/', params)

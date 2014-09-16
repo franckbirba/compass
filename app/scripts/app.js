@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('compassApp', [
+angular.module('tornadoApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

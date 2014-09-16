@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('compassApp')
+angular.module('tornadoApp')
   .factory('User', function ($resource) {
     return $resource('/api/users/:id', {
       id: '@id'
