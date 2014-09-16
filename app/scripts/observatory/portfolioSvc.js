@@ -2,17 +2,10 @@
 
 ObsModule
   .factory('PortfolioSvc', function PortfolioSvc(Restangular, Portfolio) {
-    var Portfolio = Restangular.service('portfolios');
-    // Restangular.extendCollection('portfolio', function(collection){
-    //   // to restangularize new elem added to collection
-    //   collection.add = function(params){
-    //     var data = _.clone(params);
-    //     var portfolio = Restangular.restangularizeElement(this.parentResource, data, 'portfolio');
-    //     this.push(portfolio);
-    //   };
-    //   return collection;
-    // });
-    Restangular.extendModel('portfolios', function(model){
+    var resource = 'portfolios';
+    var Portfolio = Restangular.service(resource);
+
+    Restangular.extendModel(resource, function(model){
       return angular.extend(model, {
         summary: {
           buildings: [],
@@ -25,5 +18,18 @@ ObsModule
         }
       });
     });
-    return Portfolio;
+
+    function createPortfolio(params){
+      var elem = Restangular.one(resource);
+      angular.extend(elem, params);
+      return elem.post().then(function(res){
+        elem.id = res._id;
+        return elem;
+      })
+    }
+
+    return {
+     rest: Portfolio,
+     createPortfolio: createPortfolio
+    }
   });
