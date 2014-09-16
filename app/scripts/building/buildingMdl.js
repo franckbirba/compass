@@ -8,7 +8,7 @@ angular.module('buildingMdl', ["ngRoute"])
     $routeProvider
       .when('/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/buildingDetail', {
+      .when('/buildingDetail/:params', {
         templateUrl: path + 'buildingDetail.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building', {
         templateUrl: path + 'buildingFormGen1.html', controller: 'BuildingCtrl', authenticate: auth })
@@ -36,4 +36,18 @@ angular.module('buildingMdl', ["ngRoute"])
         templateUrl: path + 'scenarioList', controller: 'BuildingCtrl', authenticate: auth })
       .when('/schemaHome', {
         templateUrl: path + 'schemaHome', controller: 'BuildingCtrl', authenticate: auth  });
+  })
+  .filter('buildingDetail', function(){
+    return function(input) {
+      var map = {
+        buildings: 'Bâtiments',
+        total_suface: 'Superficie Totale',
+        occupation_rate: 'Taux d\'occupation',
+        condition_index: 'Indice de vestuté',
+        conformity_index: 'Indice de conformité',
+        avg_performence: 'Performence moyenne',
+        avg_age: 'Age moyen'
+      }
+      return map[input];
+    }
   });

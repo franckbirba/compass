@@ -57,8 +57,13 @@ angular.module('buildingMdl')
       })
     }
 
+    function get(id){
+      return Restangular.one(resource, id).get()
+    }
+
     return {
       rest: Building,
+      get: get,
       createBuilding: createBuilding
     }
   });

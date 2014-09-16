@@ -81,7 +81,6 @@ angular.module('tornadoApp', [
     RestangularProvider.setRestangularFields({ id: "_id" });
     RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
       var extractedData;
-      console.log(operation);
       // .. to look for getList operations
       if (operation === "getList") {
         // .. and handle the data and meta data
@@ -91,6 +90,8 @@ angular.module('tornadoApp', [
         extractedData = response.data;
       }
       else {
+        console.log(data);
+        console.log(url);
         extractedData = response.data;
       }
       return extractedData;
