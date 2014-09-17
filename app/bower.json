@@ -1,5 +1,5 @@
 {
-  "name": "tornado",
+  "name": "compass",
   "version": "0.0.0",
   "dependencies": {
     "angular": ">=1.2.*",
@@ -23,6 +23,7 @@
     "json3": "~3.2.6",
     "nvd3": "",
     "sb-admin-v2": "",
-    "underscore": ""
+    "underscore": "",
+    "angular-translate": "~2.2.0"
   }
 }

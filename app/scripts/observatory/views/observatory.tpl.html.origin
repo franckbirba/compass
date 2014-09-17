@@ -1,11 +1,10 @@
 <div compassnav=""></div>
-<div class="wrapper" ng-controller="ObservatoryController as observatory">
+<div class="wrapper">
   <!-- MAIN CONTAINER -->
   <div class="container-fluid" ng-controller="UserCtrl">
     <!-- <h3 class="glyphicon glyphicon-user">{{User.name}}</h3> -->
     <div class="row">
-      <div class="col-md-4">
-        <div class="observatory">
+      <div class="col-md-4 observatory">
           <ul class="nav nav-tabs" id="createtab">
             <li class="active">
               <a href="#portfolio" data-toggle="tab">Portfolio</a>
@@ -16,12 +15,14 @@
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="portfolio">
-              <ul class="list-group" style="height:200px;overflow-y:scroll;">
-                <li class="list-group-item" ng-repeat="portfolio in observatory.portfolios"><a class="btn" data-toggle="modal" data-target="#myModal" href="">{{portfolio.name}}</a></li>
+              <ul class="list-group">
+                <li class="list-group-item" ng-repeat="portfolio in portfolios">
+                  <a class="btn" data-toggle="modal" data-target="#myModal" href="">{{portfolio.name}}</a>
+                </li>
               </ul>
               <div>
-                <button class="glyphicon glyphicon-plus btn btn-xs btn-primary"></button>
-                <input type="text" placeholder="Créer un portfolio">
+                <input type="text" ng-model="tmp.name" placeholder="Créer un portfolio">
+                <button class="glyphicon glyphicon-plus btn btn-xs btn-primary" ng-click="portfolioNew()"></button>
               </div>
             </div>
 
@@ -34,33 +35,32 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
       <div class="col-md-8">
-          <div class="observatory">
-            <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
-            <select class="form-control" style="width:400px" ng-change="filterBuildingsByHqe(hqeType)" ng-model="hqeType" ng-options="k as v for (k, v) in hqeTypes">
-            </select>
-            <br />
-            <!-- GOOGLE MAP -->
-            <google-map center="map.center" options='{styles:[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]}' draggable="true" width="600px" style="width:600px;height:400px" zoom="map.zoom">
-              <markers models="observatory.buildings" coords="'position'" labelContent="'name'" showWindow="true">
-                <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
-                    <div>
-                      <p ng-non-bindable style="font-weight: bold; color: blue; font-size: 13px">{{ name }}</p>
-                      <p ng-non-bindable style="color: #999;">{{ position.formattedAddress }}</p>
-                        <p class="muted">
-                          <a href="">Some link 1</a> | <a href="">Some link 2</a> | <a href="">Some link 3</a>
-                        </p>
-                    </div>
-                </windows>
-              </markers>
-            </google-map>
-            <!-- END MAP -->
-          </div>
+        <div class="observatory">
+          <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Carte</label>
+          <select class="form-control" style="width:400px" ng-change="filterBuildingsByHqe(hqeType)" ng-model="values.hqeTypes" ng-options="k as v for (k, v) in values.hqeTypes">
+          </select>
+          <br />
+          <!-- GOOGLE MAP -->
+          <google-map center="values.map.center" options='{styles:[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]}' draggable="true" width="600px" style="width:600px;height:400px" zoom="values.map.zoom">
+            <markers models="observatory.buildings" coords="'position'" labelContent="'name'" showWindow="true">
+              <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
+                  <div>
+                    <p ng-non-bindable style="font-weight: bold; color: blue; font-size: 13px">{{ name }}</p>
+                    <p ng-non-bindable style="color: #999;">{{ position.formattedAddress }}</p>
+                      <p class="muted">
+                        <a href="">Some link 1</a> | <a href="">Some link 2</a> | <a href="">Some link 3</a>
+                      </p>
+                  </div>
+              </windows>
+            </markers>
+          </google-map>
+          <!-- END MAP -->
+        </div>
           <div class="observatory">
             <label for="portfolio" class="col-sm-2 control-label build-lab-obs">Visualisation</label>
-              <select class="form-control" style="width:400px" ng-change="filterByUsageType(currentUsageType)" id="select-by-usage-type" ng-model="currentUsageType" ng-options="k as v for (k, v) in usageTypes">
+              <select class="form-control" style="width:400px" ng-change="filterByUsageType(currentUsageType)" id="select-by-usage-type" ng-model="currentUsageType" ng-options="k as v for (k, v) in values.usageTypes">
               </select>
             <div id="chart">
               <svg></svg>
@@ -76,7 +76,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Informations du portefeuille</h4>
+          <h4 class="modal-title" id="myModalLabel">Informations du portefeuille: {{portfolio.name}}</h4>
         </div>
         <div class="modal-body">
           <form role="form" class="form-horizontal">
@@ -134,6 +134,8 @@
       </div>
     </div>
   </div> <!-- MODAL -->
+
+
 </div><!-- wrapper -->
 
 <script type="text/javascript">

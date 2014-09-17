@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-bottom: 20px;" >
+=======
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" ng-controller="TranslateController">
+>>>>>>> FETCH_HEAD
     <div class="container-fluid">
         <div class="navbar-header" style="margin-bottom:40px;">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#compass-collapse-nav">
@@ -18,10 +22,17 @@
             <!--
             <form class="navbar-right navbar-form" role="search">
                 <div class="form-group">
-                    <input type="text" class="search-query form-control" placeholder="Search">
+                    <input type="text" class="search-query form-control" placeholder="{{ 'SEARCH' | translate }}">
                 </div>
             </form>
+<<<<<<< HEAD
         -->
+=======
+            <select class="navbar-right selectpicker" ng-model="selectLang" ng-change="changeLanguage()" ng-options="lang.name for lang in LANG">
+        <option>français</option>
+        <option>english</option>
+    </select>
+>>>>>>> FETCH_HEAD
             <ul class="nav navbar-top-links navbar-right">
                 
 

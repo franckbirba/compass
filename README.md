@@ -21,6 +21,8 @@ tornado.awesome(); // "awesome"
  * cd app && bower install
  * cd .. && grunt serve
 
+
+
 ## Examples
 _(Coming soon)_
 
@@ -31,5 +33,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2014 Fulanke  
+Copyright (c) 2014 Fulanke
 Licensed under the MIT license.

@@ -1,8 +1,7 @@
 "use strict";
 
 angular.module("models", [])
-
-.constant("MODELS", {
+  .constant("MODELS", {
     indices:{
         title:'Indices',
         genYears:true,
@@ -128,5 +127,4 @@ angular.module("models", [])
         url: 'uses',
         icon: 'glyphicon glyphicon-tree-deciduous'
     }
-})
-;
+  });

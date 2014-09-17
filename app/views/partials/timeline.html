@@ -93,8 +93,13 @@ body {
         <div id="line2">
         </div>
         <!-- ARRAYAction -->
+<<<<<<< HEAD
         <div class="row actionArray" style="margin-left:1px;">
           <span class="glyphicon glyphicon-circle-arrow-up buttonArray"></span>
+=======
+        <div class="row actionArray" ng-class="{ actionArrayAnimate: showActionsReservoir }">
+          <span class="glyphicon buttonArray" ng-class="showActionsReservoir ? 'glyphicon-circle-arrow-down' : 'glyphicon-circle-arrow-up'" ng-click="showActionsReservoir = !showActionsReservoir"></span>
+>>>>>>> FETCH_HEAD
           <h3>Réservoir d'actions</h3>
           <div class="col-sm-6 buttonFiltre">
             <a href="javascript:;;" ng-click="Action.showPlanifiedActions = 0" class="btn btn-primary"
@@ -119,9 +124,9 @@ body {
                 
               </thead>
               <tbody>
-                <tr class="timeline-action-tr" ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in Action.actions.getByIsPlanified()">
+                <tr class="timeline-action-tr" ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in Action.actionsFiltered">
                   <td>
-                    {{action.dates.join(',')}}
+                    {{action.date}}
                   </td>
                   <td>
                     {{action.name}}
@@ -147,21 +152,27 @@ body {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       
+=======
+      <div class="col-sm-4 blocright">
+        <div class="row" style="padding:5px">
+          <div class="col-sm-6">
+            <h5>Répartition des actions</h5>
+          </div>
+          <div class="col-sm-6">
+            <select class="form-control" style="width: 100%" ng-model="Action.currentBuilding" ng-change="Action.onBuildingChange(Action.currentBuilding)" ng-options="b._id as b.name for b in Action.buildings.data">
+              <option value="">Tous les Bâtiments</option>
+            </select>
+          </div>
+        </div>
+        <div timeline actions="{{Action.actionsFiltered}}"></div>
+      </div>
+>>>>>>> FETCH_HEAD
     </div>
   </div>
 </div>
 <script type="text/javascript">
-  $('.selectpicker').selectpicker();
-
-  $('.buttonArray').on('click', function() {
-    $('.actionArray').toggleClass('actionArrayAnimate');
-  });
-</script>
-
-<script type="text/javascript">
-
-
 
 var fillLine = function(el){
   var margin = {top: 20, right: 80, bottom: 30, left: 50},
