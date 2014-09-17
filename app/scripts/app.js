@@ -38,7 +38,7 @@ angular.module('compassApp', [
         authenticate: auth
       })
       .when('/buildingDetail', { // css
-      	templateUrl: 'partials/buildingDetail',
+      	templateUrl: 'scripts/observatory/views/buildingDetail',
         //  controller: 'MainCtrl',
         authenticate: auth
       })
@@ -56,37 +56,37 @@ angular.module('compassApp', [
         authenticate: auth
       })
       .when('/building', {
-        templateUrl: 'partials/buildingFormGen1',
+        templateUrl: 'scripts/observatory/views/',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
       .when('/building2', {
-        templateUrl: 'partials/buildingFormGen2',
+        templateUrl: 'scripts/observatory/views/',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
       .when('/building3', {
-        templateUrl: 'partials/buildingFormBail1',
+        templateUrl: 'scripts/observatory/views/',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
       .when('/building4', {
-        templateUrl: 'partials/buildingFormBail2',
+        templateUrl: 'scripts/observatory/views/',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
       .when('/building5', {
-        templateUrl: 'partials/buildingFormBail3',
+        templateUrl: 'scripts/observatory/views/',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
       .when('/building6', {
-        templateUrl: 'partials/buildingFormBail4',
+        templateUrl: 'scripts/observatory/views/',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
       .when('/building7', {
-        templateUrl: 'partials/buildingFormBail5',
+        templateUrl: 'scripts/observatory/views/',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
@@ -96,7 +96,7 @@ angular.module('compassApp', [
         authenticate: auth
       })
       .when('/graph', {
-        templateUrl: 'partials/graph',
+        templateUrl: 'partials/ ',
         controller: 'BuildingCtrl',
         authenticate: auth
       })
