@@ -25,6 +25,7 @@
     "sb-admin-v2": "",
     "underscore": "",
     "angular-translate": "~2.2.0",
-    "restangular": "~1.4.0"
+    "restangular": "~1.4.0",
+    "angular-bootstrap": "~0.11.0"
   }
 }
