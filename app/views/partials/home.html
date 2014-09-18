@@ -1,30 +1,31 @@
 <div compassnav=""></div>
-<div class="wrapper" ng-controller="HomeCtrl">
+<div class="wrapper" style="margin-top:20px;" ng-controller="HomeCtrl">
 	<div class="container">
-		<img class="thumbnail" width="200px" height="100px" style="float:left;">
+		<img src="logo_eportfolio.png" class="thumbnail" width="200px" height="100px" style="float:left;">
 	</div>
+	<div class="container">
+		<div class="row" style="margin-top:60px;">
+			 <div class="col-md-9"style="margin-bottom: 20px;" >
+				<div class="row" style="margin-bottom: 20px;">
+					<div class="col-md-6" style="padding:20px;">
+						<a href="/settings" role="button" class="btn btn-default home sextan img-responsive">
+							<div class="text">{{ 'OBSERVE' | translate }}</div>
+						</a>
+					</div>
+					<div class="col-md-6"  style="padding:20px;">
+						<a href="/observatory" role="button" class="btn btn-default home compass">
+							<div class="text">{{ 'PLAN' | translate }}</div>
+						</a>
+					</div>
+				</div>
 
-	<div class="container col-md-9" style="margin-bottom: 20px;">
-		<div class="row" style="margin-bottom: 20px;">
-			<div class="col-md-6">
-				<a href="/settings" role="button" class="btn btn-default home sextan">
-					<div class="text">{{ 'OBSERVE' | translate }}</div>
-				</a>
-			</div>
-			<div class="col-md-6">
-				<a href="/observatory" role="button" class="btn btn-default home compass">
-					<div class="text">{{ 'PLAN' | translate }}</div>
-				</a>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-12">
-				<a href="/settings" role="button" class="btn btn-default home homegraph">
-					<div class="text">{{ 'EVALUATE' | translate }}</div>
-				</a>
-			</div>
-		</div>
+				<div class="row">
+					<div class="col-md-12" style="padding:20px;">
+						<a href="/settings" role="button" class="btn btn-default home homegraph">
+							<div class="text">{{ 'EVALUATE' | translate }}</div>
+						</a>
+					</div>
+				</div>
 	</div>
 	<div class="container col-md-3">
 	
@@ -49,7 +50,6 @@
 				</div>
 			</div>
 			<!-- /.panel-body -->
-
 		</div>
 
 	</div>
