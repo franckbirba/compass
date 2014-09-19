@@ -1,6 +1,6 @@
 'use strict';
 
-var ObsModule = angular.module('observatoryModule', ['ngRoute', 'restangular', 'tornadoConfig']);
+var ObsModule = angular.module('observatoryMdl', ['ngRoute', 'restangular', 'tornadoConfig']);
 
 ObsModule.config(['$routeProvider', function($routeProvider) {
   // change to true to turn on authentification
