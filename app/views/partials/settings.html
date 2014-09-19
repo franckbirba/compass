@@ -3,7 +3,7 @@
 	<div id="page-wrapper" style="margin:0">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1 >Change Password</h1>
+				<h1>Change Password</h1>
 			</div>
 			<div class="col-sm-12">
 				<form class="form" name="form" ng-submit="changePassword(form)" novalidate style="background-color:#8faa00; border-radius:5px;">
@@ -60,22 +60,28 @@
 		<div class="row">
 			<h2>Coût des Fluides</h2>
 
-      <div <!--ng-show="newFluid"-->>
-        <select ng-model="choosenFluid" ng-options="fluidType.name for fluidType in fluidType.rows"></select>
-        <select ng-model="choosenVendor" ng-options="vendor.name for vendor in vendor.rows"></select>
-      </div>
+      <script type="text/ng-template" id="newFluidModal.html">
+        <div class="modal-body">
+          type de fluide <select ng-model="choosenFluid" ng-options="fluidtype for fluidtype in fluidtypes"></select><br/>
+          fournisseur <select ng-model="choosenVendor" ng-options="provider for provider in providers"></select>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" ng-click="ok()">OK</button>
+          <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+      </script>
 
 			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="fluids"></div>
 		</div>
 
 		<div class="row">
 			<h2>Fluides</h2>
-			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="fluidType"></div>
+			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="fluidtypes"></div>
 		</div>
 
 		<div class="row">
 			<h2>Fournisseurs</h2>
-			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="vendor"></div>
+			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="providers"></div>
 		</div>
 	</div>
 </div>
