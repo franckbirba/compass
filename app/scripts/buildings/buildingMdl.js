@@ -4,7 +4,7 @@ angular.module('buildingMdl', ["ngRoute"])
   .config(function($routeProvider, $locationProvider, $httpProvider) {
     // change to true to turn on authentification
     var auth = false;
-    var path = 'scripts/building/views/';
+    var path = 'scripts/buildings/views/';
     $routeProvider
       .when('/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
