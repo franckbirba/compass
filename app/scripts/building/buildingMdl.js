@@ -8,34 +8,36 @@ angular.module('buildingMdl', ["ngRoute"])
     $routeProvider
       .when('/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/buildingDetail/:params', {
+      .when('/building/:id', {
         templateUrl: path + 'buildingDetail.html', controller: 'BuildingCtrl', authenticate: auth })
+      .when('/portfolio/:id/buildings', {
+        templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building', {
         templateUrl: path + 'buildingFormGen1.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building2', {
-        templateUrl: path + 'buildingFormGen2', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'buildingFormGen2.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building3', {
-        templateUrl: path + 'buildingFormBail1', controller: 'BuildingCtrl', authenticate: auth})
+        templateUrl: path + 'buildingFormBail1.html', controller: 'BuildingCtrl', authenticate: auth})
       .when('/building4', {
-        templateUrl: path + 'buildingFormBail2', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'buildingFormBail2.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building5', {
-        templateUrl: path + 'buildingFormBail3', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'buildingFormBail3.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building6', {
-        templateUrl: path + 'buildingFormBail4', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'buildingFormBail4.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building7', {
-        templateUrl: path + 'buildingFormBail5', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'buildingFormBail5.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building8', {
-        templateUrl: path + 'buildingFormBail6', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'buildingFormBail6.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/graph', {
-        templateUrl: path + 'graph', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'graph.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/actionForm', {
-        templateUrl: path + 'actionForm', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'actionForm.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/scenario', {
-        templateUrl: path + 'scenario', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'scenario.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/scenarioList', {
-        templateUrl: path + 'scenarioList', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'scenarioList.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/schemaHome', {
-        templateUrl: path + 'schemaHome', controller: 'BuildingCtrl', authenticate: auth  });
+        templateUrl: path + 'schemaHome.html', controller: 'BuildingCtrl', authenticate: auth  });
   })
   .filter('buildingDetail', function(){
     return function(input) {
@@ -50,4 +52,14 @@ angular.module('buildingMdl', ["ngRoute"])
       }
       return map[input];
     }
-  });
+  })
+  .filter('deRestangularize', function(){
+    return function(keys){
+      var evil = ['singleOne', 'route', 'reqParams', 'fromServer', 'parentResource', 'restangularCollection']
+      var filtered = [];
+      angular.forEach(keys, function(key){
+        if (evil.indexOf(key) === -1) {filtered.push(key)}
+      })
+      return filtered
+    }
+  })

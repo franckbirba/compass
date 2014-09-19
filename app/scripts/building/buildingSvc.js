@@ -26,7 +26,7 @@ angular.module('buildingMdl')
       this.gps      = params.gps;
     }
 
-    var Building = Restangular.service(resource);
+    var Buildings = Restangular.service(resource);
 
     Restangular.extendModel(resource, function(model){
       return angular.extend(model, {
@@ -35,7 +35,7 @@ angular.module('buildingMdl')
           "built_year":  "",
           "control":  "",
           "floors":   "",
-          "name":   "",
+          "name":   "demo building",
           "parking_surface":   "",
           "parkings":   "",
           "portfolio":  "",
@@ -52,18 +52,18 @@ angular.module('buildingMdl')
       var elem = Restangular.one(resource);
       angular.extend(elem, params);
       return elem.post().then(function(res){
-        elem.id = res._id;
+        elem._id = res._id;
         return elem;
       })
     }
 
-    function get(id){
-      return Restangular.one(resource, id).get()
+    function getOne(id){
+      return Restangular.one(resource, id).get().$object
     }
 
     return {
-      rest: Building,
-      get: get,
+      rest: Buildings,
+      get: getOne,
       createBuilding: createBuilding
     }
   });

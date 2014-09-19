@@ -17,6 +17,11 @@ ObsModule
 
       $scope.portfolios = db.portfolios;
 
+      $scope.showLink = function(key){
+        if (key === 'buildings'){ return true }
+        else { return false }
+      }
+
       //For adding a new Portfolio to Obs.
       $scope.portfolioCreate = function(params){
         db.addPortfolio(params);

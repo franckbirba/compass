@@ -5,16 +5,11 @@ var ObsModule = angular.module('observatoryModule', ['ngRoute', 'restangular', '
 ObsModule.config(['$routeProvider', function($routeProvider) {
   // change to true to turn on authentification
   var auth = false;
-
+  var path = 'scripts/observatory/views/';
   $routeProvider
     .when('/observatory', {
-      templateUrl: 'scripts/observatory/views/observatory.tpl.html',
-      controller: 'ObservatoryCtrl',
-      authenticate: auth
-    })
-    .otherwise({
-      redirectTo: '/observatory'
-    })
+      templateUrl: path + 'observatory.tpl.html', controller: 'ObservatoryCtrl', authenticate: auth })
+    .otherwise({ redirectTo: '/observatory' })
 }])
 .filter('capitalizeAdressKeys', function () {
   return function (input) {

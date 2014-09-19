@@ -89,11 +89,14 @@ angular.module('tornadoApp', [
       else if (operation === "post") {
         extractedData = response.data;
       }
+      else if (operation === "put") {
+        extractedData = response;
+      }
       else {
-        console.log(data);
-        console.log(url);
         extractedData = response.data;
       }
+      console.log(operation, url);
+      // console.log(response);
       return extractedData;
     });
     // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
@@ -104,7 +107,7 @@ angular.module('tornadoApp', [
     //   console.log(url);
 
     //   return url
-    // })
+    // });
     // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
     //   console.log(headers);
     //   console.log(params);
