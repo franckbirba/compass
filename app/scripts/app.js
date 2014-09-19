@@ -14,7 +14,7 @@ angular.module('tornadoApp', [
   'ngCollaPicka',
   'restangular',
   'buildingMdl',
-  'observatoryModule',
+  'observatoryMdl',
   'pascalprecht.translate',
   'rssServices'
 ])
