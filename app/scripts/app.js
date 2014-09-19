@@ -18,10 +18,19 @@ angular.module('tornadoApp', [
   'pascalprecht.translate',
   'rssServices'
 ])
+  .run(function ($rootScope, $location, Auth) {
+    // Redirect to login if route requires auth and you're not logged in
+    $rootScope.$on('$routeChangeStart', function (event, next) {
+      if (next.authenticate && !Auth.isLoggedIn()) {
+        $location.path('/login');
+      }
+    });
+  })
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     // change to true to turn on authentification
     var auth = false;
     var path = 'partials/';
+
     $routeProvider
       .when('/', {
         templateUrl: path + 'home', controller: '', authenticate: auth})
@@ -47,78 +56,73 @@ angular.module('tornadoApp', [
         templateUrl: path + 'timeline',  controller: 'ActionCtrl', controllerAs: 'Action', authenticate: auth })
       .when('/collapicka', {
         templateUrl: path + 'testCollapicka',  controller: 'TestCtrl', authenticate: auth })
+      .when('/test', {
+        templateUrl: path + 'test',  controller: 'TestRestCtrl', authenticate: auth })
       .otherwise({
-      	redirectTo: '/'
+        redirectTo: '/'
       });
 
     $locationProvider.html5Mode(true);
 
     // Intercept 401s and redirect you to login
     $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
-    	return {
-    		'responseError': function(response) {
-    			if(response.status === 401) {
-    				$location.path('/login');
-    				return $q.reject(response);
-    			}
-    			else {
-    				return $q.reject(response);
-    			}
-    		}
-    	};
+      return {
+        'responseError': function(response) {
+          if(response.status === 401) {
+            $location.path('/login');
+            return $q.reject(response);
+          }
+          else {
+            return $q.reject(response);
+          }
+        }
+      };
     }]);
-  })
-  .run(function ($rootScope, $location, Auth) {
-    // Redirect to login if route requires auth and you're not logged in
-    $rootScope.$on('$routeChangeStart', function (event, next) {
-      if (next.authenticate && !Auth.isLoggedIn()) {
-        $location.path('/login');
-      }
-    });
-  })
-  .config(function(RestangularProvider) {
-    RestangularProvider.setBaseUrl('/crud');
-    RestangularProvider.setRestangularFields({ id: "_id" });
-    RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
-      var extractedData;
-      // .. to look for getList operations
-      if (operation === "getList") {
-        // .. and handle the data and meta data
-        extractedData = response.data;
-      }
-      else if (operation === "post") {
-        extractedData = response.data;
-      }
-      else if (operation === "put") {
-        extractedData = response;
-      }
-      else {
-        extractedData = response.data;
-      }
-      console.log(operation, url);
-      // console.log(response);
-      return extractedData;
-    });
-    // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
-
-    //   console.log(element);
-    //   console.log(operation);
-    //   console.log(what);
-    //   console.log(url);
-
-    //   return url
-    // });
-    // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
-    //   console.log(headers);
-    //   console.log(params);
-    //   console.log(element);
-    //   console.log(httpConfig);
-    // });
-    // RestangularProvider.setErrorInterceptor(function(response, deferred, responseHandler) {
-    //   if(response.status === 404) {
-    //     console.log(response);
-    //     console.log(deferred);
-    //   };
-    //   return true; // error not handled
-    // });
   });
+  // .config(function(RestangularProvider) {
+  //   RestangularProvider.setBaseUrl('/crud');
+  //   RestangularProvider.setRestangularFields({ id: "_id" });
+  //   RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+  //     var extractedData;
+  //     // .. to look for getList operations
+  //     if (operation === "getList") {
+  //       // .. and handle the data and meta data
+  //       extractedData = response.data;
+  //     }
+  //     else if (operation === "post") {
+  //       extractedData = response.data;
+  //     }
+  //     else if (operation === "put") {
+  //       extractedData = response;
+  //     }
+  //     else {
+  //       extractedData = response.data;
+  //     }
+  //     console.log(operation, url);
+  //     // console.log(response);
+  //     return extractedData;
+  //   })
+
+  //   // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
+
+  //   //   console.log(element);
+  //   //   console.log(operation);
+  //   //   console.log(what);
+  //   //   console.log(url);
+
+  //   //   return url
+  //   // });
+  //   // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
+  //   //   console.log(headers);
+  //   //   console.log(params);
+  //   //   console.log(element);
+  //   //   console.log(httpConfig);
+  //   // });
+  //   // RestangularProvider.setErrorInterceptor(function(response, deferred, responseHandler) {
+  //   //   if(response.status === 404) {
+  //   //     console.log(response);
+  //   //     console.log(deferred);
+  //   //   };
+  //   //   return true; // error not handled
+  //   // });
+  // });

@@ -8,8 +8,8 @@ ObsModule.config(['$routeProvider', function($routeProvider) {
   var path = 'scripts/observatory/views/';
   $routeProvider
     .when('/observatory', {
-      templateUrl: path + 'observatory.tpl.html', controller: 'ObservatoryCtrl', authenticate: auth })
-    .otherwise({ redirectTo: '/observatory' })
+      templateUrl: path + 'observatory.tpl.html', controller: 'ObservatoryCtrl', authenticate: auth });
+
 }])
 .filter('capitalizeAdressKeys', function () {
   return function (input) {

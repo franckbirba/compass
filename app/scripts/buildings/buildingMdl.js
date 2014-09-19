@@ -5,6 +5,7 @@ angular.module('buildingMdl', ["ngRoute"])
     // change to true to turn on authentification
     var auth = false;
     var path = 'scripts/buildings/views/';
+    var partials  = 'views/partials/';
     $routeProvider
       .when('/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
@@ -29,15 +30,15 @@ angular.module('buildingMdl', ["ngRoute"])
       .when('/building8', {
         templateUrl: path + 'buildingFormBail6.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/graph', {
-        templateUrl: path + 'graph.html', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: partials + 'graph.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/actionForm', {
-        templateUrl: path + 'actionForm.html', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: partials + 'actionForm.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/scenario', {
-        templateUrl: path + 'scenario.html', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: partials + 'scenario.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/scenarioList', {
-        templateUrl: path + 'scenarioList.html', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: partials + 'scenarioList.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/schemaHome', {
-        templateUrl: path + 'schemaHome.html', controller: 'BuildingCtrl', authenticate: auth  });
+        templateUrl: partials + 'schemaHome.html', controller: 'BuildingCtrl', authenticate: auth  });
   })
   .filter('buildingDetail', function(){
     return function(input) {
