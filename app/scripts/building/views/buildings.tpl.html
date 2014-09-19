@@ -1,7 +1,30 @@
-<div class="list-group">
-  <h4>Add Building</h4>
-  <a ng-click="create({name: 'random'})">create</a>
-  <div class="list-group-item" ng-repeat="building in buildings">
-    <a href="/buildingDetail/{{ building._id }}">{{building._id}}</a>
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="/observatory">Portfolio</a></li>
+    <li><a href="/observatory">{{portfolio_id}}</a></li>
+    <li class="active">Buildings</li>
+  </ol>
+  <div class="clearfix">
+
+    <span class="pull-right">
+      <button class="btn btn-large" ng-click="create()">
+        <i class="fa fa-plus">new</i>
+      </button>
+    </span>
+  </div>
+  <div class="list-group">
+    <div class="list-group-item clearfix" ng-repeat="building in buildings">
+      <span class="pull-left">
+        <h4 class="list-group-item-heading">{{building.name}}</h4>
+        <p class="list-group-item-text">{{buildign.portfolio}}</p>
+        <p class="list-group-item-text">{{building._id}}</p>
+      </span>
+      <span class="pull-right">
+        <ul class="nav nav-tabs">
+          <li><a href="/building/{{ building._id }}"><i class="fa fa-edit">edit</i></a></li>
+          <li ng-click="remove(building)"><a href=""><i class="fa fa-times">del</i></a></li>
+        </ul>
+      <span>
+    </div>
   </div>
 </div>

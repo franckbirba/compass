@@ -78,15 +78,18 @@
 			</div>
 			-->
 			<div class="col-md-4">
-				<form role="form" class="form-horizontal">
-					<div class="form-group" ng-repeat="key in buildingkeys">
-						<label for="building" class="col-sm-4 control-label">{{key}}</label>
+
+				<form name="buildingForm" class="form-horizontal" role="form" ng-submit="update(building)">
+					<div class="form-group" ng-repeat="key in buildingkeys | deRestangularize">
+						<label for="{{key}}" class="col-sm-4 control-label">{{key}}</label>
 						<div class="col-sm-8 input-group">
-							<input class="form-control" placeholder="{{building[key]}}" type="text">
+							<input class="form-control" name="{{key}}" data-ng-model="building[key]" placeholder="{{building[key]}}" type="text">
 						</div>
+					</div>
+					<input type="submit"></input>
 				</form>
 			</div>
-			<button ng-click="update()">Update</button>
+
 		</div>
 	</div>
 </div>
