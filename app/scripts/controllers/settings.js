@@ -1,5 +1,5 @@
-angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, User, Auth,$http, SETTINGS_CONF, ApiPlaceholder) {
-
+angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restangular, $modal) {
+/*
   $scope.errors = {};
 
   $scope.changePassword = function(form) {
@@ -17,140 +17,224 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, User, 
         });
     }
   };
+*/
 
-  for (prop in SETTINGS_CONF)
-  {
-    if (!SETTINGS_CONF.hasOwnProperty(prop))
-      continue;
 
-    var section = angular.copy(SETTINGS_CONF[prop]);
 
-    // expanding cols Array if genYears = true;
-    if (section.hasOwnProperty('genYears') &&
-       section.genYears === true)
-    {
-      var currentYear = new Date().getFullYear();
-      var years = Array.apply(null, {length: 30}).map(function(curr, index){
-        return ({name: currentYear + index});
-      });
-      section.cols = section.cols.concat(years);
-      delete section.genYears;
-    }
 
-    // expanding rows array with data fetched from persistance API
-    var tmp = ApiPlaceholder.get(section.url);
-    angular.forEach(tmp, function(value, key){
-      angular.extend(value, angular.fromJson(value.values));
-      delete value.values;
-      this.push(value);
-    }, section.rows);
-    // return TornadoApi.request('get', 'portfolio', {name: 'portfolio1'})
 
-    // expanding section with row manipulation functions.
-    // nota bene : could curry thoses bitches
-    section.add = function(inserted){
-      this.rows.push(inserted);
-      ApiPlaceholder.post(this.url, {/* SOME DATA */});
-    };
 
-    section.remove = function(row){
-      this.rows.splice(this.rows.indexOf(row), 1);
-      ApiPlaceholder.del(this.url, { /* SOME TANGS */ });
-    };
-
-    section.update = function(index){
-      console.log(index);
-      ApiPlaceholder.update(this.url, { /* DEM TAMGS */ });
-    };
-
-    // finally, extend $scope with it.
-    $scope[prop] = section;
-  }
-
-  // Hard adding of coefficient fixe de montage
-  $scope.coeff = ApiPlaceholder.get('coeff');
-
-  // Fluids section specific overridding
-  angular.forEach($scope.fluids.rows, function(val){
-    val.name = val.fluidType + ' (' + val.provider + ')';
-    delete val.fluidType;
-    delete val.provider;
+  var currentYear = new Date().getFullYear();
+  var years = Array.apply(null, {length: 30}).map(function(curr, index){
+    return ({name: currentYear + index});
   });
 
-  delete $scope.fluids.add;
-  $scope.fluids.add = function(inserted){
-    $scope.newFluid = true;
-    // Fetch a Provider
-    var provider = $scope.choosenVendor.name;
-    // Fetch a flui type
-    var fluidType = $scope.choosenFluid.name;
-    inserted.name = fluidType + ' (' + provider + ')';
-    this.rows.push(inserted);
-//    ApiPlaceholder.post(this.url, {});
-//    $scope.newFluid = false;
+
+
+
+
+
+
+  $scope.indices = {};
+  $scope.indices.title = 'Indices';
+  $scope.indices.icon = 'glyphicon glyphicon-tree-deciduous';
+  $scope.indices.columns = [{name:'name'}];
+  $scope.indices.columns = $scope.indices.columns.concat(years);
+
+  var promise = Restangular.all('indices').getList();
+  $scope.indices.rows = promise.$object;
+  promise.then(function(all){
+    // flattening retrieved data to make it work in listEdit directive
+    angular.forEach($scope.indices.rows, function(rowData){
+      var tmp = angular.extend(rowData, rowData.rows);
+    });
+  });
+
+  $scope.indices.add = function(){
+    var inserted = {};
+    this.columns.forEach(function(elem){
+       inserted[elem.name] = null;
+    });
+
+    var newEntry = {name: inserted.name};
+    delete inserted.name;
+    newEntry.rows = angular.copy(inserted);
+
+    this.rows.post(newEntry).then(function(posted){
+      $scope.indices.rows.push(posted);
+    });
+  };
+
+  $scope.indices.remove = function(row){
+    Restangular.one('indices', row._id).remove();
+    this.rows.splice(this.rows.indexOf(row), 1);
+  };
+
+  $scope.indices.update = function(row, newVals){
+    delete newVals.name;
+    row.rows = angular.copy(newVals);
+    row.put();
   };
 
 
-  //
 
 
-/*
-  $scope.getCls = function(row, cellname) {
-    if ($scope.states[row[cellname]])
-                    return $scope.states[row[cellname]].cls;
-                return $scope.states[false].cls;
+
+
+  $scope.providers = {};
+  $scope.providers.title = 'Providers';
+  $scope.providers.icon = 'glyphicon glyphicon-tree-deciduous';
+  $scope.providers.columns = [{name:'name'}];
+
+  var promise = Restangular.all('providers').getList();
+  $scope.providers.rows = promise.$object;
+
+  $scope.providers.add = function(){
+    var newEntry = {name: null};
+    var promise = this.rows.post(newEntry).then(function(posted){
+      $scope.providers.rows.push(posted);
+    });
   };
 
-  $scope.loadData = function() {
-                return Api.request("get", $scope.ngModel.url, {type:$scope.ngModel.url}, function(data){
-                    $scope.ngModel.rows = data;
-                })
-            };
+  $scope.providers.remove = function(row){
+    Restangular.one('providers', row._id).remove();
+    this.rows.splice(this.rows.indexOf(row), 1);
+  };
 
-        	$rootScope.$watch('dataLoaded', function(newVal, oldVal){
-                $scope.models = $rootScope.models;
-                $scope.ngModel = $scope.models[$scope.model];
-        	      $scope.loadData();
-                //  $rootScope.updateAllModels();
-                // $route.reload();
-        	});
-            $scope.loadData();
+  $scope.providers.update = function(row, newVals){
+    delete newVals.name;
+    row.rows = angular.copy(newVals);
+    row.put();
+  };
 
 
-           if ($scope.ngModel.genYears)
-                $scope.ngModel.cols = $scope.genYears();
 
-            $scope.saveData = function(data, row) {
-		//	    var projectId = $rootScope.currentProject._id;
-                //$scope.user not updated yet
-                angular.extend(data, {
-                    _id: row._id,
-         //           userId: row.userId ? row.userId : Auth.user.username,
-            //        projectId: row.projectId ? row.projectId : projectId,
-                    type: $scope.ngModel.url
-                });
-              //  console.log(data);
-                $http.post('/crud/'+$scope.ngModel.url+'/', data).success(function(){
-                    //$scope.loadData();
-                    //console.log("SUCCESS");
-                 //   $rootScope.updateAllModels();
-                });
-            };
 
-*/
-/*
-     $scope.showLink = function(type, row) {
-       //    console.log("LINK %O, %O", type, row);
-       var selected = [];
-			 var models = $rootScope.models;
-       angular.forEach(models[type.link].rows, function(s) {
-         //console.log(s._id, $scope.ngModel.rows);
-         //console.log(s, type.name, row[type.name]);
-         if (row[type.name] && row[type.name].indexOf(s._id) >= 0) {
-           selected.push(s.name);
-         }
-       });
-       return selected.length ? selected.join(', ') : 'Not set';
-     };
-*/
+
+
+  $scope.fluidtypes = {};
+  $scope.fluidtypes.title = 'Fluid Types';
+  $scope.fluidtypes.icon = 'glyphicon glyphicon-tree-deciduous';
+  $scope.fluidtypes.columns = [{name:'name'}];
+
+  var promise = Restangular.all('fluidtypes').getList();
+  $scope.fluidtypes.rows = promise.$object;
+
+  $scope.fluidtypes.add = function(){
+    var newEntry = {name: null};
+    var promise = this.rows.post(newEntry).then(function(posted){
+      $scope.fluidtypes.rows.push(posted);
+    });
+  };
+
+  $scope.fluidtypes.remove = function(row){
+    Restangular.one('fluidtypes', row._id).remove();
+    this.rows.splice(this.rows.indexOf(row), 1);
+  };
+
+  $scope.fluidtypes.update = function(row, newVals){
+    delete newVals.name;
+    row.rows = angular.copy(newVals);
+    row.put();
+  };
+
+
+
+
+
+
+
+
+
+
+  $scope.fluids = {};
+  $scope.fluids.title = 'Fluids';
+  $scope.fluids.icon = 'glyphicon glyphicon-tree-deciduous';
+  $scope.fluids.columns = [{name:'name'}];
+  $scope.fluids.columns = $scope.fluids.columns.concat(years);
+
+  var promise = Restangular.all('fluids').getList();
+  $scope.fluids.rows = promise.$object;
+  promise.then(function(all){
+    // flattening retrieved data to make it work in listEdit directive
+    angular.forEach($scope.fluids.rows, function(rowData){
+      var tmp = angular.extend(rowData, rowData.rows);
+    });
   });
+
+  $scope.fluids.add = function () {
+    var modalInstance = $modal.open({
+      templateUrl: 'newFluidModal.html',
+      controller: newFluidModalCtrl,
+      resolve: {
+        fluidtypes : function(){
+          return $scope.fluidtypes.rows.map(function(val){
+            return val.name;
+          });
+        },
+        providers : function(){
+          return $scope.providers.rows.map(function(val){
+            return val.name;
+          });
+        }
+      }
+    });
+    
+    modalInstance.result.then(function(choosenFluid, choosenProvider){
+      console.log('in results');
+      $scope.choosenFluid = choosenFluid;
+      $scope.choosenProvider = choosenProvider;
+      console.log($scope.choosenFluid);
+      console.log($scope.choosenVendor);
+    });
+
+    var inserted = {};
+    this.columns.forEach(function(elem){
+       inserted[elem.name] = null;
+    });
+
+    var newEntry = {name: inserted.name};
+    delete inserted.name;
+    newEntry.rows = angular.copy(inserted);
+
+    this.rows.post(newEntry).then(function(posted){
+      $scope.fluids.rows.push(posted);
+    });
+
+  };
+
+
+
+  $scope.fluids.remove = function(row){
+    Restangular.one('fluids', row._id).remove();
+    this.rows.splice(this.rows.indexOf(row), 1);
+  };
+
+  $scope.fluids.update = function(row, newVals){
+    delete newVals.name;
+    row.rows = angular.copy(newVals);
+    row.put();
+
+//    this.rows[this.rows.indexOf(row)] = newVals;
+//    this.rows.put();
+  };
+
+
+  var newFluidModalCtrl = function ($scope, $modalInstance, fluidtypes, providers) {
+
+    $scope.choosenFluid = fluidtypes[0];
+    $scope.choosenProvider = providers[0];
+    $scope.fluidtypes = fluidtypes;
+    $scope.providers = providers;
+
+    $scope.ok = function () {
+      console.log($scope.choosenFluid);
+      console.log($scope.choosenVendor);
+      $modalInstance.close($scope.choosenFluid, $scope.choosenProvider);
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+  };
+});

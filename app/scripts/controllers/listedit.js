@@ -1,4 +1,4 @@
-angular.module('tornadoApp').directive('listedit', function ($rootScope) {
+angular.module('tornadoApp').directive('listedit', function ($rootScope, $interval) {
   return {
     restrict: 'A',
     scope:{
@@ -7,24 +7,22 @@ angular.module('tornadoApp').directive('listedit', function ($rootScope) {
     link: function(scope, element, attrs){
       scope.title = scope.data.title;
       scope.icon = scope.data.icon;
-      scope.cols = scope.data.cols;
+      scope.cols = scope.data.columns;
       scope.rows = scope.data.rows;
       scope.predicate = scope.cols[0].name;
 
       scope.add = function(){
         /*
-         * dont know why but inserted has to be made in the
-         * directive scope rather then settings scope in
-         * order for editable-form to work
+         * dont know why but the object has to be
+         * made right here rather then settingsCtrl
+         * in order for editable-form to work
          */
-        scope.inserted = {};
-        scope.cols.forEach(function(elem){
-          scope.inserted[elem.name] = null;
-        });
-        scope.data.add(scope.inserted);
-        scope.data = scope.$parent[attrs.data];
+        scope.data.add();
       };
-      scope.save = function(data, row){};
+
+      scope.save = function(data, row){
+        scope.data.update(row, data);
+      };
 
       scope.stringifyIt = function(it){
         return it.toString();
