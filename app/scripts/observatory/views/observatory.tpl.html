@@ -29,12 +29,23 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <label for="portFormAdresse" class="col-sm-2 control-label">Adresse</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="portFormAdresse" type="text" placeholder="Adresse" ng-model="portForm.adresse">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="portFormImg" class="col-sm-2 control-label">Image</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="portFormImg" type="text" placeholder="Image" ng-model="portForm.image">
+                  </div>
+                </div>
+                <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-success" ng-click="portfolioCreate(portForm); portFormShow = ! portFormShow">Sauvegarder</button>
                   </div>
                 </div>
               </form>
-
             </div>
           </div>
           <div class="panel-body">
