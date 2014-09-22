@@ -13,22 +13,8 @@ angular.module('buildingMdl', ["ngRoute"])
         templateUrl: path + 'buildingDetail.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/portfolio/:id/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/building', {
+      .when('/portfolio/:id/building', {
         templateUrl: path + 'buildForm.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/building2', {
-        templateUrl: path + 'buildingFormGen2.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/building3', {
-        templateUrl: path + 'buildingFormBail1.html', controller: 'BuildingCtrl', authenticate: auth})
-      .when('/building4', {
-        templateUrl: path + 'buildingFormBail2.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/building5', {
-        templateUrl: path + 'buildingFormBail3.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/building6', {
-        templateUrl: path + 'buildingFormBail4.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/building7', {
-        templateUrl: path + 'buildingFormBail5.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/building8', {
-        templateUrl: path + 'buildingFormBail6.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/graph', {
         templateUrl: partials + 'graph.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/actionForm', {

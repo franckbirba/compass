@@ -1,0 +1,72 @@
+building:
+  portfolio:  id
+  name:       string
+  adress:
+    street:
+    city:
+    zip_code:
+    country:
+
+  img: [
+    alt:
+    src:
+  ]
+
+  additional_info:
+    construction_year:    int
+    control:              ?
+    user:                 string
+    surface_total:        /m2
+    surface_usefull:      /m2
+    floors:               int
+    parking_spaces:       int
+
+  lease:
+    name:          string
+    rental_status: {options}
+    rent:          e/m2
+    usage:         {options}
+    surface_usefull: int
+    floor:           int
+    igh:             ?
+    erp_status:      {list}
+
+    dpe:
+      energy_consumption:
+        notation:
+        value:
+      emmission_co2:
+        notation:
+        value:
+    fluid_consumption: {}
+    consumption_by_use: [{
+      usage_name:
+      supplier:
+      price:
+    }]
+    certifications: [
+      name:
+      details:
+    ]
+    confort_quality:
+      accoustic:
+      visuel:
+      thermic:
+      comments:
+    technical_info:
+      categories: [
+        cat_name:
+        vetuste:
+        conformity:
+        description:
+      ]
+      global_conformity:
+      global_vestute:
+      comments:
+    conformity_info: [
+      rule_name:
+      rule_period:
+      rule_status:
+      last_diag:
+      comment:
+    ]
