@@ -94,8 +94,8 @@ body {
         </div>
         <!-- ARRAYAction -->
 
-        <div class="row actionArray" ng-class="{ actionArrayAnimate: showActionsReservoir }">
-          <span class="glyphicon buttonArray" ng-class="showActionsReservoir ? 'glyphicon-circle-arrow-down' : 'glyphicon-circle-arrow-up'" ng-click="showActionsReservoir = !showActionsReservoir"></span>
+        <div class="row actionArray" style="margin-left:1px;" ng-class="{ actionArrayAnimate: showActionsReservoir }">
+          <span class="buttonArray" ng-class="showActionsReservoir ? 'glyphicon-circle-arrow-down' : 'glyphicon-circle-arrow-up'" ng-click="showActionsReservoir = !showActionsReservoir"></span>
 
           <h3>Réservoir d'actions</h3>
           <div class="col-sm-6 buttonFiltre">
@@ -163,7 +163,6 @@ body {
         </div>
         <div timeline actions="{{Action.actionsFiltered}}"></div>
       </div>
-
     </div>
   </div>
 </div>

@@ -91,7 +91,11 @@
 					<input type="submit"></input>
 				</form>
 			</div>
+<<<<<<< HEAD
 			<button ng-click="update()">Update</button>
+
+=======
+>>>>>>> building forward
 
 		</div>
 	</div>
