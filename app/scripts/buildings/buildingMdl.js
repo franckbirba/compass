@@ -14,7 +14,7 @@ angular.module('buildingMdl', ["ngRoute"])
       .when('/portfolio/:id/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building', {
-        templateUrl: path + 'buildingFormGen1.html', controller: 'BuildingCtrl', authenticate: auth })
+        templateUrl: path + 'buildForm.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building2', {
         templateUrl: path + 'buildingFormGen2.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building3', {

@@ -34,7 +34,7 @@ $component-active-color:    red !important;
     color: #000;
     padding: 0.2em 0;
 }
-    
+
 /* Space out content a bit */
 body {
     overflow: hidden;
@@ -390,43 +390,47 @@ a:hover > .text {
     overflow: hidden;
 }
 
-.build-title {
-    background-color: white;
-    height: 50px;
-    color: #7c7c7c;
-    width: 112px;
-    margin: 10px;
-    padding: 12px;
-    font-size: 18px;
-    border-radius: 5px;
-}
+/*
+** MOVED TO scripts/buildings/styles
 
-.build-title-schemaHome {
-    background-color: #8FAA00;
-    height: 50px;
-    color: #7c7c7c;
-    width: 216px;
-    margin: 10px;
-    padding: 12px;
-    font-size: 18px;
-    border-radius: 5px;
-}
+    .build-title {
+        background-color: white;
+        height: 50px;
+        color: #7c7c7c;
+        width: 112px;
+        margin: 10px;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
 
-.build-invest > .col-sm-10 {
-    width: 500px;
-}
+    .build-title-schemaHome {
+        background-color: #8FAA00;
+        height: 50px;
+        color: #7c7c7c;
+        width: 216px;
+        margin: 10px;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
 
-.build-info {
-    width: 600px;
-    margin: auto;
-}
+    .build-invest > .col-sm-10 {
+        width: 500px;
+    }
+
+    .build-info {
+        width: 600px;
+        margin: auto;
+    }
+*/
 
 .form-horizontal .control-label {
 
     font-family :"Roboto" , sans-serif;
     font-size : 16px;
     font-style : italic;
-    text-align: left; 
+    text-align: left;
     text-align: left;
     margin-bottom: 0;
     padding-top: 0px;

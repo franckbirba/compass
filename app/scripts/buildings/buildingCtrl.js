@@ -31,7 +31,14 @@ angular.module('buildingMdl')
         if (idx > -1) $scope.buildings.splice(idx, 1);
       });
     }
-    console.log('hello');
-    console.log(id);
+
+    /*
+    ** Form multi-page form when using $routeProvider
+    */
+    $scope.step = 1;
+    $scope.setStep = function(step){
+     $scope.step = step;
+    }
+    console.log($scope);
 
 });
