@@ -6,13 +6,15 @@
  * @description
  * # portForm
  */
-angular.module('tornadoApp')
+angular.module('observatoryMdl')
   .directive('portForm', function () {
     return {
-      template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the portForm directive');
+      transclude: true,
+      template: '<h1>HERE</h1>',
+      // templateUrl: '/scripts/observatory/views/portForm.tpl.html',
+      restrict: 'EA',
+      link: function () {
+        console.log('hello');
       }
     };
   });
