@@ -10,12 +10,14 @@
           <div class="panel-heading clearfix">
             <h3 class="pull-left">Portfolios</h3>
             <span class="pull-right">
-                <button class="glyphicon glyphicon-plus btn btn-xs btn-primary" ng-click="portFormShow = ! portFormShow ">
-                </button>
+              <button class="glyphicon glyphicon-plus btn btn-xs btn-primary" ng-click="portFormShow = ! portFormShow ">
+              </button>
             </span>
+
+
             <div ng-show="portFormShow">
               <h4>Creer un nouveau Portfolio</h4>
-              <div portForm></div>
+              <port-form></port-form>
             </div>
           </div>
           <div class="panel-body">

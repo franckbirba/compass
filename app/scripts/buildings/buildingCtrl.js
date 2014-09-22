@@ -6,16 +6,16 @@ angular.module('buildingMdl')
     var id = $routeParams.id || '';
     $scope.portfolio_id = $routeParams.id || '';
 
-  $scope.building = function(){
-    var b = BuildingSvc.get(id);
-    console.log(b);
-    console.log(b.getRestangularUrl());
-  }
+    $scope.building = function(){
+      var b = BuildingSvc.get(id);
+      console.log(b);
+      console.log(b.getRestangularUrl());
+    }
 
-  $scope.update = function(){
-    console.log(id);
-    console.log($scope.building.getRestangularUrl());
-  }
+    $scope.update = function(){
+      console.log(id);
+      console.log($scope.building.getRestangularUrl());
+    }
 
     $scope.buildings = Buildings.getList().$object;
 
@@ -31,5 +31,7 @@ angular.module('buildingMdl')
         if (idx > -1) $scope.buildings.splice(idx, 1);
       });
     }
+    console.log('hello');
+    console.log(id);
 
 });

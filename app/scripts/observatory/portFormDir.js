@@ -9,10 +9,8 @@
 angular.module('observatoryMdl')
   .directive('portForm', function () {
     return {
-      transclude: true,
-      template: '<h1>HERE</h1>',
-      // templateUrl: '/scripts/observatory/views/portForm.tpl.html',
-      restrict: 'EA',
+      templateUrl: '/scripts/observatory/views/portForm.tpl.html',
+      restrict: 'E',
       link: function () {
         console.log('hello');
       }
