@@ -78,30 +78,23 @@ angular.module('tornadoApp', [
         }
       };
     }]);
-  });
-  // .config(function(RestangularProvider) {
-  //   RestangularProvider.setBaseUrl('/crud');
-  //   RestangularProvider.setRestangularFields({ id: "_id" });
-  //   RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
-  //     var extractedData;
-  //     // .. to look for getList operations
-  //     if (operation === "getList") {
-  //       // .. and handle the data and meta data
-  //       extractedData = response.data;
-  //     }
-  //     else if (operation === "post") {
-  //       extractedData = response.data;
-  //     }
-  //     else if (operation === "put") {
-  //       extractedData = response;
-  //     }
-  //     else {
-  //       extractedData = response.data;
-  //     }
-  //     console.log(operation, url);
-  //     // console.log(response);
-  //     return extractedData;
-  //   })
+  })
+  .config(function(RestangularProvider) {
+    RestangularProvider.setBaseUrl('/crud');
+    RestangularProvider.setRestangularFields({id: "_id"});
+    RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+      var extractedData;
+      console.log('From RESPONSE');
+      console.log('THE ' + operation + ' OP is called with url: ' + url);
+      if (operation === "getList"){
+        extractedData = response.data;
+      }
+      // }
+      else {
+        extractedData = response;
+      }
+      return extractedData;
+    })
 
   //   // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
 
@@ -125,4 +118,4 @@ angular.module('tornadoApp', [
   //   //   };
   //   //   return true; // error not handled
   //   // });
-  // });
+  });
