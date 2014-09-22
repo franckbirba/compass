@@ -1,9 +1,9 @@
 <div compassnav=""></div>
-  <div class="wrapper">
+  <div class="wrapper" style="margin-top: 50px">
     <div class="container" ng-switch="step">
       <div ng-switch-when="1">
         <div ng-include src="'scripts/buildings/views/buildForm1.html'"></div>
-        <button ng-click="setStep(2)">Proceed</button>
+        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(2)">Proceed</button>
       </div>
       <div ng-switch-when="2">
         <div ng-include src="'scripts/buildings/views/buildForm2.html'"></div>
@@ -38,7 +38,7 @@
       <div ng-switch-when="8">
         <div ng-include src="'scripts/buildings/views/buildForm8.html'"></div>
         <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(7)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(8)">Proceed</button>
+        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="create()">Save</button>
       </div>
     </div>
 
