@@ -1,5 +1,5 @@
 angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restangular, $modal) {
-/*
+
   $scope.errors = {};
 
   $scope.changePassword = function(form) {
@@ -17,7 +17,7 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
         });
     }
   };
-*/
+
 
 
 
@@ -66,11 +66,13 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
   };
 
   $scope.indices.remove = function(row){
-    Restangular.one('indices', row._id).remove();
-    this.rows.splice(this.rows.indexOf(row), 1);
+    Restangular.one('indices', row._id).remove().then(function(){
+      $scope.indices.rows.splice($scope.indices.rows.indexOf(row), 1);
+    });
   };
 
   $scope.indices.update = function(row, newVals){
+      /* TO-DO should be able to restore old data upon failure of put()'s promise */
     delete newVals.name;
     row.rows = angular.copy(newVals);
     row.put();
@@ -97,8 +99,9 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
   };
 
   $scope.providers.remove = function(row){
-    Restangular.one('providers', row._id).remove();
-    this.rows.splice(this.rows.indexOf(row), 1);
+    Restangular.one('providers', row._id).remove().then(function(){
+      $scope.providers.rows.splice($scope.providers.rows.indexOf(row), 1);
+    });
   };
 
   $scope.providers.update = function(row, newVals){
@@ -128,8 +131,9 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
   };
 
   $scope.fluidtypes.remove = function(row){
-    Restangular.one('fluidtypes', row._id).remove();
-    this.rows.splice(this.rows.indexOf(row), 1);
+    Restangular.one('fluidtypes', row._id).remove().then(function(){
+      $scope.fluidtypes.rows.splice($scope.fluidtypes.rows.indexOf(row), 1);
+    });
   };
 
   $scope.fluidtypes.update = function(row, newVals){
@@ -141,6 +145,14 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
 
 
 
+
+
+  Restangular.all('coeffs').getList().then(function(all){
+    $scope.coeffs = all[0];
+    $scope.coeffs.update = function(){
+      $scope.coeffs.put();
+    };
+  });
 
 
 
@@ -180,43 +192,38 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
       }
     });
     
-    modalInstance.result.then(function(choosenFluid, choosenProvider){
-      console.log('in results');
-      $scope.choosenFluid = choosenFluid;
-      $scope.choosenProvider = choosenProvider;
-      console.log($scope.choosenFluid);
-      console.log($scope.choosenVendor);
+    modalInstance.result.then(function(choosens){
+      $scope.choosenFluid = choosens[0]
+      $scope.choosenProvider = choosens[1];
+
+      var inserted = {};
+      $scope.fluids.columns.forEach(function(elem){
+         inserted[elem.name] = null;
+      });
+      inserted.name = $scope.choosenFluid + '(' + $scope.choosenProvider + ')';
+
+      var newEntry = {name: inserted.name};
+      delete inserted.name;
+      newEntry.rows = angular.copy(inserted);
+
+      $scope.fluids.rows.post(newEntry).then(function(posted){
+        $scope.fluids.rows.push(posted);
+      });
     });
-
-    var inserted = {};
-    this.columns.forEach(function(elem){
-       inserted[elem.name] = null;
-    });
-
-    var newEntry = {name: inserted.name};
-    delete inserted.name;
-    newEntry.rows = angular.copy(inserted);
-
-    this.rows.post(newEntry).then(function(posted){
-      $scope.fluids.rows.push(posted);
-    });
-
   };
 
 
 
   $scope.fluids.remove = function(row){
-    Restangular.one('fluids', row._id).remove();
-    this.rows.splice(this.rows.indexOf(row), 1);
+    Restangular.one('fluids', row._id).remove().then(function(){
+      $scope.fluids.rows.splice($scope.fluids.rows.indexOf(row), 1);
+    });
   };
 
   $scope.fluids.update = function(row, newVals){
     delete newVals.name;
     row.rows = angular.copy(newVals);
     row.put();
-
-//    this.rows[this.rows.indexOf(row)] = newVals;
-//    this.rows.put();
   };
 
 
@@ -228,9 +235,7 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
     $scope.providers = providers;
 
     $scope.ok = function () {
-      console.log($scope.choosenFluid);
-      console.log($scope.choosenVendor);
-      $modalInstance.close($scope.choosenFluid, $scope.choosenProvider);
+      $modalInstance.close([$scope.choosenFluid, $scope.choosenProvider]);
     };
 
     $scope.cancel = function () {
