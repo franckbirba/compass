@@ -91,7 +91,7 @@ angular.module('tornadoApp', [
       }
       // }
       else {
-        extractedData = response;
+        extractedData = response.data;
       }
       return extractedData;
     })
