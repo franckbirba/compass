@@ -93,13 +93,8 @@ body {
         <div id="line2">
         </div>
         <!-- ARRAYAction -->
-<<<<<<< HEAD
-        <div class="row actionArray" style="margin-left:1px;">
-          <span class="glyphicon glyphicon-circle-arrow-up buttonArray"></span>
-=======
-        <div class="row actionArray" ng-class="{ actionArrayAnimate: showActionsReservoir }">
-          <span class="glyphicon buttonArray" ng-class="showActionsReservoir ? 'glyphicon-circle-arrow-down' : 'glyphicon-circle-arrow-up'" ng-click="showActionsReservoir = !showActionsReservoir"></span>
->>>>>>> FETCH_HEAD
+        <div class="row actionArray" style="margin-left:1px;" ng-class="{ actionArrayAnimate: showActionsReservoir }">
+          <span class="buttonArray" ng-class="showActionsReservoir ? 'glyphicon-circle-arrow-down' : 'glyphicon-circle-arrow-up'" ng-click="showActionsReservoir = !showActionsReservoir"></span>
           <h3>Réservoir d'actions</h3>
           <div class="col-sm-6 buttonFiltre">
             <a href="javascript:;;" ng-click="Action.showPlanifiedActions = 0" class="btn btn-primary"
@@ -121,7 +116,7 @@ body {
                   <th>Efficacité (kWh)</th>
                   <th>TRI</th>
                 </tr>
-                
+
               </thead>
               <tbody>
                 <tr class="timeline-action-tr" ng-drag="true" ng-drag-data="action" ng-drag-success="onDragComplete($data,$event)" ng-repeat="action in Action.actionsFiltered">
@@ -152,9 +147,7 @@ body {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      
-=======
+
       <div class="col-sm-4 blocright">
         <div class="row" style="padding:5px">
           <div class="col-sm-6">
@@ -168,7 +161,6 @@ body {
         </div>
         <div timeline actions="{{Action.actionsFiltered}}"></div>
       </div>
->>>>>>> FETCH_HEAD
     </div>
   </div>
 </div>
@@ -255,7 +247,7 @@ var line = d3.svg.line()
         .attr("d", function(d) { return line(d.values); })
         .style("stroke", function(d) { return color(d.name); });
 
-   
+
   });
 
 };

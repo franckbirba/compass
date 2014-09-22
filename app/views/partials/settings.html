@@ -3,7 +3,7 @@
 	<div id="page-wrapper" style="margin:0">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1 >Change Password</h1>
+				<h1>Change Password</h1>
 			</div>
 			<div class="col-sm-12">
 				<form class="form" name="form" ng-submit="changePassword(form)" novalidate style="background-color:#8faa00; border-radius:5px;">
@@ -32,11 +32,8 @@
 
 		<div class="row">
 			<h2>Coût de la construction</h2>
-<<<<<<< HEAD
-			<div class="col-sm-12" style="margin-top:20px;width:1000px;" listedit="" model="'indices'"></div>
-=======
+
 			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="indices"></div>
->>>>>>> FETCH_HEAD
 		</div>
 
 		<div class="row">
@@ -46,14 +43,14 @@
 				<div class="form-group">
 					<label for="portfolio" class="col-sm-2 control-label">Classique</label>
 					<div class="col-sm-10">
-						<input type="text" name="classic" class="form-control" />
+						<input ng-model="coeff[0].classique" type="text" name="classic" class="form-control" />
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label for="portfolio" class="col-sm-2 control-label">PPP</label>
 					<div class="col-sm-10">
-						<input type="text" name="ppp" class="form-control"/>
+						<input ng-model="coeff[0].PPP" type="text" name="ppp" class="form-control"/>
 					</div>
 				</div>
 				<p class="help-block"> {{ message }} </p>
@@ -62,29 +59,29 @@
 
 		<div class="row">
 			<h2>Coût des Fluides</h2>
-<<<<<<< HEAD
-			<div class="col-sm-12" style="margin-top:20px;width:1000px;" listedit="" model="'fluids'"></div>
-=======
+
+      <script type="text/ng-template" id="newFluidModal.html">
+        <div class="modal-body">
+          type de fluide <select ng-model="choosenFluid" ng-options="fluidtype for fluidtype in fluidtypes"></select><br/>
+          fournisseur <select ng-model="choosenVendor" ng-options="provider for provider in providers"></select>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" ng-click="ok()">OK</button>
+          <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+      </script>
+
 			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="fluids"></div>
->>>>>>> FETCH_HEAD
 		</div>
 
 		<div class="row">
 			<h2>Fluides</h2>
-<<<<<<< HEAD
-			<div class="col-sm-12" style="margin-top:20px;width:1000px;" listedit="" model="'fluidType'"></div>
-=======
-			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="fluidType"></div>
->>>>>>> FETCH_HEAD
+			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="fluidtypes"></div>
 		</div>
 
 		<div class="row">
 			<h2>Fournisseurs</h2>
-<<<<<<< HEAD
-			<div class="col-sm-12" style="margin-top:20px;width:1000px;" listedit="" model="'vendor'"></div>
-=======
-			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="vendor"></div>
->>>>>>> FETCH_HEAD
+			<div class="col-sm-12" style="margin-top:20px;width:1200px;" listedit data="providers"></div>
 		</div>
 	</div>
 </div>
