@@ -8,7 +8,6 @@
  * Factory in the tornadoApp.
  */
 
-
 ObsModule.service('ObservatorySvc', function ObservatorySvc($http, $q, Restangular, PortfolioSvc, DUMMY) {
   var self = this;
 
