@@ -1,49 +1,48 @@
-<div compassnav=""></div>
-  <div class="wrapper" style="margin-top: 50px">
-    <div class="container" ng-switch="step">
-      <div ng-switch-when="1">
-        <div ng-include src="'scripts/buildings/views/buildForm1.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(2)">Proceed</button>
-      </div>
-      <div ng-switch-when="2">
-        <div ng-include src="'scripts/buildings/views/buildForm2.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(1)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(3)">Proceed</button>
-      </div>
-      <div ng-switch-when="3">
-        <div ng-include src="'scripts/buildings/views/buildForm3.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(2)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(4)">Proceed</button>
-      </div>
-      <div ng-switch-when="4">
-        <div ng-include src="'scripts/buildings/views/buildForm4.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(3)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(5)">Proceed</button>
-      </div>
-      <div ng-switch-when="5">
-        <div ng-include src="'scripts/buildings/views/buildForm5.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(4)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(6)">Proceed</button>
-      </div>
-      <div ng-switch-when="6">
-        <div ng-include src="'scripts/buildings/views/buildForm6.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(5)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(7)">Proceed</button>
-      </div>
-      <div ng-switch-when="7">
-        <div ng-include src="'scripts/buildings/views/buildForm7.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(6)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(8)">Proceed</button>
-      </div>
-      <div ng-switch-when="8">
-        <div ng-include src="'scripts/buildings/views/buildForm8.html'"></div>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(7)">Back</button>
-        <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="create()">Save</button>
-      </div>
-    </div>
 
-    <script type="text/javascript">
-      $('.selectpicker').selectpicker();
-    </script>
+<div class="wrapper" style="margin-top: 50px">
+  <div class="container" ng-switch="step">
+    <div ng-switch-when="1">
+      <div ng-include src="'scripts/buildings/views/buildForm1.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(2)">Proceed</button>
+    </div>
+    <div ng-switch-when="2">
+      <div ng-include src="'scripts/buildings/views/buildForm2.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(1)">Back</button>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(3)">Proceed</button>
+    </div>
+    <div ng-switch-when="3">
+      <div ng-include src="'scripts/buildings/views/leaseForm1.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(2)">Back</button>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(4)">Proceed</button>
+    </div>
+    <div ng-switch-when="4">
+      <div ng-include src="'scripts/buildings/views/leaseForm2.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(3)">Back</button>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(5)">Proceed</button>
+    </div>
+    <div ng-switch-when="5">
+      <div ng-include src="'scripts/buildings/views/leaseForm3.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(4)">Back</button>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(6)">Proceed</button>
+    </div>
+    <div ng-switch-when="6">
+      <div ng-include src="'scripts/buildings/views/leaseForm4.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(5)">Back</button>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(7)">Proceed</button>
+    </div>
+    <div ng-switch-when="7">
+      <div ng-include src="'scripts/buildings/views/leaseForm5.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(6)">Back</button>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(8)">Proceed</button>
+    </div>
+    <div ng-switch-when="8">
+      <div ng-include src="'scripts/buildings/views/leaseForm6.html'"></div>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="setStep(7)">Back</button>
+      <button class="btn btn-lg btn-success btn-primary building-btn-next" ng-click="create()">Save</button>
+    </div>
   </div>
+
+  <script type="text/javascript">
+    $('.selectpicker').selectpicker();
+  </script>
 </div>

@@ -1,9 +1,12 @@
-angular.module('tornadoApp').directive('compassnav', function ($rootScope) {
+'use strict';
+
+angular.module('tornadoApp')
+  .directive('appnav', function ($rootScope) {
 	return {
-        restrict: 'A',
-        scope:{
-        	model: '='
-        },
+        restrict: 'EA',
+        // scope:{
+        // 	model: '='
+        // },
         templateUrl:'/views/directives/nav.html'
     }
 });
