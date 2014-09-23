@@ -1,0 +1,53 @@
+/*
+** Data Schema for Building
+*/
+
+[
+  {
+    "type": "building",
+    "fields": [
+      {
+        "_id":          "",
+        "portfolio_id": "",
+        "name":         "",
+        "type":         "",
+        "adress": {
+                    "street":   "",
+                    "city":     "",
+                    "zip_code": "",
+                    "country":  "",
+                    "gps":  { "long":  "", "lat":   "" }
+                  },
+        "images": [{ "alt": "", "src": "" }],
+        "leases":  [{"_id": ""}],
+        "info":   {
+                    "construction_year":  "",
+                    "control":            "",
+                    "user":               "",
+                    "area_total":         "",
+                    "area_usefull":       "",
+                    "floors":             "",
+                    "parking_spaces":     ""
+                  },
+        "required": {
+          "_id":          true,
+          "portfolio_id": true,
+          "get":          false,
+          "post":         false,
+          "put":          false,
+          "delete":       false,
+        }
+      }
+    ],
+    "actions":
+    [
+      {
+        "put":              "",
+        "delete":           "",
+        "post":             "",
+        "get":              ""
+      }
+    ],
+    "indexField": "_id",
+  }
+]
