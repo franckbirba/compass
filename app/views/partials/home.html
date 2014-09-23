@@ -1,55 +1,45 @@
 
-<div class="wrapper" style="margin-top:20px;" ng-controller="HomeCtrl">
-	<div class="container">
-		<img src="logo_eportfolio.png" class="thumbnail" width="200px" height="100px" style="float:left;">
-	</div>
-	<div class="container">
-		<div class="row" style="margin-top:60px;">
-			 <div class="col-md-9"style="margin-bottom: 20px;" >
-				<div class="row" style="margin-bottom: 20px;">
-					<div class="col-md-6" style="padding:20px;">
-						<a href="/settings" role="button" class="btn btn-default home sextan img-responsive">
-							<div class="text">{{ 'OBSERVE' | translate }}</div>
-						</a>
-					</div>
-					<div class="col-md-6"  style="padding:20px;">
-						<a href="/timeline" role="button" class="btn btn-default home compass">
-							<div class="text">{{ 'PLAN' | translate }}</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-12" style="padding:20px;">
-						<a href="/observatory" role="button" class="btn btn-default home homegraph">
-							<div class="text">{{ 'EVALUATE' | translate }}</div>
-						</a>
-					</div>
-				</div>
-	</div>
-	<div class="container col-md-3">
-
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<span class="glyphicon glyphicon-info-sign"></span>
-					{{ 'NEWS' | translate }}
-				<span class="glyphicon glyphicon-envelope" style="float:right;"></span>
+	<div class="container" ng-controller="HomeCtrl">
+		<div class="row">
+			<div class="col-md-6">
+				<a href="/settings" role="button" class="btn btn-default home sextan img-responsive">
+					<div class="text">{{ 'OBSERVE' | translate }}</div>
+				</a>
 			</div>
-			<!-- /.panel-heading -->
-			<div class="panel-body">
-				<div class="list-group" style="height:100%;overflow-y:scroll;"  ng-repeat="feed in feeds | orderBy:'title'" ng-animate="'animate'">
-				<p>
-						<span ng-repeat="item in feed.entries" ng-animate="'animate'">
-							<i> {{ 'FROM' | translate }} <span class="user">{{item.author}}</span> {{ 'AT' | translate }} <em>{{getTimeStamp(item.publishedDate) | date:'H:mm dd-MM-yyyy'}}</em></i>
-							<a class="list-group-item guest" href="{{item.link}}" target="_blank">
-								<span><strong>{{item.title}}</strong></span> <br/>
-								<span class="messageMail" ng-bind-html="item.contentSnippet"></span>
-							</a>
-						</span>
-					</p>
+			<div class="col-md-6">
+				<a href="/observatory" role="button" class="btn btn-default home compass">
+					<div class="text">{{ 'PLAN' | translate }}</div>
+				</a>
+			</div>
+			<div class="col-md-12">
+				<a href="/timeline" role="button" class="btn btn-default home homegraph">
+					<div class="text">{{ 'EVALUATE' | translate }}</div>
+				</a>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="glyphicon glyphicon-info-sign"></span>
+							{{ 'NEWS' | translate }}
+						<span class="glyphicon glyphicon-envelope" style="float:right;"></span>
+					</div>
+					<!-- /.panel-heading -->
+					<div class="panel-body">
+						<div class="list-group" style="height:100%;overflow-y:scroll;"  ng-repeat="feed in feeds | orderBy:'title'" ng-animate="'animate'">
+							<p>
+								<span ng-repeat="item in feed.entries" ng-animate="'animate'">
+									<i> {{ 'FROM' | translate }} <span class="user">{{item.author}}</span> {{ 'AT' | translate }} <em>{{getTimeStamp(item.publishedDate) | date:'H:mm dd-MM-yyyy'}}</em></i>
+									<a class="list-group-item guest" href="{{item.link}}" target="_blank">
+										<span><strong>{{item.title}}</strong></span> <br/>
+										<span class="messageMail" ng-bind-html="item.contentSnippet"></span>
+									</a>
+								</span>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- /.panel-body -->
 		</div>
+	</div>
 
 
