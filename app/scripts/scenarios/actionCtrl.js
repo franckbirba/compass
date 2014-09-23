@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   angular
-    .module('tornadoApp')
+    .module('scenarioMdl')
     .controller('ActionCtrl', ActionCtrl);
 
   ActionCtrl.$inject = ['$scope', 'Auth', 'actionService', 'buildingService', 'timelineCalculationService'];

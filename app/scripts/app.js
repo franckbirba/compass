@@ -45,18 +45,14 @@ angular.module('tornadoApp', [
         templateUrl: path + 'home',  controller: '', authenticate: auth })
       .when('/settings', {
         templateUrl: path + 'settings',  controller: 'SettingsCtrl', authenticate: auth })
-      .when('/actionList', {
-        templateUrl: path + 'actionList',  controller: 'ActionCtrl', authenticate: auth })
-      .when('/applyAction', {
-        templateUrl: path + 'applyAction',  controller: 'ActionCtrl', authenticate: auth })
-      .when('/resultats', {
-        templateUrl: path + 'resultats',  controller: 'ActionCtrl', authenticate: auth })
-      .when('/timeline', { // css
-        templateUrl: path + 'timeline',  controller: 'ActionCtrl', controllerAs: 'Action', authenticate: auth })
       .when('/collapicka', {
         templateUrl: path + 'testCollapicka',  controller: 'TestCtrl', authenticate: auth })
       .when('/test', {
         templateUrl: path + 'test',  controller: 'TestRestCtrl', authenticate: auth })
+      .when('/timeline', {
+        templateUrl: path + 'timeline',  controller: 'ActionController', controllerAs: 'Action', authenticate: auth
+      })
+
       .otherwise({
         redirectTo: '/'
       });
