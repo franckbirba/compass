@@ -49,6 +49,8 @@ angular.module('tornadoApp', [
         templateUrl: path + 'testCollapicka',  controller: 'TestCtrl', authenticate: auth })
       .when('/test', {
         templateUrl: path + 'test',  controller: 'TestRestCtrl', authenticate: auth })
+      .when('/main', {
+        templateUrl: path + 'main',  controller: '', authenticate: auth })
       .when('/timeline', {
         templateUrl: path + 'timeline',  controller: 'ActionController', controllerAs: 'Action', authenticate: auth
       })

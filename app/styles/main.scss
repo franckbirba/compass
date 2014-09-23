@@ -13,10 +13,7 @@ $primary-bg:                 #8faa00 ;
 $btn-primary-border:             #e4e4e4 ;
 // Form
 $input-border-focus: #8faa00;
-// Navbar
-$navbar-default-bg: #393939;
-$navbar-height: 43px;
-$navbar-default-border: #333;
+
 // Panel
 $panel-primary-border: #efefef;
 $panel-default-text: #fff;
@@ -37,29 +34,13 @@ $component-active-color:    red !important;
 
 /* Space out content a bit */
 body {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
+    margin-top: 50;
     font-family: 'Roboto Slab', sans-serif;
     background-color : #F1F2F1;
 }
 
 .wrapper {
-    overflow: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    float: left;
-    width: 100%;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 10px 0 10px 0;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .wrapper-timeline {
@@ -72,25 +53,13 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
 .marketing,
 .footer {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-}
 
 /* Custom page footer */
 .footer {
@@ -254,50 +223,55 @@ td, th {
 =================
  */
 
-.home {
-    height: 415px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+.home-banner {
+    padding: 0px;
+    border: 0px;
+    height: 300px;
     transition: opacity 0.8s;
+}
+
+.home-content {
+
+}
+
+.home-sidebar {
+
 }
 
 .sextan {
     background-image: url(../images/sextan.png);
     background-repeat: no-repeat;
     background-size: cover;
+    min-width: 49%;
 }
 
-.text {
-    display: none;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 45px;
+.home-legend {
     position: relative;
+    border: 0;
     top: 200px;
     width: 100%;
-    color : white;
-}
-
-a:hover {
     opacity: 0.5;
 }
 
-a:hover > .text {
+
+home-legend > a:hover {
     display: block;
+    opacity: 0.5;
 }
 
 .compass {
     background-image: url(../images/compass.png);
     background-repeat: no-repeat;
     background-size: cover;
+    min-width: 49%;
 }
 
 .homegraph {
-    width: 100%;
-    border: 1px solid $panel-primary-border;
     background-image: url(../images/evaluer-2.png);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 15px;
+    min-width: 100%;
 }
 .list-group-item {
     border: none;
@@ -328,18 +302,6 @@ a:hover > .text {
 
 
 
-
-.nav > li > a:hover,
-.nav > li > a:focus {
-    text-decoration: none;
-    background: none;
-    color: $brand-primary;
-}
-
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background: none;
-    color: $brand-primary;
-}
 
 .panel-default > .panel-heading {
     background-color: $brand-primary;
@@ -740,9 +702,6 @@ Layout
     border: 1px solid #eeeeee;
 }
 
-.navbar-form {
-    margin-top: 7.5px;
-}
 
 .apply {
     float: left;
@@ -790,15 +749,7 @@ Layout
     float: left;
 }
 
-.navbar-default {
-    background-color: #f5f5f5;
-    border-color: #f5f5f5;
-    color: #f5f5f5;
-}
 
-.navbar-brand, .navbar-top-links li a {
-    color: white !important;
-}
 /*
 =================
 @FBI
@@ -914,11 +865,4 @@ body > div > div > div.btn-group.bootstrap-select.open > div > ul > li > a > spa
     margin: 0 auto;
 }*/
 
-#logo {
-    width: 150px;
-    height: 50px;
-}
-.compass-collapse-nav {
-    max-height: 70px;
-    padding: 9px;
-}
+

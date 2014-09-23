@@ -1,29 +1,37 @@
 
 	<div class="container" ng-controller="HomeCtrl">
 		<div class="row">
-			<div class="col-md-6">
-				<a href="/settings" role="button" class="btn btn-default home sextan img-responsive">
-					<div class="text">{{ 'OBSERVE' | translate }}</div>
-				</a>
+			<div class="col-xs-12 col-md-8 home-content">
+				<div class="col-xs-6 col-md-4 home-banner sextan">
+					<div class="home-legend">
+						<a href="/settings" role="button" class="btn btn-default">
+							<h2>{{ 'OBSERVE' | translate }}<h2>
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-4 pull-right home-banner compass">
+					<div class="home-legend">
+						<a href="/observatory" role="button" class="btn btn-default">
+							<h2>{{ 'PLAN' | translate }}</h2>
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-8 home-banner homegraph">
+					<div class="home-legend">
+						<a href="/timeline" role="button" class="btn btn-default">
+							<h2>{{ 'EVALUATE' | translate }}</h2>
+						</a>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-6">
-				<a href="/observatory" role="button" class="btn btn-default home compass">
-					<div class="text">{{ 'PLAN' | translate }}</div>
-				</a>
-			</div>
-			<div class="col-md-12">
-				<a href="/timeline" role="button" class="btn btn-default home homegraph">
-					<div class="text">{{ 'EVALUATE' | translate }}</div>
-				</a>
-			</div>
-			<div class="col-md-3">
+			<!-- Rss feed -->
+			<div class="col-xs-12 col-md-4 home-sidebar">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<span class="glyphicon glyphicon-info-sign"></span>
 							{{ 'NEWS' | translate }}
 						<span class="glyphicon glyphicon-envelope" style="float:right;"></span>
 					</div>
-					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<div class="list-group" style="height:100%;overflow-y:scroll;"  ng-repeat="feed in feeds | orderBy:'title'" ng-animate="'animate'">
 							<p>
@@ -39,6 +47,8 @@
 					</div>
 				</div>
 			</div>
+			<!-- End Rss Feed -->
+
 		</div>
 	</div>
 
