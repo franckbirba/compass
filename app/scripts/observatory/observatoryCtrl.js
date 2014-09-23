@@ -1,19 +1,13 @@
 'use strict';
 ObsModule
-  // .controller('portCtrl', function($scope){
-  //     $scope.portfolioCreate = function(params){
-  //       console.log(params);
-  //       console.log($scope.portForm);
-  //       $scope.portForm = {};
-  //       console.log($scope.portForm);
-  //     }
-  // })
   .controller('ObservatoryCtrl',
     function ObservatoryCtrl($scope, $timeout, Restangular, Geocoder, ObservatorySvc){
       var db = ObservatorySvc;
       $scope.geocoder = Geocoder;
 
       $scope.values = db.values;
+      /* Set default value to show in select */
+      $scope.currentHqeType = $scope.values.hqeTypes.all;
 
       $scope.portfolios = db.portfolios;
 

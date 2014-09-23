@@ -15,6 +15,7 @@ angular.module('tornadoApp', [
   'restangular',
   'buildingMdl',
   'observatoryMdl',
+  'scenarioMdl',
   'pascalprecht.translate',
   'rssServices'
 ])
@@ -50,8 +51,6 @@ angular.module('tornadoApp', [
         templateUrl: path + 'applyAction',  controller: 'ActionCtrl', authenticate: auth })
       .when('/resultats', {
         templateUrl: path + 'resultats',  controller: 'ActionCtrl', authenticate: auth })
-      .when('/newScenario', {
-        templateUrl: path + 'newScenario',  controller: 'ActionCtrl', authenticate: auth })
       .when('/timeline', { // css
         templateUrl: path + 'timeline',  controller: 'ActionCtrl', controllerAs: 'Action', authenticate: auth })
       .when('/collapicka', {

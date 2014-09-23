@@ -19,10 +19,6 @@ angular.module('buildingMdl', ["ngRoute"])
         templateUrl: partials + 'graph.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/actionForm', {
         templateUrl: partials + 'actionForm.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/scenario', {
-        templateUrl: partials + 'scenario.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/scenarioList', {
-        templateUrl: partials + 'scenarioList.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/schemaHome', {
         templateUrl: partials + 'schemaHome.html', controller: 'BuildingCtrl', authenticate: auth  });
   })
