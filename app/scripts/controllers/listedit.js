@@ -17,6 +17,7 @@ angular.module('tornadoApp').directive('listedit', function ($rootScope, $interv
          * made right here rather then settingsCtrl
          * in order for editable-form to work
          */
+        
         scope.data.add();
       };
 

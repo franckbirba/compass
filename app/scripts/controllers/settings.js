@@ -51,6 +51,7 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
   });
 
   $scope.indices.add = function(){
+    console.log(this.columns);
     var inserted = {};
     this.columns.forEach(function(elem){
        inserted[elem.name] = null;
@@ -92,8 +93,9 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
   $scope.providers.rows = promise.$object;
 
   $scope.providers.add = function(){
+    console.log(this.columns);
     var newEntry = {name: null};
-    var promise = this.rows.post(newEntry).then(function(posted){
+    this.rows.post(newEntry).then(function(posted){
       $scope.providers.rows.push(posted);
     });
   };
@@ -193,7 +195,7 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
     });
     
     modalInstance.result.then(function(choosens){
-      $scope.choosenFluid = choosens[0]
+      $scope.choosenFluid = choosens[0];
       $scope.choosenProvider = choosens[1];
 
       var inserted = {};
@@ -207,12 +209,11 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
       newEntry.rows = angular.copy(inserted);
 
       $scope.fluids.rows.post(newEntry).then(function(posted){
+        posted.name = newEntry.name;
         $scope.fluids.rows.push(posted);
       });
     });
   };
-
-
 
   $scope.fluids.remove = function(row){
     Restangular.one('fluids', row._id).remove().then(function(){
@@ -221,6 +222,7 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
   };
 
   $scope.fluids.update = function(row, newVals){
+    console.log(row);
     delete newVals.name;
     row.rows = angular.copy(newVals);
     row.put();
