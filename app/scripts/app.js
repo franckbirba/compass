@@ -34,6 +34,8 @@ angular.module('tornadoApp', [
     $routeProvider
       .when('/', {
         templateUrl: path + 'home', controller: '', authenticate: auth})
+      .when('/actionForm', {
+        templateUrl: path + 'actionForm', controller: '', authenticate: auth})
       .when('/login', {
         templateUrl: path + 'login',  controller: 'LoginCtrl' })
       .when('/signup', {
@@ -42,6 +44,8 @@ angular.module('tornadoApp', [
         templateUrl: path + 'main',  controller: '', authenticate: auth })
       .when('/home', {
         templateUrl: path + 'home',  controller: '', authenticate: auth })
+      .when('/schemaHome', {
+        templateUrl: path + 'schemaHome',  controller: '', authenticate: auth })
       .when('/settings', {
         templateUrl: path + 'settings',  controller: 'SettingsCtrl', authenticate: auth })
       .when('/actionList', {
