@@ -36,6 +36,8 @@ angular.module('tornadoApp', [
         templateUrl: path + 'home', controller: '', authenticate: auth})
       .when('/actionForm', {
         templateUrl: path + 'actionForm', controller: '', authenticate: auth})
+      .when('/scenarioList', {
+        templateUrl: path + 'scenarioList', controller: '', authenticate: auth})
       .when('/login', {
         templateUrl: path + 'login',  controller: 'LoginCtrl' })
       .when('/signup', {
