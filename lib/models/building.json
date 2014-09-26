@@ -1,0 +1,57 @@
+{
+  "type": "building",
+  "fields": {
+    "_id": {
+      "required": true
+    },
+    "portfolio_id": null,
+    "name": null,
+    "type": null,
+    "adress": {
+      "type": "object",
+      "fields": {
+        "street": null,
+        "city": null,
+        "zip_code": null,
+        "country": null,
+        "gps": {
+          "type": "object",
+          "fields": {
+            "long": null,
+            "lat": null
+          } 
+        }
+      }
+    },
+    "images": {
+      "type": "collection",
+      "collection": "images",
+      "link": "many"
+    },
+    "leases": {
+      "type": "collection",
+      "collection": "leases"
+    },
+    "info": {
+      "type": "object",
+      "fields": {
+        "construction_year": null,
+        "control": null,
+        "user": null,
+        "area_total": null,
+        "area_usefull": null,
+        "floors": null,
+        "parking_spaces": null
+      }
+    }
+  },
+  "indexField": "_id",
+  "actions": [
+    {
+      "put": "",
+      "delete": "",
+      "post": "",
+      "get": ""
+    }
+  ]
+}
