@@ -1,7 +1,40 @@
+<ul>
+	<li>
+		<a href="/login">login</a>
+	</li>
+	<li>
+		<a href="/signup">signup</a>
+	</li>
+	<li>
+		<a href="/home">home</a>
+	</li>
+	<li>
+		<a href="/settings">settings</a>
+	</li>
+	<li>
+		<a href="/actionList">liste d'actions</a>
+	</li>
+	<li>
+		<a href="/scenarioList">liste de scénarios</a>
+	</li>
+	<li>
+		<a href="/applyAction">Appliquer des actions</a>
+	</li>
+	<li>
+		<a href="/newScenario">Nouveau scénario</a>
+	</li>
+	<li>
+		<a href="/actionForm">Nouvelle action</a>
+	</li>
+	<li>
+		<a href="/timeline">Timeline</a>
+	</li>
+</ul>
 
 	<div class="container" ng-controller="HomeCtrl">
 		<div class="row">
-			<div class="col-xs-12 col-md-8 home-content">
+
+<!-- 			<div class="col-xs-12 col-md-8 home-content">
 				<div class="col-xs-6 col-md-4 home-banner sextan">
 					<div class="home-legend">
 						<a href="/settings" role="button" class="btn btn-default">
@@ -23,6 +56,22 @@
 						</a>
 					</div>
 				</div>
+ -->
+			<div class="col-md-6">
+				<a href="/observatory" role="button" class="btn btn-default home sextan img-responsive">
+					<div class="text">{{ 'OBSERVE' | translate }}</div>
+				</a>
+			</div>
+			<div class="col-md-6">
+				<a href="/schemaHome" role="button" class="btn btn-default home compass">
+					<div class="text">{{ 'PLAN' | translate }}</div>
+				</a>
+			</div>
+			<div class="col-md-12">
+				<a href="/timeline" role="button" class="btn btn-default home homegraph">
+					<div class="text">{{ 'EVALUATE' | translate }}</div>
+				</a>
+
 			</div>
 			<!-- Rss feed -->
 			<div class="col-xs-12 col-md-4 home-sidebar">

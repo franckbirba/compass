@@ -1,0 +1,30 @@
+[
+    {
+        "name": "building",
+        "fields": 
+        [
+            {
+                "name": "",
+                "type": "",
+                "required": {
+                    "get": false,
+                    "post": false,
+                    "put": false,
+                    "delete": false
+                }
+            }
+        ],
+        "actions": 
+        [
+            {
+                "put": "",
+                "delete": "",
+                "post": "",
+                "get": ""
+            }
+        ],
+        "indexField": "userId",
+        "type": "building"
+
+    }
+]
