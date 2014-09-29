@@ -17,7 +17,7 @@ angular.module('tornadoApp').directive('listedit', function ($rootScope, $interv
          * made right here rather then settingsCtrl
          * in order for editable-form to work
          */
-        
+
         scope.data.add();
       };
 
@@ -42,6 +42,6 @@ angular.module('tornadoApp').directive('listedit', function ($rootScope, $interv
           return ('fa-sort-asc');
       };
     },
-    templateUrl:'/views/directives/listedit.html'
+    templateUrl:'/scripts/settings/listedit.html'
   };
 });

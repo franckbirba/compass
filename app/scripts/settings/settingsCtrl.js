@@ -1,3 +1,15 @@
+
+angular.module('tornadoApp')
+  .config(function($routeProvider){
+    var auth =  false;
+    var path = 'scripts/settings/';
+
+    $routeProvider
+      .when('/settings', {
+        templateUrl: path + 'settings.tpl.html',  controller: 'SettingsCtrl', authenticate: auth
+      });
+  });
+
 angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restangular, $modal) {
 
   $scope.errors = {};
@@ -193,7 +205,7 @@ angular.module('tornadoApp').controller('SettingsCtrl', function ($scope, Restan
         }
       }
     });
-    
+
     modalInstance.result.then(function(choosens){
       $scope.choosenFluid = choosens[0];
       $scope.choosenProvider = choosens[1];

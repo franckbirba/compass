@@ -49,8 +49,6 @@ angular.module('tornadoApp', [
         templateUrl: path + 'home',  controller: '', authenticate: auth })
       .when('/schemaHome', {
         templateUrl: path + 'schemaHome',  controller: '', authenticate: auth })
-      .when('/settings', {
-        templateUrl: path + 'settings',  controller: 'SettingsCtrl', authenticate: auth })
       .when('/collapicka', {
         templateUrl: path + 'testCollapicka',  controller: 'TestCtrl', authenticate: auth })
       .when('/test', {
