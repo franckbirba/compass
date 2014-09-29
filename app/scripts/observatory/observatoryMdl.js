@@ -11,16 +11,6 @@ ObsModule.config(['$routeProvider', function($routeProvider) {
       templateUrl: path + 'observatory.tpl.html', controller: 'ObservatoryCtrl', authenticate: auth });
 
 }])
-.filter('capitalizeAdressKeys', function () {
-  return function (input) {
-      if (input === 'cp'){
-        return 'Code Postal';
-      }
-      else {
-        return input.charAt(0).toUpperCase() + input.slice(1);
-      }
-  };
-})
 .filter('printPortSummary', function () {
   return function (input) {
     var map = {

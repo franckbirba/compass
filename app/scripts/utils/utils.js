@@ -6,3 +6,18 @@ function formBuilder(obj){
   })
   return keys;
 }
+
+angular.module('tornadoApp')
+  .filter('capitalizeAdressKeys', function () {
+    return function (input) {
+        if (input === 'cp'){
+          return 'Code Postal';
+        }
+        else if (input === undefined || input === null){
+          return '';
+        }
+        else {
+          return input.charAt(0).toUpperCase() + input.slice(1);
+        }
+    };
+  })

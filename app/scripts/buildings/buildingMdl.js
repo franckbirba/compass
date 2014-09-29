@@ -7,14 +7,14 @@ angular.module('buildingMdl', ["ngRoute"])
     var path = 'scripts/buildings/views/';
     var partials  = 'views/partials/';
     $routeProvider
-      .when('/buildings', {
-        templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/building/:id', {
         templateUrl: path + 'buildingDetail.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/portfolio/:id/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/portfolio/:id/building', {
         templateUrl: path + 'buildForm.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
+      .when('/leasetest', {
+        templateUrl: path + 'leaseForm.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/graph', {
         templateUrl: partials + 'graph.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/actionForm', {
@@ -32,6 +32,21 @@ angular.module('buildingMdl', ["ngRoute"])
         conformity_index: 'Indice de conformité',
         avg_performence: 'Performence moyenne',
         avg_age: 'Age moyen'
+      }
+      return map[input];
+    }
+  })
+  .filter('buildingInfo', function(){
+    return function(input) {
+      var map = {
+        construction_year: 'année de construction',
+        control: 'controle', //{full: null, shared: null},
+        user: 'utilisateur', //{own_use: null, rented: null},
+        area_total: 'surface total',
+        area_usefull: 'surface utile',
+        floors: 'nombre de niveaux',
+        parking_spaces: 'nombre de places de parking',
+        parking_surface: 'surface de parking'
       }
       return map[input];
     }

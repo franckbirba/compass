@@ -30,22 +30,24 @@
 	<div>
 		<div class="building-form">
 			<h3>Adresse</h3>
-			<div class="form-group" ng-repeat="key in adresskeys">
+			<div class="form-group" ng-repeat="key in addressKeys">
 				<label for="portfolio" class="col-sm-2 control-label">{{key | capitalizeAdressKeys}}</label>
 				<div class="col-sm-10">
 					<input class="form-control"
 						type="text"
 						placeholder="{{key | capitalizeAdressKeys}}"
 						name="{{key}}"
-						ng-model="building[key]"
+						ng-model="address[key]"
 						autofocus
 						novalidate >
 				</div>
 			</div>
+			<!-- GOOGLE MAP -->
+			<h3>Map</h3>
+			<google-map center="map.center" zoom="map.zoom"></google-map>
 		</div>
 	</div>
-	<!-- GOOGLE MAP -->
-	<google-map center="map.center" zoom="map.zoom"></google-map>
+
 
 	<!-- PHOTOS -->
 	<h3>Photos</h3>

@@ -8,45 +8,47 @@
  * Factory in the tornadoApp.
  */
 
+
+
+
 angular.module('buildingMdl')
-  .factory('BuildingSvc', function BuildingSvc(Restangular, DUMMY) {
+  .factory('BuildingSvc', function BuildingSvc($http, Restangular, DUMMY) {
     // var map = DUMMY.map;
     // var certs = DUMMY.certs;
     // var usage_types = DUMMY.usage_types;
     var resource = 'buildings';
 
-    function Address(params){
-      var params = params || {};
-      this.address1 = params.address1;
-      this.address1 = params.address2;
-      this.city     = params.city;
-      this.zipcode  = params.zipcode;
-      this.area     = params.area;
-      this.country  = params.country;
-      this.gps      = params.gps;
+    var BuildingObj = {
+      "_id": null,
+      "portfolio_id": null,
+      "name": null,
+      "type": null,
+      "address": {
+        "address1": null,
+        "address2": null,
+        "city": null,
+        "zip_code": null,
+        "area": null,
+        "country": null,
+        "gps_long": null,
+        "gps_lat": null
+      },
+      "images": [],
+      "leases": [],
+      "info": {
+        "construction_year": null,
+        "control": null,
+        "user": null,
+        "area_total": null,
+        "area_usefull": null,
+        "floors": null,
+        "parking_spaces": null,
+        "parking_surface": null
+      }
     }
 
     var Buildings = Restangular.service(resource);
 
-    Restangular.extendModel(resource, function(model){
-      return angular.extend(model, {
-          "address": new Address(),
-          "building_user":   "",
-          "built_year":  "",
-          "control":  "",
-          "floors":   "",
-          "name":   "demo building",
-          "parking_surface":   "",
-          "parkings":   "",
-          "portfolio":  "",
-          "property":   "",
-          "total_surface":   "",
-          "useful_surface":  "",
-          "user":   "",
-          "hqe":  "",
-          "images": []
-        });
-    });
 
     function createBuilding(params){
       var elem = Restangular.one(resource);
@@ -61,7 +63,14 @@ angular.module('buildingMdl')
       return Restangular.one(resource, id).get().$object
     }
 
+    function getBuilding(){
+      $http.get('data/building_object.json').then(function(res){
+        return res
+      });
+    }
+
     return {
+      buildingObj: BuildingObj,
       rest: Buildings,
       get: getOne,
       createBuilding: createBuilding
