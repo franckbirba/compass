@@ -37,8 +37,8 @@ angular.module('buildingMdl')
       "leases": [],
       "info": {
         "construction_year": null,
-        "control": null,
-        "user": null,
+        "control": {"full": null, "shared": null},
+        "user": {"own_use": null, "rented": null},
         "area_total": null,
         "area_usefull": null,
         "floors": null,
