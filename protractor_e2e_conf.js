@@ -12,6 +12,7 @@ exports.config = {
    */
   specs: [
     'test/client/e2e/**/*.spec.js',
+    'app/scripts/**/**/*.spec.js',
   ],
 
   /**
