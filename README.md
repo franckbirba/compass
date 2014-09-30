@@ -38,6 +38,7 @@ tornado.awesome(); // "awesome"
     2. In a new shell launch Protractor to actually run the tests
     ''''
     $ ./node_modules/protractor/bin/protractor protractor_e2e_conf.js
+    NB: make sure to run grunt serve before launching ptor tests.
 
 
 
