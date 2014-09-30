@@ -21,6 +21,24 @@ tornado.awesome(); // "awesome"
  * cd app && bower install
  * cd .. && grunt serve
 
+## Testing
+  E2E
+  using protractor. Dependencies will be installed with
+  ''''
+  $ npm install
+  ''''
+  Run the Selenium installation script.
+  ''''
+  $ ./node_modules/protractor/bin/webdriver-manager update
+  ''''
+  To run the test:
+    1. Start the seperate selium server
+    ''''
+    $ ./node_modules/protractor/bin/webdriver-manager start
+    2. In a new shell launch Protractor to actually run the tests
+    ''''
+    $ ./node_modules/protractor/bin/protractor protractor_e2e_conf.js
+
 
 
 ## Examples
