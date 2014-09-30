@@ -11,8 +11,10 @@ exports.config = {
    * We're pointing to the directory where our CoffeeScript output goes.
    */
   specs: [
+    // test protractor installation.
     'test/client/e2e/**/*.spec.js',
-    'app/scripts/**/**/*.spec.js',
+    // run all application module specs.
+    'app/scripts/**/**/*.spec.{js,coffee}',
   ],
 
   /**
@@ -25,5 +27,15 @@ exports.config = {
   /**
    * This should point to your running app instance, for relative path resolution in tests.
    */
-  baseUrl: 'http://localhost:9000'
+  baseUrl: 'http://localhost:9000',
+
+  /**
+   * Config Jasmine output format
+   */
+  jasmineNodeOpts: {
+    onComplete: null,
+    isVerbose: true,
+    showColors: true,
+    includeStackTrace: true
+  }
 };

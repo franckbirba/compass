@@ -10,6 +10,10 @@ describe('Protractor test', function() {
     expect(browser.getCurrentUrl()).toEqual('http://localhost:9000/');
   });
 
+  it('it runs a test from within app', function() {
+    browser.get('/');
+    expect(element(by.name('ptor-test'))).toMatch('login');
+  });
   // it('should warn on missing/malformed credentials', function() {
   //   email.clear();
   //   password.clear();
