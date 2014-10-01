@@ -440,6 +440,16 @@ module.exports = function (grunt) {
         },
         stdout: true,
         stderr: true
+      },
+      'db-seed': {
+          command: function() {
+            var cmd = [];
+            cmd.push('mongo tornado --eval "db.dropDatabase()"');
+            cmd.push('node lib/seed.js');
+            return cmd.join(';');
+          },
+          stdout: true,
+          stderr: true
       }
     },
 
@@ -563,4 +573,5 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('reset-mongo', [ 'exec:reset-mongo' ]);
+  grunt.registerTask('db-seed', [ 'exec:db-seed' ]);
 };

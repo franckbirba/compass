@@ -1,0 +1,74 @@
+---
+actions:
+  -
+    delete: ""
+    get: ""
+    post: ""
+    put: ""
+fields:
+  -
+    _id: ""
+    area_usefull: ""
+    building_id: ""
+    certifications:
+      -
+        cert_id: ""
+        comments: ""
+    conformity_info:
+      -
+        comments: ""
+        last_diagnostic: ""
+        rule_name: ""
+        rule_period: ""
+        rule_status: ""
+    confort_quality:
+      accoustic: ""
+      comments: ""
+      thermic: ""
+      visuel: ""
+    consumption_by_use:
+      -
+        cost:
+          price: ""
+          unit: ""
+          year: ""
+        supplier: ""
+        use: ""
+    consumption_fluids: {}
+    dpe:
+      co2_emmission:
+        notation: ""
+        value: ""
+      energy_consumption:
+        notation: ""
+        value: ""
+    erp_status:
+      options: []
+    floor: ""
+    igh: ""
+    name: ""
+    rent: ""
+    rental_status:
+      options: []
+    required:
+      _id: true
+      building_id: true
+      delete: false
+      get: false
+      post: false
+      put: false
+    technical_info:
+      categories:
+        -
+          conformity: ""
+          desc: ""
+          name: ""
+          obsolence: ""
+      comments: ""
+      global_conformity: ""
+      global_obsolence: ""
+    type: ""
+    usage:
+      options: []
+indexField: _id
+type: lease

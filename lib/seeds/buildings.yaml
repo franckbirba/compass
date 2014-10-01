@@ -1,0 +1,68 @@
+
+-
+  name: 'Godot'
+  portfolio_id: null
+  type: null
+  address:
+    address1: '21, rue Godot de Mauroy'
+    address2: null
+    city: 'Paris'
+    zip_code: 75008
+    area: 'Ile de France'
+    country: 'France'
+    gps_long: null
+    gps_lat: null
+  images:
+    -
+      link: null
+  leases:
+    -
+      _id: null
+  info:
+    construction_year: 1900
+    control:
+      full: true
+      shared: false
+    user:
+      own_use: true
+      rented: false
+    area_total: 18790
+    area_usefull: 15005
+    floors: 14
+    parking_spaces: 30
+    parking_surface: 40
+
+
+-
+  name: 'Godot'
+  portfolio_id: null
+  type: null
+  address:
+    address1: '15, Bd des Capucines'
+    address2: null
+    city: 'Paris'
+    zip_code: 75009
+    area: 'Ile de France'
+    country: 'France'
+    gps_long: null
+    gps_lat: null
+  images:
+    -
+      link: null
+  leases:
+    -
+      _id: null
+  info:
+    construction_year: 1900
+    control:
+      full: true
+      shared: false
+    user:
+      own_use: true
+      rented: false
+    area_total: 18790
+    area_usefull: 15005
+    floors: 14
+    parking_spaces: 30
+    parking_surface: 40
+
