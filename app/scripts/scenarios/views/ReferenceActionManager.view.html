@@ -1,0 +1,7 @@
+<ul>
+  <li ng-repeat="ReferenceAction in ReferenceActions">
+    {{ReferenceAction.name}}
+    <button ng-click="remove($index)">X</button>
+  <li>
+</ul>
+<button ng-click="addReferenceAction()">+</button>

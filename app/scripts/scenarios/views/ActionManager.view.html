@@ -1,0 +1,7 @@
+<ul>
+  <li ng-repeat="Action in Actions">
+    {{Action.name}}
+    <button ng-click="remove($index)">X</button>
+  <li>
+</ul>
+<button ng-click="addAction()">+</button>
