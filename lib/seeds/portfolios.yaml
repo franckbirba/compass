@@ -2,7 +2,13 @@
   name: 'BNP Immobilier'
   user: 'syndicat gestion etrange'
   desc: 'useless client'
+  buildings:
+    -
+      _id:
 -
   name: 'Axa Housing'
   user: 'syndicat gestion etrange'
   desc: 'useless client'
+  buildings:
+  -
+    _id:
