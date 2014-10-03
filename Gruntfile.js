@@ -84,7 +84,7 @@ module.exports = function (grunt) {
       express: {
         files: [
           'server.js',
-          'lib/**/*.{js,json}'
+          'server/**/*.{js,json}'
         ],
         tasks: ['newer:jshint:server', 'express:dev', 'wait'],
         options: {
@@ -102,9 +102,9 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          jshintrc: 'lib/.jshintrc'
+          jshintrc: 'server/.jshintrc'
         },
-        src: [ 'lib/{,*/}*.js']
+        src: [ 'server/{,*/}*.js']
       },
       all: [
         '<%= yeoman.app %>/scripts/{,*/}*.js'
@@ -360,7 +360,7 @@ module.exports = function (grunt) {
           src: [
             'package.json',
             'server.js',
-            'lib/**/*'
+            'server/**/*'
           ]
         }]
       },
@@ -445,7 +445,7 @@ module.exports = function (grunt) {
           command: function() {
             var cmd = [];
             cmd.push('mongo tornado --eval "db.dropDatabase()"');
-            cmd.push('node lib/seed.js');
+            cmd.push('node server/seed.js');
             return cmd.join(';');
           },
           stdout: true,

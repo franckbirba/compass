@@ -14,12 +14,14 @@ tornado.awesome(); // "awesome"
  Prerequisites
  make sure you have (install otherwise) mongodb, node.js, npm, ruby & compass, grunt-cli, bower, mongodb
  Launch the project
- * launch mongodb on default port
- * git clone this
- * npm install
- * bower install
- * cd app && bower install
- * cd .. && grunt serve
+ ```
+ $ mongod
+ $ git clone <project>
+ $ npm install
+ $ bower install
+ $ cd app && bower install
+ $ cd .. && grunt serve
+```
 
 ## Testing
   E2E

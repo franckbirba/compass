@@ -12,11 +12,11 @@ var express = require('express'),
 // Set default node environment to development
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var config = require('./lib/config/config');
+var config = require('./server/config/config');
 var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Bootstrap models
-var modelsPath = path.join(__dirname, 'lib/models');
+var modelsPath = path.join(__dirname, 'server/models');
 fs.readdirSync(modelsPath).forEach(function (file) {
 if ( /(.*)\.(js$|coffee$)/.test(file) && !/(.*)\.(spec)/.test(file) ) {
     console.log(file + ' loded by server.js');
@@ -25,16 +25,16 @@ if ( /(.*)\.(js$|coffee$)/.test(file) && !/(.*)\.(spec)/.test(file) ) {
 });
 
 // Populate empty DB with sample data
-require('./lib/config/dummydata');
-require('./lib/config/seeds');
+require('./server/config/dummydata');
+require('./server/config/seeds');
 
 // Passport Configuration
-var passport = require('./lib/config/passport');
+var passport = require('./server/config/passport');
 
 // Setup Express
 var app = express();
-require('./lib/config/express')(app);
-require('./lib/routes')(app);
+require('./server/config/express')(app);
+require('./server/routes')(app);
 
 // Start server
 app.listen(config.port, config.ip, function () {
