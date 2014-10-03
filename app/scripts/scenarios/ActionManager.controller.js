@@ -5,9 +5,7 @@ var constructor = function($scope, $location, Actions){
 
   $scope.remove = function(index){
     var id = $scope.Actions[index]._id;
-    Actions.remove(id, index).then(function(){
-      $scope.Actions.splice(index, 1);
-    });
+    Actions.remove(id, index);
   };
 
   $scope.addAction = function(){

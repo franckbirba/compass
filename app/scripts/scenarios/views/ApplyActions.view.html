@@ -1,7 +1,17 @@
 <form name="form">
-  {{RefAction.name}}<input type="checkbox" ng-model="RefAction.choosen" ng-repeat="RefAction in ReferenceActions"><br/>
+  <span ng-repeat-start="RefAction in ReferenceActions">
+    {{RefAction.name}}
+  </span>
+  <input type="checkbox" ng-model="RefAction.choosen">
+  <br ng-repeat-end >
+
   <br/>
-<!--  {{building.name}}<input type="checkbox" ng-model="building.choosen" ng-repeat="building in buildings"><br/>
--->
- <button></button>
+
+  <span ng-repeat-start="Building in Buildings">
+    {{Building.name}}
+  </span>
+  <input type="checkbox" ng-model="Building.choosen" >
+  <br ng-repeat-end >
+
+  <button ng-click="apply()">APPLY</button>
  </form>

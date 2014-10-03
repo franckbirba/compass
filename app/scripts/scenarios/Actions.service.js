@@ -22,10 +22,10 @@ var ActionsRecipe = function(ReferenceActions, Restangular) {
     });
   });
 
-  Actions.create = function(/*building, */refAction){
+  Actions.create = function(building, refAction){
     var action = {
       ref: refAction._id,
-/*    building : building._id,*/
+      building : building._id,
       mask: {}
     };
     var promise = Restangular.all('actions').post(action);
@@ -36,6 +36,17 @@ var ActionsRecipe = function(ReferenceActions, Restangular) {
     });
     return promise;
   };
+
+  Actions.remove = function(id, index){
+    var promise = Restangular.one('actions', id).remove();
+    promise.then(function(deleted){
+      deleted.get().then(function(it){
+        Actions.all.splice(index, 1);
+      });
+    });
+    return promise;
+  };
+
 
   return Actions;
 };

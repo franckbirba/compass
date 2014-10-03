@@ -5,9 +5,7 @@ var constructor = function($scope, $location, ReferenceActions){
 
   $scope.remove = function(index){
     var id = $scope.ReferenceActions[index]._id;
-    ReferenceActions.remove(id, index).then(function(){
-      $scope.ReferenceActions.splice(index, 1);
-    });
+    ReferenceActions.remove(id, index);
   };
 
   $scope.addReferenceAction = function(){
