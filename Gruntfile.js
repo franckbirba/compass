@@ -450,6 +450,13 @@ module.exports = function (grunt) {
           },
           stdout: true,
           stderr: true
+      },
+      'db-clean': {
+        command: function() {
+          return ('mongo tornado --eval "db.dropDatabase()"');
+        },
+        stdout: true,
+        stderr: true
       }
     },
 
@@ -574,4 +581,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('reset-mongo', [ 'exec:reset-mongo' ]);
   grunt.registerTask('db-seed', [ 'exec:db-seed' ]);
+  grunt.registerTask('db-clean', [ 'exec:db-clean' ]);
 };

@@ -8,7 +8,7 @@ var BuildingSchema = new Schema({
   portfolio:   [{ type: Schema.Types.ObjectId, ref: 'Portfolio' }],
   name:        { type: String, default: '' },
   type:        { type: String, default: '' },
-  address:     [{
+  address:     {
         address1: { type: String, default: '' },
         address2: { type: String, default: '' },
         city:     { type: String, default: '' },
@@ -17,10 +17,10 @@ var BuildingSchema = new Schema({
         country:  { type: String, default: '' },
         gps_long: { type: Number, default: 0 },
         gps_lat:  { type: Number, default: 0 },
-  }],
+  },
   images:     [{ type: Schema.Types.ObjectId, ref: 'Image'}],
   leases:     [{ type: Schema.Types.ObjectId, ref: 'Lease'}],
-  info:       [{
+  info:       {
         construction_year: { type: Number, default: 1900 },
         control: [{
           full:   { type: Boolean, default: false },
@@ -35,7 +35,7 @@ var BuildingSchema = new Schema({
         floors:         { type: Number, default: 0 },
         parking_spaces: { type: Number, default: 0 },
         parking_surface: { type: Number, default: 0 }
-  }]
+  }
 });
 
 module.exports = mongoose.model('Building', BuildingSchema);
