@@ -5,6 +5,7 @@
   buildings:
     -
       _id:
+  image: ''
 -
   name: 'Axa Housing'
   user: 'syndicat gestion etrange'
@@ -12,3 +13,4 @@
   buildings:
   -
     _id:
+  image: ''
