@@ -32,7 +32,7 @@
                   <div class="list-group">
                     <h4>Informations du Portfolio</h4>
                     <div class="list-group-item clearfix" ng-repeat="key in summarykeys($index)" ng-switch on="showLink(key)">
-                      <a ng-switch-when="true" href="/portfolio/{{portfolio._id}}/buildings">
+                      <a ng-switch-when="true" href="/portfolios/{{portfolio._id}}/buildings">
                         <h5 class="pull-left">{{key | printPortSummary}}</h5>
                         <span class="pull-right">{{$parent.portfolio.summary[key]}}</span>
                       </a>

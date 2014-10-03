@@ -7,11 +7,13 @@ angular.module('buildingMdl', ["ngRoute"])
     var path = 'scripts/buildings/views/';
     var partials  = 'views/partials/';
     $routeProvider
-      .when('/building/:id', {
-        templateUrl: path + 'buildingDetail.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/portfolio/:id/buildings', {
+      .when('/buildings', {
         templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
-      .when('/portfolio/:id/building', {
+      .when('/buildings/:id', {
+        templateUrl: path + 'buildingDetail.html', controller: 'BuildingCtrl', authenticate: auth })
+      .when('/portfolios/:id/buildings', {
+        templateUrl: path + 'buildings.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
+      .when('/portfolios/:id/building', {
         templateUrl: path + 'buildForm.tpl.html', controller: 'BuildingCtrl', authenticate: auth })
       .when('/leasetest', {
         templateUrl: path + 'leaseForm.tpl.html', controller: 'BuildingCtrl', authenticate: auth })

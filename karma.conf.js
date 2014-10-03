@@ -29,19 +29,19 @@ module.exports = function(config) {
       'app/bower_components/restangular/dist/restangular.js',
       'app/bower_components/ngstorage/ngStorage.min.js',
       'app/bower_components/angular-translate/angular-translate.js',
-      'app/bower_components/sb-admin/js/plugins/morris/raphael-2.1.0.min.js',
+
       'app/scripts/*.js',
       'app/scripts/utils/*.js',
       'app/config/settingsConf.js',
       'app/config/*.js',
-      'app/scripts/observatory/observatoryModule.js',
+      'app/scripts/observatory/observatoryMdl.js',
       'app/scripts/observatory/*.js',
       'app/scripts/controllers/*.js',
       'app/scripts/directives/*.js',
       'app/scripts/services/*.js',
 
-      'test/client/mock/**/*.js',
-      'test/client/spec/**/*.js'
+      // 'test/client/mock/**/*.js',
+      // 'test/client/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude

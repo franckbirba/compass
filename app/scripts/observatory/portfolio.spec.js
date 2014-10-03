@@ -1,18 +1,16 @@
-describe('Protractor test', function() {
+describe('Observatory e2e', function() {
 
-  // var email = element(by.name('login-email'));
-  // var password = element(by.name('login-password'));
-  // var loginButton = element(by.xpath('//form[1]/input[@type="submit"]'));
-  // var error = element(by.model('loginError'));
+  beforeEach(function(){
+    browser.get('/observatory');
+    ptor = protractor.getInstance();
+  })
 
-  it('it runs a test from within app', function() {
-    browser.get('/');
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:9000/');
+  it('it loads correct route', function() {
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:9000/observatory');
   });
 
   it('it runs a test from within app', function() {
-    browser.get('/');
-    expect(element(by.name('ptor-test'))).toMatch('login');
+
   });
   // it('should warn on missing/malformed credentials', function() {
   //   email.clear();

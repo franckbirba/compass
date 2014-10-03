@@ -1,10 +1,9 @@
-'use strict';
+(function(){
+  'use strict';
 
-angular.module('buildingMdl')
-  .controller('BuildingCtrl', function BuildingCtrl($http, $scope, $location, $routeParams, BuildingSvc, Restangular) {
+  function BuildingCtrl($http, $scope, $location, $routeParams, BuildingSvc, Restangular) {
     var Buildings = BuildingSvc.rest;
     var BuildingObj = BuildingSvc.buildingObj;
-
 
     var id = $routeParams.id || '';
     $scope.portfolio_id = $routeParams.id || '';
@@ -42,16 +41,25 @@ angular.module('buildingMdl')
     $scope.saveBuilding = function(){
       $location.url('/leasetest')
     }
+
+
     /*
     ** Form multi-page form when using $routeProvider
     */
     $scope.buildStep = 1;
     $scope.setBuildStep = function(step){
-     $scope.buildStep = step;
+      $scope.buildStep = step;
     }
     $scope.leaseStep = 1;
     $scope.setLeaseStep = function(step){
-     $scope.leaseStep = step;
+      $scope.leaseStep = step;
     }
 
-});
+  };
+
+  BuildingCtrl.$inject = ['$http', '$scope', '$location', '$routeParams', 'BuildingSvc','Restangular'];
+
+  angular.module('buildingMdl')
+    .controller('BuildingCtrl', BuildingCtrl);
+
+})();

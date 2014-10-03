@@ -46,10 +46,6 @@ module.exports = function(app) {
     .get(function(req, res) {
       res.send(404);
     });
-  app.route('/crud/*')
-    .get(function(req, res) {
-      res.send(404);
-    });
 
   // All other routes to use Angular routing in app/scripts/app.js
   app.route('/partials/*')

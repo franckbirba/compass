@@ -35,6 +35,16 @@ var BuildingSchema = new Schema({
         floors:         { type: Number, default: 0 },
         parking_spaces: { type: Number, default: 0 },
         parking_surface: { type: Number, default: 0 }
+  },
+  summary: {
+    structure:  { type: String, default: '' },
+    facade:     { type: String, default: '' },
+    prod_hot:   { type: String, default: '' },
+    tgbt:       { type: String, default: '' },
+    cold_tem:   { type: String, default: '' },
+    global_confor: { type: String, default: '' },
+    global_age:    { type: String, default: '' },
+    gloabl_conformity: { type: String, default: '' }
   }
 });
 
