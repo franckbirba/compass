@@ -13,6 +13,9 @@ var constructor = function($scope, $location, Actions){
   $scope.addAction = function(){
     $location.path('/new-action');
   };
+
+  $scope.edit = function(index){
+  };
 };
 
 constructor.$inject = ['$scope', '$location', 'Actions'];

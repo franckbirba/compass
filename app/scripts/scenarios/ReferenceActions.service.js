@@ -40,7 +40,7 @@ var ReferenceActionsRecipe = function (Restangular) {
     var tmp = ReferenceActions.all.filter(function(val, indx){
       return val._id === id;
     });
-    return tmp[0];
+    return tmp.length > 0 ? tmp[0] : null;
   };
 
   return ReferenceActions;

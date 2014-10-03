@@ -1,7 +1,8 @@
 <ul>
   <li ng-repeat="Action in Actions">
-    {{Action.name}}
+    {{Action || json}}
     <button ng-click="remove($index)">X</button>
+    <button ng-click="edit($index)">edit</button>
   <li>
 </ul>
 <button ng-click="addAction()">+</button>

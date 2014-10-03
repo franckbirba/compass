@@ -1,7 +1,6 @@
 var constructor = function($scope, $location, ReferenceActions){
   ReferenceActions.dataReady.then(function(){
     $scope.ReferenceActions = ReferenceActions.all;
-    console.log(ReferenceActions.all);
   });
 
   $scope.remove = function(index){
@@ -13,6 +12,9 @@ var constructor = function($scope, $location, ReferenceActions){
 
   $scope.addReferenceAction = function(){
     $location.path('/new-ref-action');
+  };
+
+  $scope.edit = function(index){
   };
 };
 

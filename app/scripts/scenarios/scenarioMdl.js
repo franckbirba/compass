@@ -1,6 +1,6 @@
 'use strict'
 
-var SceModule = angular.module('scenarioMdl', []);
+var SceModule = angular.module('scenarioMdl', ['buildingMdl']);
 
 SceModule
   .config(['$routeProvider', function($routeProvider){
@@ -18,8 +18,8 @@ SceModule
         authenticate: auth
       })
       .when('/new-action', {
-        templateUrl: path + 'NewAction.view.html',
-        controller: 'NewActionController',
+        templateUrl: path + 'ApplyActions.view.html',
+        controller: 'ApplyActionsController',
         authenticate: auth
       })
       .when('/actions', {

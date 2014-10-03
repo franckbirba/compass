@@ -12,7 +12,6 @@ var ActionsRecipe = function(ReferenceActions, Restangular) {
 
   // mettre tout ca dans le then() de la promesse de ReferenceActionCatalogue ???
   Actions.dataReady.then(function(res){
-    console.log(Actions.all);
     Actions.all = res.map(function(action){
       newAction = Object.create(ReferenceActions.get(action.ref));
       for (prop in action.mask)
@@ -22,6 +21,21 @@ var ActionsRecipe = function(ReferenceActions, Restangular) {
       return newAction;
     });
   });
+
+  Actions.create = function(/*building, */refAction){
+    var action = {
+      ref: refAction._id,
+/*    building : building._id,*/
+      mask: {}
+    };
+    var promise = Restangular.all('actions').post(action);
+    promise.then(function(newAction){
+      newAction.get().then(function(it){
+        Actions.all.push(it[0])
+      });
+    });
+    return promise;
+  };
 
   return Actions;
 };
