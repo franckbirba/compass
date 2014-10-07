@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: {
       // configurable paths
-      app: require('./bower.json').appPath || './app',
+      app: require('./bower.json').appPath || 'client',
       dist: 'dist'
     },
     express: {
@@ -248,8 +248,8 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: ['<%= yeoman.app %>/views/index.html',
-             '<%= yeoman.app %>/views/index.jade'],
+      html: ['<%= yeoman.app %>/index.html',
+             '<%= yeoman.app %>/index.jade'],
       options: {
         dest: '<%= yeoman.dist %>/public'
       }

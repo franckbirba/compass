@@ -23,6 +23,5 @@ exports.partials = function(req, res) {
  * Send our single page app
  */
 exports.index = function(req, res) {
-  // dirty hack because default path is app/views/
-  res.render('../index');
+  res.render('index');
 };

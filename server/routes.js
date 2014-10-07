@@ -35,7 +35,6 @@ module.exports = function(app) {
     .post(api.crud)
     .delete(api.crud);
 
-
   /*
   ** Old style routes with ending '/'
   */
