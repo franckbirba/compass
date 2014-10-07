@@ -7,6 +7,11 @@
 
     var id = $routeParams.id || '';
     $scope.portfolio_id = $routeParams.id || '';
+    $scope.buildings = Buildings.getList().$object;
+
+    Restangular.one('portfolio', $scope.portfolio_id).getList('buildings').then(function(res){
+      console.log(res);
+    })
 
     $scope.building = function(){
       var b = BuildingSvc.get(id);
@@ -19,7 +24,7 @@
       console.log($scope.building.getRestangularUrl());
     }
 
-    $scope.buildings = Buildings.getList().$object;
+
 
     $scope.create = function(params){
       BuildingSvc.createBuilding(params).then(function(res){
@@ -34,8 +39,9 @@
       });
     }
 
-    $scope.addressKeys = formBuilder(BuildingObj.address);
-    $scope.infoKeys = formBuilder(BuildingObj.info);
+    // No longer necessary (k, v) in x
+    // $scope.addressKeys = formBuilder(BuildingObj.address);
+    // $scope.infoKeys = formBuilder(BuildingObj.info);
 
 
     $scope.saveBuilding = function(){

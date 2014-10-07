@@ -1,19 +1,20 @@
 'use strict';
 
-var should = require('should'),
+var chai = require('chai'),
+    expect = chai.expect,
     app = require('../../../server'),
     request = require('supertest');
 
-describe('GET /api/awesomeThings', function() {
-  
+describe('GET /crud/portfolios', function() {
+
   it('should respond with JSON array', function(done) {
     request(app)
-      .get('/api/awesomeThings')
+      .get('/crud/portfolios')
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
-        res.body.should.be.instanceof(Array);
+        expect(res.body).to.be.instanceof(Array);
         done();
       });
   });

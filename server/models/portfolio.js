@@ -9,16 +9,16 @@ var mongoose = require('mongoose'),
 var PortfolioSchema = new Schema({
   name:       {type: String, default: ''},
   info:       {type: String, default: ''},
-  summary:    {type: String, default: ''},
+  desc:       {type: String, default: ''},
   buildings:  [{ type: Schema.Types.ObjectId, ref: 'Building' }],
   image:      {type: String, default: ''},
   summary: {
-    total_surface:    { type: Number, default: 0 },
-    occupation_rate: { type: Number, default: 0 },
-    condition_idx:  {type: Number, default: 0},
-    conformity_idx: {type: Number, default: 0},
-    avg_performance: {type: NUmber, default: 0},
-    avg_age:  {type: NUmber, default: 0}
+    total_surface:    {type: Number, default: 0},
+    occupation_rate:  {type: Number, default: 0},
+    condition_idx:    {type: Number, default: 0},
+    conformity_idx:   {type: Number, default: 0},
+    avg_performance:  {type: Number, default: 0},
+    avg_age:          {type: Number, default: 0}
   }
 });
 

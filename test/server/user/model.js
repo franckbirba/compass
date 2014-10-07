@@ -1,6 +1,7 @@
 'use strict';
 
-var should = require('should'),
+var chai = require('chai'),
+    expect = chai.expect,
     mongoose = require('mongoose'),
     User = mongoose.model('User');
 
@@ -27,7 +28,7 @@ describe('User Model', function() {
 
   it('should begin with no users', function(done) {
     User.find({}, function(err, users) {
-      users.should.have.length(0);
+      expect(users.length).to.equal(0)
       done();
     });
   });
@@ -36,7 +37,7 @@ describe('User Model', function() {
     user.save();
     var userDup = new User(user);
     userDup.save(function(err) {
-      should.exist(err);
+      expect(err).to.exist;
       done();
     });
   });
@@ -44,17 +45,17 @@ describe('User Model', function() {
   it('should fail when saving without an email', function(done) {
     user.email = '';
     user.save(function(err) {
-      should.exist(err);
+      expect(err).to.exist;
       done();
     });
   });
 
   it("should authenticate user if password is valid", function() {
-    user.authenticate('password').should.be.true;
+    expect(user.authenticate('password')).to.be.true;
   });
 
   it("should not authenticate user if password is invalid", function() {
-    user.authenticate('blah').should.not.be.true;
+    expect(user.authenticate('blah')).to.not.be.true;
   });
 
 });

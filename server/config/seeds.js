@@ -44,8 +44,8 @@ function createBuildings(qty){
   var buildings = [];
   var newBuilding = function(){
     return new Building({
-      name:     							Faker.name.firstName(),
-      address:                new Address(),
+      name:    Faker.name.firstName(),
+      address:  new Address(),
       info: {
         construction_year: Faker.random.number(),
         control: {
