@@ -3,6 +3,7 @@
 var api = require('./controllers/api'),
     index = require('./controllers'),
     users = require('./controllers/users'),
+    portfolios = require('./controllers/portfolios'),
     session = require('./controllers/session'),
     middleware = require('./middleware');
 
@@ -23,23 +24,43 @@ module.exports = function(app) {
   app.route('/api/session')
     .post(session.login)
     .delete(session.logout);
-  app.route('/crud/:collection')
+
+  app.route('/crud/:collection/')
+    .get(api.crud)
+    .put(api.crud)
+    .post(api.crud)
+    .delete(api.crud);
+
+  app.route('/crud/:collection/:id')
+    .get(api.crud)
+    .put(api.crud)
+    .post(api.crud)
+    .delete(api.crud);
+
+  app.route('/crud/portfolios/:id/buildings')
     .get(api.crud)
     .post(api.crud)
     .put(api.crud)
     .delete(api.crud);
 
-  app.route('/crud/:collection/')
-  .get(api.crud)
-  .put(api.crud)
-  .post(api.crud)
-  .delete(api.crud);
+  app.route('/crud/buildings/:id/leases')
+    .get(api.crud)
+    .post(api.crud)
+    .put(api.crud)
+    .delete(api.crud);
 
-  app.route('/crud/:collection/:id')
-  .get(api.crud)
-  .put(api.crud)
-  .post(api.crud)
-  .delete(api.crud);
+   app.route('/crud/:collection/:id')
+    .get(api.crud)
+    .put(api.crud)
+    .post(api.crud)
+    .delete(api.crud);
+
+
+ app.route('/crud/:collection')
+    .get(api.crud)
+    .post(api.crud)
+    .put(api.crud)
+    .delete(api.crud);
 
   // All undefined api routes should return a 404
   app.route('/api/*')

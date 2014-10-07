@@ -3,6 +3,6 @@
 module.exports = {
   env: 'development',
   mongo: {
-    uri: 'mongodb://localhost/tornado'
+    uri: 'mongodb://localhost/tornado-dev'
   }
 };

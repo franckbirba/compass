@@ -36,6 +36,6 @@ exports.config = {
     onComplete: null,
     isVerbose: true,
     showColors: true,
-    includeStackTrace: true
+    includeStackTrace: false
   }
 };

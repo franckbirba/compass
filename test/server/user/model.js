@@ -1,6 +1,8 @@
 'use strict';
 
-var should = require('should'),
+var app = require('../../../server'),
+    chai = require('chai'),
+    expect = chai.expect,
     mongoose = require('mongoose'),
     User = mongoose.model('User');
 
@@ -25,36 +27,36 @@ describe('User Model', function() {
     done();
   });
 
-  it('should begin with no users', function(done) {
+  it('begins with no users', function(done) {
     User.find({}, function(err, users) {
-      users.should.have.length(0);
+      expect(users.length).to.equal(0)
       done();
     });
   });
 
-  it('should fail when saving a duplicate user', function(done) {
+  it('fails when saving a duplicate user', function(done) {
     user.save();
     var userDup = new User(user);
     userDup.save(function(err) {
-      should.exist(err);
+      expect(err).to.exist;
       done();
     });
   });
 
-  it('should fail when saving without an email', function(done) {
+  it('fails when saving without an email', function(done) {
     user.email = '';
     user.save(function(err) {
-      should.exist(err);
+      expect(err).to.exist;
       done();
     });
   });
 
-  it("should authenticate user if password is valid", function() {
-    user.authenticate('password').should.be.true;
+  it("authenticates user if password is valid", function() {
+    expect(user.authenticate('password')).to.be.true;
   });
 
-  it("should not authenticate user if password is invalid", function() {
-    user.authenticate('blah').should.not.be.true;
+  it("fails user authentication if password is invalid", function() {
+    expect(user.authenticate('blah')).to.not.be.true;
   });
 
 });

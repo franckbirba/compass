@@ -88,7 +88,7 @@ exports.CRUD.prototype.put = function(collection,query, callback){
 
 
 	this.db.collection(collection).update({_id:tmpId},{$set:tmp},{upsert:false},function(err, items){
-		if (items == '1'|| typeof items != 'object'){
+		if (items === '1'|| typeof items !== 'object'){
 			items = [tmpId];
 		}
 		callback(err, items);
@@ -103,7 +103,7 @@ exports.CRUD.prototype.delete = function(collection,query, callback){
 
 	this.db.collection(collection).remove({_id: tmpId},{justOne: true},function(err, items){
 
-		if (items == '1'|| typeof items != 'object'){
+		if (items === '1'|| typeof items !== 'object'){
 			items = [tmpId];
 		}
 		callback(err, items);
@@ -117,7 +117,7 @@ exports.CRUD.prototype.post = function(collection,query, callback){
     if(tmp._id) delete tmp._id;
 
     this.db.collection(collection).update({_id:tmpId},{$set:tmp},{upsert:true},function(err, items){
-        if (items == '1'|| typeof items != 'object'){
+        if (items === '1'|| typeof items !== 'object'){
 
             items = {_id: tmpId};
             console.log(items);

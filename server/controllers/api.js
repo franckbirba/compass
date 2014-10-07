@@ -1,6 +1,5 @@
 'use strict';
 
-
     var crud = require('./crud.js').CRUD;
     var dbClient = new crud();
     var zlib = require('zlib');
@@ -15,7 +14,7 @@
             res.writeHead(200, {'Content-Type': 'application/javascript', 'Content-Encoding': 'gzip'});
         }
 
-        var data = typeof obj == 'object' ? JSON.stringify(obj) : obj;
+        var data = typeof obj === 'object' ? JSON.stringify(obj) : obj;
         zlib.gzip(data, function (_, result) {  // The callback will give you the
             res.end(result);                     // result, so just send it.
         });
