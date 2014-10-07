@@ -12,9 +12,6 @@ var api = require('./controllers/api'),
  */
 module.exports = function(app) {
 
-app.route('/crud/portfolios/:id/buildings')
-  .get(portfolios.buildings);
-
   // Server API Routes
 
   app.route('/api/users')
@@ -38,6 +35,31 @@ app.route('/crud/portfolios/:id/buildings')
     .get(api.crud)
     .put(api.crud)
     .post(api.crud)
+    .delete(api.crud);
+
+  app.route('/crud/portfolios/:id/buildings')
+    .get(api.crud)
+    .post(api.crud)
+    .put(api.crud)
+    .delete(api.crud);
+
+  app.route('/crud/buildings/:id/leases')
+    .get(api.crud)
+    .post(api.crud)
+    .put(api.crud)
+    .delete(api.crud);
+
+   app.route('/crud/:collection/:id')
+    .get(api.crud)
+    .put(api.crud)
+    .post(api.crud)
+    .delete(api.crud);
+
+
+ app.route('/crud/:collection')
+    .get(api.crud)
+    .post(api.crud)
+    .put(api.crud)
     .delete(api.crud);
 
   // All undefined api routes should return a 404
