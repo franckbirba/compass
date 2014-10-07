@@ -25,6 +25,20 @@ module.exports = function(app) {
     .post(session.login)
     .delete(session.logout);
 
+  /*
+  ** New style routes without the ending '/'
+  ** for request likes '/buildings'. Plays better with Restangular.
+  */
+  app.route('/crud/:collection')
+    .get(api.crud)
+    .put(api.crud)
+    .post(api.crud)
+    .delete(api.crud);
+
+
+  /*
+  ** Old style routes with ending '/'
+  */
   app.route('/crud/:collection/')
     .get(api.crud)
     .put(api.crud)
