@@ -1,4 +1,4 @@
-var ReferenceActionsRecipe = function (Restangular) {
+var ReferenceActionsRecipe = function (Restangular, Actions) {
   var ReferenceActions = {};
 
   ReferenceActions.all = [];
@@ -19,6 +19,7 @@ var ReferenceActionsRecipe = function (Restangular) {
   ReferenceActions.remove = function(id, index){
     var promise = Restangular.one('reference-actions', id).remove();
     promise.then(function(deleted){
+      Actions.orphanize(id);
       deleted.get().then(function(it){
         ReferenceActions.all.splice(index, 1);
       });

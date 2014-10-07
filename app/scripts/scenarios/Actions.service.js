@@ -37,6 +37,12 @@ var ActionsRecipe = function(ReferenceActions, Restangular) {
     return promise;
   };
 
+    Actions.orphanize = function(refActionId){
+    var action = ;
+    var refAction;
+    angular.extend(action, refAction);
+  };
+
   Actions.remove = function(id, index){
     var promise = Restangular.one('actions', id).remove();
     promise.then(function(deleted){
