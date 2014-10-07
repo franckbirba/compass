@@ -20,7 +20,7 @@ var express = require('express'),
 module.exports = function(app) {
   var env = app.get('env');
 
-  if ('development' === env) {
+  if ('development' === env || 'test' === env ) {
     app.use(require('connect-livereload')());
 
     // Disable caching of scripts for easier testing

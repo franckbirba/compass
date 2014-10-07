@@ -1,6 +1,7 @@
 'use strict';
 
-var chai = require('chai'),
+var app = require('../../../server'),
+    chai = require('chai'),
     expect = chai.expect,
     mongoose = require('mongoose'),
     User = mongoose.model('User');
