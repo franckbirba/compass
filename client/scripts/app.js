@@ -9,10 +9,10 @@ angular.module('tornadoApp', [
   'ui.bootstrap',
   'xeditable',
   'tableSort',
-  'uiGmapgoogle-maps',
+  'google-maps'.ns(), // resolves to uiGmapgoogle-maps
   'geocoder',
   'ngCollaPicka',
-  'restangular',
+  'restangular',      // called with RestangularProvider
   'buildingMdl',
   'observatoryMdl',
   'scenarioMdl',
@@ -77,44 +77,4 @@ angular.module('tornadoApp', [
         }
       };
     }]);
-  })
-  .config(function(RestangularProvider) {
-    RestangularProvider.setBaseUrl('/crud');
-    RestangularProvider.setRestangularFields({id: "_id"});
-    RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
-      var extractedData;
-      console.log('From RESPONSE');
-      console.log('THE ' + operation + ' OP is called with url: ' + url);
-      if (operation === "getList"){
-        extractedData = response.data;
-      }
-      // }
-      else {
-        extractedData = response.data;
-      }
-      return extractedData;
-    })
-
-  //   // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
-
-  //   //   console.log(element);
-  //   //   console.log(operation);
-  //   //   console.log(what);
-  //   //   console.log(url);
-
-  //   //   return url
-  //   // });
-  //   // RestangularProvider.addFullRequestInterceptor(function(headers, params, element, httpConfig){
-  //   //   console.log(headers);
-  //   //   console.log(params);
-  //   //   console.log(element);
-  //   //   console.log(httpConfig);
-  //   // });
-  //   // RestangularProvider.setErrorInterceptor(function(response, deferred, responseHandler) {
-  //   //   if(response.status === 404) {
-  //   //     console.log(response);
-  //   //     console.log(deferred);
-  //   //   };
-  //   //   return true; // error not handled
-  //   // });
   });
