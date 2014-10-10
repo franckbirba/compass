@@ -1,7 +1,7 @@
-'use strict';
+(function(){
+  'use strict';
 
-ObsModule
-  .factory('PortfolioSvc', function PortfolioSvc(Restangular, Portfolio) {
+  function PortfolioSvc(Restangular) {
     var resource = 'portfolios';
     var Portfolio = Restangular.service(resource);
 
@@ -16,6 +16,14 @@ ObsModule
 
     return {
      rest: Portfolio,
+     resolve_test: 'test',
      createPortfolio: createPortfolio
     }
-  });
+  };
+
+  PortfolioSvc.$inject = ['Restangular'];
+
+  angular.module('observatoryMdl')
+    .factory('PortfolioSvc', PortfolioSvc);
+
+})();
