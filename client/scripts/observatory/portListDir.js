@@ -1,22 +1,22 @@
 /**
  * @ngdoc directive
- * @name tornadoApp.directive:portForm
+ * @name tornadoApp.directive:portList
  * @description
- * # portForm
+ * # portList
  */
 
 (function(){
   'use strict';
 
-  function portFormDir(){
+  function portListDir(){
     return {
-      templateUrl: '/scripts/observatory/views/portForm.tpl.html',
+      templateUrl: '/scripts/observatory/views/portList.tpl.html',
       restrict: 'E',
       link: function () {}
     };
   }
 
   angular.module('observatoryMdl')
-    .directive('portForm', portFormDir);
+    .directive('portList', portListDir);
 
 })();
