@@ -9,7 +9,7 @@ angular.module('tornadoApp', [
   'ui.bootstrap',
   'xeditable',
   'tableSort',
-  'google-maps',
+  'uiGmapgoogle-maps',
   'geocoder',
   'ngCollaPicka',
   'restangular',
