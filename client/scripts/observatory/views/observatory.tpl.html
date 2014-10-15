@@ -17,37 +17,7 @@
           </div>
         </div>
         <div class="panel-body">
-          <div class="list-group">
-            <div class="list-group-item clearfix" ng-repeat="portfolio in portfolios track by $index">
-              <span class="pull-left">
-                <a class="btn" ng-click="portfolioCard = ! portfolioCard" href="">{{portfolio.name}}</a>
-              </span>
-              <span class="pull-right">
-                <button ng-click="portfolioDel(portfolio)">
-                  <i class="fa fa-times"></i>
-                </button>
-              </span>
-              <div class="panel panel-default" ng-show="portfolioCard">
-                <div class="panel-body">
-                  <div class="list-group clearfix">
-                    <h4>Informations du Portfolio</h4>
-                    <div class="list-group-item clearfix">
-                      <a href="/portfolios/{{portfolio._id}}/buildings">
-                        <h5 class="pull-left">{{"buildings" | printPortSummary}}</h5>
-                        <span class="pull-right">{{portfolio.buildings.length}}</span>
-                      </a>
-                    </div>
-                    <div class="list-group-item clearfix" ng-repeat="(key, value) in portfolio.summary">
-                      <span>
-                        <h5 class="pull-left">{{key | printPortSummary}}</h5>
-                        <span class="pull-right">{{value}}</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <port-list></port-list>
         </div>
       </div><!-- END FOCUS PANEL -->
     </div>
@@ -64,7 +34,7 @@
         </div>
 
         <div class="panel-body"><!-- GOOGLE MAP -->
-          <google-map center="values.map.center" options='{styles:[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]}' draggable="true" width="600px" style="width:600px;height:400px" zoom="values.map.zoom">
+          <ui-gmap-google-map center="values.map.center" options='{styles:[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]}' draggable="true" width="600px" style="width:600px;height:400px" zoom="values.map.zoom">
             <markers models="observatory.buildings" coords="'position'" labelContent="'name'" showWindow="true">
               <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
                 <div>
@@ -76,7 +46,7 @@
                 </div>
               </windows>
             </markers>
-          </google-map>
+          </ui-gmap-google-map>
         </div><!-- END MAP -->
         <div class="panel-heading clearfix">
           <h3 class="pull-left">Visualisation</h3>

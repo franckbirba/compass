@@ -38,7 +38,7 @@ var ActionsRecipe = function(ReferenceActions, Restangular) {
   };
 
     Actions.orphanize = function(refActionId){
-    var action = ;
+    var action = null;
     var refAction;
     angular.extend(action, refAction);
   };

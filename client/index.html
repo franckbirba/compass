@@ -49,7 +49,6 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
-     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 
 
     <!--[if lt IE 9]>
@@ -68,6 +67,7 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/bluebird/js/browser/bluebird.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/angular-scenario/angular-scenario.js"></script>
@@ -79,16 +79,6 @@
     <script src="bower_components/google-code-prettify/bin/prettify.min.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <script src="bower_components/nvd3/nv.d3.js"></script>
-    <script src="bower_components/DataTables/media/js/jquery.dataTables.js"></script>
-    <script src="bower_components/flot/jquery.flot.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/flot.tooltip/js/jquery.flot.tooltip.js"></script>
-    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
-    <script src="bower_components/raphael/raphael.js"></script>
-    <script src="bower_components/mocha/mocha.js"></script>
-    <script src="bower_components/morrisjs/morris.js"></script>
-    <script src="bower_components/sb-admin-v2/js/sb-admin.js"></script>
-    <script src="bower_components/sb-admin-v2/js/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
@@ -99,6 +89,8 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/utils/utils.js"></script>
+        <script src="scripts/utils/restangular.js"></script>
+        <script src="scripts/utils/googleMapsApi.js"></script>
 
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/langCtrl.js"></script>
@@ -139,9 +131,11 @@
         <script src="scripts/buildings/buildingCtrl.js"></script>
 
         <script src="scripts/observatory/observatoryMdl.js"></script>
-        <script src="scripts/observatory/portfolioModel.js"></script>
+
         <script src="scripts/observatory/portfolioSvc.js"></script>
+        <script src="scripts/observatory/observatoryCfg.js"></script>
         <script src="scripts/observatory/portFormDir.js"></script>
+        <script src="scripts/observatory/portListDir.js"></script>
         <script src="scripts/observatory/observatorySvc.js"></script>
         <script src="scripts/observatory/observatoryCtrl.js"></script>
 

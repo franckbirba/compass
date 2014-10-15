@@ -22,7 +22,10 @@
   };
 
   PortfolioSvc.$inject = ['Restangular'];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 28f8e07cd071d2236fd6a97073de332210341319
   angular.module('observatoryMdl')
     .factory('PortfolioSvc', PortfolioSvc);
 
