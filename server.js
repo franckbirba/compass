@@ -26,7 +26,7 @@ if ( /(.*)\.(js$|coffee$)/.test(file) && !/(.*)\.(spec)/.test(file) ) {
 
 // Populate empty DB with sample data
 require('./server/config/dummydata');
-require('./server/config/seeds');
+
 
 // Passport Configuration
 var passport = require('./server/config/passport');

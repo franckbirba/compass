@@ -6,12 +6,17 @@
     var BuildingObj = BuildingSvc.buildingObj;
 
     var id = $routeParams.id || '';
-    $scope.portfolio_id = $routeParams.id || '';
+    $scope.portfolio_id = $routeParams.id || null;
     $scope.buildings = Buildings.getList().$object;
 
-    Restangular.one('portfolio', $scope.portfolio_id).getList('buildings').then(function(res){
-      console.log(res);
-    })
+
+    Restangular
+      .one('portfolios', $scope.portfolio_id)
+      .all('buildings')
+      .getList()
+      .then(function(res){
+        $scope.buildings = res;
+      });
 
     $scope.building = function(){
       var b = BuildingSvc.get(id);
@@ -39,15 +44,9 @@
       });
     }
 
-    // No longer necessary (k, v) in x
-    // $scope.addressKeys = formBuilder(BuildingObj.address);
-    // $scope.infoKeys = formBuilder(BuildingObj.info);
-
-
     $scope.saveBuilding = function(){
       $location.url('/leasetest')
     }
-
 
     /*
     ** Form multi-page form when using $routeProvider

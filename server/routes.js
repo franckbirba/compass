@@ -51,7 +51,7 @@ module.exports = function(app) {
     .delete(api.crud);
 
   app.route('/crud/portfolios/:id/buildings')
-    .get(api.crud)
+    .get(portfolios.buildings)
     .post(api.crud)
     .put(api.crud)
     .delete(api.crud);

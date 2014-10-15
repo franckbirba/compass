@@ -24,7 +24,11 @@ module.exports = function (grunt) {
         }
       }
     },
-
+    mongo_drop: {
+      dev: {
+        'uri': 'mongodb://localhost/tornado-dev',
+      },
+    },
     // Project settings
     yeoman: {
       // configurable paths
@@ -393,6 +397,7 @@ module.exports = function (grunt) {
       test: [
         'compass'
       ],
+
       debug: {
         tasks: [
           'nodemon',
@@ -449,22 +454,14 @@ module.exports = function (grunt) {
         stderr: true
       },
       'db-seed': {
-          command: function() {
-            var cmd = [];
-            cmd.push('mongo tornado --eval "db.dropDatabase()"');
-            cmd.push('node server/seed.js');
-            return cmd.join(';');
-          },
-          stdout: true,
-          stderr: true
-      },
-      'db-clean': {
         command: function() {
-          return ('mongo tornado --eval "db.dropDatabase()"');
+          var cmd = [];
+          cmd.push('node server/config/seeds.js');
+          return cmd.join(';');
         },
         stdout: true,
         stderr: true
-      }
+      },
     },
 
     // Test settings
@@ -588,5 +585,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('reset-mongo', [ 'exec:reset-mongo' ]);
   grunt.registerTask('db-seed', [ 'exec:db-seed' ]);
-  grunt.registerTask('db-clean', [ 'exec:db-clean' ]);
+
 };

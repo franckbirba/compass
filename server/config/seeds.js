@@ -1,5 +1,8 @@
 'use strict';
 
+require('../models/portfolio');
+require('../models/building');
+require('../models/lease');
 var mongoose = require('mongoose'),
   Faker = require('faker'),
   Portfolio = mongoose.model('Portfolio'),
@@ -85,25 +88,39 @@ function createLeases(qty){
   return leases;
 }
 
+function seedDatabase(){
+  var portfolios = createPortfolios(3);
+  portfolios.forEach(function(portfolio){
+    var buildings = createBuildings(3);
+    buildings.forEach(function(building){
+      building.portfolio = portfolio._id;
+      portfolio.buildings.push(building._id);
+      var leases = createLeases(2);
+      leases.forEach(function(lease){
+        lease.building_id = building._id;
+        building.leases.push(lease._id);
+        lease.save();
+      });
+      building.save();
+    });
+    portfolio.save();
+  });
+  // still need to disconnect after save finised.
+  // either with single call back of Model.collection.insert(docs, callback())
+  // or async call
+}
 
 /**
- * Populate database with sample application data
+ * Conenct to database and seed with sample application data
  */
-var Portfolios = createPortfolios(3);
-Portfolios.forEach(function(portfolio){
-  var buildings = createBuildings(3);
-  buildings.forEach(function(building){
-    building.portfolio = portfolio._id;
-    portfolio.buildings.push(building._id);
-    var leases = createLeases(2);
-    leases.forEach(function(lease){
-      lease.building_id = building._id;
-      building.leases.push(lease._id);
-      lease.save();
-    });
-    building.save();
-  });
-  portfolio.save();
+mongoose.connect('mongodb://localhost/tornado-dev');
+mongoose.connection.on('error', function (err) {
+  console.log('connection error');
+  console.log(err);
+  mongoose.disconnect();
 });
-
-console.log('finished seeding db');
+mongoose.connection.on('open', function (res) {
+  console.log('connection success');
+  seedDatabase();
+  console.log('finished seeding db');
+});

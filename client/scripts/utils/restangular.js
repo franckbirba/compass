@@ -8,11 +8,12 @@
       var extractedData;
       console.log('From RESPONSE');
       console.log('THE ' + operation + ' OP is called with url: ' + url);
+      console.log(response);
       if (operation === "getList"){ extractedData = response.data; }
       else { extractedData = response.data; }
       return extractedData
     });
-    
+
     // RestangularProvider.addRequestInterceptor(function(element, operation, what, url){
 
     //   console.log(element);

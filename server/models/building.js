@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 
 var BuildingSchema = new Schema({
-  portfolio:   [{ type: Schema.Types.ObjectId, ref: 'Portfolio' }],
+  portfolio:   { type: Schema.Types.ObjectId, ref: 'Portfolio' },
   name:        { type: String, default: '' },
   type:        { type: String, default: '' },
   address:     {
