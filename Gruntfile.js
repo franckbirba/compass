@@ -17,6 +17,13 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
+    coffee: {
+       compile: {
+        files: {
+        'client/scripts/x.js': ['client/scripts/{,*/}*.coffee']
+        }
+      }
+    },
 
     // Project settings
     yeoman: {
