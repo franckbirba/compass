@@ -7,8 +7,7 @@
     RestangularProvider.addResponseInterceptor( function(data, operation, what, url, response, deferred) {
       var extractedData;
       console.log('From RESPONSE');
-      console.log('THE ' + operation + ' OP is called with url: ' + url);
-      console.log(response);
+      console.log('The ' + operation + ' OP is called with url: ' + url);
       if (operation === "getList"){ extractedData = response.data; }
       else { extractedData = response.data; }
       return extractedData

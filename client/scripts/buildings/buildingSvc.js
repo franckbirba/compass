@@ -8,7 +8,27 @@
  * Factory in the tornadoApp.
  */
 
-
+angular.module('buildingMdl')
+  .factory('ResolveSvc', function (Restangular, $route){
+    return {
+      'something': ['Restangular', '$route', function(Restangular, $route){
+        console.log('from resolve');
+        console.log( $route.current.params.id);
+        Restangular
+          .one('portfolios', $route.current.params.id)
+          .all('buildings')
+          .getList()
+      }]
+      // ,
+      // 'foo': ['BuildingSvc', function(BuildingSvc){
+      //   console.log('from foo resolve');
+      //   return BuildingSvc.get('543e9a638a14b10553f2fcb4');
+      // }],
+      // 'bar': function(){
+      //   return 'hello'
+      // }
+    }
+  })
 
 
 angular.module('buildingMdl')
@@ -69,10 +89,12 @@ angular.module('buildingMdl')
       });
     }
 
+
+
     return {
       buildingObj: BuildingObj,
       rest: Buildings,
       get: getOne,
-      createBuilding: createBuilding
+      createBuilding: createBuilding,
     }
   });

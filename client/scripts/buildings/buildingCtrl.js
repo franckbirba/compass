@@ -1,22 +1,18 @@
 (function(){
   'use strict';
 
-  function BuildingCtrl($http, $scope, $location, $routeParams, BuildingSvc, Restangular) {
+  function BuildingCtrl($http, $scope, $location, $routeParams, Restangular, BuildingSvc, bar, something) {
+    console.log('from controller')
+    $scope.bar = bar;
+    $scope.something = something;
+    console.log($scope.bar);
+    console.log($scope.something);
     var Buildings = BuildingSvc.rest;
     var BuildingObj = BuildingSvc.buildingObj;
 
     var id = $routeParams.id || '';
     $scope.portfolio_id = $routeParams.id || null;
     $scope.buildings = Buildings.getList().$object;
-
-
-    Restangular
-      .one('portfolios', $scope.portfolio_id)
-      .all('buildings')
-      .getList()
-      .then(function(res){
-        $scope.buildings = res;
-      });
 
     $scope.building = function(){
       var b = BuildingSvc.get(id);
@@ -62,7 +58,7 @@
 
   };
 
-  BuildingCtrl.$inject = ['$http', '$scope', '$location', '$routeParams', 'BuildingSvc','Restangular'];
+  BuildingCtrl.$inject = ['$http', '$scope', '$location', '$routeParams', 'Restangular', 'BuildingSvc', 'bar', 'something'];
 
   angular.module('buildingMdl')
     .controller('BuildingCtrl', BuildingCtrl);
