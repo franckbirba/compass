@@ -2,6 +2,6 @@
 
 'use strict';
 
-  angular.module('buildingMdl', ['ngRoute']);
+  angular.module('buildingMdl', ['ngRoute', 'ngResource', 'restangular', 'tornadoConfig']);
 
 })();

@@ -1,19 +1,11 @@
-# tornado
+# Tornado
 
-The best project ever.
+A complete planification environnement for property management
 
 ## Getting Started
-Install the module with: `npm install tornado`
-
-```javascript
-var tornado = require('tornado');
-tornado.awesome(); // "awesome"
-```
-
-## Documentation
  Prerequisites
  make sure you have (install otherwise) mongodb, node.js, npm, ruby & compass, grunt-cli, bower, mongodb
- Launch the project
+
  ```
  $ mongod
  $ git clone <project>

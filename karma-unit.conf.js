@@ -4,17 +4,39 @@
 module.exports = function(config) {
   config.set({
     // base path, that will be used to resolve files and exclude
-    basePath: '',
+    basePath: 'client/scripts',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'chai'],
 
     // list of files / patterns to load in the browser
     files: [
+      // #3rd Party Code
+      '../bower_components/angular/angular.js',
+      '../bower_components/angular-mocks/angular-mocks.js',
+      '../bower_components/angular-route/angular-route.min.js',
+      '../bower_components/angular-resource/angular-resource.min.js',
+      '../bower_components/restangular/dist/restangular.min.js',
+      '../config/settingsConf.js',
+      '../config/*.js',
+
+      // # Application code
+      // '{**, }*.js',
+
+      'zombies/*.js',
+
+      // # Test code
+      'zombies/tests/*.spec.coffee'
     ],
 
     // list of files / patterns to exclude
-    exclude: ['*.origin'],
+    exclude: [
+      '{**, }*.old.js',
+      '*.origin',
+      'buildings/*.e2e.js',
+      '{**, }*.e2e.js'
+
+    ],
 
     // web server port
     port: 8080,

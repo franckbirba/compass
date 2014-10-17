@@ -52,11 +52,11 @@ module.exports = function (grunt) {
         }
       }
     },
-    open: {
-      server: {
-        url: 'http://localhost:<%= express.options.port %>'
-      }
-    },
+    // open: {
+    //   server: {
+    //     url: 'http://localhost:<%= express.options.port %>'
+    //   }
+    // },
     watch: {
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
@@ -467,7 +467,7 @@ module.exports = function (grunt) {
     // Test settings
     karma: {
       unit: {
-        configFile: 'karma.conf.js',
+        configFile: 'karma-unit.conf.js',
         singleRun: true
       }
     },
@@ -504,7 +504,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
+      return grunt.task.run(['build', 'express:prod', 'express-keepalive']); // add 'open' here to launch window on start
     }
 
     if (target === 'debug') {
@@ -523,7 +523,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'express:dev',
-      'open',
+      // 'open',
       'watch'
     ]);
   });
