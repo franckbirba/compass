@@ -5,6 +5,7 @@ angular.module('tornadoApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngMessages',
   'tornadoConfig',
   'ui.bootstrap',
   'xeditable',
@@ -13,6 +14,7 @@ angular.module('tornadoApp', [
   'geocoder',
   'ngCollaPicka',
   'restangular',      // called with RestangularProvider
+  'autoform',         // tchatel autoform
   'buildingMdl',
   'observatoryMdl',
   'scenarioMdl',
