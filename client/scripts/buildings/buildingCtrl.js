@@ -29,6 +29,7 @@
     }
 
     $scope.create = function(building){
+      console.log(building)
       building.save().then(function(res){
         $scope.buildings.push(res);
       })
@@ -41,11 +42,22 @@
       });
     }
 
-    $scope.saveBuilding = function(params){
-      console.log(params)
-      BuildingSvc.post(params)
-      console.log('going to next step');
-      // $location.url('/leasetest')
+    $scope.saveBuilding = function(){
+      var elem = {};
+      elem.portfolio = $scope.model.portfolio;
+      elem.name = $scope.model.name;
+      elem.type = $scope.model.type;
+      elem.address = $scope.model.address;
+      elem.images = $scope.model.images;
+      elem.info = $scope.model.info;
+      elem.summary = $scope.model.summary;
+
+      BuildingSvc.post(elem).then(function(res){
+        console.log(res);
+        var next = '/buildings/' + res._id + '/leases';
+        console.log(next);
+        $location.url(next);
+      });
     }
 
     /*

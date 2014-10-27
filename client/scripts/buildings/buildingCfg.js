@@ -3,7 +3,7 @@
 'use strict';
   var Resolve = {
     'model': ['Restangular', function(Restangular){
-      return Restangular.one('buildings').get({name: 'Model'});
+      return Restangular.one('models').get({name: 'Model'});
     }],
     'index':['Restangular', '$route', 'BuildingSvc', function(Restangular, $route, BuildingSvc){
       if (_.has($route.current.params, 'id')){
@@ -53,9 +53,11 @@
         controller: 'BuildingCtrl',
         resolve: Resolve,
         authenticate: auth })
-      .when('/leasetest', {
-        templateUrl: path + 'leases/views/leaseForm.tpl.html',
-        controller: 'BuildingCtrl',
+      // Index new leases
+      .when('/buildings/:id/leases', {
+        templateUrl: 'scripts/buildings/leases/views/leaseForm.tpl.html',
+        controller: 'LeaseCtrl',
+        resolve: Resolve,
         authenticate: auth })
       .when('/graph', {
         templateUrl: partials + 'graph.html',

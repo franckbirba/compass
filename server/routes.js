@@ -29,6 +29,9 @@ module.exports = function(app) {
   app.route('/crud/portfolio')
     .post(portfolios.create)
   app.route('/crud/buildings')
+    .get(building.index)
+    .post(building.create);
+  app.route('/crud/models')
     .get(building.show)
 
   /*x
