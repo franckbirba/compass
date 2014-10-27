@@ -2,21 +2,24 @@
 
 'use strict';
   var Resolve = {
-    'something': ['Restangular', '$route', function(Restangular, $route){
-      console.log('from resolve');
-      console.log( $route.current.params.id);
-      return Restangular
-        .one('portfolios', $route.current.params.id)
-        .all('buildings')
-        .getList()
+    'model': ['Restangular', function(Restangular){
+      return Restangular.one('buildings').get({name: 'Model'});
     }],
-    'bar': ['$q', '$timeout', function($q, $timeout){
-      console.log('from bar')
-      var defer = $q.defer();
-      $timeout(function(){
-        defer.resolve('bar has replied')
-      }, 2000);
-      return defer.promise
+    'index':['Restangular', '$route', 'BuildingSvc', function(Restangular, $route, BuildingSvc){
+      if (_.has($route.current.params, 'id')){
+        var portfolio_id = $route.current.params.id;
+        return Restangular
+          .one('portfolios', portfolio_id)
+          .all('buildings')
+          .getList().$object;
+      }
+      else {
+        return BuildingSvc.getList().$object;
+      }
+    }],
+    'show': ['$route', 'BuildingSvc', function($route, BuildingSvc){
+      var one = BuildingSvc.one($route.current.params.id).get();
+      return one;
     }]
   }
 
@@ -26,28 +29,32 @@
     var path = 'scripts/buildings/views/';
     var partials  = 'views/partials/';
     $routeProvider
+      // Index all users buildings
       .when('/buildings', {
         templateUrl: path + 'buildings.tpl.html',
         controller: 'BuildingCtrl',
+        resolve: Resolve,
         authenticate: auth })
+      // Show single building
       .when('/buildings/:id', {
         templateUrl: path + 'buildingDetail.html',
         controller: 'BuildingCtrl',
+        resolve: Resolve,
         authenticate: auth })
+      // Index all portfolio buildings
       .when('/portfolios/:id/buildings', {
         templateUrl: path + 'buildings.tpl.html',
         controller: 'BuildingCtrl',
-        resolve: {
-          something: Resolve.something,
-          bar: Resolve.bar
-        },
+        resolve: Resolve,
         authenticate: auth })
+      // Create new building belonging to port
       .when('/portfolios/:id/building', {
         templateUrl: path + 'buildForm.tpl.html',
         controller: 'BuildingCtrl',
+        resolve: Resolve,
         authenticate: auth })
       .when('/leasetest', {
-        templateUrl: path + 'leaseForm.tpl.html',
+        templateUrl: path + 'leases/views/leaseForm.tpl.html',
         controller: 'BuildingCtrl',
         authenticate: auth })
       .when('/graph', {
@@ -64,7 +71,7 @@
         authenticate: auth  });
 
   }
-  BuildingCfg.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', 'ResolveSvcProvider'];
+  BuildingCfg.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
 
   angular.module('buildingMdl').
     config(BuildingCfg);

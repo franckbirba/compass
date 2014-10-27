@@ -6,8 +6,9 @@
     RestangularProvider.setRestangularFields({id: "_id"});
     RestangularProvider.addResponseInterceptor( function(data, operation, what, url, response, deferred) {
       var extractedData;
-      console.log('From RESPONSE');
-      console.log('The ' + operation + ' OP is called with url: ' + url);
+      // console.log('From RESPONSE');
+      // console.log('The ' + operation + ' OP is called with url: ' + url);
+      // console.log(response);
       if (operation === "getList"){ extractedData = response.data; }
       else { extractedData = response.data; }
       return extractedData

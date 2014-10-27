@@ -18,6 +18,21 @@ angular.module('buildingMdl')
       return map[input];
     }
   })
+  .filter('buildingAdress', function(){
+    return function(input){
+      var map = {
+        address1: 'Addresse 1',
+        address2: 'Addresse 2',
+        city: 'Ville',
+        zip_code: 'Code Postal',
+        area: 'Region',
+        country: 'Pays',
+        gps_long: 'Gps Longitude',
+        gps_lat: 'Gps Latitutude'
+      }
+      return map[input];
+    }
+  })
   .filter('buildingInfo', function(){
     return function(input) {
       var map = {

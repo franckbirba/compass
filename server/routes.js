@@ -4,6 +4,7 @@ var api = require('./controllers/api'),
     index = require('./controllers'),
     users = require('./controllers/users'),
     portfolios = require('./controllers/portfolios'),
+    building = require('./controllers/building'),
     session = require('./controllers/session'),
     middleware = require('./middleware');
 
@@ -25,10 +26,12 @@ module.exports = function(app) {
     .post(session.login)
     .delete(session.logout);
 
-  app.route('/crud/:portfolio')
+  app.route('/crud/portfolio')
     .post(portfolios.create)
+  app.route('/crud/buildings')
+    .get(building.show)
 
-  /*
+  /*x
   ** New style routes without the ending '/'
   ** for request likes '/buildings'. Plays better with Restangular.
   */

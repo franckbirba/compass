@@ -48,4 +48,5 @@ var BuildingSchema = new Schema({
   }
 });
 
+
 module.exports = mongoose.model('Building', BuildingSchema);

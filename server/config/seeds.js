@@ -110,8 +110,22 @@ function seedDatabase(){
   // or async call
 }
 
+/*
+** Create default Models
+*/
+function defaultModels(){
+  var portfolio = new Portfolio({ name: 'Model'});
+  var building = new Building({ name: 'Model' });
+  building.portfolio = portfolio._id;
+  console.log(building.portfolio)
+  building.save();
+  portfolio.building = building._id;
+  portfolio.save();
+}
+
+
 /**
- * Conenct to database and seed with sample application data
+ * Connect to database and seed with sample application data
  */
 mongoose.connect('mongodb://localhost/tornado-dev');
 mongoose.connection.on('error', function (err) {
@@ -122,5 +136,6 @@ mongoose.connection.on('error', function (err) {
 mongoose.connection.on('open', function (res) {
   console.log('connection success');
   seedDatabase();
+  defaultModels();
   console.log('finished seeding db');
 });

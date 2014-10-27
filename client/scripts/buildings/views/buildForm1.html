@@ -7,10 +7,9 @@
 			<div class="col-sm-10">
 				 <input class="form-control"
 				 	type="text"
-				 	id="portfolio"
 				 	placeholder="{{portfolio_id}}"
 				 	name="portfolio"
-				 	ng-model="building.portofolio"
+				 	ng-model="model.portofolio"
 				 	novalidate >
 			</div>
 		</div>
@@ -21,7 +20,7 @@
 					type="text"
 					placeholder="Nom du Bâtiment"
 					name="name"
-					ng-model="building.name"
+					ng-model="model.name"
 					autofocus
 					novalidate>
 			</div>
@@ -30,14 +29,14 @@
 	<div>
 		<div class="building-form">
 			<h3>Adresse</h3>
-			<div class="form-group" ng-repeat="key in addressKeys">
-				<label for="portfolio" class="col-sm-2 control-label">{{key | capitalizeAdressKeys}}</label>
+			<div class="form-group" ng-repeat="(key, values) in model.address">
+				<label for="portfolio" class="col-sm-2 control-label">{{key | buildingAdress}}</label>
 				<div class="col-sm-10">
 					<input class="form-control"
 						type="text"
-						placeholder="{{key | capitalizeAdressKeys}}"
+						placeholder="{{key | buildingAdress}}"
 						name="{{key}}"
-						ng-model="address[key]"
+						ng-model="model.address[key]"
 						autofocus
 						novalidate >
 				</div>

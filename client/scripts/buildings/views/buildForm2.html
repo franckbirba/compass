@@ -4,18 +4,17 @@
 	<form role="form" class="form-horizontal" name="form" ng-submit="" novalidate>
 	<div class="build-info">
 		<h3>Informations complémentaires</h3>
-
-		<div class="form-group" ng-repeat="key in infoKeys">
-			<label for="portfolio" class="col-sm-2 control-label">{{key | buildingInfo | capitalizeAdressKeys}}
+		<pre>{{model.info}}</pre>
+		<div class="form-group" ng-repeat="(key, values) in model.info">
+			<label for="portfolio" class="col-sm-2 control-label">{{key | buildingInfo }}
 			</label>
 			<div class="col-sm-10">
 				<input class="form-control"
 					type="text"
-					placeholder="{{key | capitalizeAdressKeys}}"
+					placeholder="{{key | buildingInfo}}"
 					name="{{key}}"
-					ng-model="info[key]"
-					autofocus
-					novalidate >
+					ng-model="model.info[key]"
+					autofocus>
 			</div>
 		</div>
 	</form>
@@ -42,4 +41,3 @@
 		</div>
 	</div>
 </div>
-
