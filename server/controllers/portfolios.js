@@ -20,3 +20,11 @@ exports.buildings = function(req, res, next) {
     res.send(buildings);
   })
 }
+
+// Creates a new post in the DB.
+exports.create = function(req, res) {
+  Portfolio.create(req.body, function(err, portfolio) {
+    if(err) { return handleError(res, err); }
+    return res.json(201, portfolio);
+  });
+};

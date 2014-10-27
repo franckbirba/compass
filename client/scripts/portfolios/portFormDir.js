@@ -10,13 +10,13 @@
 
   function portFormDir(){
     return {
-      templateUrl: '/scripts/observatory/views/portForm.tpl.html',
+      templateUrl: '/scripts/portfolios/portForm.tpl.html',
       restrict: 'E',
       link: function () {}
     };
   }
 
-  angular.module('observatoryMdl')
+  angular.module('portfolioMdl')
     .directive('portForm', portFormDir);
 
 })();

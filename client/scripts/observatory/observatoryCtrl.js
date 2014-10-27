@@ -1,27 +1,32 @@
 (function(){
   'use strict';
 
-  function ObservatoryCtrl($scope, $timeout, Restangular, GoogleMapApi, Geocoder, ObservatorySvc ){
-    var db = ObservatorySvc;
+  function ObservatoryCtrl($scope, $timeout, Restangular, GoogleMapApi, Geocoder, ObservatorySvc, PortfolioSvc ){
     $scope.geocoder = Geocoder;
 
-    $scope.values = db.values;
+    $scope.values = ObservatorySvc.values;
     /* Set default value to show in select */
     $scope.currentHqeType = $scope.values.hqeTypes.all;
 
-    $scope.portfolios = db.portfolios;
-
-    //For adding a new Portfolio to Obs.
+    // To handle Portfolios. Could move to PortfolioCtrl?
+    $scope.portfolios = PortfolioSvc.getList().$object;
     $scope.portfolioCreate = function(params){
-      db.addPortfolio(params);
-      // toDo: clear $scope.portForm after, setting to null doesn't work.
-      $scope.portForm = null;
+      PortfolioSvc.post(params).then(function(res){
+        $scope.portfolios.push(res);
+        // toDo: clear $scope.portForm after, setting to null doesn't work.
+        $scope.portForm = null;
+      });
+    }
+    $scope.portfolioDel = function(elem){
+      var index = $scope.portfolios.indexOf(elem)
+      var portfolio = $scope.portfolios[index];
+      portfolio.remove().then(function(res){
+        if(index > -1) $scope.portfolios.splice(index, 1);
+      })
     }
 
-    $scope.portfolioDel = function(index){
-      db.delPortfolio(index);
-    }
 
+    // Init Google Maps
     GoogleMapApi.then(function(maps){
       console.log('map ready');
     });
@@ -207,7 +212,7 @@
     }
   };
 
-  ObservatoryCtrl.$inject = ['$scope', '$timeout', 'Restangular', 'GoogleMapApi'.ns(), 'Geocoder', 'ObservatorySvc'];
+  ObservatoryCtrl.$inject = ['$scope', '$timeout', 'Restangular', 'GoogleMapApi'.ns(), 'Geocoder', 'ObservatorySvc', 'PortfolioSvc'];
 
   angular.module('observatoryMdl')
     .controller('ObservatoryCtrl', ObservatoryCtrl);

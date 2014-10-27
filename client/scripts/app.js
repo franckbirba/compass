@@ -16,6 +16,7 @@ angular.module('tornadoApp', [
   'restangular',      // called with RestangularProvider
   'autoform',         // tchatel autoform
   'buildingMdl',
+  'portfolioMdl',
   'observatoryMdl',
   'scenarioMdl',
   'pascalprecht.translate',

@@ -10,13 +10,13 @@
 
   function portListDir(){
     return {
-      templateUrl: '/scripts/observatory/views/portList.tpl.html',
+      templateUrl: '/scripts/portfolios/portList.tpl.html',
       restrict: 'E',
       link: function () {}
     };
   }
 
-  angular.module('observatoryMdl')
+  angular.module('portfolioMdl')
     .directive('portList', portListDir);
 
 })();

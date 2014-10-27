@@ -5,11 +5,11 @@
  * # observatoryService
  * Factory in the tornadoApp.
  */
- 
+
 (function(){
 'use strict';
 
-  function ObservatorySvc($http, $q, Restangular, PortfolioSvc, DUMMY){
+  function ObservatorySvc($http, $q, Restangular, DUMMY){
     var self = this;
 
     // Static values
@@ -19,27 +19,9 @@
       map:                          DUMMY.observatory_map,
       usageTypes:                   DUMMY.usage_types
     };
-
-
-    // Public functions
-    this.portfolios = PortfolioSvc.rest.getList().$object;
-
-    this.addPortfolio = function(params){
-      PortfolioSvc.createPortfolio(params).then(function(res){
-        self.portfolios.push(res);
-      })
-    };
-
-    this.delPortfolio = function(portfolio){
-      var index = this.portfolios.indexOf(portfolio);
-      var port = this.portfolios[index];
-      port.remove().then(function(res) {
-        if (index > -1) self.portfolios.splice(index, 1);
-      });
-    }
   }
 
-  ObservatorySvc.$inject = ['$http', '$q', 'Restangular', 'PortfolioSvc', 'DUMMY'];
+  ObservatorySvc.$inject = ['$http', '$q', 'Restangular', 'DUMMY'];
 
   angular.module('observatoryMdl')
     .service('ObservatorySvc', ObservatorySvc);

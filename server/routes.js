@@ -25,6 +25,9 @@ module.exports = function(app) {
     .post(session.login)
     .delete(session.logout);
 
+  app.route('/crud/:portfolio')
+    .post(portfolios.create)
+
   /*
   ** New style routes without the ending '/'
   ** for request likes '/buildings'. Plays better with Restangular.
