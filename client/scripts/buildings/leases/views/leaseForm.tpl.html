@@ -1,10 +1,10 @@
 <div class="rows">
   <aside class="col-md-2" style="height: 100%">
+    {{leases}}
     <h3>leases</h3>
     <ul>
       <li ng-repeat="lease in leases">{{lease._id}}</li>
     </ul>
-
   </aside>
   <section class="col-md-8" ng-switch="leaseStep">
     <button class="btn btn-lg btn-success" ng-click="setLeaseStep(1)">New Lease</button>

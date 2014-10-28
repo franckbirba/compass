@@ -4,7 +4,7 @@ var api = require('./controllers/api'),
     index = require('./controllers'),
     users = require('./controllers/users'),
     portfolios = require('./controllers/portfolios'),
-    building = require('./controllers/building'),
+    buildings = require('./controllers/building'),
     session = require('./controllers/session'),
     middleware = require('./middleware'),
     models = require('./controllers/models');
@@ -28,10 +28,10 @@ module.exports = function(app) {
     .delete(session.logout);
 
   app.route('/crud/portfolio')
-    .post(portfolios.create)
+    .post(portfolios.create);
   app.route('/crud/buildings')
-    .get(building.index)
-    .post(building.create);
+    .get(buildings.index)
+    .post(buildings.create);
 
   /**
   * Fetch Schema of each Model
@@ -71,7 +71,7 @@ module.exports = function(app) {
     .delete(api.crud);
 
   app.route('/crud/buildings/:id/leases')
-    .get(api.crud)
+    .get(buildings.leases)
     .post(api.crud)
     .put(api.crud)
     .delete(api.crud);

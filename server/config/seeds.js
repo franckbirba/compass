@@ -116,6 +116,9 @@ function seedDatabase(){
 function defaultModels(){
   var portfolio = new Portfolio({ name: 'Model'});
   var building = new Building({ name: 'Model' });
+  var lease = new Lease({name: 'Model'});
+  lease.building = building._id;
+  lease.save();
   building.portfolio = portfolio._id;
   console.log(building.portfolio)
   building.save();

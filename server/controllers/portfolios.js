@@ -18,7 +18,7 @@ exports.buildings = function(req, res, next) {
   Building.find({portfolio: mongoose.Types.ObjectId(req.params.id)}, function(err, buildings){
     if (err) { console.log(err); next() };
     res.send(buildings);
-  })
+  });
 }
 
 // Creates a new post in the DB.

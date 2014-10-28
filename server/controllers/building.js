@@ -1,7 +1,9 @@
 'use strict';
 
 var _ = require('lodash');
+var mongoose = require('mongoose');
 var Building = require('../models/building');
+var Lease = require('../models/lease');
 
 // Get list of buildings
 exports.index = function(req, res) {
@@ -55,6 +57,14 @@ exports.destroy = function(req, res) {
     });
   });
 };
+
+exports.leases = function(req, res, next){
+  Lease.find({building_id: mongoose.Types.ObjectId(req.params.id)}, function(err, leases){
+    if (err) { console.log(err); next() };
+    console.log(leases);
+    res.send(leases);
+  });
+}
 
 function handleError(res, err) {
   return res.send(500, err);

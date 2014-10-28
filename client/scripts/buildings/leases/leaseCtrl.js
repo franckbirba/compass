@@ -1,7 +1,9 @@
 (function(){
   'use strict';
 
-  function LeaseCtrl($scope, $routeParams){
+  function LeaseCtrl($scope, $routeParams, index){
+    $scope.leases = index;
+
     /*
     ** For multi-page form when using $routeProvider
     */
@@ -11,7 +13,7 @@
     }
   }
 
-  LeaseCtrl.$inject = ['$scope', '$routeParams'];
+  LeaseCtrl.$inject = ['$scope', '$routeParams', 'index'];
 
   angular.module('buildingMdl')
     .controller('LeaseCtrl', LeaseCtrl);
