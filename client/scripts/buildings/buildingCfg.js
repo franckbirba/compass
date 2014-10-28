@@ -54,12 +54,6 @@
         controller: 'BuildingCtrl',
         resolve: Resolve,
         authenticate: auth })
-      // Index new leases
-      .when('/buildings/:id/leases', {
-        templateUrl: 'scripts/buildings/leases/views/leaseForm.tpl.html',
-        controller: 'LeaseCtrl',
-        resolve: Resolve,
-        authenticate: auth })
       .when('/graph', {
         templateUrl: partials + 'graph.html',
         controller: 'BuildingCtrl',

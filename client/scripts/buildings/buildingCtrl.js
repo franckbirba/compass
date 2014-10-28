@@ -67,10 +67,6 @@
     $scope.setBuildStep = function(step){
       $scope.buildStep = step;
     }
-    $scope.leaseStep = 1;
-    $scope.setLeaseStep = function(step){
-      $scope.leaseStep = step;
-    }
 
   };
 
