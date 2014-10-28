@@ -6,7 +6,8 @@ var api = require('./controllers/api'),
     portfolios = require('./controllers/portfolios'),
     building = require('./controllers/building'),
     session = require('./controllers/session'),
-    middleware = require('./middleware');
+    middleware = require('./middleware'),
+    models = require('./controllers/models');
 
 /**
  * Application routes
@@ -31,10 +32,14 @@ module.exports = function(app) {
   app.route('/crud/buildings')
     .get(building.index)
     .post(building.create);
-  app.route('/crud/models')
-    .get(building.show)
 
-  /*x
+  /**
+  * Fetch Schema of each Model
+  **/
+  app.route('/crud/models')
+    .get(models.show);
+
+  /*
   ** New style routes without the ending '/'
   ** for request likes '/buildings'. Plays better with Restangular.
   */

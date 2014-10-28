@@ -3,7 +3,8 @@
 'use strict';
   var Resolve = {
     'model': ['Restangular', function(Restangular){
-      return Restangular.one('models').get({name: 'Model'});
+      var model = Restangular.one('models').get({name: 'Model', collection: 'building'});
+      return model;
     }],
     'index':['Restangular', '$route', 'BuildingSvc', function(Restangular, $route, BuildingSvc){
       if (_.has($route.current.params, 'id')){
