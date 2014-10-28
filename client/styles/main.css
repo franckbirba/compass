@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+.wrapper {
+  height: 500px;
+}
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 /* line 9, ../../app/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss */
