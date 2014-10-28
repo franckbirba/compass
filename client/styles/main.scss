@@ -13,14 +13,16 @@ $primary-bg:                 #8faa00 ;
 $btn-primary-border:             #e4e4e4 ;
 // Form
 $input-border-focus: #8faa00;
-
+// Navbar
+$navbar-default-bg: #393939;
+$navbar-height: 43px;
+$navbar-default-border: #333;
 // Panel
 $panel-primary-border: #efefef;
 $panel-default-text: #fff;
 $panel-default-border: #dddddd;
 
 $brand-success:         #8faa00 !default;
-
 $component-active-color:    red !important;
 //** Global background color for active items (e.g., navs or dropdowns).
 
@@ -34,13 +36,29 @@ $component-active-color:    red !important;
 
 /* Space out content a bit */
 body {
-    margin-top: 50;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     font-family: 'Roboto Slab', sans-serif;
     background-color : #F1F2F1;
+	color:#000 !important;
 }
 
 .wrapper {
-    margin-top: 50px;
+    overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    float: left;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 0 10px 0;
+    margin-top: 70px;
 }
 
 .wrapper-timeline {
@@ -53,13 +71,25 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
 .marketing,
 .footer {
     padding-left: 15px;
     padding-right: 15px;
 }
 
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
 
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
 
 /* Custom page footer */
 .footer {
@@ -121,17 +151,17 @@ a {
 }
 
 form {
-    padding: 20px;
-    border: 1px solid #efefef;
+    padding: 20px 20px 55px 20px;
     width: 500px;
     margin: auto;
+	background-color: rgb(206, 206, 206) !important;
 }
 
 .form-control{
     font-family :'Roboto', sans-serif;
     font-size : 14px;
     color : #8faa00;
-
+	border: 1px solid #f1f1f1 !important;
 }
 
 .form-control:focus {
@@ -141,6 +171,7 @@ form {
 
 .b-login-from {
     width: 100%;
+	background-color:rgba(0, 0, 0, 0) !important;
 }
 
 button {
@@ -223,65 +254,64 @@ td, th {
 =================
  */
 
-.home-banner {
-    padding: 0px;
-    border: 0px;
-    height: 300px;
+.home {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
     transition: opacity 0.8s;
-}
-
-.home-content {
-
-}
-
-.home-sidebar {
-
 }
 
 .sextan {
     background-image: url(../images/sextan.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    min-width: 49%;
+    background-size: contain;
+	height:360px;
 }
 
-.home-legend {
+.text {
+    display: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 45px;
     position: relative;
-    border: 0;
     top: 200px;
     width: 100%;
+    color : white;
+}
+
+a:hover {
     opacity: 0.5;
 }
 
-
-home-legend > a:hover {
+a:hover > .text {
     display: block;
-    opacity: 0.5;
 }
 
 .compass {
     background-image: url(../images/compass.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    min-width: 49%;
+    background-size: contain;
+	height:360px;
 }
 
 .homegraph {
+    width: 100%;
+    border: 1px solid $panel-primary-border;
     background-image: url(../images/evaluer-2.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 15px;
-    min-width: 100%;
+    background-size: contain;
+	height:360px;
 }
 .list-group-item {
     border: none;
     padding-top:20px;
 }
 .btn-primary {
-    border-radius: 0;
-    background-color: #f4f4f4;
-    color: #4d4d4d;
-    border: 0;
+	border-radius: 0px;
+	background-color: #8FAA00;
+	color: #000;
+	border: 0px none;
+	padding: 5px 40px;
+	float:right;
 }
 
 .panel-primary > .panel-heading {
@@ -303,6 +333,18 @@ home-legend > a:hover {
 
 
 
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background: none;
+    color: $brand-primary;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background: none;
+    color: $brand-primary;
+}
+
 .panel-default > .panel-heading {
     background-color: $brand-primary;
 }
@@ -315,7 +357,7 @@ home-legend > a:hover {
 
 .login-panel {
     width: 300px;
-    margin: auto;
+	margin-left: 9%;
 }
 
 .panel-heading {
@@ -627,6 +669,11 @@ Layout
     width: 1130px;
 }
 
+.panel {
+	background-color:rgba(0,0,0,0) !important;
+	border: none !important;
+}
+
 .item-carousel {
     height: 180px;
     padding: 10px;
@@ -702,6 +749,9 @@ Layout
     border: 1px solid #eeeeee;
 }
 
+.navbar-form {
+    margin-top: 7.5px;
+}
 
 .apply {
     float: left;
@@ -749,7 +799,15 @@ Layout
     float: left;
 }
 
+.navbar-default {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #f5f5f5;
+}
 
+.navbar-brand, .navbar-top-links li a {
+    color: white !important;
+}
 /*
 =================
 @FBI
@@ -865,4 +923,87 @@ body > div > div > div.btn-group.bootstrap-select.open > div > ul > li > a > spa
     margin: 0 auto;
 }*/
 
+#logo {
+    width: 150px;
+    height: 50px;
+}
 
+#logologin {
+	width:400px;
+}
+
+.compass-collapse-nav {
+    max-height: 70px;
+    padding: 9px;
+}
+
+.login {
+	background-image:url(../images/fondhome.jpg);
+	background-repeat:no-repeat;
+	height:800px;
+}
+
+input {
+	font-style: italic;
+	color:#000 !important;
+}
+
+.panel-default {
+	height: 200px;
+}
+
+
+.col-md-8 {
+	padding-top: 2%;
+}
+
+.btn:hover .ng-binding {
+	color:#303030;
+	font-style:italic;
+	top: 154px;
+}
+
+.col-md-4 a:hover {
+	color:#303030 !important;
+	font-style:italic;
+}
+
+.btn-primary:hover {
+	color:#fff !important;
+	background-color:#88a201 !important;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-left: 0;
+}
+
+.guest {
+	height:100px;
+}
+
+.list-group-item  {
+	padding:10px;
+}
+
+.signup {
+	padding: 10px 0 10px 20px;
+	margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+	.sextan, .compass, .homegraph {
+		height:218px;
+	}
+	
+	.col-md-4 {
+		width:33%;
+		float:left;
+	}
+	
+	.col-md-8 {
+		width:66%;
+		margin-top:40px;
+	}
+}
+
+	
