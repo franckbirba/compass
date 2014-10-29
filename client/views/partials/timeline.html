@@ -28,29 +28,29 @@ body {
 
 </style>
 
-<div class="wrapper" style="background-color:#F1F2F1;margin-top:40px;">
+<div class="wrapper" style="background-color:#FFF;margin-top:40px;">
   <div class="build-title">Scénario 1</div>
 
-<div class="wrapper-timeline style="margin-top:20px;"" style="background-color:#F1F2F1;">
-  <div class="container" style="background-color:#F1F2F1;">
-    <div class="row" style="background-color:#F1F2F1;">
+<div class="wrapper-timeline style="margin-top:20px;"" style="background-color:#FFF;">
+  <div class="container" style="background-color:#FFF;">
+    <div class="row" style="background-color:#FFF;">
       <div class="col-sm-4 blocright" style="background-color:#e4e4e4;">
         <div class="row">
           <div class="wrapper_titre_timeline">
             <h1 class="text-center">Timeline</h1>
           </div>
-          <div class="col-sm-6">
+          <!--<div class="col-sm-6">
             <h5 style="padding-top:5px; "><u>Répartition des actions</u></h5>
           </div>
           <div class="col-sm-6">
             <select class="form-control" style="width: 100%" ng-model="Action.currentBuilding" ng-change="Action.onBuildingChange(Action.currentBuilding)" ng-options="b._id as b.name for b in Action.buildings.data">
               <option value="">Tous les Bâtiments</option>
             </select>
-          </div>
+          </div>-->
         </div>
         <div timeline></div>
       </div>
-      <div class="col-sm-7 col-sm-offset-1 blocleft blocleft" style="background-color:#e4e4e4;padding:0px;">
+      <div class="col-sm-8 col-sm-offset-1 blocleft blocleft" style="background-color:#e4e4e4;padding:0px;">
          <div class="wrapper_titre_timeline">
             <h1 class="text-center">Bilan</h1>
           </div>
@@ -148,12 +148,12 @@ body {
         </div>
       </div>
 
-      <div class="col-sm-4 blocright">
+      <div class="col-sm-4 blocright timelineabsolute">
         <div class="row" style="padding:5px">
-          <div class="col-sm-6">
-            <h5>Répartition des actions</h5>
+          <div class="col-sm-4">
+            <h6>Répartition des actions</h6>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <select class="form-control" style="width: 100%" ng-model="Action.currentBuilding" ng-change="Action.onBuildingChange(Action.currentBuilding)" ng-options="b._id as b.name for b in Action.buildings.data">
               <option value="">Tous les Bâtiments</option>
             </select>

@@ -1,12 +1,13 @@
 <!-- <div ng-include="'partials/navbar.html'"></div> -->
 <div class="login" ng-controller="TranslateController">
 	<select class="selectpicker" ng-model="selectLang" ng-change="changeLanguage()" ng-options="lang.name for lang in LANG">
+		<option>français</option>
+		<option>english</option>
 	</select>
 
 	<div class="container" ng-controller="LoginCtrl">
 		<div>
-			<img id="logologin" src="images/logo_portfolio_baseline_good.png"></img>
-			<h1>{{ 'HEADLINE' | translate }}</h1>
+		<img id="logologin" src="images/logo_portfolio_baseline_good.png"></img>
 			<div class="login-panel panel panel-default" style="margin-top: 10px;">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{ 'SIGNUP_TITLE' | translate }}</h3>
@@ -37,5 +38,5 @@
 	</div>
 </div>
 <script type="text/javascript">
-	// $('.selectpicker').selectpicker();
+	$('.selectpicker').selectpicker();
 </script>

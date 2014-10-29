@@ -8,7 +8,7 @@ var app = require('../../../server'),
 
 var user;
 
-describe('User Model', function() {
+describe.only('User Model', function() {
   before(function(done) {
     user = new User({
       provider: 'local',
